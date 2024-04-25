@@ -1,0 +1,14 @@
+{
+    "python.analysis.autoFormatStrings": true,
+    "cSpell.words": [
+        "BASEPATH",
+        "cloudresourcemanager",
+        "CRDS",
+        "fastapi",
+        "googleapiclient",
+        "gserviceaccount",
+        "jsonable",
+        "pydantic",
+        "pymongo"
+    ]
+}

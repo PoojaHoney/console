@@ -1,0 +1,8 @@
+[
+    {
+        "name": "roles/accessapproval.approver",
+        "title": "Access Approval Approver",
+        "description": "Ability to view or act on access approval requests and view configuration.",
+        "stage": "GA",
+        "etag": "AA==",
+        "_id": 

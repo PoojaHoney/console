@@ -1,0 +1,9 @@
+google-cloud==0.34.0
+google-cloud-iam==2.14.3
+google-auth==2.29.0
+google-api-python-client==2.126.0
+fastapi==0.110.1
+uvicorn==0.29.0
+pydantic==2.7.0
+pydantic_settings==2.2.1
+pymongo==4.7.0
