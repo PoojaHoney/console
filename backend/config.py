@@ -11,11 +11,12 @@ class GCP_Settings(BaseSettings):
     SRV_ACC_PRIVATE_KEY_ID: str = os.environ.get("GCP_SRV_ACC_PRIVATE_KEY_ID")
     SRV_ACC_PRIVATE_KEY: str = os.environ.get("GCP_SRV_ACC_PRIVATE_KEY")
     SRV_ACC_CLIENT_EMAIL: str = os.environ.get("GCP_SRV_ACC_CLIENT_EMAIL")
-    CLIENT_ID: str = os.environ.get("GCP_CLIENT_ID")
+    SRV_ACC_CLIENT_ID: str = os.environ.get("GCP_SRV_ACC_CLIENT_ID")
     AUTH_URL: str = os.environ.get("GCP_AUTH_URL")
     TOKEN_URL: str = os.environ.get("GCP_TOKEN_URL")
     CLIENT_X509_CERT_URL: str = os.environ.get("GCP_CLIENT_X509_CERT_URL")
-    GCP_BUCKET_NAME: str = os.environ.get("GCP_BUCKET_NAME", "alph-a_console")
+    BUCKET_NAME: str = os.environ.get("GCP_BUCKET_NAME", "alph-a_console")
+    DEFAULT_ZONE: str = os.environ.get("GCP_DEFAULT_ZONE", "asia-south1-c")
 
 class Settings(BaseSettings):
     SERVICE_PORT: int = os.environ.get("SERVICE_PORT", 6001)

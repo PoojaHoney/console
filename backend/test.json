@@ -1,0 +1,15 @@
+{
+    "kind": "compute#operation",
+    "id": "7087094103361212531",
+    "name": "operation-1714548378934-6175f67139d83-d52ea013-2d0d8076",
+    "zone": "https://www.googleapis.com/compute/v1/projects/peaceful-harbor-416116/zones/asia-south1-c",
+    "operationType": "insert",
+    "targetLink": "https://www.googleapis.com/compute/v1/projects/peaceful-harbor-416116/zones/asia-south1-c/instances/oqrzeasample",
+    "targetId": "1184078716592738420",
+    "status": "RUNNING",
+    "user": "console-automation@peaceful-harbor-416116.iam.gserviceaccount.com",
+    "progress": 0,
+    "insertTime": "2024-05-01T00:26:20.518-07:00",
+    "startTime": "2024-05-01T00:26:20.519-07:00",
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/peaceful-harbor-416116/zones/asia-south1-c/operations/operation-1714548378934-6175f67139d83-d52ea013-2d0d8076"
+}
