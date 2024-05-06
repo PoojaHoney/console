@@ -1,0 +1,142 @@
+{
+    "mapping": [
+        {
+            "serviceType": "Elastic Compute Cloud",
+            "product": "Amazon Elastic Compute Cloud",
+            "gcpProducts": "Compute Engine",
+            "description": "Virtual servers in the cloud for compute capacity"
+        },
+        {
+            "serviceType": "Relational Database Service",
+            "product": "Amazon Relational Database Service",
+            "gcpProducts": "Cloud SQL",
+            "description": "Managed relational database service"
+        },
+        {
+            "serviceType": "Simple Storage Service",
+            "product": "Amazon Simple Storage Service",
+            "gcpProducts": "Cloud Storage",
+            "description": "Object storage service for storing and retrieving any amount of data"
+        },
+        {
+            "serviceType": "Lambda",
+            "product": "AWS Lambda",
+            "gcpProducts": "Cloud Functions",
+            "description": "Run code without provisioning or managing servers"
+        },
+        {
+            "serviceType": "Elastic Load Balancing",
+            "product": "Elastic Load Balancing",
+            "gcpProducts": "Load Balancing",
+            "description": "Automatically distribute incoming application traffic across multiple targets"
+        },
+        {
+            "serviceType": "CloudFront",
+            "product": "Amazon CloudFront",
+            "gcpProducts": "Cloud CDN",
+            "description": "Content delivery network service for securely delivering data, videos, applications, and APIs to customers globally"
+        },
+        {
+            "serviceType": "ElasticCache",
+            "product": "Amazon ElastiCache",
+            "gcpProducts": "Memorystore",
+            "description": "In-memory data store and cache service"
+        },
+        {
+            "serviceType": "Elastic File System",
+            "product": "Amazon Elastic File System",
+            "gcpProducts": "Filestore",
+            "description": "Fully managed file system for use with AWS Cloud services and on-premises resources"
+        },
+        {
+            "serviceType": "Simple Email Service",
+            "product": "Amazon Simple Email Service",
+            "gcpProducts": "No equivalent",
+            "description": "Email sending and receiving service"
+        },
+        {
+            "serviceType": "Cloud Watch",
+            "product": "Amazon CloudWatch",
+            "gcpProducts": "Monitoring",
+            "description": "Monitor your AWS resources and applications in real-time"
+        },
+        {
+            "serviceType": "WAF",
+            "product": "AWS WAF",
+            "gcpProducts": "Google Cloud Armor",
+            "description": "Web Application Firewall to protect your web applications from common web exploits"
+        },
+        {
+            "serviceType": "Key Management Service",
+            "product": "AWS KMS",
+            "gcpProducts": "Cloud KMS",
+            "description": "Managed service that makes it easy for you to create and control the encryption keys used to encrypt your data"
+        },
+        {
+            "serviceType": "Elastic Container Registry",
+            "product": "Amazon Elastic Container Registry",
+            "gcpProducts": "Artifact Registry",
+            "description": "Fully managed Docker container registry"
+        },
+        {
+            "serviceType": "Rekognition",
+            "product": "Amazon Rekognition",
+            "gcpProducts": "Vision AI",
+            "description": "Deep learning-based image and video analysis service"
+        },
+        {
+            "serviceType": "Config",
+            "product": "AWS Config",
+            "gcpProducts": "Config",
+            "description": "Assess, audit, and evaluate the configurations of your AWS resources"
+        },
+        {
+            "serviceType": "Elastic Block Storage",
+            "product": "Amazon Elastic Block Storage",
+            "gcpProducts": "Persistent Disk",
+            "description": "High-performance block storage service designed for use with AWS EC2 instances"
+        },
+        {
+            "serviceType": "DynamoDB",
+            "product": "Amazon DynamoDB",
+            "gcpProducts": "Datastore",
+            "description": "Fully managed NoSQL database service"
+        },
+        {
+            "serviceType": "Elastic Kubernetes Service",
+            "product": "Amazon Elastic Kubernetes Service",
+            "gcpProducts": "Google Kubernetes Engine",
+            "description": "Managed Kubernetes service"
+        },
+        {
+            "serviceType": "Route53",
+            "product": "Amazon Route 53",
+            "gcpProducts": "Cloud DNS",
+            "description": "Highly available and scalable Domain Name System (DNS) web service"
+        },
+        {
+            "serviceType": "API Gateway",
+            "product": "Amazon API Gateway",
+            "gcpProducts": "API Gateway",
+            "description": "Create, publish, maintain, monitor, and secure APIs"
+        },
+        {
+            "serviceType": "Athena",
+            "product": "Amazon Athena",
+            "gcpProducts": "BigQuery",
+            "description": "Query data stored in Amazon S3 using standard SQL expressions"
+        },
+        {
+            "serviceType": "Virtual Private Cloud",
+            "product": "Amazon VPC",
+            "gcpProducts": "Virtual Private Cloud",
+            "description": "Isolated section of the AWS Cloud where you can launch AWS resources in a virtual network"
+        },
+        {
+            "serviceType": "Data Transfer",
+            "product": "AWS Data Transfer",
+            "gcpProducts": "Cloud Interconnect, Cloud VPN",
+            "description": "Transfer data into and out of AWS"
+        }
+    ]
+}

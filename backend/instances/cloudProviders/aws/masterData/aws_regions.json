@@ -1,0 +1,328 @@
+{
+    "af-south-1": {
+        "location": "Africa (Cape Town)",
+        "region": "af-south-1",
+        "zones": [
+            "af-south-1a",
+            "af-south 1b",
+            "af-south 1c"
+        ],
+        "label": "Cape Town"
+    },
+    "ap-east-1": {
+        "location": "Asia Pacific (Hong Kong)",
+        "region": "ap-east-1",
+        "zones": [
+            "ap-east-1a",
+            "ap-east-1b",
+            "ap-east-1c"
+        ],
+        "label": "Hong Kong"
+    },
+    "ap-northeast-1": {
+        "location": "Asia Pacific (Tokyo)",
+        "region": "ap-northeast-1",
+        "zones": [
+            "ap-northeast-1a",
+            "ap-northeast-1b",
+            "ap-northeast-1c",
+            "ap-northeast-2d"
+        ],
+        "label": "Tokyo"
+    },
+    "ap-northeast-2": {
+        "location": "Asia Pacific (Seoul)",
+        "region": "ap-northeast-2",
+        "zones": [
+            "ap-northeast-2a",
+            "ap-northeast-2b",
+            "ap-northeast-2c",
+            "ap-northeast-2d"
+        ],
+        "label": "Seoul"
+    },
+    "ap-northeast-3": {
+        "location": "Asia Pacific (Osaka)",
+        "region": "ap-northeast-3",
+        "zones": [
+            "ap-northeast-3a",
+            "ap-northeast-3b",
+            "ap-northeast-3c"
+        ],
+        "label": "Osaka"
+    },
+    "ap-south-1": {
+        "location": "Asia Pacific (Mumbai)",
+        "region": "ap-south-1",
+        "zones": [
+            "ap-south-1a",
+            "ap-south-1b",
+            "ap-south-1c"
+        ],
+        "label": "Mumbai"
+    },
+    "ap-south-2": {
+        "location": "Asia Pacific (Hyderabad)",
+        "region": "ap-south-2",
+        "zones": [
+            "ap-south-2a",
+            "ap-south-2b",
+            "ap-south-2c"
+        ],
+        "label": "Hyderabad"
+    },
+    "ap-southeast-1": {
+        "location": "Asia Pacific (Singapore)",
+        "region": "ap-southeast-1",
+        "zones": [
+            "ap-southeast-1a",
+            "ap-southeast-1b",
+            "ap-southeast-1c"
+        ],
+        "label": "Singapore"
+    },
+    "ap-southeast-2": {
+        "location": "Asia Pacific (Sydney)",
+        "region": "ap-southeast-2",
+        "zones": [
+            "ap-southeast-2a",
+            "ap-southeast-2b",
+            "ap-southeast-2c"
+        ],
+        "label": "Sydney"
+    },
+    "ap-southeast-3": {
+        "location": "Asia Pacific (Jakarta)",
+        "region": "ap-southeast-3",
+        "zones": [
+            "ap-southeast-3a",
+            "ap-southeast-3b",
+            "ap-southeast-3c"
+        ],
+        "label": "Jakarta"
+    },
+    "ap-southeast-4": {
+        "location": "Asia Pacific (Melbourne)",
+        "region": "ap-southeast-4",
+        "zones": [
+            "ap-southeast-4a",
+            "ap-southeast-4b",
+            "ap-southeast-4c"
+        ],
+        "label": "Melbourne"
+    },
+    "ca-central-1": {
+        "location": "Canada (Central)",
+        "region": "ca-central-1",
+        "zones": [
+            "ca-central-1a",
+            "ca-central-1b",
+            "ca-central-1c"
+        ],
+        "label": "Canada Central"
+    },
+    "ca-west-1": {
+        "location": "Canada West (Calgary)",
+        "region": "ca-west-1",
+        "zones": [
+            "ca-west-1a",
+            "ca-west-1b",
+            "ca-west-1c"
+        ],
+        "label": "Canada West Calgary"
+    },
+    "eu-central-1": {
+        "location": "Europe (Frankfurt)",
+        "region": "eu-central-1",
+        "zones": [
+            "eu-central-1a",
+            "eu-central-1b",
+            "eu-central-1c"
+        ],
+        "label": "Frankfurt"
+    },
+    "eu-central-2": {
+        "location": "Europe (Zurich)",
+        "region": "eu-central-2",
+        "zones": [
+            "eu-central-2a",
+            "eu-central-2b",
+            "eu-central-2c"
+        ],
+        "label": "Zurich"
+    },
+    "eu-north-1": {
+        "location": "Europe (Stockholm)",
+        "region": "eu-north-1",
+        "zones": [
+            "eu-north-1a",
+            "eu-north-1b",
+            "eu-north-1c"
+        ],
+        "label": "Stockholm"
+    },
+    "eu-south-1": {
+        "location": "Europe (Milan)",
+        "region": "eu-south-1",
+        "zones": [
+            "eu-south-1a",
+            "eu-south-1b",
+            "eu-south-1c"
+        ],
+        "label": "Milan"
+    },
+    "eu-south-2": {
+        "location": "Europe (Spain)",
+        "region": "eu-south-2",
+        "zones": [
+            "eu-south-2a",
+            "eu-south-2b",
+            "eu-south-2c"
+        ],
+        "label": "Spain"
+    },
+    "eu-west-1": {
+        "location": "Europe (Ireland)",
+        "region": "eu-west-1",
+        "zones": [
+            "eu-west-1a",
+            "eu-west-1b",
+            "eu-west-1c"
+        ],
+        "label": "Ireland"
+    },
+    "eu-west-2": {
+        "location": "Europe (London)",
+        "region": "eu-west-2",
+        "zones": [
+            "eu-west-2a",
+            "eu-west-2b",
+            "eu-west-2c"
+        ],
+        "label": "London"
+    },
+    "eu-west-3": {
+        "location": "Europe (Paris)",
+        "region": "eu-west-3",
+        "zones": [
+            "eu-west-3a",
+            "eu-west-3b",
+            "eu-west-3c"
+        ],
+        "label": "Paris"
+    },
+    "me-central-1": {
+        "location": "Middle East (UAE)",
+        "region": "me-central-1",
+        "zones": [
+            "me-central-1a",
+            "me-central-1b",
+            "me-central-1c"
+        ],
+        "label": "UAE"
+    },
+    "me-south-1": {
+        "location": "Middle East (Bahrain)",
+        "region": "me-south-1",
+        "zones": [
+            "me-south-1a",
+            "me-south-1b",
+            "me-south-1c"
+        ],
+        "label": "Bahrain"
+    },
+    "sa-east-1": {
+        "location": "South America (Sao Paulo)",
+        "region": "sa-east-1",
+        "zones": [
+            "sa-east-1a",
+            "sa-east-1b",
+            "sa-east-1c"
+        ],
+        "label": "Sao Paulo"
+    },
+    "us-east-1": {
+        "location": "US East (N. Virginia)",
+        "region": "us-east-1",
+        "zones": [
+            "us-east-1a",
+            "us-east-1b",
+            "us-east-1c",
+            "us-east-1d",
+            "us-east-1e",
+            "us-east-1f"
+        ],
+        "label": "N. Virginia"
+    },
+    "us-east-2": {
+        "location": "US East (Ohio)",
+        "region": "us-east-2",
+        "zones": [
+            "us-east-2a",
+            "us-east-2b",
+            "us-east-2c"
+        ],
+        "label": "Ohio"
+    },
+    "us-gov-east-1": {
+        "location": "AWS GovCloud (US-East)",
+        "region": "us-gov-east-1",
+        "zones": [
+            "us-gov-east-1a",
+            "us-gov-east-1b",
+            "us-gov-east-1c"
+        ],
+        "label": "US-East"
+    },
+    "us-gov-west-1": {
+        "location": "AWS GovCloud (US-West)",
+        "region": "us-gov-west-1",
+        "zones": [
+            "us-gov-west-1a",
+            "us-gov-west-1b",
+            "us-gov-west-1c"
+        ],
+        "label": "US-West"
+    },
+    "us-west-1": {
+        "location": "US West (N. California)",
+        "region": "us-west-1",
+        "zones": [
+            "us-west-1a",
+            "us-west-1b",
+            "us-west-1c"
+        ],
+        "label": "N. California"
+    },
+    "us-west-2": {
+        "location": "US West (Oregon)",
+        "region": "us-west-2",
+        "zones": [
+            "us-west-2a",
+            "us-west-2b",
+            "us-west-2c",
+            "us-west-2d"
+        ],
+        "label": "Oregon"
+    },
+    "cn-north-1": {
+        "location": "China (Beijing)",
+        "region": "cn-north-1",
+        "zones": [
+            "cn-north-1a",
+            "cn-north-1b",
+            "cn-north-1c"
+        ],
+        "label": "Beijing"
+    },
+    "cn-northwest-1": {
+        "location": "China (Ningxia)",
+        "region": "cn-northwest-1",
+        "zones": [
+            "cn-northwest-1a",
+            "cn-northwest-1b",
+            "cn-northwest-1c"
+        ],
+        "label": "Ningxia"
+    }
+}

@@ -1,0 +1,403 @@
+{
+    "asia-south1": {
+        "location": "Mumbai, India",
+        "region": "asia-south1",
+        "zones": [
+            "asia-south1-a",
+            "asia-south1-b",
+            "asia-south1-c"
+        ],
+        "label": "Mumbai"
+    },
+    "asia-south2": {
+        "location": "Delhi, India",
+        "region": "asia-south2",
+        "zones": [
+            "asia-south2-a",
+            "asia-south2-b",
+            "asia-south2-c"
+        ],
+        "label": "Delhi"
+    },
+    "asia-east1": {
+        "location": "Changhua County, Taiwan",
+        "region": "asia-east1",
+        "zones": [
+            "asia-east1-a",
+            "asia-east1-b",
+            "asia-east1-c"
+        ],
+        "label": "Changhua County"
+    },
+    "asia-east2": {
+        "location": "Hong Kong",
+        "region": "asia-east2",
+        "zones": [
+            "asia-east2-a",
+            "asia-east2-b",
+            "asia-east2-c"
+        ],
+        "label": "Hong Kong"
+    },
+    "asia-northeast1": {
+        "location": "Tokyo, Japan",
+        "region": "asia-northeast1",
+        "zones": [
+            "asia-northeast1-a",
+            "asia-northeast1-b",
+            "asia-northeast1-c"
+        ],
+        "label": "Tokyo"
+    },
+    "asia-northeast2": {
+        "location": "Osaka, Japan",
+        "region": "asia-northeast2",
+        "zones": [
+            "asia-northeast2-a",
+            "asia-northeast2-b",
+            "asia-northeast2-c"
+        ],
+        "label": "Osaka"
+    },
+    "asia-northeast3": {
+        "location": "Seoul, South Korea",
+        "region": "asia-northeast3",
+        "zones": [
+            "asia-northeast3-a",
+            "asia-northeast3-b",
+            "asia-northeast3-c"
+        ],
+        "label": "Seoul"
+    },
+    "asia-southeast1": {
+        "location": "Jurong West, Singapore",
+        "region": "asia-southeast1",
+        "zones": [
+            "asia-southeast1-a",
+            "asia-southeast1-b",
+            "asia-southeast1-c"
+        ],
+        "label": "Jurong West"
+    },
+    "australia-southeast1": {
+        "location": "Sydney, Australia",
+        "region": "australia-southeast1",
+        "zones": [
+            "australia-southeast1-a",
+            "australia-southeast1-b",
+            "australia-southeast1-c"
+        ],
+        "label": "Sydney"
+    },
+    "australia-southeast2": {
+        "location": "Melbourne, Australia",
+        "region": "australia-southeast2",
+        "zones": [
+            "australia-southeast2-a",
+            "australia-southeast2-b",
+            "australia-southeast2-c"
+        ],
+        "label": "Melbourne"
+    },
+    "europe-central2": {
+        "location": "Warsaw, Poland",
+        "region": "europe-central2",
+        "zones": [
+            "europe-central2-a",
+            "europe-central2-b",
+            "europe-central2-c"
+        ],
+        "label": "Warsaw"
+    },
+    "europe-north2": {
+        "location": "Hamina, Finland",
+        "region": "europe-north2",
+        "zones": [
+            "europe-north2-a",
+            "europe-north2-b",
+            "europe-north2-c"
+        ],
+        "label": "Hamina"
+    },
+    "europe-southwest1": {
+        "location": "Madrid, Spain",
+        "region": "europe-southwest1",
+        "zones": [
+            "europe-southwest1-a",
+            "europe-southwest1-b",
+            "europe-southwest1-c"
+        ],
+        "label": "Madrid"
+    },
+    "europe-west1": {
+        "location": "St. Ghislain, Belgium",
+        "region": "europe-west1",
+        "zones": [
+            "europe-west1-b",
+            "europe-west1-c",
+            "europe-west1-d"
+        ],
+        "label": "St. Ghislain"
+    },
+    "europe-west2": {
+        "location": "London, England",
+        "region": "europe-west2",
+        "zones": [
+            "europe-west2-a",
+            "europe-west2-b",
+            "europe-west2-c"
+        ],
+        "label": "London"
+    },
+    "europe-west3": {
+        "location": "Frankfurt, Germany",
+        "region": "europe-west3",
+        "zones": [
+            "europe-west3-a",
+            "europe-west3-b",
+            "europe-west3-c"
+        ],
+        "label": "Frankfurt"
+    },
+    "europe-west4": {
+        "location": "Eemshaven, Netherlands",
+        "region": "europe-west4",
+        "zones": [
+            "europe-west4-a",
+            "europe-west4-b",
+            "europe-west4-c"
+        ],
+        "label": "Eemshaven"
+    },
+    "europe-west6": {
+        "location": "Zurich, Switzerland",
+        "region": "europe-west6",
+        "zones": [
+            "europe-west6-a",
+            "europe-west6-b",
+            "europe-west6-c"
+        ],
+        "label": "Zurich"
+    },
+    "europe-west8": {
+        "location": "Milan, Italy",
+        "region": "europe-west8",
+        "zones": [
+            "europe-west8-a",
+            "europe-west8-b",
+            "europe-west8-c"
+        ],
+        "label": "Milan"
+    },
+    "europe-west9": {
+        "location": "Paris, France",
+        "region": "europe-west9",
+        "zones": [
+            "europe-west9-a",
+            "europe-west9-b",
+            "europe-west9-c"
+        ],
+        "label": "Paris"
+    },
+    "northamerica-northeast1": {
+        "location": "Montr\u00e9al, Qu\u00e9bec",
+        "region": "northamerica-northeast1",
+        "zones": [
+            "northamerica-northeast1-a",
+            "northamerica-northeast1-b",
+            "northamerica-northeast1-c"
+        ],
+        "label": "Montr\u00e9al"
+    },
+    "northamerica-northeast2": {
+        "location": "Toronto, Ontario",
+        "region": "northamerica-northeast2",
+        "zones": [
+            "northamerica-northeast2-a",
+            "northamerica-northeast2-b",
+            "northamerica-northeast2-c"
+        ],
+        "label": "Toronto"
+    },
+    "southamerica-east1": {
+        "location": "Osasco, S\u00e3o Paulo",
+        "region": "southamerica-east1",
+        "zones": [
+            "southamerica-east1-a",
+            "southamerica-east1-b",
+            "southamerica-east1-c"
+        ],
+        "label": "S\u00e3o Paulo"
+    },
+    "us-central1": {
+        "location": "Council Bluffs, Iowa",
+        "region": "us-central1",
+        "zones": [
+            "us-central1-a",
+            "us-central1-b",
+            "us-central1-c",
+            "us-central1-f"
+        ],
+        "label": "Iowa"
+    },
+    "us-east1": {
+        "location": "Moncks Corner, South Carolina",
+        "region": "us-east1",
+        "zones": [
+            "us-east1-b",
+            "us-east1-c",
+            "us-east1-d"
+        ],
+        "label": "Moncks Corner"
+    },
+    "us-east4": {
+        "location": "Ashburn, Virginia",
+        "region": "us-east4",
+        "zones": [
+            "us-east4-a",
+            "us-east4-b",
+            "us-east4-c"
+        ],
+        "label": "Ashburn"
+    },
+    "us-west1": {
+        "location": "The Dalles, Oregon",
+        "region": "us-west1",
+        "zones": [
+            "us-west1-a",
+            "us-west1-b",
+            "us-west1-c"
+        ],
+        "label": "The Dalles"
+    },
+    "us-west2": {
+        "location": "Los Angeles, California",
+        "region": "us-west2",
+        "zones": [
+            "us-west2-a",
+            "us-west2-b",
+            "us-west2-c"
+        ],
+        "label": "Los Angeles"
+    },
+    "us-west3": {
+        "location": "Salt Lake City, Utah",
+        "region": "us-west3",
+        "zones": [
+            "us-west3-a",
+            "us-west3-b",
+            "us-west3-c"
+        ],
+        "label": "Salt Lake City"
+    },
+    "us-west4": {
+        "location": "Las Vegas, Nevada",
+        "region": "us-west4",
+        "zones": [
+            "us-west4-a",
+            "us-west4-b",
+            "us-west4-c"
+        ],
+        "label": "Las Vegas"
+    },
+    "asia-southeast2": {
+        "location": "Jakarta, Indonesia",
+        "region": "asia-southeast2",
+        "zones": [
+            "asia-southeast2-a",
+            "asia-southeast2-b",
+            "asia-southeast2-c"
+        ],
+        "label": "Jakarta"
+    },
+    "europe-west12": {
+        "location": "Turin, Italy, Europe",
+        "region": "europe-west12",
+        "zones": [
+            "europe-west12-a",
+            "europe-west12-b",
+            "europe-west12-c"
+        ],
+        "label": "Turin"
+    },
+    "me-central1": {
+        "location": "Doha, Qatar, Middle East",
+        "region": "me-central1",
+        "zones": [
+            "me-central1-a",
+            "me-central1-b",
+            "me-central1-c"
+        ],
+        "label": "Doha"
+    },
+    "me-west1": {
+        "location": "Tel Aviv, Israel, Middle East",
+        "region": "me-west1",
+        "zones": [
+            "me-west1-a",
+            "me-west1-b",
+            "me-west1-c"
+        ],
+        "label": "Tel Aviv"
+    },
+    "southamerica-west1": {
+        "location": "Santiago, America",
+        "region": "southamerica-west1",
+        "zones": [
+            "southamerica-west1-a",
+            "southamerica-west1-b",
+            "southamerica-west1-c"
+        ],
+        "label": "Santiago"
+    },
+    "us-east5": {
+        "location": "Turin, Italy, Europe",
+        "region": "us-east5",
+        "zones": [
+            "us-east5-a",
+            "us-east5-b",
+            "us-east5-c"
+        ],
+        "label": "Columbus"
+    },
+    "africa-south1": {
+        "location": "Johannesbug, Africa",
+        "region": "africa-south1",
+        "zones": [
+            "africa-south1-a",
+            "africa-south1-b",
+            "africa-south1-c"
+        ],
+        "label": "Johannesburg"
+    },
+    "europe-north1": {
+        "location": "Finland, Scandinavia",
+        "region": "europe-north1",
+        "zones": [
+            "europe-north1-a",
+            "europe-north1-b",
+            "europe-north1-c"
+        ],
+        "label": "Finland"
+    },
+    "europe-west10": {
+        "location": "Berlin, Germany",
+        "region": "europe-west10",
+        "zones": [
+            "europe-west10-a",
+            "europe-west10-b",
+            "europe-west10-c"
+        ],
+        "label": "Berline"
+    },
+    "me-central2": {
+        "location": "Dammam",
+        "region": "me-central2",
+        "zones": [
+            "me-central2-a",
+            "me-central2-b",
+            "me-central2-c"
+        ],
+        "label": "Dammam"
+    }
+}

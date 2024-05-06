@@ -1,0 +1,1025 @@
+{
+    "mapping": [
+        {
+            "serviceType": "CI/CD",
+            "product": "Cloud Build",
+            "awsProducts": "AWS CodeBuild, AWS CodeDeploy, AWS CodePipeline",
+            "description": "Build, test, and deploy on Google Cloud serverless CI/CD platform"
+        },
+        {
+            "serviceType": "CI/CD",
+            "product": "Google Cloud Deploy",
+            "awsProducts": "AWS CodeCommit, AWS CodeBuild, AWS CodeDeploy",
+            "description": "Deliver continuously to Google Kubernetes Engine and Anthos."
+        },
+        {
+            "serviceType": "Execution Control",
+            "product": "Cloud Tasks",
+            "awsProducts": "Amazon EventBridge, Amazon Simple Notification Service (SNS)",
+            "description": "Control and observe asynchronous service requests between independent applications using this zonal, execution-control service."
+        },
+        {
+            "serviceType": "Multi-cloud",
+            "product": "Anthos",
+            "awsProducts": "Amazon EKS Anywhere, Amazon ECS Anywhere, AWS Outposts",
+            "description": "Migrate directly from VMs, build, deploy, and optimize apps on GKE, Anthos serverless landing zones and VMs anywhere—simply, flexibly, and securely"
+        },
+        {
+            "serviceType": "Multi-cloud",
+            "product": "Anthos Clusters",
+            "awsProducts": "Amazon EKS Anywhere",
+            "description": "Extend GKE to work in multiple environments, including attached clusters, AWS, Azure, bare metal, and VMWare."
+        },
+        {
+            "serviceType": "Multi-cloud",
+            "product": "Anthos Config Management",
+            "awsProducts": "AWS Systems Manager",
+            "description": "Automate policy and security at scale for your hybrid and multi-cloud Kubernetes deployments."
+        },
+        {
+            "serviceType": "Multi-cloud",
+            "product": "Config Connector",
+            "awsProducts": "AWS Controllers for Kubernetes",
+            "description": "Manage Google Cloud resources through Kubernetes."
+        },
+        {
+            "serviceType": "Multi-cloud",
+            "product": "Container-Optimized OS",
+            "awsProducts": "AWS Bottlerocket",
+            "description": "Efficiently and securely run Docker containers on Compute Engine VMs."
+        },
+        {
+            "serviceType": "Multi-cloud",
+            "product": "Google Distributed Cloud",
+            "awsProducts": "AWS Outposts",
+            "description": "Extend Google Cloud’s infrastructure and services to the edge and your data centers."
+        },
+        {
+            "serviceType": "Multi-cloud",
+            "product": "Hybrid Connectivity",
+            "awsProducts": "AWS Direct Connect",
+            "description": "Connect your infrastructure to Google Cloud on your terms, from anywhere."
+        },
+        {
+            "serviceType": "Multi-cloud serverless",
+            "product": "Cloud Run for Anthos",
+            "description": "Flexible serverless development for multicloud environments."
+        },
+        {
+            "serviceType": "Service mesh",
+            "product": "Anthos Service Mesh",
+            "awsProducts": "AWS App Mesh",
+            "description": "Simplify, manage, and secure complex microservices architectures with this fully managed service."
+        },
+        {
+            "serviceType": "Service mesh",
+            "product": "Cloud Router",
+            "awsProducts": "Amazon VPC",
+            "description": "Dynamically exchange routes between your Virtual Private Cloud (VPC) and on-premises networks by using Border Gateway Protocol (BGP)."
+        },
+        {
+            "serviceType": "Service mesh",
+            "product": "Istio on Google Kubernetes Engine",
+            "awsProducts": "Istio on Amazon EKS",
+            "description": "Quickly create GKE clusters with all the components you need to create and run an Istio service mesh in a single step."
+        },
+        {
+            "serviceType": "Cloud cost optimization",
+            "product": "Recommender",
+            "awsProducts": "AWS Cost Optimization",
+            "description": "Optimize your Google Cloud usage with proactive, easily actionable recommendations."
+        },
+        {
+            "serviceType": "Conversational interface",
+            "product": "Dialogflow",
+            "awsProducts": "Amazon Lex",
+            "description": "Lifelike conversational AI with state-of-the-art virtual agents."
+        },
+        {
+            "serviceType": "Document understanding",
+            "product": "Document AI",
+            "awsProducts": "Amazon Textract",
+            "description": "Automate data capture at scale to reduce document processing costs."
+        },
+        {
+            "serviceType": "Image recognition",
+            "product": "Vision AI",
+            "awsProducts": "Amazon Rekognition Image",
+            "description": "Derive insights from your images in the cloud or at the edge, or use pre-trained Vision API models to detect emotion, understand text, and more."
+        },
+        {
+            "serviceType": "ML for structured data",
+            "product": "Vertex AI AutoML tabular models",
+            "awsProducts": "Amazon SageMaker",
+            "description": "Automatically build and deploy state-of-the-art machine learning models on structured data."
+        },
+        {
+            "serviceType": "ML platform",
+            "product": "Deep Learning VM Images",
+            "awsProducts": "Amazon SageMaker, Amazon EC2 P3",
+            "description": "Preconfigured VMs for deep learning applications."
+        },
+        {
+            "serviceType": "ML platform",
+            "product": "TensorFlow Enterprise",
+            "awsProducts": "Tensorflow on AWS",
+            "description": "Reliability and performance for AI applications with enterprise-grade support and managed services."
+        },
+        {
+            "serviceType": "ML platform",
+            "product": "Vertex AI",
+            "awsProducts": "Amazon SageMaker",
+            "description": "Train your machine learning models at scale, to host your trained model in the cloud, and to use your model to make predictions about new data."
+        },
+        {
+            "serviceType": "ML platform",
+            "product": "Vertex AI AutoML models",
+            "awsProducts": "Amazon SageMaker Autopilot",
+            "description": "Train high-quality custom machine learning models with minimal effort and machine learning expertise."
+        },
+        {
+            "serviceType": "ML platform",
+            "product": "Vertex AI custom training",
+            "awsProducts": "Amazon SageMaker",
+            "description": "Host your machine learning models and train them with the power and flexibility of TensorFlow, scikit-learn, XGBoost, and custom containers."
+        },
+        {
+            "serviceType": "ML platform",
+            "product": "Vertex AI custom-trained models",
+            "awsProducts": "Amazon SageMaker",
+            "description": "Host your trained models so that you can send them prediction requests with the power and flexibility of TensorFlow, scikit-learn, and XGBoost."
+        },
+        {
+            "serviceType": "ML platform",
+            "product": "Vertex AI Workbench",
+            "awsProducts": "Amazon SageMaker",
+            "description": "Create instances running JupyterLab that come pre-installed with the latest data science and machine learning frameworks in a single click."
+        },
+        {
+            "serviceType": "Natural language processing",
+            "product": "Natural Language AI",
+            "awsProducts": "Amazon Comprehend",
+            "description": "Derive insights from unstructured text using Google machine learning."
+        },
+        {
+            "serviceType": "Personalization",
+            "product": "Recommendations AI",
+            "awsProducts": "Amazon Personalize",
+            "description": "Deliver highly personalized product recommendations at scale."
+        },
+        {
+            "serviceType": "Speech recognition",
+            "product": "Speech-to-Text",
+            "awsProducts": "Amazon Transcribe",
+            "description": "Accurately convert speech into text using an API powered by Google's AI technologies."
+        },
+        {
+            "serviceType": "Speech synthesis",
+            "product": "Text-to-Speech",
+            "awsProducts": "Amazon Polly",
+            "description": "Convert text into natural-sounding speech using an API powered by Google’s AI technologies."
+        },
+        {
+            "serviceType": "Translation",
+            "product": "Translation AI",
+            "awsProducts": "Amazon Translate",
+            "description": "Dynamically translate between languages using Google machine learning."
+        },
+        {
+            "serviceType": "Video intelligence",
+            "product": "Video Intelligence API",
+            "awsProducts": "Amazon Rekognition Video",
+            "description": "Quickly categorize video content using thousands of predefined labels and creating additional custom labels to suit your specific needs."
+        },
+        {
+            "serviceType": "SaaS",
+            "product": "Actifio",
+            "awsProducts": "AWS Resilience Hub",
+            "description": "Protect your data and business with this backup and disaster recovery offering that supports Google Cloud workloads as well as hybrid workloads like VMware, SAP HANA, Oracle, or SQL Server."
+        },
+        {
+            "serviceType": "Core compute",
+            "product": "Cloud GPUs",
+            "awsProducts": "Amazon Elastic Compute Cloud (EC2) P3",
+            "description": "Train and run machine learning models faster than before."
+        },
+        {
+            "serviceType": "Core compute",
+            "product": "Cloud TPU",
+            "awsProducts": "AWS UltraClusters",
+            "description": "Train and run machine learning models faster than ever before."
+        },
+        {
+            "serviceType": "Core compute",
+            "product": "Compute Engine",
+            "awsProducts": "Amazon Elastic Compute Cloud (EC2)",
+            "description": "Accelerate your digital transformation with high-performance VMs."
+        },
+        {
+            "serviceType": "Core compute",
+            "product": "Compute Engine Autoscaler",
+            "awsProducts": "AWS EC2 Autoscaling",
+            "description": "Automatically add or delete VM instances from a managed instance group (MIG) based on increases or decreases in load."
+        },
+        {
+            "serviceType": "Core compute",
+            "product": "OS Login",
+            "awsProducts": "Amazon EC2 Instance Connect",
+            "description": "Manage SSH access to your instances using IAM without having to create and manage individual SSH keys."
+        },
+        {
+            "serviceType": "Core compute",
+            "product": "Persistent Disk",
+            "awsProducts": "Amazon Elastic Block Store (EBS)",
+            "description": "Reliable, high-performance block storage for VM instances."
+        },
+        {
+            "serviceType": "Core compute",
+            "product": "SSH from the browser",
+            "awsProducts": "AWS EC2 Instance Connect",
+            "description": "Connect to a Compute Engine virtual machine (VM) instance using SSH with the Google Cloud console in your web browser."
+        },
+        {
+            "serviceType": "Core Compute",
+            "product": "VM Manager",
+            "awsProducts": "AWS Systems Manager",
+            "description": "Manage operating systems for large virtual machine (VM) fleets running Windows and Linux on Compute Engine."
+        },
+        {
+            "serviceType": "Dedicated VMs",
+            "product": "Sole-tenant nodes",
+            "awsProducts": "Amazon EC2 Dedicated Host",
+            "description": "Host your VMs on hardware dedicated only to your project."
+        },
+        {
+            "serviceType": "Infrastructure modernization",
+            "product": "SAP on Google Cloud",
+            "awsProducts": "SAP on AWS",
+            "description": "Run SAP on Google Cloud."
+        },
+        {
+            "serviceType": "PaaS",
+            "product": "App Engine",
+            "awsProducts": "AWS Lambda, AWS Fargate, AWS App Runner",
+            "description": "Build highly scalable applications on a fully managed serverless platform."
+        },
+        {
+            "serviceType": "VMware connectivity",
+            "product": "VMware Engine",
+            "awsProducts": "VMware Cloud on AWS",
+            "description": "Migrate and run your VMware workloads on Google Cloud."
+        },
+        {
+            "serviceType": "CaaS",
+            "product": "Google Kubernetes Engine",
+            "awsProducts": "Amazon Elastic Kubernetes Service (EKS), Amazon Elastic Container Service (ECS)",
+            "description": "Secured and managed Kubernetes service with four-way autoscaling and multi-cluster support."
+        },
+        {
+            "serviceType": "Container registry",
+            "product": "Artifact Registry",
+            "awsProducts": "Amazon Elastic Container Registry (ECR)",
+            "description": "Store, manage, and secure your container images."
+        },
+        {
+            "serviceType": "Container Security",
+            "product": "Binary Authorization",
+            "description": "Require images to be signed by trusted authorities during the development process and then enforce signature validation when deploying."
+        },
+        {
+            "serviceType": "Gaming",
+            "product": "Game Servers",
+            "awsProducts": "Amazon GameLift",
+            "description": "Deliver seamless multiplayer gaming experiences with simpler multicluster management."
+        },
+        {
+            "serviceType": "Business intelligence",
+            "product": "Looker",
+            "awsProducts": "Amazon QuickSight",
+            "description": "Explore, share, and visualize your company's data so that you can make better business decisions."
+        },
+        {
+            "serviceType": "Data discovery and metadata management",
+            "product": "Dataplex",
+            "awsProducts": "AWS Glue Data Catalog",
+            "description": "Discover, understand, and manage data at scale with powerful search and seamless integration to BigQuery, Pub/Sub, and Cloud Storage, secured using IAM and Cloud Data Loss Prevention."
+        },
+        {
+            "serviceType": "Data integration / ETL",
+            "product": "Cloud Data Fusion",
+            "awsProducts": "Amazon AppFlow, Amazon Data Pipeline, AWS Glue",
+            "description": "Implement fully managed, cloud-native data integration at scale."
+        },
+        {
+            "serviceType": "Data processing",
+            "product": "Dataproc",
+            "awsProducts": "Amazon Elastic MapReduce (EMR), AWS Batch, AWS Glue",
+            "description": "Deploy open-source data and analytics processing services (Apache Hadoop, Apache Spark, etc.) with improved efficiency and security."
+        },
+        {
+            "serviceType": "Data warehouse",
+            "product": "BigQuery",
+            "awsProducts": "Amazon Athena, Amazon Redshift",
+            "description": "Serverless, highly scalable, and cost-effective multi-cloud data warehouse designed for business agility."
+        },
+        {
+            "serviceType": "Data wrangling",
+            "product": "Dataprep by Trifecta",
+            "awsProducts": "AWS Glue Data Brew",
+            "description": "An intelligent cloud data service to visually explore, clean, and prepare data for analysis and machine learning."
+        },
+        {
+            "serviceType": "Messaging",
+            "product": "Pub/Sub",
+            "awsProducts": "AWS Kinesis, Amazon MQ",
+            "description": "Messaging and ingestion for event-driven systems and streaming analytics."
+        },
+        {
+            "serviceType": "Messaging",
+            "product": "Pub/Sub Lite",
+            "awsProducts": "Amazon Simple Notification Service, Amazon Simple Queueing Service",
+            "description": "Send and receive messages between independent applications using this zonal, real-time messaging service."
+        },
+        {
+            "serviceType": "Query service",
+            "product": "BigQuery",
+            "awsProducts": "Amazon Redshift Spectrum",
+            "description": "Analyze petabytes of data at scale using ANSI SQL and gain 26%–34% lower three-year total cost of ownership (TCO) than competing cloud data warehouses."
+        },
+        {
+            "serviceType": "Stream data ingest",
+            "product": "Pub/Sub",
+            "awsProducts": "Amazon Kinesis",
+            "description": "Create scalable messaging and ingestion for event-driven systems and streaming analytics."
+        },
+        {
+            "serviceType": "Stream data processing",
+            "product": "Dataflow",
+            "awsProducts": "Amazon Kinesis Data Firehose",
+            "description": "Unify stream and batch data processing that's serverless, fast, and cost-effective."
+        },
+        {
+            "serviceType": "Workflow orchestration",
+            "product": "Cloud Composer",
+            "awsProducts": "Amazon Data Pipeline, AWS Glue, Managed Workflows for Apache Airflow",
+            "description": "Author, schedule, and monitor pipelines that span across hybrid and multi-cloud environments using this fully managed workflow orchestration service built on Apache Airflow."
+        },
+        {
+            "serviceType": "Document data storage",
+            "product": "Firestore",
+            "awsProducts": "Amazon DocumentDB, Amazon DynamoDB",
+            "description": "Easily develop rich applications using a fully managed, scalable, and serverless document database."
+        },
+        {
+            "serviceType": "In-memory data store",
+            "product": "Memorystore",
+            "awsProducts": "Amazon ElastiCache",
+            "description": "Reduce latency with scalable, secure, and highly available in-memory service for Redis and Memcached."
+        },
+        {
+            "serviceType": "NoSQL: Indexed",
+            "product": "Datastore",
+            "awsProducts": "Amazon DynamoDB",
+            "description": "A highly scalable NoSQL database for your web and mobile applications."
+        },
+        {
+            "serviceType": "NoSQL: Key-value",
+            "product": "Cloud Bigtable",
+            "awsProducts": "Amazon DynamoDB",
+            "description": "Run large analytical and operational workloads using this fully managed, scalable NoSQL database service."
+        },
+        {
+            "serviceType": "RDBMS",
+            "product": "AlloyDB for PostgreSQL",
+            "awsProducts": "Amazon Aurora",
+            "description": "Run transactional workloads 4x faster than standard PostgreSQL, and analytical queries up to 100x faster."
+        },
+        {
+            "serviceType": "RDBMS",
+            "product": "Cloud Spanner",
+            "awsProducts": "Amazon Aurora",
+            "description": "Manage relational data with massive scale, strong consistency worldwide, and up to 99.999% availability."
+        },
+        {
+            "serviceType": "RDBMS",
+            "product": "Cloud SQL",
+            "awsProducts": "Amazon Relational Database Service (RDS), Amazon Aurora",
+            "description": "Manage relational data for MySQL, PostgreSQL, and SQL Server for workloads under 64 TB."
+        },
+        {
+            "serviceType": "Relational",
+            "product": "Bare Metal Solution",
+            "awsProducts": "Amazon RDS for Oracle",
+            "description": "Lift and shift Oracle workloads to Google Cloud."
+        },
+        {
+            "serviceType": "Client libraries",
+            "product": "Cloud SDK",
+            "awsProducts": "AWS SDKs",
+            "description": "Tools and libraries for interacting with Google Cloud products and services."
+        },
+        {
+            "serviceType": "Cloud development IDE plugin",
+            "product": "Cloud Code for IntelliJ",
+            "awsProducts": "AWS Toolkit for IntelliJ",
+            "description": "Write, debug, and deploy your cloud-based applications for IntelliJ, VS Code, or any browser."
+        },
+        {
+            "serviceType": "Cloud development IDE plugin",
+            "product": "Cloud Code for VS Code",
+            "awsProducts": "AWS Toolkit for Visual Studio Code",
+            "description": "Write, debug, and deploy your cloud-based applications for IntelliJ, VS Code, or any browser."
+        },
+        {
+            "serviceType": "Cloud-based IDE",
+            "product": "Cloud Shell",
+            "awsProducts": "AWS CloudShell",
+            "description": "Manage your infrastructure and develop your applications from any browser."
+        },
+        {
+            "serviceType": "Command-line interface (CLI)",
+            "product": "Cloud SDK",
+            "awsProducts": "AWS CLI",
+            "description": "Tools and libraries for interacting with Google Cloud products and services."
+        },
+        {
+            "serviceType": "Error handling",
+            "product": "Error Reporting",
+            "description": "Real-time exception monitoring and alerting for your applications."
+        },
+        {
+            "serviceType": "Git Repositories",
+            "product": "Cloud Source Repositories",
+            "awsProducts": "AWS Code Commit",
+            "description": "Access fully featured, private Git repositories hosted on Google Cloud."
+        },
+        {
+            "serviceType": "Job scheduling",
+            "product": "Cloud Scheduler",
+            "awsProducts": "Amazon EventBridge",
+            "description": "Fully managed cron job service."
+        },
+        {
+            "serviceType": "No-code",
+            "product": "AppSheet",
+            "awsProducts": "AppSheet, Amazon Honeycode",
+            "description": "Enable anyone to build business applications and automated workflows, without coding."
+        },
+        {
+            "serviceType": "Parallel task execution",
+            "product": "Cloud Tasks",
+            "awsProducts": "Amazon Simple Queue Service (SQS), Amazon Simple Notification Service (SNS)",
+            "description": "Control and observe asynchronous service requests between independent applications using this zonal, execution-control service."
+        },
+        {
+            "serviceType": "PowerShell",
+            "product": "Cloud Tools for PowerShell",
+            "awsProducts": "AWS Tools for PowerShell",
+            "description": "Full cloud control from Windows PowerShell."
+        },
+        {
+            "serviceType": "Abuse prevention",
+            "product": "reCAPTCHA Enterprise",
+            "awsProducts": "AWS WAF CAPTCHA, AWS Fraud",
+            "description": "Help protect your website from fraudulent activity, spam, and abuse without creating friction."
+        },
+        {
+            "serviceType": "Marketplace",
+            "product": "Marketplace",
+            "awsProducts": "AWS Marketplace",
+            "description": "Scale procurement for your enterprise via online discovery, purchasing, and fulfillment of enterprise-grade cloud solutions."
+        },
+        {
+            "serviceType": "ML workflows",
+            "product": "Tensorflow Enterprise",
+            "awsProducts": "Tensorflow on AWS",
+            "description": "Scale resources across CPUs, GPUs, and record-setting Cloud TPUs."
+        },
+        {
+            "serviceType": "Solutions catalog",
+            "product": "Private Catalog",
+            "awsProducts": "AWS Service Catalog",
+            "description": "Control internal enterprise solutions and make them easily discoverable."
+        },
+        {
+            "serviceType": "Regulated services",
+            "product": "Assured Workloads",
+            "awsProducts": "AWS GovCloud",
+            "description": "Run more secure and compliant workloads on Google Cloud."
+        },
+        {
+            "serviceType": "API management",
+            "product": "Apigee API Management",
+            "awsProducts": "Amazon API Gateway",
+            "description": "Design, secure, analyze, and scale APIs anywhere with visibility and control."
+        },
+        {
+            "serviceType": "API management",
+            "product": "API Gateway",
+            "awsProducts": "Amazon API Gateway",
+            "description": "Develop, deploy, secure, and manage APIs with a fully managed gateway."
+        },
+        {
+            "serviceType": "Cost management",
+            "product": "Cost Management",
+            "awsProducts": "AWS Cost Explorer, AWS Budgets",
+            "description": "Tools for monitoring, controlling, and optimizing your Google Cloud costs."
+        },
+        {
+            "serviceType": "Deployment",
+            "product": "Cloud Deployment Manager",
+            "awsProducts": "AWS CloudFormation, AWS Serverless Application Model (SAM), AWS Cloud Development Kit (CDK)",
+            "description": "Create and manage cloud resources with simple templates."
+        },
+        {
+            "serviceType": "Monetization",
+            "product": "Apigee API Management",
+            "awsProducts": "Amazon Publisher Services, Mobile Ads",
+            "description": "Easy-to-use and flexible way to monetize your APIs so that you can generate revenue whenever your APIs are used."
+        },
+        {
+            "serviceType": "AI",
+            "product": "Video AI",
+            "awsProducts": "Amazon Rekognition Video",
+            "description": "Enable powerful content discovery and engaging video experiences."
+        },
+        {
+            "serviceType": "Encoding and streaming",
+            "product": "Livestream API",
+            "awsProducts": "AWS MediaLive",
+            "description": "Encode and transform live video content for use across a variety of user devices."
+        },
+        {
+            "serviceType": "Encoding and streaming",
+            "product": "Transcoder API",
+            "awsProducts": "AWS Media Convert",
+            "description": "Convert video files and package them for optimized delivery to web, mobile, and connected TVs."
+        },
+        {
+            "serviceType": "Monetization",
+            "product": "Video Stitcher API",
+            "awsProducts": "AWS MediaTailor",
+            "description": "Dynamically insert content and ads for targeted personalization of video-on-demand (VOD) and live content."
+        },
+        {
+            "serviceType": "Container migration",
+            "product": "Migrate to Containers",
+            "awsProducts": "AWS App2Container",
+            "description": "Intelligently extract, migrate, and modernize applications to run natively on containers in GKE and Anthos clusters."
+        },
+        {
+            "serviceType": "Server migration",
+            "product": "Migrate to Virtual Machines",
+            "awsProducts": "AWS Server Migration Service",
+            "description": "Migrate VM instances to Google Cloud from AWS, Azure, or VMWare VSphere."
+        },
+        {
+            "serviceType": "SQL database migration",
+            "product": "Database Migration Service",
+            "awsProducts": "AWS Database Migration Service",
+            "description": "Migrate databases to Cloud SQL from on-premises, Compute Engine, and other clouds."
+        },
+        {
+            "serviceType": "Storage migration",
+            "product": "Storage Transfer Service",
+            "awsProducts": "AWS Storage Gateway, AWS DataSync",
+            "description": "Complete large-scale online data transfers from online and on-premises sources to Cloud Storage."
+        },
+        {
+            "serviceType": "Storage migration",
+            "product": "Transfer Appliance",
+            "awsProducts": "AWS Snowcone, AWS Snowball, AWS Snowmobile",
+            "description": "Securely migrate large volumes of data to Google Cloud through physical shipments of large-capacity and cost-efficient storage transfer appliances."
+        },
+        {
+            "serviceType": "CDN",
+            "product": "Cloud CDN",
+            "awsProducts": "Amazon CloudFront",
+            "description": "Serve web and HTTP(S) content globally and in a secure manner using the low-latency, global Google Front End (GFE)."
+        },
+        {
+            "serviceType": "CDN",
+            "product": "Media CDN",
+            "awsProducts": "Amazon CloudFront",
+            "description": "Deliver exceptional media content through Google's planet-scale cache network."
+        },
+        {
+            "serviceType": "Domains and DNS",
+            "product": "Cloud DNS",
+            "awsProducts": "Amazon Route 53",
+            "description": "Publish your zones and records in DNS without the burden of managing your own DNS servers and software."
+        },
+        {
+            "serviceType": "Domains and DNS",
+            "product": "Cloud Domains",
+            "awsProducts": "Amazon Route 53",
+            "description": "Register and configure a domain in Google Cloud."
+        },
+        {
+            "serviceType": "Firewall",
+            "product": "Google Cloud Armor",
+            "awsProducts": "AWS WAF, AWS Shield",
+            "description": "Help protect your applications and websites against denial of service and web attacks."
+        },
+        {
+            "serviceType": "Firewall",
+            "product": "Google Cloud Armor Managed Protection Plus",
+            "awsProducts": "AWS Shield Advanced",
+            "description": "Help protect your applications and websites against advanced denial of service and web attacks."
+        },
+        {
+            "serviceType": "Firewall",
+            "product": "Cloud Firewall",
+            "awsProducts": "AWS Network Firewall, AWS Security Groups, AWS network Access Control List (ACL)",
+            "description": "Protect your network with firewalls that are fully embedded in the cloud networking fabric, highly scalable, and granular."
+        },
+        {
+            "serviceType": "Load balancing",
+            "product": "Cloud Load Balancing",
+            "awsProducts": "Elastic Load Balancing",
+            "description": "Efficiently distribute network traffic across Compute Engine, Google Kubernetes Engine (GKE), serverless applications, and multi-cloud services."
+        },
+        {
+            "serviceType": "Network connectivity",
+            "product": "Cloud Interconnect",
+            "awsProducts": "AWS Direct Connect",
+            "description": "Extend your on-premises network to Google's network through a highly available, low-latency connection. You can use Dedicated Interconnect to connect directly to Google or use Partner Interconnect to connect to Google through a supported service provider."
+        },
+        {
+            "serviceType": "Network connectivity",
+            "product": "Cloud VPN",
+            "awsProducts": "AWS Virtual Private Network (VPN)",
+            "description": "Connect your peer network to your Virtual Private Cloud (VPC) network through an IPsec VPN connection."
+        },
+        {
+            "serviceType": "Network connectivity",
+            "product": "Network Connectivity Center",
+            "awsProducts": "Amazon Cloud WAN, AWS Transit Gateway",
+            "description": "Reimagine how you deploy, manage, and scale your networks on Google Cloud and beyond."
+        },
+        {
+            "serviceType": "Network connectivity",
+            "product": "Private Service Connect",
+            "awsProducts": "AWS PrivateLink",
+            "description": "Create a private and secure connection from your VPCs to Google, third parties, or your own services."
+        },
+        {
+            "serviceType": "Network monitoring",
+            "product": "Network Intelligence Center",
+            "awsProducts": "AWS Network Manager",
+            "description": "Centralize your network monitoring functions to verify network configurations, optimize network performance, increase network security, and reduce troubleshooting time."
+        },
+        {
+            "serviceType": "Premium networking",
+            "product": "Network Service Tiers, Premium Tier",
+            "awsProducts": "AWS Global Accelerator",
+            "description": "High-performing network experience using Google's global network."
+        },
+        {
+            "serviceType": "Premium networking",
+            "product": "Network Service Tiers, Standard Tier",
+            "awsProducts": "AWS data transfer",
+            "description": "Cost-effective network for data transfers with performance that is comparable to the internet."
+        },
+        {
+            "serviceType": "Service mesh",
+            "product": "Traffic Director",
+            "awsProducts": "AWS App Mesh",
+            "description": "Easily deploy global load balancing across clusters and VM instances in multiple regions, offload health checking from service proxies, and configure sophisticated traffic control policies."
+        },
+        {
+            "serviceType": "Services discovery (DNS)",
+            "product": "Service Directory",
+            "awsProducts": "AWS Cloud Map",
+            "description": "Publish, discover, and connect services from a single directory."
+        },
+        {
+            "serviceType": "Virtual networks",
+            "product": "Cloud NAT",
+            "awsProducts": "AWS NAT gateway",
+            "description": "Send and receive packets using Google Cloud private GKE clusters or Compute Engine VM instances with no external IP address."
+        },
+        {
+            "serviceType": "Virtual networks",
+            "product": "Virtual Private Cloud",
+            "awsProducts": "Amazon Virtual Private Cloud (VPC)",
+            "description": "Provide managed networking functionality for your cloud-based services running on Compute Engine VM instances, Google Kubernetes Engine, App Engine flexible environment instances, and other Google Cloud products built on Compute Engine VMs."
+        },
+        {
+            "serviceType": "Audit logging",
+            "product": "Cloud Audit Logs",
+            "awsProducts": "AWS CloudTrail",
+            "description": "Log all user activity on Google Cloud."
+        },
+        {
+            "serviceType": "Logging",
+            "product": "Cloud Logging",
+            "awsProducts": "Amazon CloudWatch Logs",
+            "description": "Manage logging and analysis in real time at scale."
+        },
+        {
+            "serviceType": "Monitoring",
+            "product": "Cloud Monitoring",
+            "awsProducts": "Amazon CloudWatch",
+            "description": "Monitor the performance, availability, and health of your applications and infrastructure."
+        },
+        {
+            "serviceType": "Performance tracing",
+            "product": "Cloud Trace",
+            "awsProducts": "AWS X-Ray",
+            "description": "Find performance bottlenecks in production."
+        },
+        {
+            "serviceType": "Profiling",
+            "product": "Cloud Profiler",
+            "awsProducts": "Amazon CodeGuru Profiler",
+            "description": "Understand resource consumption in your code and see the ways the code is actually called."
+        },
+        {
+            "serviceType": "Certificate management",
+            "product": "Certificate Authority Service",
+            "awsProducts": "AWS Private Certificate Authority (AWS Private CA)",
+            "description": "Simplify the deployment and management of private certificate authorities without managing infrastructure."
+        },
+        {
+            "serviceType": "CIAM",
+            "product": "Identity Platform",
+            "awsProducts": "Amazon Cognito",
+            "description": "Add Google-grade identity and access management to your apps."
+        },
+        {
+            "serviceType": "Cloud provider access management",
+            "product": "Access Transparency and Access Approval",
+            "description": "Help expand visibility and control over your cloud provider with admin access logs and approval controls."
+        },
+        {
+            "serviceType": "Container security",
+            "product": "Artifact Registry",
+            "awsProducts": "Amazon Elastic Container Registry (ECR)",
+            "description": "Deploy only trusted containers on GKE."
+        },
+        {
+            "serviceType": "Container security",
+            "product": "Artifact Analysis",
+            "awsProducts": "Amazon ECR Image Scanning",
+            "description": "Perform vulnerability scans on container images in Artifact Registry and Container Registry, and monitor vulnerability information to keep it up to date."
+        },
+        {
+            "serviceType": "Data loss prevention (DLP)",
+            "product": "Sensitive Data Protection (including Cloud Data Loss Prevention and DLP API)",
+            "awsProducts": "Amazon Macie",
+            "description": "Discover, classify, and help protect your most sensitive cloud data."
+        },
+        {
+            "serviceType": "Encryption",
+            "product": "Confidential Computing",
+            "awsProducts": "AWS Nitro Enclaves, AMD Secure Encrypted Virtualization-Secure Nested Paging (AMD SEV-SNP)",
+            "description": "Encrypt data in-use with Confidential Computing and Confidential GKE Nodes."
+        },
+        {
+            "serviceType": "Exfiltration prevention",
+            "product": "VPC Service Controls",
+            "awsProducts": "AWS PrivateLink",
+            "description": "Isolate resources of multi-tenant Google Cloud services to help mitigate data exfiltration risks."
+        },
+        {
+            "serviceType": "Key management",
+            "product": "Cloud KMS and Cloud HSM",
+            "awsProducts": "AWS KMS (FIPS 140-2 Level 2)",
+            "description": "Host encryption keys and perform cryptographic operations in a cluster of FIPS 140-2 Level 3 certified hardware security modules (HSMs)."
+        },
+        {
+            "serviceType": "Key management",
+            "product": "Cloud KMS and Cloud EKM",
+            "awsProducts": "AWS KMS with AWS External Key Store (XKS), AWS CloudHSM with custom key store",
+            "description": "Use keys that you manage within a supported external key management partner to protect data within Google Cloud."
+        },
+        {
+            "serviceType": "IAM",
+            "product": "Cloud Identity",
+            "awsProducts": "AWS IAM Identity Center",
+            "description": "A unified identity, access, app, and endpoint management (IAM/EMM) platform."
+        },
+        {
+            "serviceType": "IAM",
+            "product": "Identity and Access Management",
+            "awsProducts": "Amazon Identity and Access Management",
+            "description": "Provide fine-grained access control and visibility for centrally managing resources."
+        },
+        {
+            "serviceType": "IAM",
+            "product": "Identity-Aware Proxy (IAP)",
+            "awsProducts": "AWS Verified Access",
+            "description": "Use identity and context to guard access to your applications and VMs."
+        },
+        {
+            "serviceType": "IAM",
+            "product": "Identity-Aware Proxy (IAP) TCP forwarding",
+            "awsProducts": "AWS Systems Manager",
+            "description": "Establish an encrypted tunnel over which you can forward SSH, RDP, and other traffic to VM instances."
+        },
+        {
+            "serviceType": "IAM",
+            "product": "Managed Service for Microsoft Active Directory",
+            "awsProducts": "AWS Managed Microsoft AD",
+            "description": "Use a highly available, hardened service running actual Microsoft Active Directory (AD)."
+        },
+        {
+            "serviceType": "Resource access management",
+            "product": "Organization Policy Service",
+            "awsProducts": "AWS Organizations policies",
+            "description": "Configure restrictions on how resources can be used."
+        },
+        {
+            "serviceType": "Resource monitoring",
+            "product": "Cloud Asset Inventory",
+            "awsProducts": "AWS Config",
+            "description": "View, monitor, and analyze all your Google Cloud and Anthos assets across projects and services using this metadata inventory service."
+        },
+        {
+            "serviceType": "Resource monitoring",
+            "product": "Resource Manager",
+            "awsProducts": "AWS Resource Access Manager, AWS Organizations",
+            "description": "Hierarchically manage resources by project, folder, and organization."
+        },
+        {
+            "serviceType": "SIEM",
+            "product": "Chronicle",
+            "awsProducts": "Amazon Security Lake",
+            "description": "Normalizes, indexes, correlates, and analyzes security and network data to provide instant analysis and context on risky activity."
+        },
+        {
+            "serviceType": "Secret management",
+            "product": "Secret Manager",
+            "awsProducts": "AWS Secrets Manager, AWS Systems Manager Parameter Store",
+            "description": "Store API keys, passwords, certificates, and other sensitive data."
+        },
+        {
+            "serviceType": "Key management",
+            "product": "Cloud Key Management Service (Cloud KMS)",
+            "awsProducts": "AWS Key Management Service (KMS)",
+            "description": "Manage encryption keys on Google Cloud."
+        },
+        {
+            "serviceType": "Security and risk management",
+            "product": "Security Command Center",
+            "awsProducts": "Amazon Guard Duty, AWS Security Hub, AWS Audit Manager, AWS Config",
+            "description": "Security and risk management platform for Google Cloud."
+        },
+        {
+            "serviceType": "Zero trust",
+            "product": "BeyondCorp Enterprise",
+            "description": "Enable secure access to critical applications and services, with integrated threat and data protection."
+        },
+        {
+            "serviceType": "IAM",
+            "product": "Workload Identity Federation",
+            "awsProducts": "AWS IAM Identity Center",
+            "description": "Use an external identity provider (IdP) to authenticate and authorize your users using IAM, so that your users can access Google Cloud services."
+        },
+        {
+            "serviceType": "Build",
+            "product": "Cloud Storage for Firebase",
+            "awsProducts": "AWS Simple Storage Service (S3)",
+            "description": "Store and serve user-generated content from Firebase apps, such as photos or videos, including bandwidth-friendly transactions and automated ML, synced automatically in real time."
+        },
+        {
+            "serviceType": "Build",
+            "product": "Firebase Auth",
+            "awsProducts": "Amazon Cognito",
+            "description": "Sign in users to your Firebase app, either by using Firebase UI as a complete drop-in authentication solution, or by using the Firebase Authentication SDK to manually integrate one or several sign-in methods into your app."
+        },
+        {
+            "serviceType": "Build",
+            "product": "Firebase Hosting",
+            "awsProducts": "AWS Amplify Hosting",
+            "description": "Provides fast and secure hosting for your Firebase web app, static and dynamic content, and microservices, including a generous free tier."
+        },
+        {
+            "serviceType": "Build",
+            "product": "Firebase Realtime Database",
+            "awsProducts": "Amazon DynamoDB, AWS AppSync",
+            "description": "Store and sync data from your Firebase application with our NoSQL cloud database. Data is synced across all clients in real time, and remains available when your application goes offline."
+        },
+        {
+            "serviceType": "Containers without infrastructure",
+            "product": "Cloud Run",
+            "awsProducts": "AWS App Runner, AWS Fargate, AWS Lambda",
+            "description": "Develop and deploy highly scalable containerized applications on a fully managed serverless platform."
+        },
+        {
+            "serviceType": "Engage",
+            "product": "Firebase A/B Testing",
+            "description": "Deploy A/B experiments to test how a change to your application's UI, features, or engagement campaigns affects key metrics (like revenue) before you implement the change widely."
+        },
+        {
+            "serviceType": "Engage",
+            "product": "Firebase Cloud Messaging",
+            "awsProducts": "Amazon Device Messaging (ADM), Amazon Simple Notification Service (SNS)",
+            "description": "Send and receive notifications across platforms with this reliable and battery-efficient connection between your server and devices, including iOS, Android, and the web."
+        },
+        {
+            "serviceType": "Engage",
+            "product": "Firebase Messaging Campaigns (Firebase Cloud Messaging or Firebase In-App Messaging)",
+            "awsProducts": "Amazon Simple Notification Service (SNS)",
+            "description": "Engage active users of your Firebase application by sending them targeted, contextual messages to complete key actions, such as beating a game level, buying an item, or subscribing to content."
+        },
+        {
+            "serviceType": "Engage",
+            "product": "Firebase Remote Config",
+            "awsProducts": "AWS AppConfig",
+            "description": "Control and optimize your app on the fly."
+        },
+        {
+            "serviceType": "Engage",
+            "product": "Google Analytics for Firebase",
+            "awsProducts": "AWS Amplify, Amazon Pinpoint",
+            "description": "Make informed decisions regarding application marketing and performance optimizations by understanding user behavior using the Firebase SDK and integration with the Google ecosystem."
+        },
+        {
+            "serviceType": "Event handling",
+            "product": "Eventarc",
+            "awsProducts": "AWS EventBridge",
+            "description": "Asynchronously deliver events from Google services, SaaS, and your own apps using loosely coupled services that react to state changes."
+        },
+        {
+            "serviceType": "FaaS",
+            "product": "Cloud Functions",
+            "awsProducts": "AWS Lambda",
+            "description": "Run your code with zero server management with this scalable, pay-as-you-go functions-as-a-service (FaaS) offering."
+        },
+        {
+            "serviceType": "FaaS",
+            "product": "Cloud Functions for Firebase",
+            "awsProducts": "AWS Lambda",
+            "description": "Run backend code for your Firebase applications in response to events that are triggered by Firebase and Google Cloud features, without managing servers."
+        },
+        {
+            "serviceType": "Release & monitor",
+            "product": "Firebase App Distribution",
+            "description": "Distribute your Firebase apps to trusted testers quickly and easily."
+        },
+        {
+            "serviceType": "Release & monitor",
+            "product": "Firebase Crashlytics",
+            "description": "Get real-time, actionable insight into Firebase application issues with this native crash reporting solution for iOS, Android, and Unity, including streaming data export."
+        },
+        {
+            "serviceType": "Release & monitor",
+            "product": "Firebase Performance Monitoring",
+            "description": "Gain insight into your app's performance issues."
+        },
+        {
+            "serviceType": "Release & monitor",
+            "product": "Firebase Test Lab",
+            "awsProducts": "AWS Device Farm",
+            "description": "Test your Firebase application on devices hosted in a Google data center."
+        },
+        {
+            "serviceType": "Workflow orchestration",
+            "product": "Workflows",
+            "awsProducts": "AWS Step Functions",
+            "description": "Orchestrate and automate Google Cloud and HTTP-based API services with serverless workflows."
+        },
+        {
+            "serviceType": "Release & monitor",
+            "product": "Firebase App Check",
+            "description": "Help protect your API resources from abuse by preventing unauthorized clients from accessing your backend resources."
+        },
+        {
+            "serviceType": "FaaS",
+            "product": "Firebase Extensions",
+            "awsProducts": "AWS Serverless Applications",
+            "description": "Deploy pre-built solutions to add new functionality to your app without managing servers or containers. New functionality includes payment processing, data syncing, and generative AI."
+        },
+        {
+            "serviceType": "Build",
+            "product": "Firebase Machine Learning",
+            "description": "Use machine learning in your apps to solve real-world problems."
+        },
+        {
+            "serviceType": "Block storage",
+            "product": "Persistent Disk",
+            "awsProducts": "Amazon Elastic Block Store (EBS)",
+            "description": "Store data from VM instances running in Compute Engine or GKE, Google Cloud's state-of-the-art block storage offering."
+        },
+        {
+            "serviceType": "File storage",
+            "product": "Filestore",
+            "awsProducts": "Amazon Elastic File System (EFS)",
+            "description": "Provide fully managed NFS file servers on Google Cloud for applications running on Compute Engine VMs (VMs) instances or GKE clusters."
+        },
+        {
+            "serviceType": "Infrequently accessed object storage",
+            "product": "Cloud Storage Archive",
+            "awsProducts": "Amazon S3 Glacier",
+            "description": "Store infrequently accessed data using Google Cloud's ultra low-cost, highly durable, highly available archival storage."
+        },
+        {
+            "serviceType": "Object storage",
+            "product": "Cloud Storage",
+            "awsProducts": "AWS Simple Storage Service (S3)",
+            "description": "Store any amount of data and retrieve it as often as you'd like, using Google Cloud's object storage offering."
+        }
+    ]
+}

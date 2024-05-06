@@ -1,0 +1,8 @@
+{
+    "go.formatTool": "gofmt",
+    "go.lintTool": "golint",
+    "editor.defaultFormatter": "ms-python.autopep8",
+    "[go]": {
+        "editor.defaultFormatter": "golang.go"
+    }
+}

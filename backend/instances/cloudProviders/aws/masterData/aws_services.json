@@ -1,0 +1,19 @@
+{
+    "services": [
+        "EC2",
+        "ECR",
+        "ELB",
+        "RDS",
+        "S3",
+        "EKS",
+        "EFS",
+        "ECS",
+        "EBS",
+        "Route53",
+        "Cloudfront",
+        "VPC",
+        "Athena",
+        "DynamoDB",
+        "DocDB"
+    ]
+}
