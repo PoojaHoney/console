@@ -41,3 +41,4 @@ def create_compute_engine(details: ComputeEngine_Schema, gcp_client: GCP_Crds.ge
     details_json = jsonable_encoder(details)
     compute_engine = Compute.create_compute_engine(gcp_crds=gcp_client, details=details_json)
     return API_Response(message="Compute Engine created successfully", data=compute_engine, status_code=200).model_dump()
+

@@ -1204,7 +1204,7 @@
         "kind": 2,
         "importPath": "api_v1.handlers.iam",
         "description": "api_v1.handlers.iam",
-        "peekOfCode": "def delete_service_account(service_account: str):\n    gcp_client = GCP_Crds.get_gcp_crds({\"project_id\":settings.GCP_Config.PROJECT_ID,\n                            \"private_key_id\":settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                            \"private_key\":settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                            \"client_email\":settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                    })\n    iam_client = IAM.get_iam_client(gcp_client)\n    if service_account == \"\" or service_account == None:\n        return API_Response(error=ValueError(\"Please provide service account name\"), status_code=400).model_dump()",
+        "peekOfCode": "def delete_service_account(service_account: str, gcp_client: GCP_Crds.get_gcp_crds = None):\n    if gcp_client == None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\":settings.GCP_Config.PROJECT_ID,\n                                \"private_key_id\":settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                \"private_key\":settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                \"client_email\":settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                        })\n    iam_client = IAM.get_iam_client(gcp_client)\n    if service_account == \"\" or service_account == None:",
         "detail": "api_v1.handlers.iam",
         "documentation": {}
     },
@@ -1249,7 +1249,16 @@
         "kind": 2,
         "importPath": "api_v1.handlers.instances",
         "description": "api_v1.handlers.instances",
-        "peekOfCode": "def create_instance(details: Instance):\n    instance_id = random.choice(string.ascii_lowercase) + ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(5))\n    gcp_client = GCP_Crds.get_gcp_crds({\"project_id\":settings.GCP_Config.PROJECT_ID,\n                                \"private_key_id\":settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                \"private_key\":settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                \"client_email\":settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                            })\n    iam_response = IAM.create_service_account(IAM_Role(\n        name=f\"{instance_id}{details.name}\",",
+        "peekOfCode": "def create_instance(details: Instance):\n    instance_id = random.choice(string.ascii_lowercase) + ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(5))\n    gcp_client = GCP_Crds.get_gcp_crds({\"project_id\":settings.GCP_Config.PROJECT_ID,\n                                \"private_key_id\":settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                \"private_key\":settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                \"client_email\":settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                            })\n    try:\n        iam_response = IAM.create_service_account(IAM_Role(",
+        "detail": "api_v1.handlers.instances",
+        "documentation": {}
+    },
+    {
+        "label": "delete_instance",
+        "kind": 2,
+        "importPath": "api_v1.handlers.instances",
+        "description": "api_v1.handlers.instances",
+        "peekOfCode": "def delete_instance(instance_id: str, name: str, gcp_client: GCP_Crds.get_gcp_crds = None):\n    if gcp_client == None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\":settings.GCP_Config.PROJECT_ID,\n                                \"private_key_id\":settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                \"private_key\":settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                \"client_email\":settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                            })\n    #delete iam role\n    IAM.delete_service_account(service_account=f\"{instance_id}@{settings.GCP_Config.PROJECT_ID}.iam.gserviceaccount.com\", gcp_crds=gcp_client)",
         "detail": "api_v1.handlers.instances",
         "documentation": {}
     },
@@ -1321,7 +1330,7 @@
         "kind": 2,
         "importPath": "api_v1.handlers.vpc",
         "description": "api_v1.handlers.vpc",
-        "peekOfCode": "def delete_vpc(vpc_name: str):\n    gcp_client = GCP_Crds.get_gcp_crds({\"project_id\":settings.GCP_Config.PROJECT_ID,\n                            \"private_key_id\":settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                            \"private_key\":settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                            \"client_email\":settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                        })\n    vpc_client = VPC.get_vpc_client(gcp_crds=gcp_client)\n    vpc = VPC.get_vpc(gcp_crds=gcp_client, vpc_name=vpc_name, vpc_client=vpc_client)\n    if type(vpc) == API_Response:",
+        "peekOfCode": "def delete_vpc(vpc_name: str, gcp_client: GCP_Crds.get_gcp_crds = None):\n    if gcp_client == None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\":settings.GCP_Config.PROJECT_ID,\n                                \"private_key_id\":settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                \"private_key\":settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                \"client_email\":settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                            })\n    vpc_client = VPC.get_vpc_client(gcp_crds=gcp_client)\n    vpc = VPC.get_vpc(gcp_crds=gcp_client, vpc_name=vpc_name, vpc_client=vpc_client)",
         "detail": "api_v1.handlers.vpc",
         "documentation": {}
     },
@@ -1789,7 +1798,7 @@
         "kind": 6,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "class Settings(BaseSettings):\n    SERVICE_PORT: int = os.environ.get(\"SERVICE_PORT\", 6001)\n    SERVICE_NAME: str = os.environ.get(\"SERVICE_NAME\", \"Console Instances\")\n    SERVICE_DOMAIN: str = os.environ.get(\"SERVICE_DOMAIN\", \"localhost\")\n    SERVICE_BASEPATH: str = os.environ.get(\"SERVICE_BASEPATH\", \"/api/instances\")\n    SERVICE_VERSION: str = os.environ.get(\"SERVICE_VERSION\", \"v1\")\n    AWS_CLOUD_PROVIDER: str = \"aws\"\n    GCP_Config: GCP_Settings = GCP_Settings() # type: ignore\nclass Databases():\n    mongo_client = None",
+        "peekOfCode": "class Settings(BaseSettings):\n    SERVICE_PORT: int = os.environ.get(\"SERVICE_PORT\", 6001)\n    SERVICE_NAME: str = os.environ.get(\"SERVICE_NAME\", \"Console Instances\")\n    SERVICE_DOMAIN: str = os.environ.get(\"SERVICE_DOMAIN\", \"localhost\")\n    SERVICE_BASEPATH: str = os.environ.get(\n        \"SERVICE_BASEPATH\", \"/api/instances\")\n    SERVICE_VERSION: str = os.environ.get(\"SERVICE_VERSION\", \"v1\")\n    AWS_CLOUD_PROVIDER: str = \"aws\"\n    GCP_Config: GCP_Settings = GCP_Settings()  # type: ignore\nclass Databases():",
         "detail": "config",
         "documentation": {}
     },

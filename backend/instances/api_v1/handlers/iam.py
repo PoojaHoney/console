@@ -95,13 +95,14 @@ def list_service_accounts(service_account: str):
     else:
         return IAM.get_service_account(gcp_crds=gcp_client, iam_client=iam_client, details={"email":service_account})
 
-def delete_service_account(service_account: str):
-    gcp_client = GCP_Crds.get_gcp_crds({"project_id":settings.GCP_Config.PROJECT_ID,
-                            "private_key_id":settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,
-                            "private_key":settings.GCP_Config.SRV_ACC_PRIVATE_KEY,
-                            "client_email":settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,
-                            "token_uri": settings.GCP_Config.TOKEN_URL,
-                    })
+def delete_service_account(service_account: str, gcp_client: GCP_Crds.get_gcp_crds = None):
+    if gcp_client == None:
+        gcp_client = GCP_Crds.get_gcp_crds({"project_id":settings.GCP_Config.PROJECT_ID,
+                                "private_key_id":settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,
+                                "private_key":settings.GCP_Config.SRV_ACC_PRIVATE_KEY,
+                                "client_email":settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,
+                                "token_uri": settings.GCP_Config.TOKEN_URL,
+                        })
     iam_client = IAM.get_iam_client(gcp_client)
     if service_account == "" or service_account == None:
         return API_Response(error=ValueError("Please provide service account name"), status_code=400).model_dump()

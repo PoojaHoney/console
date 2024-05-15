@@ -119,13 +119,14 @@ def create_vpc(details: VPC_Schema, gcp_client: GCPSrvAcc.Credentials = None, vp
     vpc = VPC.create_vpc(gcp_crds=gcp_client, details=details_json, vpc_client=vpc_client)
     return vpc
 
-def delete_vpc(vpc_name: str):
-    gcp_client = GCP_Crds.get_gcp_crds({"project_id":settings.GCP_Config.PROJECT_ID,
-                            "private_key_id":settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,
-                            "private_key":settings.GCP_Config.SRV_ACC_PRIVATE_KEY,
-                            "client_email":settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,
-                            "token_uri": settings.GCP_Config.TOKEN_URL,
-                        })
+def delete_vpc(vpc_name: str, gcp_client: GCP_Crds.get_gcp_crds = None):
+    if gcp_client == None:
+        gcp_client = GCP_Crds.get_gcp_crds({"project_id":settings.GCP_Config.PROJECT_ID,
+                                "private_key_id":settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,
+                                "private_key":settings.GCP_Config.SRV_ACC_PRIVATE_KEY,
+                                "client_email":settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,
+                                "token_uri": settings.GCP_Config.TOKEN_URL,
+                            })
     vpc_client = VPC.get_vpc_client(gcp_crds=gcp_client)
     vpc = VPC.get_vpc(gcp_crds=gcp_client, vpc_name=vpc_name, vpc_client=vpc_client)
     if type(vpc) == API_Response:
