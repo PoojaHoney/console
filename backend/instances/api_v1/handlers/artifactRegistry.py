@@ -12,7 +12,7 @@ def list_artifact_registries(registry_name: str):
                             "token_uri": settings.GCP_Config.TOKEN_URL,
                         })
     artifact_registries = ArtifaceRegistry.list_artifact_repositories(gcp_crds=gcp_client, region=settings.GCP_Config.DEFAULT_REGION)
-    return API_Response(message="Artifact Registries fetched successfully", data=artifact_registries, status_code=200).model_dump()
+    return API_Response(message="Artifact Registries fetched successfully", data=artifact_registries, statusCode=200).model_dump()
 
 def get_artifact_registry_permissions(repository_id: str, gcp_client = None):
     if gcp_client is None:
@@ -23,7 +23,7 @@ def get_artifact_registry_permissions(repository_id: str, gcp_client = None):
                                 "token_uri": settings.GCP_Config.TOKEN_URL,
                             })
     artifact_registries = ArtifaceRegistry.get_artifact_registry_permissions(gcp_crds=gcp_client, region=settings.GCP_Config.DEFAULT_REGION, repository_id=repository_id)
-    return API_Response(message="Artifact Registries fetched successfully", data=artifact_registries, status_code=200).model_dump()
+    return API_Response(message="Artifact Registries fetched successfully", data=artifact_registries, statusCode=200).model_dump()
 
 def set_service_account_artifact_registry(repository_id: str, service_account: str, roles: list[str] ,gcp_client = None):
     if gcp_client is None:
@@ -34,4 +34,4 @@ def set_service_account_artifact_registry(repository_id: str, service_account: s
                                 "token_uri": settings.GCP_Config.TOKEN_URL,
                             })
     bindings = ArtifaceRegistry.add_service_account_to_policy(gcp_crds=gcp_client, region=settings.GCP_Config.DEFAULT_REGION, repository_id=repository_id, service_account_email=service_account, roles=roles)
-    return API_Response(message="Artifact Registries fetched successfully", data=bindings, status_code=200).model_dump() 
+    return API_Response(message="Artifact Registries fetched successfully", data=bindings, statusCode=200).model_dump() 

@@ -30,7 +30,7 @@ func (srv *Service) init() {
 
 // @Console - USER Service
 // @version 1.0
-// @description User Microservice for Console d
+// @description User Microservice for Console
 
 // @securityDefinitions.apikey BearerAuth
 // @in header

@@ -11,7 +11,7 @@ def get_vpc(cloud_provider: str, vpc_name: str = Query(default=None, max_length=
         if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:
             return VPC.list_vpcs(vpc_name=vpc_name)
     except Exception as exp:
-        return API_Response(error=exp, status_code=400).model_dump()
+        return API_Response(error=exp, statusCode=400).model_dump()
 
 @router.post("/vpc/{cloud_provider}")
 def create_vpc(cloud_provider: str, details: VPC_Schema):
@@ -19,7 +19,7 @@ def create_vpc(cloud_provider: str, details: VPC_Schema):
         if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:
             return VPC.create_vpc_subnetwork_firewall(details=details)
     except Exception as exp:
-        return API_Response(error=exp, status_code=400).model_dump()
+        return API_Response(error=exp, statusCode=400).model_dump()
     
 @router.delete("/vpc/{cloud_provider}")
 def delete_vpc(cloud_provider: str, vpc_name: str):
@@ -27,4 +27,4 @@ def delete_vpc(cloud_provider: str, vpc_name: str):
         if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:
             return VPC.delete_vpc(vpc_name=vpc_name)
     except Exception as exp:
-        return API_Response(error=exp, status_code=400).model_dump()
+        return API_Response(error=exp, statusCode=400).model_dump()

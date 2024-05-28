@@ -14,12 +14,22 @@ PROJECT_ID={{PROJECT_ID}}
 REGION={{REGION}}
 INSTANCE_ID={{INSTANCE_ID}}
 INSTANCE_NAME={{INSTANCE_NAME}}
+USER_IMAGE_VERSION={{USER_IMAGE_VERSION}}
+CONTENT_IMAGE_VERSION={{CONTENT_IMAGE_VERSION}}
+FRONTEND_IMAGE_VERSION={{FRONTEND_IMAGE_VERSION}}
+USER_NAME={{USER_NAME}}
+CONTENT_NAME={{CONTENT_NAME}}
+FRONTEND_NAME={{FRONTEND_NAME}}
+USER_PORT={{USER_PORT}}
+CONTENT_PORT={{CONTENT_PORT}}
+FRONTEND_PORT={{FRONTEND_PORT}}
 PRODUCT="lms"
 GCP_ARTIFACT_REGISTRY="$REGION-docker.pkg.dev/$PROJECT_ID/$PRODUCT"
 SERVICE_ACCOUNT={{SERVICE_ACCOUNT}}
-FRONTEND_IMAGE="$GCP_ARTIFACT_REGISTRY/bo-frontend:0.0.2"
-USER_IMAGE="$GCP_ARTIFACT_REGISTRY/bo-user:0.0.2"
-CONTENT_IMAGE="$GCP_ARTIFACT_REGISTRY/bo-content:0.0.2"
+FRONTEND_IMAGE="$GCP_ARTIFACT_REGISTRY/$FRONTEND_NAME:$FRONTEND_IMAGE_VERSION"
+USER_IMAGE="$GCP_ARTIFACT_REGISTRY/$USER_NAME:$USER_IMAGE_VERSION"
+CONTENT_IMAGE="$GCP_ARTIFACT_REGISTRY/$CONTENT_NAME:$CONTENT_IMAGE_VERSION"
+export PUBLIC_IP=$(curl -H "Metadata-Flavor: Google" http://metadata.google.internal/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip)
 
 # Add a new user to the VM with sudo privileges
 useradd -m -s /bin/bash $SSH_USER
@@ -55,7 +65,7 @@ docker pull $USER_IMAGE
 docker pull $CONTENT_IMAGE
 docker pull mongo:latest
 
-docker network create $PRODUCT 
+docker network create $PRODUCT
 
 # Run MongoDB Docker container
 docker run -d --name mongo -e MONGO_INITDB_ROOT_USERNAME=$MONGO_USERNAME -e MONGO_INITDB_ROOT_PASSWORD=$MONGO_PASSWORD --network=$PRODUCT mongo
@@ -69,6 +79,6 @@ docker cp /home/$SSH_USER/$PRODUCT/restore-data mongo:/restore_data/
 docker exec -i mongo mongorestore --host localhost:27017 --username=$MONGO_USERNAME --password=$MONGO_PASSWORD --authenticationDatabase=admin --db=$MONGO_DATABASE /restore_data
 
 # Run Docker containers for services
-docker run -d --name bo-frontend -p 4000:4000 --network=$PRODUCT $FRONTEND_IMAGE
-docker run -d --name bo-user -p 4002:4002 --network=$PRODUCT $USER_IMAGE
-docker run -d --name bo-content -p 4001:4001 --network=$PRODUCT $CONTENT_IMAGE
+docker run -d --name $FRONTEND_NAME -p $FRONTEND_PORT:$FRONTEND_PORT --network=$PRODUCT -e CONTENT_API_HOST=$PUBLIC_IP -e USERS_API_HOST=$PUBLIC_IP $FRONTEND_IMAGE
+docker run -d --name $USER_NAME -p $USER_PORT:$USER_PORT --network=$PRODUCT $USER_IMAGE
+docker run -d --name $CONTENT_NAME -p $CONTENT_PORT:$CONTENT_PORT --network=$PRODUCT $CONTENT_IMAGE

@@ -1,7 +1,6 @@
 import os
 from pydantic_settings import BaseSettings
 from pymongo import MongoClient
-from fastapi import Depends
 
 
 class GCP_Settings(BaseSettings):
@@ -29,21 +28,61 @@ class Settings(BaseSettings):
     SERVICE_VERSION: str = os.environ.get("SERVICE_VERSION", "v1")
     AWS_CLOUD_PROVIDER: str = "aws"
     GCP_Config: GCP_Settings = GCP_Settings()  # type: ignore
+    MONGO_DATABASE: str = os.environ.get("MONGO_DATABASE", "instances")
+    USER_COLLECTION: str = os.environ.get("USER_COLLECTION", "users")
+    TOKEN_COLLECTION: str = os.environ.get("TOKEN_COLLECTION", "tokens")
+    MONGO_HOST: str = os.environ.get("MONGO_HOST", "localhost")
+    MONGO_USERNAME: str = os.environ.get("MONGO_USERNAME", "")
+    MONGO_PASSWORD: str = os.environ.get("MONGO_PASSWORD", "")
+    MONGO_PORT: int = os.environ.get("MONGO_PORT", 27017)
+    INSTANCE_COLLECTION: str = os.environ.get(
+        "INSTANCE_COLLECTION", "instances")
+    INSTANCE_CONFIGURATION_COLLECTION: str = os.environ.get(
+        "INSTANCE_CONFIGURATION_COLLECTION", "instance_configurations")
+    USER_OTP_COLLECTION: str = os.environ.get(
+        "USER_OTP_COLLECTION", "userOTP")
+    USER_DATABASE: str = os.environ.get("USER_DATABASE", "users")
+    PRODUCT_DATABASE: str = os.environ.get("PRODUCT_DATABASE", "products")
+    PRODUCT_MICROSERVICE_COLLECTION: str = os.environ.get(
+        "PRODUCT_MICROSERVICE_COLLECTION", "microservices")
+    PRODUCT_RESOURCE_COLLECTION: str = os.environ.get(
+        "PRODUCT_RESOURCE_COLLECTION", "resources")
+    PRODUCT_PLANS_COLLECTION: str = os.environ.get(
+        "PRODUCT_PLANS_COLLECTION", "plans")
+    PRODUCT_VERSIONS_COLLECTION: str = os.environ.get(
+        "PRODUCT_VERSIONS_COLLECTION", "versions")
+    PRODUCT_CONFIG_COLLECTION: str = os.environ.get(
+        "PRODUCT_CONFIG_COLLECTION", "configurations")
+    PRODUCT_COLLECTION: str = os.environ.get(
+        "PRODUCT_COLLECTION", "products")
+    PRODUCT_FULL_DETAILS: str = os.environ.get(
+        "PRODUCT_FULL_DETAILS", "productFullDetails")
+
+
+settings = Settings()
 
 
 class Databases():
     mongo_client = None
 
-    @classmethod
+    @ classmethod
     def get_mongo_connection(cls):
         if cls.mongo_client is None:
-            cls.mongo_client = MongoClient("mongodb://localhost:27017/")
+            if settings.MONGO_USERNAME != "" and settings.MONGO_PASSWORD != "":
+                cls.mongo_client = MongoClient(
+                    f"mongodb://{settings.MONGO_USERNAME}:{settings.MONGO_PASSWORD}@{settings.MONGO_HOST}:{settings.MONGO_PORT}/")
+            else:
+                cls.mongo_client = MongoClient(
+                    f"mongodb://{settings.MONGO_HOST}:{settings.MONGO_PORT}/")
         return cls.mongo_client
 
-    @classmethod
+    @ classmethod
     def get_mongo_database(cls, db_name: str):
         return cls.get_mongo_connection()[db_name]
 
+    @classmethod
+    def get_mongo_collection(cls, db_name, collection_name: str):
+        return cls.get_mongo_database(db_name)[collection_name]
 
-settings = Settings()
+
 databases = Databases()

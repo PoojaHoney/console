@@ -76,7 +76,7 @@ func (srv *Service) Create(ctx *fiber.Ctx) error {
 	}
 	return ctx.Status(fiber.StatusAccepted).JSON(fiber.Map{
 		"message": "User created successfully",
-		"user":    user})
+		"data":    user})
 }
 
 // Update Updates a user.

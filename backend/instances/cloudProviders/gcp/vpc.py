@@ -47,7 +47,7 @@ def create_subnetwork(gcp_crds: GCPSrvAcc.Credentials, details: dict, vpc_client
     time.sleep(10)
     return response
 
-def get_subnetworks(gcp_crds: GCPSrvAcc.Credentials,subnetwork_name: str ,vpc_client: Any= None):
+def get_subnetwork(gcp_crds: GCPSrvAcc.Credentials,subnetwork_name: str ,vpc_client: Any= None):
     if vpc_client is None:
         vpc_client = get_vpc_client(gcp_crds)
     project_id = gcp_crds.project_id
@@ -74,7 +74,7 @@ def list_vpc_subnetworks(gcp_crds: GCPSrvAcc.Credentials, vpc_target_link: str, 
 def check_subnetwork_exists(gcp_crds: GCPSrvAcc.Credentials, subnetwork_name: str, vpc_client: Any = None):
     if vpc_client is None:
         vpc_client = get_vpc_client(gcp_crds)
-    if get_subnetworks(gcp_crds, subnetwork_name, vpc_client) is None:
+    if get_subnetwork(gcp_crds, subnetwork_name, vpc_client) is None:
         return False
     return True
 

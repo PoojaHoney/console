@@ -1,9 +1,14 @@
+from typing import List, Optional
 from pydantic import BaseModel
+import datetime
 from typing import Any, Optional, List
+import bson
+
+
 class IAM_Role(BaseModel):
-    name: str
-    description: str
-    policies: list
+    name: str = ""
+    description: str = ""
+    policies: list = []
     email: Optional[str] = ""
     product: Optional[str] = ""
     instanceId: Optional[str] = ""
@@ -15,8 +20,10 @@ class Response(BaseModel):
     statusCode: Optional[int] = 0
     error: Optional[Any] = ""
 
+
 class RoutingConfig(BaseModel):
     routingMode: Optional[str] = "REGIONAL"
+
 
 class SubNetwork(BaseModel):
     vpc_name: str
@@ -25,21 +32,22 @@ class SubNetwork(BaseModel):
     region: Optional[str] = ""
     network: str
 
+
 class FireWall(BaseModel):
     name: str = None
     network: str = None
     direction: Optional[str] = "INGRESS"
-    priority: Optional[int]=1000
+    priority: Optional[int] = 1000
     sourceRanges: list[str]
     sourceTags: Optional[list[str]] = None
-    targetTags: Optional[list[str]] =None
+    targetTags: Optional[list[str]] = None
     allowed: list[Any] = None
     denied: Optional[list] = None
-    description: Optional[str]=""
+    description: Optional[str] = ""
+
 
 class VPC(BaseModel):
     name: str
-    product: Optional[str] = ""
     instanceId: Optional[str] = ""
     description: Optional[str] = ""
     cidr: Optional[str] = ""
@@ -48,9 +56,8 @@ class VPC(BaseModel):
     enableFlowLogs: Optional[bool] = False
     mtu: Optional[int] = 1460
     routingConfig: Optional[RoutingConfig] = RoutingConfig()
-    
-from pydantic import BaseModel
-from typing import List, Optional
+    ports: Optional[List[str]] = []
+
 
 class ComputeEngine(BaseModel):
     class InitializeParams(BaseModel):
@@ -71,7 +78,8 @@ class ComputeEngine(BaseModel):
     class NetworkInterfaces(BaseModel):
         subnetwork: str
         name: str
-        accessConfigs: List['ComputeEngine.AccessConfig'] = [{"type": "ONE_TO_ONE_NAT", "name": "External NAT"}]
+        accessConfigs: List['ComputeEngine.AccessConfig'] = [
+            {"type": "ONE_TO_ONE_NAT", "name": "External NAT"}]
 
     class Scopes(BaseModel):
         email: str = "default"
@@ -107,14 +115,55 @@ class ComputeEngine(BaseModel):
     cpuPlatform: Optional[str] = "Intel Broadwell"
     shieldedInstanceConfig: Optional[ShieldedInstanceConfig] = None
 
+
+class SSHKey(BaseModel):
+    userName: Optional[str] = ""
+    password: Optional[str] = ""
+    publicKey: Optional[str] = ""
+    keyFilePath: Optional[str] = ""
+
+
+class InstanceDatabase(BaseModel):
+    type: Optional[str] = ""
+    database: Optional[str] = ""
+    name: Optional[str] = ""
+    portNumber: Optional[int] = 0
+    userName: Optional[str] = ""
+    password: Optional[str] = ""
+
+
+class InstanceConfiguration(BaseModel):
+    instanceId: str = ""
+    productId: str = ""
+    ssh: Optional[SSHKey] = SSHKey()
+    databases: List[InstanceDatabase] = []
+
+
 class Instance(BaseModel):
-    name: str
-    cloudProvider: str
-    product: str
-    machineType: str
-    diskSizeGb: Optional[int] = 10
-    diskType: Optional[str] = "pd-standard"
-    region: Optional[str]
-    zone: Optional[str]
-    sourceImage: Optional[str] = None
-    
+    name: str = ""
+    provider: str = ""
+    productID: str = ""
+    memory: float = 10
+    diskType: str = "pd-standard"
+    machineType: str = ""
+    planId: str = ""
+    status: Optional[str] = ""
+    createdOn: Optional[datetime.date] = datetime.date.today()
+    changedOn: Optional[datetime.date] = datetime.date.today()
+    region: str = ""
+    prefix: Optional[str] = ""
+    description: Optional[str] = ""
+    instanceId: Optional[str] = ""
+    startTimeInDay: Optional[datetime.time] = datetime.time()
+    endTimeInDay: Optional[datetime.time] = datetime.time()
+    reinitializeOnSameDay: Optional[bool] = False
+    weekOffDays: Optional[bool] = False
+    alwaysRun: bool = False
+    createdBy: Optional[str] = ""
+    runningStatus: Optional[str] = ""
+    url: Optional[str] = ""
+    version: str = ""
+    stage: Optional[str] = ""
+    deployedOn: str = ""
+    autoScaling: bool = False
+    vmSourceImage: str = ""
