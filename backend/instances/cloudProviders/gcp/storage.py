@@ -47,3 +47,9 @@ def create_bucket(gcp_crds: GCPSrvAcc.Credentials, input: dict):
             bucket.add_lifecycle_delete_rule(age=condition)
     bucket.patch()
     return bucket
+
+def delete_blob(gcp_crds: GCPSrvAcc.Credentials, bucket: str, path: str):
+    bucket = get_storage_client(gcp_crds).bucket(bucket)
+    blob = bucket.blob(path)
+    blob.delete()
+    return blob 

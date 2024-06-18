@@ -47,11 +47,11 @@ su - $SSH_USER -c 'ssh-keygen -t rsa -b 2048 -f ~/.ssh/id_rsa -N ""'
 su - $SSH_USER -c 'cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys'
 su - $SSH_USER -c 'chmod 0600 ~/.ssh/authorized_keys'
 
-gsutil cp /home/$SSH_USER/.ssh/id_rsa gs://$CLOUD_STORE_BUCKET/ssh-keys/
+gsutil cp /home/$SSH_USER/.ssh/id_rsa gs://$CLOUD_STORE_BUCKET/$PRODUCT/$INSTANCE_ID/ssh-keys/
 
 sudo systemctl restart sshd
 
-gsutil cp gs://$CLOUD_STORE_BUCKET/$PRODUCT/$INSTANCE_ID/serviceAccounts/keys/$INSTANCE_ID$INSTANCE_NAME.json key.json
+gsutil cp gs://$CLOUD_STORE_BUCKET/$PRODUCT/$INSTANCE_ID/serviceAccounts/keys/$PRODUCT-$INSTANCE_ID-$INSTANCE_NAME.json key.json
 gcloud auth activate-service-account --key-file key.json
 
 # Authenticate Docker with Artifact Registry

@@ -7,14 +7,14 @@ class GCP_Settings(BaseSettings):
     CLOUD_PROVIDER: str = "gcp"
     IAM_TYPE: str = os.environ.get("GCP_IAM_TYPE", "service_account")
     DEFAULT_REGION: str = os.environ.get("GCP_DEFAULT_REGION", "asia-south1")
-    PROJECT_ID: str = os.environ.get("GCP_PROJECT_ID")
-    SRV_ACC_PRIVATE_KEY_ID: str = os.environ.get("GCP_SRV_ACC_PRIVATE_KEY_ID")
-    SRV_ACC_PRIVATE_KEY: str = os.environ.get("GCP_SRV_ACC_PRIVATE_KEY")
-    SRV_ACC_CLIENT_EMAIL: str = os.environ.get("GCP_SRV_ACC_CLIENT_EMAIL")
-    SRV_ACC_CLIENT_ID: str = os.environ.get("GCP_SRV_ACC_CLIENT_ID")
-    AUTH_URL: str = os.environ.get("GCP_AUTH_URL")
-    TOKEN_URL: str = os.environ.get("GCP_TOKEN_URL")
-    CLIENT_X509_CERT_URL: str = os.environ.get("GCP_CLIENT_X509_CERT_URL")
+    PROJECT_ID: str = os.environ.get("GCP_PROJECT_ID", "")
+    SRV_ACC_PRIVATE_KEY_ID: str = os.environ.get("GCP_SRV_ACC_PRIVATE_KEY_ID", "")
+    SRV_ACC_PRIVATE_KEY: str = os.environ.get("GCP_SRV_ACC_PRIVATE_KEY", "")
+    SRV_ACC_CLIENT_EMAIL: str = os.environ.get("GCP_SRV_ACC_CLIENT_EMAIL", "")
+    SRV_ACC_CLIENT_ID: str = os.environ.get("GCP_SRV_ACC_CLIENT_ID", "")
+    AUTH_URL: str = os.environ.get("GCP_AUTH_URL", "")
+    TOKEN_URL: str = os.environ.get("GCP_TOKEN_URL", "")
+    CLIENT_X509_CERT_URL: str = os.environ.get("GCP_CLIENT_X509_CERT_URL", "")
     BUCKET_NAME: str = os.environ.get("GCP_BUCKET_NAME", "alph-a_console")
     DEFAULT_ZONE: str = os.environ.get("GCP_DEFAULT_ZONE", "asia-south1-c")
 
@@ -60,6 +60,14 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
+
+
+class Constants():
+    TERRAFORM_FRAMEWORK: str = "terraform"
+    SDK_FRAMEWORK: str = "sdk"
+
+
+constants = Constants()
 
 
 class Databases():

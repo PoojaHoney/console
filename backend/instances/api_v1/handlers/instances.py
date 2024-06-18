@@ -10,11 +10,11 @@ import random
 from config import settings
 import cloudProviders.gcp.credentials as GCP_Crds
 import string
-from api_v1.handlers import iam as IAM, vpc as VPC, compute as Compute, artifactRegistry as ArtifaceRegistry, storage as CloudStorage
+from api_v1.handlers.sdk import iam as IAM, vpc as VPC, compute as Compute, artifactRegistry as ArtifaceRegistry, storage as CloudStorage
 
 
 def create_instance_compute_engine(details: Instance, product: dict):
-    instance_id = random.choice(string.ascii_lowercase) + ''.join(
+    instanceId = random.choice(string.ascii_lowercase) + ''.join(
         random.choice(string.ascii_lowercase + string.digits) for _ in range(5))
     gcp_client = GCP_Crds.get_gcp_crds({"project_id": settings.GCP_Config.PROJECT_ID,
                                         "private_key_id": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,
@@ -30,10 +30,9 @@ def create_instance_compute_engine(details: Instance, product: dict):
         for microservice in product["microservices"]:
             ports.append(microservice["portNumber"])
         vpc_response = VPC.create_vpc_subnetwork_firewall(details=VPC_Schema(
-            name=f"{instance_id}{details.name}",
-            instanceId=instance_id,
+            name=f"{details.productID}-{instanceId}-{details.name}",
             ports=ports,
-            description=f"{instance_id}{details.name} VPC for {details.name} of {details.productID} product",
+            description=f"{instanceId}{details.name} VPC for {details.name} of {details.productID} product",
         ), gcp_client=gcp_client)
         if vpc_response.get("error") != "":
             return API_Response(error=vpc_response.get("error"), statusCode=400).model_dump()
@@ -46,10 +45,10 @@ def create_instance_compute_engine(details: Instance, product: dict):
                 break
 
         iam_response = IAM.create_service_account(IAM_Role(
-            name=f"{instance_id}{details.name}",
-            instanceId=instance_id,
+            name=f"{details.productID}-{instanceId}-{details.name}",
+            instanceId=instanceId,
             product=details.productID,
-            description=f"{instance_id}{details.name} service account for {details.name} of {details.productID} product",
+            description=f"{instanceId}{details.name} service account for {details.name} of {details.productID} product",
             policies=policies
         ), gcp_client=gcp_client)
         if iam_response.get("error") != "":
@@ -76,7 +75,7 @@ def create_instance_compute_engine(details: Instance, product: dict):
             startup_script = startup_script.replace(
                 "{{SERVICE_ACCOUNT}}", iam["email"])
             startup_script = startup_script.replace(
-                "{{INSTANCE_ID}}", instance_id)
+                "{{INSTANCE_ID}}", instanceId)
             startup_script = startup_script.replace(
                 "{{INSTANCE_NAME}}", details.name)
 
@@ -98,7 +97,7 @@ def create_instance_compute_engine(details: Instance, product: dict):
                             service_name, latest_version["resourceName"])
 
         compute_response = Compute.create_compute_engine(gcp_client=gcp_client, details=ComputeEngine_Schema(
-            name=f"{instance_id}{details.name}",
+            name=f"{details.productID}-{instanceId}-{details.name}",
             zone=settings.GCP_Config.DEFAULT_ZONE,
             machineType=details.machineType,
             region=settings.GCP_Config.DEFAULT_REGION,
@@ -138,11 +137,11 @@ def create_instance_compute_engine(details: Instance, product: dict):
         if "was not found" in exp.get("reason"):
             return API_Response(error=str(exp), statusCode=400, message="VPC limit crossed").model_dump()
         delete_instance_compute_engine(
-            instance_id=instance_id, name=details.name, gcp_client=gcp_client)
+            instanceId=instanceId, name=details.name, gcp_client=gcp_client)
         return API_Response(error=str(exp), statusCode=400).model_dump()
 
 
-def delete_instance_compute_engine(instance_id: str, name: str, gcp_client: GCP_Crds.get_gcp_crds = None):
+def delete_instance_compute_engine(instanceId: str, product: str, name: str, gcp_client: GCP_Crds.get_gcp_crds = None):
     if gcp_client == None:
         gcp_client = GCP_Crds.get_gcp_crds({"project_id": settings.GCP_Config.PROJECT_ID,
                                             "private_key_id": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,
@@ -152,11 +151,12 @@ def delete_instance_compute_engine(instance_id: str, name: str, gcp_client: GCP_
                                             })
     try:
         Compute.delete_compute_engine(
-            compute_engine_name=f"{instance_id}{name}", gcp_client=gcp_client)
+            compute_engine_name=f"{product}-{instanceId}-{name}", gcp_client=gcp_client)
         IAM.delete_service_account(
-            service_account=f"{instance_id}{name}@{settings.GCP_Config.PROJECT_ID}.iam.gserviceaccount.com", gcp_client=gcp_client)
+            instanceId=instanceId, product=product,
+            service_account=f"{product}-{instanceId}-{name}@{settings.GCP_Config.PROJECT_ID}.iam.gserviceaccount.com", gcp_client=gcp_client)
         time.sleep(20)
-        VPC.delete_vpc(vpc_name=f"{instance_id}{name}", gcp_client=gcp_client)
+        VPC.delete_vpc(vpc_name=f"{product}-{instanceId}-{name}", gcp_client=gcp_client)
         return API_Response(message="Instance deleted successfully", statusCode=200).model_dump()
     except Exception as exp:
         return API_Response(error=str(exp), statusCode=400).model_dump()

@@ -23,17 +23,17 @@ def create_instance(details: Instance):
                 if environmentSupport["environment"] == details.deployedOn and details.deployedOn == "compute_engine":
                     result = Instances.create_instance_compute_engine(
                         details=details, product=product)
-                    if result["statusCode"] != 200:
-                        return result
+                    # if result["statusCode"] != 200:
+                    return result
     except Exception as exp:
         return API_Response(error=exp, statusCode=400).model_dump()
 
 
 @router.delete("/delete", response_model=API_Response)
-def delete_instance(instance_id: str, name: str):
+def delete_instance(instance_id: str, product: str, name: str):
     try:
         result = delete_instance_compute_engine(
-            name=name, instance_id=instance_id)
+            name=name, instanceId=instance_id, product=product)
         return result
     except Exception as exp:
         return API_Response(error=exp, statusCode=400).model_dump()

@@ -2,7 +2,6 @@ from typing import List, Optional
 from pydantic import BaseModel
 import datetime
 from typing import Any, Optional, List
-import bson
 
 
 class IAM_Role(BaseModel):
@@ -10,8 +9,8 @@ class IAM_Role(BaseModel):
     description: str = ""
     policies: list = []
     email: Optional[str] = ""
-    product: Optional[str] = ""
     instanceId: Optional[str] = ""
+    product: Optional[str] = ""
 
 
 class Response(BaseModel):
@@ -48,7 +47,6 @@ class FireWall(BaseModel):
 
 class VPC(BaseModel):
     name: str
-    instanceId: Optional[str] = ""
     description: Optional[str] = ""
     cidr: Optional[str] = ""
     network: Optional[str] = ""

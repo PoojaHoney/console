@@ -112,6 +112,38 @@
         "documentation": {}
     },
     {
+        "label": "Response",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "VPC",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SubNetwork",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "FireWall",
+        "importPath": "schemas",
+        "description": "schemas",
+        "isExtraImport": true,
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
         "label": "Instance",
         "importPath": "schemas",
         "description": "schemas",
@@ -145,38 +177,6 @@
     },
     {
         "label": "ComputeEngine",
-        "importPath": "schemas",
-        "description": "schemas",
-        "isExtraImport": true,
-        "detail": "schemas",
-        "documentation": {}
-    },
-    {
-        "label": "Response",
-        "importPath": "schemas",
-        "description": "schemas",
-        "isExtraImport": true,
-        "detail": "schemas",
-        "documentation": {}
-    },
-    {
-        "label": "VPC",
-        "importPath": "schemas",
-        "description": "schemas",
-        "isExtraImport": true,
-        "detail": "schemas",
-        "documentation": {}
-    },
-    {
-        "label": "SubNetwork",
-        "importPath": "schemas",
-        "description": "schemas",
-        "isExtraImport": true,
-        "detail": "schemas",
-        "documentation": {}
-    },
-    {
-        "label": "FireWall",
         "importPath": "schemas",
         "description": "schemas",
         "isExtraImport": true,
@@ -281,26 +281,218 @@
     },
     {
         "label": "artifactRegistry",
-        "importPath": "api_v1.handlers",
-        "description": "api_v1.handlers",
+        "importPath": "api_v1.handlers.sdk",
+        "description": "api_v1.handlers.sdk",
         "isExtraImport": true,
-        "detail": "api_v1.handlers",
+        "detail": "api_v1.handlers.sdk",
         "documentation": {}
     },
     {
         "label": "compute",
-        "importPath": "api_v1.handlers",
-        "description": "api_v1.handlers",
+        "importPath": "api_v1.handlers.sdk",
+        "description": "api_v1.handlers.sdk",
         "isExtraImport": true,
-        "detail": "api_v1.handlers",
+        "detail": "api_v1.handlers.sdk",
         "documentation": {}
     },
     {
         "label": "iam",
-        "importPath": "api_v1.handlers",
-        "description": "api_v1.handlers",
+        "importPath": "api_v1.handlers.sdk",
+        "description": "api_v1.handlers.sdk",
         "isExtraImport": true,
-        "detail": "api_v1.handlers",
+        "detail": "api_v1.handlers.sdk",
+        "documentation": {}
+    },
+    {
+        "label": "vpc",
+        "importPath": "api_v1.handlers.sdk",
+        "description": "api_v1.handlers.sdk",
+        "isExtraImport": true,
+        "detail": "api_v1.handlers.sdk",
+        "documentation": {}
+    },
+    {
+        "label": "iam",
+        "importPath": "api_v1.handlers.sdk",
+        "description": "api_v1.handlers.sdk",
+        "isExtraImport": true,
+        "detail": "api_v1.handlers.sdk",
+        "documentation": {}
+    },
+    {
+        "label": "vpc",
+        "importPath": "api_v1.handlers.sdk",
+        "description": "api_v1.handlers.sdk",
+        "isExtraImport": true,
+        "detail": "api_v1.handlers.sdk",
+        "documentation": {}
+    },
+    {
+        "label": "compute",
+        "importPath": "api_v1.handlers.sdk",
+        "description": "api_v1.handlers.sdk",
+        "isExtraImport": true,
+        "detail": "api_v1.handlers.sdk",
+        "documentation": {}
+    },
+    {
+        "label": "artifactRegistry",
+        "importPath": "api_v1.handlers.sdk",
+        "description": "api_v1.handlers.sdk",
+        "isExtraImport": true,
+        "detail": "api_v1.handlers.sdk",
+        "documentation": {}
+    },
+    {
+        "label": "storage",
+        "importPath": "api_v1.handlers.sdk",
+        "description": "api_v1.handlers.sdk",
+        "isExtraImport": true,
+        "detail": "api_v1.handlers.sdk",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "constants",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "constants",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "constants",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "databases",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "constants",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "databases",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
         "documentation": {}
     },
     {
@@ -309,166 +501,6 @@
         "description": "api_v1.handlers",
         "isExtraImport": true,
         "detail": "api_v1.handlers",
-        "documentation": {}
-    },
-    {
-        "label": "vpc",
-        "importPath": "api_v1.handlers",
-        "description": "api_v1.handlers",
-        "isExtraImport": true,
-        "detail": "api_v1.handlers",
-        "documentation": {}
-    },
-    {
-        "label": "iam",
-        "importPath": "api_v1.handlers",
-        "description": "api_v1.handlers",
-        "isExtraImport": true,
-        "detail": "api_v1.handlers",
-        "documentation": {}
-    },
-    {
-        "label": "vpc",
-        "importPath": "api_v1.handlers",
-        "description": "api_v1.handlers",
-        "isExtraImport": true,
-        "detail": "api_v1.handlers",
-        "documentation": {}
-    },
-    {
-        "label": "compute",
-        "importPath": "api_v1.handlers",
-        "description": "api_v1.handlers",
-        "isExtraImport": true,
-        "detail": "api_v1.handlers",
-        "documentation": {}
-    },
-    {
-        "label": "artifactRegistry",
-        "importPath": "api_v1.handlers",
-        "description": "api_v1.handlers",
-        "isExtraImport": true,
-        "detail": "api_v1.handlers",
-        "documentation": {}
-    },
-    {
-        "label": "storage",
-        "importPath": "api_v1.handlers",
-        "description": "api_v1.handlers",
-        "isExtraImport": true,
-        "detail": "api_v1.handlers",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "config",
-        "description": "config",
-        "isExtraImport": true,
-        "detail": "config",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "config",
-        "description": "config",
-        "isExtraImport": true,
-        "detail": "config",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "config",
-        "description": "config",
-        "isExtraImport": true,
-        "detail": "config",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "config",
-        "description": "config",
-        "isExtraImport": true,
-        "detail": "config",
-        "documentation": {}
-    },
-    {
-        "label": "databases",
-        "importPath": "config",
-        "description": "config",
-        "isExtraImport": true,
-        "detail": "config",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "config",
-        "description": "config",
-        "isExtraImport": true,
-        "detail": "config",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "config",
-        "description": "config",
-        "isExtraImport": true,
-        "detail": "config",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "config",
-        "description": "config",
-        "isExtraImport": true,
-        "detail": "config",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "config",
-        "description": "config",
-        "isExtraImport": true,
-        "detail": "config",
-        "documentation": {}
-    },
-    {
-        "label": "databases",
-        "importPath": "config",
-        "description": "config",
-        "isExtraImport": true,
-        "detail": "config",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "config",
-        "description": "config",
-        "isExtraImport": true,
-        "detail": "config",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "config",
-        "description": "config",
-        "isExtraImport": true,
-        "detail": "config",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "config",
-        "description": "config",
-        "isExtraImport": true,
-        "detail": "config",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "config",
-        "description": "config",
-        "isExtraImport": true,
-        "detail": "config",
         "documentation": {}
     },
     {
@@ -681,6 +713,15 @@
         "documentation": {}
     },
     {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
         "label": "json",
         "kind": 6,
         "isExtraImport": true,
@@ -708,39 +749,12 @@
         "documentation": {}
     },
     {
-        "label": "api_v1.handlers.storage",
+        "label": "api_v1.handlers.sdk.storage",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "api_v1.handlers.storage",
-        "description": "api_v1.handlers.storage",
-        "detail": "api_v1.handlers.storage",
-        "documentation": {}
-    },
-    {
-        "label": "time",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "time",
-        "description": "time",
-        "detail": "time",
-        "documentation": {}
-    },
-    {
-        "label": "random",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "random",
-        "description": "random",
-        "detail": "random",
-        "documentation": {}
-    },
-    {
-        "label": "string",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "string",
-        "description": "string",
-        "detail": "string",
+        "importPath": "api_v1.handlers.sdk.storage",
+        "description": "api_v1.handlers.sdk.storage",
+        "detail": "api_v1.handlers.sdk.storage",
         "documentation": {}
     },
     {
@@ -814,6 +828,24 @@
         "importPath": "cloudProviders.gcp.storage",
         "description": "cloudProviders.gcp.storage",
         "detail": "cloudProviders.gcp.storage",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "string",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "string",
+        "description": "string",
+        "detail": "string",
         "documentation": {}
     },
     {
@@ -956,20 +988,11 @@
         "documentation": {}
     },
     {
-        "label": "bson",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "bson",
-        "description": "bson",
-        "detail": "bson",
-        "documentation": {}
-    },
-    {
         "label": "get_artifact_registry",
         "kind": 2,
         "importPath": "api_v1.endpoints.artifactRegistry",
         "description": "api_v1.endpoints.artifactRegistry",
-        "peekOfCode": "def get_artifact_registry(cloud_provider: str, registry_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n            return ArtifactRegistry.list_artifact_registries(registry_name=registry_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.get(\"/artifact_registry_permissions/{cloud_provider}\")\ndef get_artifact_registry_permissions(cloud_provider: str, registry_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:",
+        "peekOfCode": "def get_artifact_registry(cloud_provider: str, framework: str, registry_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_ArtifactRegistry.list_artifact_registries(registry_name=registry_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.get(\"/artifact_registry_permissions/{cloud_provider}/{framework}\")\ndef get_artifact_registry_permissions(cloud_provider: str, framework: str, registry_name: str = Query(default=None, max_length=200)):",
         "detail": "api_v1.endpoints.artifactRegistry",
         "documentation": {}
     },
@@ -978,7 +1001,7 @@
         "kind": 2,
         "importPath": "api_v1.endpoints.artifactRegistry",
         "description": "api_v1.endpoints.artifactRegistry",
-        "peekOfCode": "def get_artifact_registry_permissions(cloud_provider: str, registry_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n            return ArtifactRegistry.get_artifact_registry_permissions(repository_id=registry_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
+        "peekOfCode": "def get_artifact_registry_permissions(cloud_provider: str, framework: str, registry_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_ArtifactRegistry.get_artifact_registry_permissions(repository_id=registry_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
         "detail": "api_v1.endpoints.artifactRegistry",
         "documentation": {}
     },
@@ -987,7 +1010,7 @@
         "kind": 5,
         "importPath": "api_v1.endpoints.artifactRegistry",
         "description": "api_v1.endpoints.artifactRegistry",
-        "peekOfCode": "router = APIRouter()\n@router.get(\"/artifact_registry/{cloud_provider}\")\ndef get_artifact_registry(cloud_provider: str, registry_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n            return ArtifactRegistry.list_artifact_registries(registry_name=registry_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.get(\"/artifact_registry_permissions/{cloud_provider}\")\ndef get_artifact_registry_permissions(cloud_provider: str, registry_name: str = Query(default=None, max_length=200)):",
+        "peekOfCode": "router = APIRouter()\n@router.get(\"/artifact_registry/{cloud_provider}/{framework}\")\ndef get_artifact_registry(cloud_provider: str, framework: str, registry_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_ArtifactRegistry.list_artifact_registries(registry_name=registry_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
         "detail": "api_v1.endpoints.artifactRegistry",
         "documentation": {}
     },
@@ -996,7 +1019,7 @@
         "kind": 2,
         "importPath": "api_v1.endpoints.compute",
         "description": "api_v1.endpoints.compute",
-        "peekOfCode": "def get_compute(cloud_provider: str, compute_engine_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n            return Compute.list_compute_engines(compute_engine_name=compute_engine_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.post(\"/compute/{cloud_provider}\")\ndef create_compute(cloud_provider: str, details: ComputeEngine_Schema):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:",
+        "peekOfCode": "def get_compute(cloud_provider: str, framework: str, compute_engine_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_Compute.list_compute_engines(compute_engine_name=compute_engine_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.post(\"/compute/{cloud_provider}/{framework}\")\ndef create_compute(cloud_provider: str, details: ComputeEngine_Schema, framework: str):",
         "detail": "api_v1.endpoints.compute",
         "documentation": {}
     },
@@ -1005,7 +1028,16 @@
         "kind": 2,
         "importPath": "api_v1.endpoints.compute",
         "description": "api_v1.endpoints.compute",
-        "peekOfCode": "def create_compute(cloud_provider: str, details: ComputeEngine_Schema):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n            return Compute.create_compute_engine(details=details)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
+        "peekOfCode": "def create_compute(cloud_provider: str, details: ComputeEngine_Schema, framework: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_Compute.create_compute_engine(details=details)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.delete(\"/compute/{cloud_provider}/{framework}\")\ndef delete_compute(cloud_provider: str, compute_engine: str, framework: str):",
+        "detail": "api_v1.endpoints.compute",
+        "documentation": {}
+    },
+    {
+        "label": "delete_compute",
+        "kind": 2,
+        "importPath": "api_v1.endpoints.compute",
+        "description": "api_v1.endpoints.compute",
+        "peekOfCode": "def delete_compute(cloud_provider: str, compute_engine: str, framework: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_Compute.delete_compute_engine(compute_engine_name=compute_engine)\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
         "detail": "api_v1.endpoints.compute",
         "documentation": {}
     },
@@ -1014,7 +1046,7 @@
         "kind": 5,
         "importPath": "api_v1.endpoints.compute",
         "description": "api_v1.endpoints.compute",
-        "peekOfCode": "router = APIRouter()\n@router.get(\"/compute/{cloud_provider}\")\ndef get_compute(cloud_provider: str, compute_engine_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n            return Compute.list_compute_engines(compute_engine_name=compute_engine_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.post(\"/compute/{cloud_provider}\")\ndef create_compute(cloud_provider: str, details: ComputeEngine_Schema):",
+        "peekOfCode": "router = APIRouter()\n@router.get(\"/compute/{cloud_provider}/{framework}\")\ndef get_compute(cloud_provider: str, framework: str, compute_engine_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_Compute.list_compute_engines(compute_engine_name=compute_engine_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
         "detail": "api_v1.endpoints.compute",
         "documentation": {}
     },
@@ -1023,7 +1055,7 @@
         "kind": 2,
         "importPath": "api_v1.endpoints.iam",
         "description": "api_v1.endpoints.iam",
-        "peekOfCode": "def create_iam_role(cloud_provider: str, details: IAM_Role):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n            return IAM.create_service_account(details=details)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.put(\"/iam_role/{cloud_provider}/{action}\")\ndef update_iam_role(cloud_provider: str, details: IAM_Role, action: str):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:",
+        "peekOfCode": "def create_iam_role(cloud_provider: str, details: IAM_Role, framework: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_IAM.create_service_account(details=details)\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
         "detail": "api_v1.endpoints.iam",
         "documentation": {}
     },
@@ -1032,7 +1064,7 @@
         "kind": 2,
         "importPath": "api_v1.endpoints.iam",
         "description": "api_v1.endpoints.iam",
-        "peekOfCode": "def update_iam_role(cloud_provider: str, details: IAM_Role, action: str):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n            return IAM.update_service_account( details=details, action=action)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.delete(\"/iam_role/{cloud_provider}\")\ndef delete_iam_role(cloud_provider: str, service_account: str):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:",
+        "peekOfCode": "def update_iam_role(cloud_provider: str, details: IAM_Role, action: str, framework: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_IAM.update_service_account(details=details, action=action)\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
         "detail": "api_v1.endpoints.iam",
         "documentation": {}
     },
@@ -1041,7 +1073,7 @@
         "kind": 2,
         "importPath": "api_v1.endpoints.iam",
         "description": "api_v1.endpoints.iam",
-        "peekOfCode": "def delete_iam_role(cloud_provider: str, service_account: str):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n            return IAM.delete_service_account(service_account=service_account)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.get(\"/iam_role/{cloud_provider}\")\ndef get_iam_roles(cloud_provider: str, service_account: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:",
+        "peekOfCode": "def delete_iam_role(cloud_provider: str, service_account: str, framework: str,\n                    product: str = Query(default=\"\"),\n                    instanceId: str = Query(default=\"\")):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_IAM.delete_service_account(service_account=service_account, instanceId=instanceId, product=product)\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()",
         "detail": "api_v1.endpoints.iam",
         "documentation": {}
     },
@@ -1050,7 +1082,16 @@
         "kind": 2,
         "importPath": "api_v1.endpoints.iam",
         "description": "api_v1.endpoints.iam",
-        "peekOfCode": "def get_iam_roles(cloud_provider: str, service_account: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n            return IAM.list_service_accounts(service_account=service_account)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n#--------------------------------------SERVICE ACCOUNT PERMISSIONS/POLICIES/ROLE APIs----------------------------------------\n@router.get(\"/iam_role_permissions/{cloud_provider}\")\ndef get_iam_role_permissions(cloud_provider: str, role_name: str):\n    try:",
+        "peekOfCode": "def get_iam_roles(cloud_provider: str, framework: str, service_account: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_IAM.list_service_accounts(service_account=service_account)\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
+        "detail": "api_v1.endpoints.iam",
+        "documentation": {}
+    },
+    {
+        "label": "get_iam_role_key",
+        "kind": 2,
+        "importPath": "api_v1.endpoints.iam",
+        "description": "api_v1.endpoints.iam",
+        "peekOfCode": "def get_iam_role_key(cloud_provider: str, service_account: str, framework: str,\n                    product: str = Query(default=\"\"),\n                    instanceId: str = Query(default=\"\")):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_IAM.get_service_account_key(service_account=service_account, product=product, instanceId=instanceId)\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()",
         "detail": "api_v1.endpoints.iam",
         "documentation": {}
     },
@@ -1059,7 +1100,7 @@
         "kind": 2,
         "importPath": "api_v1.endpoints.iam",
         "description": "api_v1.endpoints.iam",
-        "peekOfCode": "def get_iam_role_permissions(cloud_provider: str, role_name: str):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n            return IAM.get_service_account_permissions(role_name=role_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n#--------------------------------------SERVICE ACCOUNT KEYS APIs----------------------------------------\n@router.post(\"/iam_role_keys\")\ndef create_iam_role_key(cloud_provider: str, service_account: str):\n    try:",
+        "peekOfCode": "def get_iam_role_permissions(cloud_provider: str, role_name: str, framework: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_IAM.get_service_account_permissions(role_name=role_name)\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
         "detail": "api_v1.endpoints.iam",
         "documentation": {}
     },
@@ -1068,7 +1109,7 @@
         "kind": 2,
         "importPath": "api_v1.endpoints.iam",
         "description": "api_v1.endpoints.iam",
-        "peekOfCode": "def create_iam_role_key(cloud_provider: str, service_account: str):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n            return IAM.create_service_account_key(service_account=service_account)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n#--------------------------------------IAM ROLES PERMISSIONS PREDEFINED APIs----------------------------------------\n@router.post(\"/iam_predefined_roles/{cloud_provider}\")\ndef create_iam_predefined_roles(cloud_provider: str) -> API_Response:\n    try:",
+        "peekOfCode": "def create_iam_role_key(cloud_provider: str, service_account: str, framework: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_IAM.create_service_account_key(service_account=service_account)\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
         "detail": "api_v1.endpoints.iam",
         "documentation": {}
     },
@@ -1077,7 +1118,7 @@
         "kind": 2,
         "importPath": "api_v1.endpoints.iam",
         "description": "api_v1.endpoints.iam",
-        "peekOfCode": "def create_iam_predefined_roles(cloud_provider: str) -> API_Response:\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n            response = IAM.create_iam_predefined_roles()\n            return response\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.get(\"/iam_predefined_roles/{cloud_provider}\")\ndef get_iam_predefined_roles(cloud_provider: str,\n                filter: str = Query(default=None, max_length=200)):",
+        "peekOfCode": "def create_iam_predefined_roles(cloud_provider: str, framework: str) -> API_Response:\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    response = SDK_IAM.create_iam_predefined_roles()\n                    return response\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()\n    except Exception as exp:",
         "detail": "api_v1.endpoints.iam",
         "documentation": {}
     },
@@ -1086,7 +1127,7 @@
         "kind": 2,
         "importPath": "api_v1.endpoints.iam",
         "description": "api_v1.endpoints.iam",
-        "peekOfCode": "def get_iam_predefined_roles(cloud_provider: str,\n                filter: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n            return IAM.get_iam_predefined_roles(filter=filter)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
+        "peekOfCode": "def get_iam_predefined_roles(cloud_provider: str,\n                             framework: str,\n                             filter: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_IAM.get_iam_predefined_roles(filter=filter)\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()",
         "detail": "api_v1.endpoints.iam",
         "documentation": {}
     },
@@ -1095,7 +1136,7 @@
         "kind": 5,
         "importPath": "api_v1.endpoints.iam",
         "description": "api_v1.endpoints.iam",
-        "peekOfCode": "router = APIRouter()\n#--------------------------------------SERVICE ACCOUNT/IAM ROLES APIs----------------------------------------\n@router.post(\"/iam_role/{cloud_provider}\")\ndef create_iam_role(cloud_provider: str, details: IAM_Role):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n            return IAM.create_service_account(details=details)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.put(\"/iam_role/{cloud_provider}/{action}\")",
+        "peekOfCode": "router = APIRouter()\n# --------------------------------------SERVICE ACCOUNT/IAM ROLES APIs----------------------------------------\n@router.post(\"/iam_role/{cloud_provider}/{framework}\")\ndef create_iam_role(cloud_provider: str, details: IAM_Role, framework: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_IAM.create_service_account(details=details)\n        else:",
         "detail": "api_v1.endpoints.iam",
         "documentation": {}
     },
@@ -1113,7 +1154,7 @@
         "kind": 2,
         "importPath": "api_v1.endpoints.instances",
         "description": "api_v1.endpoints.instances",
-        "peekOfCode": "def delete_instance(instance_id: str, name: str):\n    try:\n        result = delete_instance_compute_engine(\n            name=name, instance_id=instance_id)\n        return result\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
+        "peekOfCode": "def delete_instance(instance_id: str, product: str, name: str):\n    try:\n        result = delete_instance_compute_engine(\n            name=name, instanceId=instance_id, product=product)\n        return result\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
         "detail": "api_v1.endpoints.instances",
         "documentation": {}
     },
@@ -1131,7 +1172,7 @@
         "kind": 2,
         "importPath": "api_v1.endpoints.vpc",
         "description": "api_v1.endpoints.vpc",
-        "peekOfCode": "def get_vpc(cloud_provider: str, vpc_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n            return VPC.list_vpcs(vpc_name=vpc_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.post(\"/vpc/{cloud_provider}\")\ndef create_vpc(cloud_provider: str, details: VPC_Schema):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:",
+        "peekOfCode": "def get_vpc(cloud_provider: str, framework: str, vpc_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_VPC.list_vpcs(vpc_name=vpc_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.post(\"/vpc/{cloud_provider}/{framework}\")\ndef create_vpc(cloud_provider: str, framework: str,  details: VPC_Schema):",
         "detail": "api_v1.endpoints.vpc",
         "documentation": {}
     },
@@ -1140,7 +1181,7 @@
         "kind": 2,
         "importPath": "api_v1.endpoints.vpc",
         "description": "api_v1.endpoints.vpc",
-        "peekOfCode": "def create_vpc(cloud_provider: str, details: VPC_Schema):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n            return VPC.create_vpc_subnetwork_firewall(details=details)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.delete(\"/vpc/{cloud_provider}\")\ndef delete_vpc(cloud_provider: str, vpc_name: str):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:",
+        "peekOfCode": "def create_vpc(cloud_provider: str, framework: str,  details: VPC_Schema):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_VPC.create_vpc_subnetwork_firewall(details=details)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.delete(\"/vpc/{cloud_provider}/{framework}\")\ndef delete_vpc(cloud_provider: str, framework: str, vpc_name: str):",
         "detail": "api_v1.endpoints.vpc",
         "documentation": {}
     },
@@ -1149,7 +1190,7 @@
         "kind": 2,
         "importPath": "api_v1.endpoints.vpc",
         "description": "api_v1.endpoints.vpc",
-        "peekOfCode": "def delete_vpc(cloud_provider: str, vpc_name: str):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n            return VPC.delete_vpc(vpc_name=vpc_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
+        "peekOfCode": "def delete_vpc(cloud_provider: str, framework: str, vpc_name: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_VPC.delete_vpc(vpc_name=vpc_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
         "detail": "api_v1.endpoints.vpc",
         "documentation": {}
     },
@@ -1158,134 +1199,242 @@
         "kind": 5,
         "importPath": "api_v1.endpoints.vpc",
         "description": "api_v1.endpoints.vpc",
-        "peekOfCode": "router = APIRouter()\n@router.get(\"/vpc/{cloud_provider}\")\ndef get_vpc(cloud_provider: str, vpc_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n            return VPC.list_vpcs(vpc_name=vpc_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.post(\"/vpc/{cloud_provider}\")\ndef create_vpc(cloud_provider: str, details: VPC_Schema):",
+        "peekOfCode": "router = APIRouter()\n@router.get(\"/vpc/{cloud_provider}/{framework}\")\ndef get_vpc(cloud_provider: str, framework: str, vpc_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_VPC.list_vpcs(vpc_name=vpc_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
         "detail": "api_v1.endpoints.vpc",
         "documentation": {}
     },
     {
         "label": "list_artifact_registries",
         "kind": 2,
-        "importPath": "api_v1.handlers.artifactRegistry",
-        "description": "api_v1.handlers.artifactRegistry",
+        "importPath": "api_v1.handlers.sdk.artifactRegistry",
+        "description": "api_v1.handlers.sdk.artifactRegistry",
         "peekOfCode": "def list_artifact_registries(registry_name: str):\n    gcp_client = GCP_Crds.get_gcp_crds({\"project_id\":settings.GCP_Config.PROJECT_ID,\n                            \"private_key_id\":settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                            \"private_key\":settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                            \"client_email\":settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                        })\n    artifact_registries = ArtifaceRegistry.list_artifact_repositories(gcp_crds=gcp_client, region=settings.GCP_Config.DEFAULT_REGION)\n    return API_Response(message=\"Artifact Registries fetched successfully\", data=artifact_registries, statusCode=200).model_dump()\ndef get_artifact_registry_permissions(repository_id: str, gcp_client = None):",
-        "detail": "api_v1.handlers.artifactRegistry",
+        "detail": "api_v1.handlers.sdk.artifactRegistry",
         "documentation": {}
     },
     {
         "label": "get_artifact_registry_permissions",
         "kind": 2,
-        "importPath": "api_v1.handlers.artifactRegistry",
-        "description": "api_v1.handlers.artifactRegistry",
+        "importPath": "api_v1.handlers.sdk.artifactRegistry",
+        "description": "api_v1.handlers.sdk.artifactRegistry",
         "peekOfCode": "def get_artifact_registry_permissions(repository_id: str, gcp_client = None):\n    if gcp_client is None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\":settings.GCP_Config.PROJECT_ID,\n                                \"private_key_id\":settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                \"private_key\":settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                \"client_email\":settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                            })\n    artifact_registries = ArtifaceRegistry.get_artifact_registry_permissions(gcp_crds=gcp_client, region=settings.GCP_Config.DEFAULT_REGION, repository_id=repository_id)\n    return API_Response(message=\"Artifact Registries fetched successfully\", data=artifact_registries, statusCode=200).model_dump()",
-        "detail": "api_v1.handlers.artifactRegistry",
+        "detail": "api_v1.handlers.sdk.artifactRegistry",
         "documentation": {}
     },
     {
         "label": "set_service_account_artifact_registry",
         "kind": 2,
-        "importPath": "api_v1.handlers.artifactRegistry",
-        "description": "api_v1.handlers.artifactRegistry",
+        "importPath": "api_v1.handlers.sdk.artifactRegistry",
+        "description": "api_v1.handlers.sdk.artifactRegistry",
         "peekOfCode": "def set_service_account_artifact_registry(repository_id: str, service_account: str, roles: list[str] ,gcp_client = None):\n    if gcp_client is None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\":settings.GCP_Config.PROJECT_ID,\n                                \"private_key_id\":settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                \"private_key\":settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                \"client_email\":settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                            })\n    bindings = ArtifaceRegistry.add_service_account_to_policy(gcp_crds=gcp_client, region=settings.GCP_Config.DEFAULT_REGION, repository_id=repository_id, service_account_email=service_account, roles=roles)\n    return API_Response(message=\"Artifact Registries fetched successfully\", data=bindings, statusCode=200).model_dump()",
-        "detail": "api_v1.handlers.artifactRegistry",
+        "detail": "api_v1.handlers.sdk.artifactRegistry",
         "documentation": {}
     },
     {
         "label": "list_compute_engines",
         "kind": 2,
-        "importPath": "api_v1.handlers.compute",
-        "description": "api_v1.handlers.compute",
+        "importPath": "api_v1.handlers.sdk.compute",
+        "description": "api_v1.handlers.sdk.compute",
         "peekOfCode": "def list_compute_engines(compute_engine_name: str):\n    gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                        \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                        \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                        \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                        \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                        })\n    if compute_engine_name == \"\" or compute_engine_name == None:\n        compute_engines = Compute.list_compute_engines(\n            gcp_crds=gcp_client, zone=settings.GCP_Config.DEFAULT_ZONE)",
-        "detail": "api_v1.handlers.compute",
+        "detail": "api_v1.handlers.sdk.compute",
         "documentation": {}
     },
     {
         "label": "create_compute_engine",
         "kind": 2,
-        "importPath": "api_v1.handlers.compute",
-        "description": "api_v1.handlers.compute",
+        "importPath": "api_v1.handlers.sdk.compute",
+        "description": "api_v1.handlers.sdk.compute",
         "peekOfCode": "def create_compute_engine(details: ComputeEngine_Schema, gcp_client: GCP_Crds.get_gcp_crds = None):\n    try:\n        if gcp_client == None:\n            gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                                \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                                \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                                \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                                \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                                })\n        compute_client = Compute.get_compute_client(gcp_crds=gcp_client)",
-        "detail": "api_v1.handlers.compute",
+        "detail": "api_v1.handlers.sdk.compute",
         "documentation": {}
     },
     {
         "label": "delete_compute_engine",
         "kind": 2,
-        "importPath": "api_v1.handlers.compute",
-        "description": "api_v1.handlers.compute",
+        "importPath": "api_v1.handlers.sdk.compute",
+        "description": "api_v1.handlers.sdk.compute",
         "peekOfCode": "def delete_compute_engine(compute_engine_name: str, gcp_client: GCP_Crds.get_gcp_crds = None):\n    try:\n        if gcp_client == None:\n            gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                                \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                                \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                                \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                                \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                                })\n        Compute.delete_compute_engine(",
-        "detail": "api_v1.handlers.compute",
+        "detail": "api_v1.handlers.sdk.compute",
         "documentation": {}
     },
     {
         "label": "create_service_account",
         "kind": 2,
-        "importPath": "api_v1.handlers.iam",
-        "description": "api_v1.handlers.iam",
+        "importPath": "api_v1.handlers.sdk.iam",
+        "description": "api_v1.handlers.sdk.iam",
         "peekOfCode": "def create_service_account(details: IAM_Role, gcp_client: GCP_Crds.get_gcp_crds = None) -> API_Response:\n    if details.name == \"\" or details.name == None:\n        return API_Response(error=\"Please provide valid role name\", statusCode=400).model_dump()\n    if len(details.name) < 6 and len(details.name) > 30:\n        return API_Response(error=\"Role name should be between 6 and 30 characters length\", statusCode=400).model_dump()\n    if gcp_client is None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                            \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                            \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                            \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,",
-        "detail": "api_v1.handlers.iam",
+        "detail": "api_v1.handlers.sdk.iam",
         "documentation": {}
     },
     {
         "label": "update_service_account",
         "kind": 2,
-        "importPath": "api_v1.handlers.iam",
-        "description": "api_v1.handlers.iam",
+        "importPath": "api_v1.handlers.sdk.iam",
+        "description": "api_v1.handlers.sdk.iam",
         "peekOfCode": "def update_service_account(details: IAM_Role, action: str, gcp_client: GCP_Crds.get_gcp_crds = None) -> API_Response:\n    try:\n        if gcp_client is None:\n            gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                                \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                                \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                                \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                                \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                                })\n        if action == \"\" or action == None:",
-        "detail": "api_v1.handlers.iam",
+        "detail": "api_v1.handlers.sdk.iam",
         "documentation": {}
     },
     {
         "label": "list_service_accounts",
         "kind": 2,
-        "importPath": "api_v1.handlers.iam",
-        "description": "api_v1.handlers.iam",
-        "peekOfCode": "def list_service_accounts(service_account: str):\n    gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                        \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                        \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                        \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                        \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                        })\n    iam_client = IAM.get_iam_client(gcp_client)\n    if service_account == \"\" or service_account == None:\n        return IAM.list_service_accounts(gcp_crds=gcp_client, iam_client=iam_client)",
-        "detail": "api_v1.handlers.iam",
+        "importPath": "api_v1.handlers.sdk.iam",
+        "description": "api_v1.handlers.sdk.iam",
+        "peekOfCode": "def list_service_accounts(service_account: str):\n    gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                        \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                        \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                        \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                        \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                        })\n    iam_client = IAM.get_iam_client(gcp_client)\n    if service_account == \"\" or service_account == None:\n        iam_list = IAM.list_service_accounts(",
+        "detail": "api_v1.handlers.sdk.iam",
+        "documentation": {}
+    },
+    {
+        "label": "get_service_account_key",
+        "kind": 2,
+        "importPath": "api_v1.handlers.sdk.iam",
+        "description": "api_v1.handlers.sdk.iam",
+        "peekOfCode": "def get_service_account_key(service_account: str, product: str, instanceId: str, gcp_client: GCP_Crds.get_gcp_crds = None):\n    if gcp_client == None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                            \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                            \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                            \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                            })\n    if product == \"\" and instanceId == \"\":\n        keys = Storage.get_blob_text(",
+        "detail": "api_v1.handlers.sdk.iam",
         "documentation": {}
     },
     {
         "label": "delete_service_account",
         "kind": 2,
-        "importPath": "api_v1.handlers.iam",
-        "description": "api_v1.handlers.iam",
-        "peekOfCode": "def delete_service_account(service_account: str, gcp_client: GCP_Crds.get_gcp_crds = None):\n    try:\n        if gcp_client == None:\n            gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                                \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                                \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                                \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                                \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                                })\n        iam_client = IAM.get_iam_client(gcp_client)",
-        "detail": "api_v1.handlers.iam",
+        "importPath": "api_v1.handlers.sdk.iam",
+        "description": "api_v1.handlers.sdk.iam",
+        "peekOfCode": "def delete_service_account(service_account: str, product: str, instanceId: str, gcp_client: GCP_Crds.get_gcp_crds = None):\n    try:\n        if gcp_client == None:\n            gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                                \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                                \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                                \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                                \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                                })\n        iam_client = IAM.get_iam_client(gcp_client)",
+        "detail": "api_v1.handlers.sdk.iam",
         "documentation": {}
     },
     {
         "label": "create_service_account_key",
         "kind": 2,
-        "importPath": "api_v1.handlers.iam",
-        "description": "api_v1.handlers.iam",
-        "peekOfCode": "def create_service_account_key(service_account: str, iam_client: Any = None, gcp_client: GCP_Crds.get_gcp_crds = None):\n    if service_account == \"\" or service_account == None:\n        return API_Response(error=ValueError(\"Please provide service account name\"), statusCode=400).model_dump()\n    if gcp_client == None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                        \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                        \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                        \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                        \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                        })",
-        "detail": "api_v1.handlers.iam",
+        "importPath": "api_v1.handlers.sdk.iam",
+        "description": "api_v1.handlers.sdk.iam",
+        "peekOfCode": "def create_service_account_key(service_account: str, iam_client: Any = None, gcp_client: GCP_Crds.get_gcp_crds = None):\n    if service_account == \"\" or service_account == None:\n        return API_Response(error=ValueError(\"Please provide service account name\"), statusCode=400).model_dump()\n    if gcp_client == None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                            \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                            \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                            \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                            })",
+        "detail": "api_v1.handlers.sdk.iam",
         "documentation": {}
     },
     {
         "label": "get_service_account_permissions",
         "kind": 2,
-        "importPath": "api_v1.handlers.iam",
-        "description": "api_v1.handlers.iam",
+        "importPath": "api_v1.handlers.sdk.iam",
+        "description": "api_v1.handlers.sdk.iam",
         "peekOfCode": "def get_service_account_permissions(role_name: str, gcp_client: GCP_Crds.get_gcp_crds = None):\n    if role_name == \"\" or role_name == None:\n        return API_Response(error=ValueError(\"Please provide role name\"), statusCode=400)\n    if gcp_client == None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                            \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                            \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                            \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                            })",
-        "detail": "api_v1.handlers.iam",
+        "detail": "api_v1.handlers.sdk.iam",
         "documentation": {}
     },
     {
         "label": "create_iam_predefined_roles",
         "kind": 2,
-        "importPath": "api_v1.handlers.iam",
-        "description": "api_v1.handlers.iam",
+        "importPath": "api_v1.handlers.sdk.iam",
+        "description": "api_v1.handlers.sdk.iam",
         "peekOfCode": "def create_iam_predefined_roles():\n    gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                        \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                        \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                        \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                        \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                        })\n    roles = IAM.list_predefined_roles(gcp_client)\n    if len(roles):\n        db = databases.get_mongo_database(db_name=\"gcpMasterData\")",
-        "detail": "api_v1.handlers.iam",
+        "detail": "api_v1.handlers.sdk.iam",
         "documentation": {}
     },
     {
         "label": "get_iam_predefined_roles",
         "kind": 2,
-        "importPath": "api_v1.handlers.iam",
-        "description": "api_v1.handlers.iam",
+        "importPath": "api_v1.handlers.sdk.iam",
+        "description": "api_v1.handlers.sdk.iam",
         "peekOfCode": "def get_iam_predefined_roles(filter: str):\n    try:\n        roles = []\n        db = databases.get_mongo_database(db_name=\"gcpMasterData\")\n        if filter == None or filter == \"\":\n            roles = db[\"iam_predefined_roles\"].find()\n        else:\n            roles = db[\"iam_predefined_roles\"].find(\n                {\"$or\": [{\"name\": {\"$regex\": f\".*{filter}.*\"}}, {\"title\": {\"$regex\": f\".*{filter}.*\"}}]})\n        return API_Response(data=roles, statusCode=200, message=\"list of predefined roles from JSON file\").model_dump()",
-        "detail": "api_v1.handlers.iam",
+        "detail": "api_v1.handlers.sdk.iam",
+        "documentation": {}
+    },
+    {
+        "label": "upload_blob_from_memory",
+        "kind": 2,
+        "importPath": "api_v1.handlers.sdk.storage",
+        "description": "api_v1.handlers.sdk.storage",
+        "peekOfCode": "def upload_blob_from_memory(gcp_crds:  GCPSrvAcc.Credentials, content: Any, path: str):\n    Storage.upload_blob_from_memory(gcp_crds, settings.GCP_Config.BUCKET_NAME, content, path)\ndef get_blob_text(gcp_crds:  GCPSrvAcc.Credentials, path: str, bucket: str):\n    return Storage.get_blob(gcp_crds, bucket, path).download_as_text()\ndef create_bucket(gcp_crds:  GCPSrvAcc.Credentials, bucket_name: str):\n    return \ndef delete_blob(gcp_crds:  GCPSrvAcc.Credentials, bucket: str, path: str):\n    return Storage.delete_blob(gcp_crds, bucket, path)",
+        "detail": "api_v1.handlers.sdk.storage",
+        "documentation": {}
+    },
+    {
+        "label": "get_blob_text",
+        "kind": 2,
+        "importPath": "api_v1.handlers.sdk.storage",
+        "description": "api_v1.handlers.sdk.storage",
+        "peekOfCode": "def get_blob_text(gcp_crds:  GCPSrvAcc.Credentials, path: str, bucket: str):\n    return Storage.get_blob(gcp_crds, bucket, path).download_as_text()\ndef create_bucket(gcp_crds:  GCPSrvAcc.Credentials, bucket_name: str):\n    return \ndef delete_blob(gcp_crds:  GCPSrvAcc.Credentials, bucket: str, path: str):\n    return Storage.delete_blob(gcp_crds, bucket, path)",
+        "detail": "api_v1.handlers.sdk.storage",
+        "documentation": {}
+    },
+    {
+        "label": "create_bucket",
+        "kind": 2,
+        "importPath": "api_v1.handlers.sdk.storage",
+        "description": "api_v1.handlers.sdk.storage",
+        "peekOfCode": "def create_bucket(gcp_crds:  GCPSrvAcc.Credentials, bucket_name: str):\n    return \ndef delete_blob(gcp_crds:  GCPSrvAcc.Credentials, bucket: str, path: str):\n    return Storage.delete_blob(gcp_crds, bucket, path)",
+        "detail": "api_v1.handlers.sdk.storage",
+        "documentation": {}
+    },
+    {
+        "label": "delete_blob",
+        "kind": 2,
+        "importPath": "api_v1.handlers.sdk.storage",
+        "description": "api_v1.handlers.sdk.storage",
+        "peekOfCode": "def delete_blob(gcp_crds:  GCPSrvAcc.Credentials, bucket: str, path: str):\n    return Storage.delete_blob(gcp_crds, bucket, path)",
+        "detail": "api_v1.handlers.sdk.storage",
+        "documentation": {}
+    },
+    {
+        "label": "list_vpcs",
+        "kind": 2,
+        "importPath": "api_v1.handlers.sdk.vpc",
+        "description": "api_v1.handlers.sdk.vpc",
+        "peekOfCode": "def list_vpcs(vpc_name: str, gcp_client: GCP_Crds.get_gcp_crds = None):\n    if gcp_client == None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                            \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                            \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                            \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                            })\n    if vpc_name == \"\" or vpc_name == None:\n        vpc = VPC.list_vpcs(gcp_crds=gcp_client)",
+        "detail": "api_v1.handlers.sdk.vpc",
+        "documentation": {}
+    },
+    {
+        "label": "create_vpc_subnetwork_firewall",
+        "kind": 2,
+        "importPath": "api_v1.handlers.sdk.vpc",
+        "description": "api_v1.handlers.sdk.vpc",
+        "peekOfCode": "def create_vpc_subnetwork_firewall(details: VPC_Schema, gcp_client: GCP_Crds.get_gcp_crds = None):\n    if gcp_client == None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                            \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                            \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                            \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                            })\n    vpc_client = VPC.get_vpc_client(gcp_crds=gcp_client)\n    if not VPC.check_vpc_exists(gcp_crds=gcp_client, vpc_name=details.name, vpc_client=vpc_client):",
+        "detail": "api_v1.handlers.sdk.vpc",
+        "documentation": {}
+    },
+    {
+        "label": "create_firewall",
+        "kind": 2,
+        "importPath": "api_v1.handlers.sdk.vpc",
+        "description": "api_v1.handlers.sdk.vpc",
+        "peekOfCode": "def create_firewall(firewall_rules: list[Firewall_Schema], gcp_client: GCPSrvAcc.Credentials = None, vpc_client: Any = None):\n    result = []\n    if gcp_client == None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                            \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                            \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                            \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                            })\n    for firewall in firewall_rules:",
+        "detail": "api_v1.handlers.sdk.vpc",
+        "documentation": {}
+    },
+    {
+        "label": "create_subnetwork",
+        "kind": 2,
+        "importPath": "api_v1.handlers.sdk.vpc",
+        "description": "api_v1.handlers.sdk.vpc",
+        "peekOfCode": "def create_subnetwork(details: SubNetwork_Schema, gcp_client: GCPSrvAcc.Credentials = None, vpc_client: Any = None):\n    if gcp_client == None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                            \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                            \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                            \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                            })\n    details_json = jsonable_encoder(details)\n    if VPC.check_subnetwork_exists(gcp_crds=gcp_client, subnetwork_name=details_json[\"name\"], vpc_client=vpc_client):",
+        "detail": "api_v1.handlers.sdk.vpc",
+        "documentation": {}
+    },
+    {
+        "label": "create_vpc",
+        "kind": 2,
+        "importPath": "api_v1.handlers.sdk.vpc",
+        "description": "api_v1.handlers.sdk.vpc",
+        "peekOfCode": "def create_vpc(details: VPC_Schema, gcp_client: GCPSrvAcc.Credentials = None, vpc_client: Any = None):\n    if gcp_client == None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                            \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                            \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                            \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                            })\n    details_json = {\n        \"name\": details.name,",
+        "detail": "api_v1.handlers.sdk.vpc",
+        "documentation": {}
+    },
+    {
+        "label": "delete_vpc",
+        "kind": 2,
+        "importPath": "api_v1.handlers.sdk.vpc",
+        "description": "api_v1.handlers.sdk.vpc",
+        "peekOfCode": "def delete_vpc(vpc_name: str, gcp_client: GCP_Crds.get_gcp_crds = None):\n    try:\n        if gcp_client == None:\n            gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                                \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                                \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                                \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                                \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                                })\n        vpc_client = VPC.get_vpc_client(gcp_crds=gcp_client)",
+        "detail": "api_v1.handlers.sdk.vpc",
+        "documentation": {}
+    },
+    {
+        "label": "get_sample_firewalls",
+        "kind": 2,
+        "importPath": "api_v1.handlers.sdk.vpc",
+        "description": "api_v1.handlers.sdk.vpc",
+        "peekOfCode": "def get_sample_firewalls(vpc_name: str, vpc_target_link: str, subnetwork_ip: str, ports: list):\n    all_ports = [\"22\", \"80\", \"443\", \"3000\"] + ports\n    return [\n        {\n            \"name\": f\"{vpc_name}-allow-ssh\",\n            \"direction\": \"INGRESS\",\n            \"priority\": 65534,\n            \"network\": vpc_target_link,\n            \"sourceRanges\": [\"0.0.0.0/0\"],\n            \"allowed\": [",
+        "detail": "api_v1.handlers.sdk.vpc",
         "documentation": {}
     },
     {
@@ -1293,7 +1442,7 @@
         "kind": 2,
         "importPath": "api_v1.handlers.instances",
         "description": "api_v1.handlers.instances",
-        "peekOfCode": "def create_instance_compute_engine(details: Instance, product: dict):\n    instance_id = random.choice(string.ascii_lowercase) + ''.join(\n        random.choice(string.ascii_lowercase + string.digits) for _ in range(5))\n    gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                        \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                        \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                        \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                        \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                        })\n    iam = None",
+        "peekOfCode": "def create_instance_compute_engine(details: Instance, product: dict):\n    instanceId = random.choice(string.ascii_lowercase) + ''.join(\n        random.choice(string.ascii_lowercase + string.digits) for _ in range(5))\n    gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                        \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                        \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                        \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                        \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                        })\n    iam = None",
         "detail": "api_v1.handlers.instances",
         "documentation": {}
     },
@@ -1302,98 +1451,8 @@
         "kind": 2,
         "importPath": "api_v1.handlers.instances",
         "description": "api_v1.handlers.instances",
-        "peekOfCode": "def delete_instance_compute_engine(instance_id: str, name: str, gcp_client: GCP_Crds.get_gcp_crds = None):\n    if gcp_client == None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                            \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                            \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                            \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                            })\n    try:\n        Compute.delete_compute_engine(",
+        "peekOfCode": "def delete_instance_compute_engine(instanceId: str, product: str, name: str, gcp_client: GCP_Crds.get_gcp_crds = None):\n    if gcp_client == None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                            \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                            \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                            \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                            })\n    try:\n        Compute.delete_compute_engine(",
         "detail": "api_v1.handlers.instances",
-        "documentation": {}
-    },
-    {
-        "label": "upload_blob_from_memory",
-        "kind": 2,
-        "importPath": "api_v1.handlers.storage",
-        "description": "api_v1.handlers.storage",
-        "peekOfCode": "def upload_blob_from_memory(gcp_crds:  GCPSrvAcc.Credentials, content: Any, path: str):\n    Storage.upload_blob_from_memory(gcp_crds, settings.GCP_Config.BUCKET_NAME, content, path)\ndef get_blob_text(gcp_crds:  GCPSrvAcc.Credentials, path: str, bucket: str):\n    return Storage.get_blob(gcp_crds, bucket, path).download_as_text()\ndef create_bucket(gcp_crds:  GCPSrvAcc.Credentials, bucket_name: str):\n    return",
-        "detail": "api_v1.handlers.storage",
-        "documentation": {}
-    },
-    {
-        "label": "get_blob_text",
-        "kind": 2,
-        "importPath": "api_v1.handlers.storage",
-        "description": "api_v1.handlers.storage",
-        "peekOfCode": "def get_blob_text(gcp_crds:  GCPSrvAcc.Credentials, path: str, bucket: str):\n    return Storage.get_blob(gcp_crds, bucket, path).download_as_text()\ndef create_bucket(gcp_crds:  GCPSrvAcc.Credentials, bucket_name: str):\n    return",
-        "detail": "api_v1.handlers.storage",
-        "documentation": {}
-    },
-    {
-        "label": "create_bucket",
-        "kind": 2,
-        "importPath": "api_v1.handlers.storage",
-        "description": "api_v1.handlers.storage",
-        "peekOfCode": "def create_bucket(gcp_crds:  GCPSrvAcc.Credentials, bucket_name: str):\n    return",
-        "detail": "api_v1.handlers.storage",
-        "documentation": {}
-    },
-    {
-        "label": "list_vpcs",
-        "kind": 2,
-        "importPath": "api_v1.handlers.vpc",
-        "description": "api_v1.handlers.vpc",
-        "peekOfCode": "def list_vpcs(vpc_name: str, gcp_client: GCP_Crds.get_gcp_crds = None):\n    if gcp_client == None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                            \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                            \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                            \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                            })\n    if vpc_name == \"\" or vpc_name == None:\n        vpc = VPC.list_vpcs(gcp_crds=gcp_client)",
-        "detail": "api_v1.handlers.vpc",
-        "documentation": {}
-    },
-    {
-        "label": "create_vpc_subnetwork_firewall",
-        "kind": 2,
-        "importPath": "api_v1.handlers.vpc",
-        "description": "api_v1.handlers.vpc",
-        "peekOfCode": "def create_vpc_subnetwork_firewall(details: VPC_Schema, gcp_client: GCP_Crds.get_gcp_crds = None):\n    if gcp_client == None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                            \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                            \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                            \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                            })\n    vpc_client = VPC.get_vpc_client(gcp_crds=gcp_client)\n    if not VPC.check_vpc_exists(gcp_crds=gcp_client, vpc_name=details.name, vpc_client=vpc_client):",
-        "detail": "api_v1.handlers.vpc",
-        "documentation": {}
-    },
-    {
-        "label": "create_firewall",
-        "kind": 2,
-        "importPath": "api_v1.handlers.vpc",
-        "description": "api_v1.handlers.vpc",
-        "peekOfCode": "def create_firewall(firewall_rules: list[Firewall_Schema], gcp_client: GCPSrvAcc.Credentials = None, vpc_client: Any = None):\n    result = []\n    if gcp_client == None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                            \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                            \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                            \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                            })\n    for firewall in firewall_rules:",
-        "detail": "api_v1.handlers.vpc",
-        "documentation": {}
-    },
-    {
-        "label": "create_subnetwork",
-        "kind": 2,
-        "importPath": "api_v1.handlers.vpc",
-        "description": "api_v1.handlers.vpc",
-        "peekOfCode": "def create_subnetwork(details: SubNetwork_Schema, gcp_client: GCPSrvAcc.Credentials = None, vpc_client: Any = None):\n    if gcp_client == None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                            \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                            \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                            \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                            })\n    details_json = jsonable_encoder(details)\n    if VPC.check_subnetwork_exists(gcp_crds=gcp_client, subnetwork_name=details_json[\"name\"], vpc_client=vpc_client):",
-        "detail": "api_v1.handlers.vpc",
-        "documentation": {}
-    },
-    {
-        "label": "create_vpc",
-        "kind": 2,
-        "importPath": "api_v1.handlers.vpc",
-        "description": "api_v1.handlers.vpc",
-        "peekOfCode": "def create_vpc(details: VPC_Schema, gcp_client: GCPSrvAcc.Credentials = None, vpc_client: Any = None):\n    if gcp_client == None:\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                            \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                            \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                            \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                            })\n    details_json = {\n        \"name\": details.name,",
-        "detail": "api_v1.handlers.vpc",
-        "documentation": {}
-    },
-    {
-        "label": "delete_vpc",
-        "kind": 2,
-        "importPath": "api_v1.handlers.vpc",
-        "description": "api_v1.handlers.vpc",
-        "peekOfCode": "def delete_vpc(vpc_name: str, gcp_client: GCP_Crds.get_gcp_crds = None):\n    try:\n        if gcp_client == None:\n            gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                                \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                                \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                                \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                                \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                                })\n        vpc_client = VPC.get_vpc_client(gcp_crds=gcp_client)",
-        "detail": "api_v1.handlers.vpc",
-        "documentation": {}
-    },
-    {
-        "label": "get_sample_firewalls",
-        "kind": 2,
-        "importPath": "api_v1.handlers.vpc",
-        "description": "api_v1.handlers.vpc",
-        "peekOfCode": "def get_sample_firewalls(vpc_name: str, vpc_target_link: str, subnetwork_ip: str, ports: list):\n    all_ports = [\"22\", \"80\", \"443\", \"3000\"] + ports\n    return [\n        {\n            \"name\": f\"{vpc_name}-allow-ssh\",\n            \"direction\": \"INGRESS\",\n            \"priority\": 65534,\n            \"network\": vpc_target_link,\n            \"sourceRanges\": [\"0.0.0.0/0\"],\n            \"allowed\": [",
-        "detail": "api_v1.handlers.vpc",
         "documentation": {}
     },
     {
@@ -1703,6 +1762,15 @@
         "documentation": {}
     },
     {
+        "label": "delete_blob",
+        "kind": 2,
+        "importPath": "cloudProviders.gcp.storage",
+        "description": "cloudProviders.gcp.storage",
+        "peekOfCode": "def delete_blob(gcp_crds: GCPSrvAcc.Credentials, bucket: str, path: str):\n    bucket = get_storage_client(gcp_crds).bucket(bucket)\n    blob = bucket.blob(path)\n    blob.delete()\n    return blob",
+        "detail": "cloudProviders.gcp.storage",
+        "documentation": {}
+    },
+    {
         "label": "get_vpc_client",
         "kind": 2,
         "importPath": "cloudProviders.gcp.vpc",
@@ -1869,7 +1937,7 @@
         "kind": 6,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "class GCP_Settings(BaseSettings):\n    CLOUD_PROVIDER: str = \"gcp\"\n    IAM_TYPE: str = os.environ.get(\"GCP_IAM_TYPE\", \"service_account\")\n    DEFAULT_REGION: str = os.environ.get(\"GCP_DEFAULT_REGION\", \"asia-south1\")\n    PROJECT_ID: str = os.environ.get(\"GCP_PROJECT_ID\")\n    SRV_ACC_PRIVATE_KEY_ID: str = os.environ.get(\"GCP_SRV_ACC_PRIVATE_KEY_ID\")\n    SRV_ACC_PRIVATE_KEY: str = os.environ.get(\"GCP_SRV_ACC_PRIVATE_KEY\")\n    SRV_ACC_CLIENT_EMAIL: str = os.environ.get(\"GCP_SRV_ACC_CLIENT_EMAIL\")\n    SRV_ACC_CLIENT_ID: str = os.environ.get(\"GCP_SRV_ACC_CLIENT_ID\")\n    AUTH_URL: str = os.environ.get(\"GCP_AUTH_URL\")",
+        "peekOfCode": "class GCP_Settings(BaseSettings):\n    CLOUD_PROVIDER: str = \"gcp\"\n    IAM_TYPE: str = os.environ.get(\"GCP_IAM_TYPE\", \"service_account\")\n    DEFAULT_REGION: str = os.environ.get(\"GCP_DEFAULT_REGION\", \"asia-south1\")\n    PROJECT_ID: str = os.environ.get(\"GCP_PROJECT_ID\", \"\")\n    SRV_ACC_PRIVATE_KEY_ID: str = os.environ.get(\"GCP_SRV_ACC_PRIVATE_KEY_ID\", \"\")\n    SRV_ACC_PRIVATE_KEY: str = os.environ.get(\"GCP_SRV_ACC_PRIVATE_KEY\", \"\")\n    SRV_ACC_CLIENT_EMAIL: str = os.environ.get(\"GCP_SRV_ACC_CLIENT_EMAIL\", \"\")\n    SRV_ACC_CLIENT_ID: str = os.environ.get(\"GCP_SRV_ACC_CLIENT_ID\", \"\")\n    AUTH_URL: str = os.environ.get(\"GCP_AUTH_URL\", \"\")",
         "detail": "config",
         "documentation": {}
     },
@@ -1879,6 +1947,15 @@
         "importPath": "config",
         "description": "config",
         "peekOfCode": "class Settings(BaseSettings):\n    SERVICE_PORT: int = os.environ.get(\"SERVICE_PORT\", 6001)\n    SERVICE_NAME: str = os.environ.get(\"SERVICE_NAME\", \"Console Instances\")\n    SERVICE_DOMAIN: str = os.environ.get(\"SERVICE_DOMAIN\", \"localhost\")\n    SERVICE_BASEPATH: str = os.environ.get(\n        \"SERVICE_BASEPATH\", \"/api/instances\")\n    SERVICE_VERSION: str = os.environ.get(\"SERVICE_VERSION\", \"v1\")\n    AWS_CLOUD_PROVIDER: str = \"aws\"\n    GCP_Config: GCP_Settings = GCP_Settings()  # type: ignore\n    MONGO_DATABASE: str = os.environ.get(\"MONGO_DATABASE\", \"instances\")",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "Constants",
+        "kind": 6,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "class Constants():\n    TERRAFORM_FRAMEWORK: str = \"terraform\"\n    SDK_FRAMEWORK: str = \"sdk\"\nconstants = Constants()\nclass Databases():\n    mongo_client = None\n    @ classmethod\n    def get_mongo_connection(cls):\n        if cls.mongo_client is None:\n            if settings.MONGO_USERNAME != \"\" and settings.MONGO_PASSWORD != \"\":",
         "detail": "config",
         "documentation": {}
     },
@@ -1896,7 +1973,16 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "settings = Settings()\nclass Databases():\n    mongo_client = None\n    @ classmethod\n    def get_mongo_connection(cls):\n        if cls.mongo_client is None:\n            if settings.MONGO_USERNAME != \"\" and settings.MONGO_PASSWORD != \"\":\n                cls.mongo_client = MongoClient(\n                    f\"mongodb://{settings.MONGO_USERNAME}:{settings.MONGO_PASSWORD}@{settings.MONGO_HOST}:{settings.MONGO_PORT}/\")\n            else:",
+        "peekOfCode": "settings = Settings()\nclass Constants():\n    TERRAFORM_FRAMEWORK: str = \"terraform\"\n    SDK_FRAMEWORK: str = \"sdk\"\nconstants = Constants()\nclass Databases():\n    mongo_client = None\n    @ classmethod\n    def get_mongo_connection(cls):\n        if cls.mongo_client is None:",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "constants",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "constants = Constants()\nclass Databases():\n    mongo_client = None\n    @ classmethod\n    def get_mongo_connection(cls):\n        if cls.mongo_client is None:\n            if settings.MONGO_USERNAME != \"\" and settings.MONGO_PASSWORD != \"\":\n                cls.mongo_client = MongoClient(\n                    f\"mongodb://{settings.MONGO_USERNAME}:{settings.MONGO_PASSWORD}@{settings.MONGO_HOST}:{settings.MONGO_PORT}/\")\n            else:",
         "detail": "config",
         "documentation": {}
     },
@@ -1923,7 +2009,7 @@
         "kind": 6,
         "importPath": "schemas",
         "description": "schemas",
-        "peekOfCode": "class IAM_Role(BaseModel):\n    name: str = \"\"\n    description: str = \"\"\n    policies: list = []\n    email: Optional[str] = \"\"\n    product: Optional[str] = \"\"\n    instanceId: Optional[str] = \"\"\nclass Response(BaseModel):\n    message: Optional[str] = \"\"\n    data: Optional[Any] = {}",
+        "peekOfCode": "class IAM_Role(BaseModel):\n    name: str = \"\"\n    description: str = \"\"\n    policies: list = []\n    email: Optional[str] = \"\"\n    instanceId: Optional[str] = \"\"\n    product: Optional[str] = \"\"\nclass Response(BaseModel):\n    message: Optional[str] = \"\"\n    data: Optional[Any] = {}",
         "detail": "schemas",
         "documentation": {}
     },
@@ -1968,7 +2054,7 @@
         "kind": 6,
         "importPath": "schemas",
         "description": "schemas",
-        "peekOfCode": "class VPC(BaseModel):\n    name: str\n    instanceId: Optional[str] = \"\"\n    description: Optional[str] = \"\"\n    cidr: Optional[str] = \"\"\n    network: Optional[str] = \"\"\n    autoCreateSubnetworks: Optional[bool] = False\n    enableFlowLogs: Optional[bool] = False\n    mtu: Optional[int] = 1460\n    routingConfig: Optional[RoutingConfig] = RoutingConfig()",
+        "peekOfCode": "class VPC(BaseModel):\n    name: str\n    description: Optional[str] = \"\"\n    cidr: Optional[str] = \"\"\n    network: Optional[str] = \"\"\n    autoCreateSubnetworks: Optional[bool] = False\n    enableFlowLogs: Optional[bool] = False\n    mtu: Optional[int] = 1460\n    routingConfig: Optional[RoutingConfig] = RoutingConfig()\n    ports: Optional[List[str]] = []",
         "detail": "schemas",
         "documentation": {}
     },
