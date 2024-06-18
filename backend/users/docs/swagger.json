@@ -3,8 +3,7 @@
     "info": {
         "description": "User Microservice for Console",
         "contact": {},
-        "version": "1.0",
-        "title": "User"
+        "version": "1.0"
     },
     "paths": {
         "/api/user/v1/create": {

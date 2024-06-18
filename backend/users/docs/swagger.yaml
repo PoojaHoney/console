@@ -1,0 +1,314 @@
+definitions:
+  main.Address:
+    properties:
+      country:
+        type: string
+      district:
+        type: string
+      doorNo:
+        type: string
+      latitude:
+        type: number
+      longitude:
+        type: number
+      pinCode:
+        type: integer
+      state:
+        type: string
+      street:
+        type: string
+      village:
+        type: string
+    type: object
+  main.LoginCredentials:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+      refreshToken:
+        type: string
+    type: object
+  main.Organization:
+    properties:
+      contactEmail:
+        type: string
+      contactPerson:
+        type: string
+      contactPhoneNumber:
+        type: string
+      domain:
+        type: string
+      industry:
+        type: string
+      organizationName:
+        type: string
+    type: object
+  main.Password:
+    properties:
+      password:
+        type: string
+      userId:
+        type: string
+    type: object
+  main.Personal:
+    properties:
+      dateOfBirth:
+        type: string
+      phoneNumber:
+        type: integer
+    type: object
+  main.SendOTPVerificationMail:
+    properties:
+      email:
+        type: string
+    type: object
+  main.Settings:
+    properties:
+      currencyCode:
+        type: string
+      dateFormat:
+        type: string
+      language:
+        type: string
+    type: object
+  main.User:
+    properties:
+      accountNumber:
+        type: integer
+      active:
+        type: boolean
+      address:
+        $ref: '#/definitions/main.Address'
+      cloudProvider:
+        type: string
+      createdOn:
+        type: string
+      deleted:
+        type: boolean
+      email:
+        type: string
+      id:
+        type: string
+      image:
+        additionalProperties: true
+        type: object
+      lastChangedBy:
+        type: string
+      lastChangedOn:
+        type: string
+      name:
+        type: string
+      organization:
+        $ref: '#/definitions/main.Organization'
+      password:
+        type: string
+      personal:
+        $ref: '#/definitions/main.Personal'
+      region:
+        type: string
+      saltStored:
+        type: string
+      settings:
+        $ref: '#/definitions/main.Settings'
+      userType:
+        type: string
+    required:
+    - email
+    - name
+    - password
+    - region
+    - userType
+    type: object
+  main.VerifyOTP:
+    properties:
+      email:
+        type: string
+      otp:
+        type: integer
+    type: object
+info:
+  contact: {}
+  description: User Microservice for Console
+  version: "1.0"
+paths:
+  /api/user/v1/create:
+    post:
+      consumes:
+      - application/json
+      description: Creates a new user with the provided user data.
+      parameters:
+      - description: User object containing user data
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/main.User'
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - BearerAuth: []
+      summary: Creates a new user
+  /api/user/v1/delete/{id}/{hardDelete}:
+    delete:
+      consumes:
+      - application/json
+      description: Deletes a user with the provided user id.
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Hard delete or soft delete
+        in: path
+        name: hardDelete
+        required: true
+        type: boolean
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - BearerAuth: []
+      summary: Deletes a user
+  /api/user/v1/fieldCatalogues:
+    get:
+      description: Gets all fields catalogues of user service tables.
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - BearerAuth: []
+      summary: Fields Catalogues of user service
+  /api/user/v1/get:
+    get:
+      description: Get or Read users from database based on filters if any.
+      parameters:
+      - description: Filters for user retrieval
+        in: query
+        name: filters
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - BearerAuth: []
+      summary: Get or Read users from database based on filters if any
+  /api/user/v1/login:
+    post:
+      consumes:
+      - application/json
+      description: Verify the User by login api with email and password.
+      parameters:
+      - description: Object containing email, password and token
+        in: body
+        name: loginCrds
+        required: true
+        schema:
+          $ref: '#/definitions/main.LoginCredentials'
+      produces:
+      - application/json
+      responses: {}
+      summary: Verify the User by login api with email and password
+  /api/user/v1/register:
+    post:
+      consumes:
+      - application/json
+      description: Register a new user with the provided user data.
+      parameters:
+      - description: User object containing user data
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/main.User'
+      produces:
+      - application/json
+      responses: {}
+      summary: Register a new user
+  /api/user/v1/sendOTPVerificationMail:
+    post:
+      consumes:
+      - application/json
+      description: Send OTP Verification Mail To User.
+      parameters:
+      - description: Object containing email
+        in: body
+        name: email
+        required: true
+        schema:
+          $ref: '#/definitions/main.SendOTPVerificationMail'
+      produces:
+      - application/json
+      responses: {}
+      summary: Send OTP Verification Mail To User
+  /api/user/v1/update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: Updates a user with the provided user data.
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: User object containing user data
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/main.User'
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - BearerAuth: []
+      summary: Updates a user
+  /api/user/v1/updatePassword/{id}:
+    put:
+      consumes:
+      - application/json
+      description: Updates a user password with the provided user password data.
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: User object containing user password data
+        in: body
+        name: password
+        required: true
+        schema:
+          $ref: '#/definitions/main.Password'
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - BearerAuth: []
+      summary: Updates a user password
+  /api/user/v1/verifyOTP:
+    post:
+      consumes:
+      - application/json
+      description: Verify the OTP from User Mail.
+      parameters:
+      - description: Object containing otp and email
+        in: body
+        name: otp
+        required: true
+        schema:
+          $ref: '#/definitions/main.VerifyOTP'
+      produces:
+      - application/json
+      responses: {}
+      summary: Verify the OTP from User Mail
+securityDefinitions:
+  BearerAuth:
+    description: Bearer token authentication
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
