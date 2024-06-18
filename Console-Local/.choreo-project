@@ -1,0 +1,14 @@
+{
+    "id": "5a558a12-37da-41e6-a428-6b4f99da1022",
+    "orgId": 43869,
+    "name": "Console-Local",
+    "version": "1.0.0",
+    "createdDate": "2024-06-18T05:48:54.989Z",
+    "handler": "consolelocal",
+    "region": "US",
+    "description": "Local Console Project ",
+    "repository": "console",
+    "gitProvider": "github",
+    "branch": "main",
+    "gitOrganization": "PoojaHoney"
+}

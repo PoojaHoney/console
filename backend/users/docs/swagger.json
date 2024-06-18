@@ -1,9 +1,10 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "User Microservice for Console d",
+        "description": "User Microservice for Console",
         "contact": {},
-        "version": "1.0"
+        "version": "1.0",
+        "title": "User"
     },
     "paths": {
         "/api/user/v1/create": {
