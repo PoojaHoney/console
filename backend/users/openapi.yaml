@@ -5,7 +5,7 @@ info:
   version: "1.0"
   title: User
 servers:
-  - url: http://localhost:6003
+  - url: http://localhost:6004
 paths:
   /api/user/v1/create:
     post:
