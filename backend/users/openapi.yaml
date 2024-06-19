@@ -7,7 +7,7 @@ info:
 servers:
   - url: http://localhost:6004
 paths:
-  /api/user/v1/create:
+  /create:
     post:
       security:
         - BearerAuth: []
@@ -16,7 +16,7 @@ paths:
       requestBody:
         $ref: "#/components/requestBodies/main.User"
       responses: {}
-  "/api/user/v1/delete/{id}/{hardDelete}":
+  "/delete/{id}/{hardDelete}":
     delete:
       security:
         - BearerAuth: []
@@ -36,14 +36,14 @@ paths:
           schema:
             type: boolean
       responses: {}
-  /api/user/v1/fieldCatalogues:
+  /fieldCatalogues:
     get:
       security:
         - BearerAuth: []
       description: Gets all fields catalogues of user service tables.
       summary: Fields Catalogues of user service
       responses: {}
-  /api/user/v1/get:
+  /get:
     get:
       security:
         - BearerAuth: []
@@ -56,7 +56,7 @@ paths:
           schema:
             type: string
       responses: {}
-  /api/user/v1/login:
+  /login:
     post:
       description: Verify the User by login api with email and password.
       summary: Verify the User by login api with email and password
@@ -68,14 +68,14 @@ paths:
         description: Object containing email, password and token
         required: true
       responses: {}
-  /api/user/v1/register:
+  /register:
     post:
       description: Register a new user with the provided user data.
       summary: Register a new user
       requestBody:
         $ref: "#/components/requestBodies/main.User"
       responses: {}
-  /api/user/v1/sendOTPVerificationMail:
+  /sendOTPVerificationMail:
     post:
       description: Send OTP Verification Mail To User.
       summary: Send OTP Verification Mail To User
@@ -87,7 +87,7 @@ paths:
         description: Object containing email
         required: true
       responses: {}
-  "/api/user/v1/update/{id}":
+  "/update/{id}":
     put:
       security:
         - BearerAuth: []
@@ -103,7 +103,7 @@ paths:
       requestBody:
         $ref: "#/components/requestBodies/main.User"
       responses: {}
-  "/api/user/v1/updatePassword/{id}":
+  "/updatePassword/{id}":
     put:
       security:
         - BearerAuth: []
@@ -124,7 +124,7 @@ paths:
         description: User object containing user password data
         required: true
       responses: {}
-  /api/user/v1/verifyOTP:
+  /verifyOTP:
     post:
       description: Verify the OTP from User Mail.
       summary: Verify the OTP from User Mail
