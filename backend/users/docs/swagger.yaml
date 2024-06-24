@@ -178,8 +178,6 @@ paths:
       produces:
       - application/json
       responses: {}
-      security:
-      - BearerAuth: []
       summary: Fields Catalogues of user service
   /api/user/v1/get:
     get:

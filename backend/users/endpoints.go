@@ -188,7 +188,6 @@ func (srv *Service) Delete(ctx *fiber.Ctx) error {
 // @Summary Fields Catalogues of user service
 // @Description Gets all fields catalogues of user service tables.
 // @Produce json
-// @Security BearerAuth
 // @Router /api/user/v1/fieldCatalogues [get]
 func (srv *Service) FieldCatalogues(ctx *fiber.Ctx) error {
 	return ctx.Status(fiber.StatusOK).JSON(fiber.Map{

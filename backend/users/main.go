@@ -16,10 +16,10 @@ func (srv *Service) init() {
 	{
 		appRouter.Post("/login", srv.Login)
 		appRouter.Post("/register", srv.UserRegistration)
+		appRouter.Get("/fieldCatalogues", srv.FieldCatalogues)
 		appRouter.Post("/sendOTPVerificationMail", srv.SendOTPVerificationMail)
 		appRouter.Post("/verifyOTP", srv.VerifyOTP)
 		appRouter.Use(ValidateToken(srv))
-		appRouter.Get("/fieldCatalogues", srv.FieldCatalogues)
 		appRouter.Post("/create", srv.Create)
 		appRouter.Put("/update/:id", srv.Update)
 		appRouter.Put("/updatePassword/:id", srv.UpdatePassword)

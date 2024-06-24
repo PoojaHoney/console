@@ -71,11 +71,6 @@
         },
         "/api/user/v1/fieldCatalogues": {
             "get": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
                 "description": "Gets all fields catalogues of user service tables.",
                 "produces": [
                     "application/json"
