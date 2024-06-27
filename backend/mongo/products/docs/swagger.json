@@ -1,0 +1,589 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Product Microservice for Console",
+        "contact": {},
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/product/v1/activateProduct": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Activate the product, makes the product available to the user/customers.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Activates the product",
+                "parameters": [
+                    {
+                        "description": "Object Containing Product id",
+                        "name": "product",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/product/v1/createConfiguration": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Creates product Configuration with the provided Configuration data.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Creates product Configuration",
+                "parameters": [
+                    {
+                        "description": "Configuration object containing Configuration data",
+                        "name": "configuration",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/main.ProductConfiguration"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/product/v1/createMicroService": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Creates new microservices for a product.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Creates new microservices for a product",
+                "parameters": [
+                    {
+                        "description": "Microservices array containing microservice data",
+                        "name": "microservices",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/main.ProductMicroService"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/product/v1/createPlan": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Creates product Plans with the provided Plans data.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Creates product Plans",
+                "parameters": [
+                    {
+                        "description": "Plans array containing Product Plans data",
+                        "name": "Plans",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/main.ProductPlan"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/product/v1/createProduct": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Creates a new product with the provided product data.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Creates a new product",
+                "parameters": [
+                    {
+                        "description": "Product object containing product data",
+                        "name": "product",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/main.Product"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/product/v1/createResource": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Creates a product resources with the provided resource data.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Creates a product resources",
+                "parameters": [
+                    {
+                        "description": "Resources array containing resources data of a product",
+                        "name": "resources",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/main.ProductResource"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/product/v1/createVersion": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Creates product versions with the provided versions data.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Creates product versions",
+                "parameters": [
+                    {
+                        "description": "Versions array containing Product versions data",
+                        "name": "version",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/main.ProductVersion"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/product/v1/fieldCatalogues": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Gets all fields catalogues of product service tables.",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Fields Catalogues of product service",
+                "responses": {}
+            }
+        }
+    },
+    "definitions": {
+        "main.Product": {
+            "type": "object",
+            "properties": {
+                "createdBy": {
+                    "type": "string"
+                },
+                "createdOn": {
+                    "type": "string"
+                },
+                "databasesCount": {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "microServicesCount": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "productID": {
+                    "type": "string"
+                },
+                "providers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "status": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "updatedOn": {
+                    "type": "string"
+                }
+            }
+        },
+        "main.ProductConfiguration": {
+            "type": "object",
+            "properties": {
+                "artifactRegistryName": {
+                    "type": "string"
+                },
+                "createdOn": {
+                    "type": "string"
+                },
+                "defaultMemory": {
+                    "type": "number"
+                },
+                "defaultRAM": {
+                    "type": "number"
+                },
+                "environmentsSupport": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.ProductEnvironmentSupport"
+                    }
+                },
+                "id": {
+                    "type": "string"
+                },
+                "networkTags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "productID": {
+                    "type": "string"
+                },
+                "providerPermissions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.ProductProviderPermissions"
+                    }
+                },
+                "startupScriptFilePath": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "updatedOn": {
+                    "type": "string"
+                }
+            }
+        },
+        "main.ProductEnvironmentSupport": {
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "type": "boolean"
+                },
+                "environment": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                }
+            }
+        },
+        "main.ProductMicroService": {
+            "type": "object",
+            "properties": {
+                "basePath": {
+                    "type": "string"
+                },
+                "createdOn": {
+                    "type": "string"
+                },
+                "host": {
+                    "type": "string"
+                },
+                "name": {
+                    "description": "ID         primitive.ObjectID            `json:\"id\" bson:\"_id\" description:\"Microservice ID\" editable:\"false\" enabled:\"false\" label:\"ID\" unique:\"true\"`",
+                    "type": "string"
+                },
+                "portNumber": {
+                    "type": "string"
+                },
+                "productDatabases": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.ProductMicroServiceDatabase"
+                    }
+                },
+                "productID": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "updatedOn": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                }
+            }
+        },
+        "main.ProductMicroServiceDatabase": {
+            "type": "object",
+            "properties": {
+                "database": {
+                    "type": "string"
+                },
+                "defaultPassword": {
+                    "type": "string"
+                },
+                "defaultUsername": {
+                    "type": "string"
+                },
+                "host": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "mockDataPath": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "portNumber": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                }
+            }
+        },
+        "main.ProductPlan": {
+            "type": "object",
+            "properties": {
+                "active": {
+                    "type": "string"
+                },
+                "createdOn": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "plan": {
+                    "type": "string"
+                },
+                "productID": {
+                    "description": "ID          primitive.ObjectID `json:\"id\" bson:\"_id\" description:\"Plan ID\" editable:\"false\" enabled:\"false\" label:\"ID\" unique:\"true\"`",
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "updatedOn": {
+                    "type": "string"
+                }
+            }
+        },
+        "main.ProductProviderPermissions": {
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "type": "boolean"
+                },
+                "permissions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "provider": {
+                    "type": "string"
+                }
+            }
+        },
+        "main.ProductResource": {
+            "type": "object",
+            "properties": {
+                "createdOn": {
+                    "type": "string"
+                },
+                "deploymentTemplateLocation": {
+                    "type": "string"
+                },
+                "deploymentTemplateName": {
+                    "type": "string"
+                },
+                "environmentVariablesFile": {
+                    "type": "string"
+                },
+                "exposedEnvVariables": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "kind": {
+                    "description": "ID                         primitive.ObjectID        `json:\"id\" bson:\"_id\" description:\"Resource ID\" editable:\"false\" enabled:\"false\" label:\"ID\" unique:\"true\"`",
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "productID": {
+                    "type": "string"
+                },
+                "productVersion": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "taskType": {
+                    "type": "string"
+                },
+                "updatedOn": {
+                    "type": "string"
+                },
+                "versions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.ProductResourceVersions"
+                    }
+                }
+            }
+        },
+        "main.ProductResourceVersions": {
+            "type": "object",
+            "properties": {
+                "createdOn": {
+                    "type": "string"
+                },
+                "developmentTag": {
+                    "type": "string"
+                },
+                "latest": {
+                    "type": "boolean"
+                },
+                "productTag": {
+                    "type": "string"
+                },
+                "resourceName": {
+                    "type": "string"
+                },
+                "stagingTag": {
+                    "type": "string"
+                },
+                "testingTag": {
+                    "type": "string"
+                },
+                "updatedOn": {
+                    "type": "string"
+                }
+            }
+        },
+        "main.ProductVersion": {
+            "type": "object",
+            "properties": {
+                "buildNumber": {
+                    "type": "string"
+                },
+                "createdOn": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "name": {
+                    "description": "ID          primitive.ObjectID `json:\"id\" bson:\"_id\" description:\"Plan ID\" editable:\"false\" enabled:\"false\" label:\"ID\" unique:\"true\"`",
+                    "type": "string"
+                },
+                "productID": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "updatedOn": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "BearerAuth": {
+            "description": "Bearer token authentication",
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    }
+}

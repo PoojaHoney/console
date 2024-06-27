@@ -1,0 +1,36 @@
+{
+    "address": {
+        "country": "India",
+        "district": "Krishna",
+        "doorNo": "7-228/3",
+        "latitude": 0,
+        "longitude": 0,
+        "pinCode": 521201,
+        "state": "Andhra Pradesh",
+        "street": "Samatha Nagar",
+        "village": "Nuzvid"
+    },
+    "cloudProvider": "gcp",
+    "email": "poojahoney.tumu@gmail.com",
+    "name": "Pooja Tumu",
+    "organization": {
+        "contactEmail": "",
+        "contactPerson": "",
+        "contactPhoneNumber": "",
+        "domain": "",
+        "industry": "",
+        "organizationName": ""
+    },
+    "password": "APooja#267810",
+    "personal": {
+        "dateOfBirth": "1999-10-08T00:00:00Z",
+        "phoneNumber": 9618789728
+    },
+    "region": "Hyderabad",
+    "settings": {
+        "currencyCode": "INR",
+        "dateFormat": "",
+        "language": ""
+    },
+    "userType": "personal"
+}

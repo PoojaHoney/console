@@ -1,0 +1,12 @@
+[{
+  "_id": {
+    "$oid": "6678fd17ebbea0e7c73bc6c4"
+  },
+  "otp": 818484,
+  "email": "poojahoney.tumu@gmail.com",
+  "userId": "664d8236b5eb2327529f52d4",
+  "expiry": {
+    "$date": "2024-06-24T05:29:03.327Z"
+  },
+  "times": 1
+}]

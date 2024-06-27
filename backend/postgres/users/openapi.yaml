@@ -1,0 +1,282 @@
+openapi: 3.0.0
+info:
+  description: User Microservice for Console
+  contact: {}
+  version: "1.0"
+  title: User
+servers:
+  - url: http://localhost:6004
+paths:
+  /create:
+    post:
+      security:
+        - BearerAuth: []
+      description: Creates a new user with the provided user data.
+      summary: Creates a new user
+      requestBody:
+        $ref: "#/components/requestBodies/main.User"
+      responses: {}
+  "/delete/{id}/{hardDelete}":
+    delete:
+      security:
+        - BearerAuth: []
+      description: Deletes a user with the provided user id.
+      summary: Deletes a user
+      parameters:
+        - description: User ID
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - description: Hard delete or soft delete
+          name: hardDelete
+          in: path
+          required: true
+          schema:
+            type: boolean
+      responses: {}
+  /fieldCatalogues:
+    get:
+      security:
+        - BearerAuth: []
+      description: Gets all fields catalogues of user service tables.
+      summary: Fields Catalogues of user service
+      responses: {}
+  /get:
+    get:
+      security:
+        - BearerAuth: []
+      description: Get or Read users from database based on filters if any.
+      summary: Get or Read users from database based on filters if any
+      parameters:
+        - description: Filters for user retrieval
+          name: filters
+          in: query
+          schema:
+            type: string
+      responses: {}
+  /login:
+    post:
+      description: Verify the User by login api with email and password.
+      summary: Verify the User by login api with email and password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/main.LoginCredentials"
+        description: Object containing email, password and token
+        required: true
+      responses: {}
+  /register:
+    post:
+      description: Register a new user with the provided user data.
+      summary: Register a new user
+      requestBody:
+        $ref: "#/components/requestBodies/main.User"
+      responses: {}
+  /sendOTPVerificationMail:
+    post:
+      description: Send OTP Verification Mail To User.
+      summary: Send OTP Verification Mail To User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/main.SendOTPVerificationMail"
+        description: Object containing email
+        required: true
+      responses: {}
+  "/update/{id}":
+    put:
+      security:
+        - BearerAuth: []
+      description: Updates a user with the provided user data.
+      summary: Updates a user
+      parameters:
+        - description: User ID
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        $ref: "#/components/requestBodies/main.User"
+      responses: {}
+  "/updatePassword/{id}":
+    put:
+      security:
+        - BearerAuth: []
+      description: Updates a user password with the provided user password data.
+      summary: Updates a user password
+      parameters:
+        - description: User ID
+          name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/main.Password"
+        description: User object containing user password data
+        required: true
+      responses: {}
+  /verifyOTP:
+    post:
+      description: Verify the OTP from User Mail.
+      summary: Verify the OTP from User Mail
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/main.VerifyOTP"
+        description: Object containing otp and email
+        required: true
+      responses: {}
+components:
+  requestBodies:
+    main.User:
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/main.User"
+      description: User object containing user data
+      required: true
+  securitySchemes:
+    BearerAuth:
+      description: Bearer token authentication
+      type: apiKey
+      name: Authorization
+      in: header
+  schemas:
+    main.Address:
+      type: object
+      properties:
+        country:
+          type: string
+        district:
+          type: string
+        doorNo:
+          type: string
+        latitude:
+          type: number
+        longitude:
+          type: number
+        pinCode:
+          type: integer
+        state:
+          type: string
+        street:
+          type: string
+        village:
+          type: string
+    main.LoginCredentials:
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+        refreshToken:
+          type: string
+    main.Organization:
+      type: object
+      properties:
+        contactEmail:
+          type: string
+        contactPerson:
+          type: string
+        contactPhoneNumber:
+          type: string
+        domain:
+          type: string
+        industry:
+          type: string
+        organizationName:
+          type: string
+    main.Password:
+      type: object
+      properties:
+        password:
+          type: string
+        userId:
+          type: string
+    main.Personal:
+      type: object
+      properties:
+        dateOfBirth:
+          type: string
+        phoneNumber:
+          type: integer
+    main.SendOTPVerificationMail:
+      type: object
+      properties:
+        email:
+          type: string
+    main.Settings:
+      type: object
+      properties:
+        currencyCode:
+          type: string
+        dateFormat:
+          type: string
+        language:
+          type: string
+    main.User:
+      type: object
+      required:
+        - email
+        - name
+        - password
+        - region
+        - userType
+      properties:
+        accountNumber:
+          type: integer
+        active:
+          type: boolean
+        address:
+          $ref: "#/components/schemas/main.Address"
+        cloudProvider:
+          type: string
+        createdOn:
+          type: string
+        deleted:
+          type: boolean
+        email:
+          type: string
+        id:
+          type: string
+        image:
+          type: object
+          additionalProperties: true
+        lastChangedBy:
+          type: string
+        lastChangedOn:
+          type: string
+        name:
+          type: string
+        organization:
+          $ref: "#/components/schemas/main.Organization"
+        password:
+          type: string
+        personal:
+          $ref: "#/components/schemas/main.Personal"
+        region:
+          type: string
+        saltStored:
+          type: string
+        settings:
+          $ref: "#/components/schemas/main.Settings"
+        userType:
+          type: string
+    main.VerifyOTP:
+      type: object
+      properties:
+        email:
+          type: string
+        otp:
+          type: integer

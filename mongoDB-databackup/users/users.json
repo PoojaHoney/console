@@ -1,0 +1,57 @@
+[{
+  "_id": {
+    "$oid": "664d8236b5eb2327529f52d4"
+  },
+  "name": "Pooja Tumu",
+  "accountNumber": {
+    "$numberLong": "9479260944"
+  },
+  "email": "poojahoney.tumu@gmail.com",
+  "password": "aThgqyRC0iWrOEgRLNkdFyLWs13MFVe3dtdCXreG3iYL0liEgLILTYmdVKgXNc1NxQ==",
+  "saltStored": "RuokH+kQQsFfRn1h7BClEQ==",
+  "image": null,
+  "active": true,
+  "deleted": false,
+  "region": "Hyderabad",
+  "userType": "personal",
+  "cloudProvider": "gcp",
+  "lastChangedBy": "664d8236b5eb2327529f52d4",
+  "lastChangedOn": {
+    "$date": "2024-05-22T05:27:18.067Z"
+  },
+  "createdOn": {
+    "$date": "2024-05-22T05:27:18.067Z"
+  },
+  "personal": {
+    "phoneNumber": {
+      "$numberLong": "9618789728"
+    },
+    "dateOfBirth": {
+      "$date": "1999-10-08T00:00:00.000Z"
+    }
+  },
+  "organization": {
+    "organizationName": "",
+    "industry": "",
+    "contactPerson": "",
+    "contactEmail": "",
+    "domain": "",
+    "contactPhoneNumber": ""
+  },
+  "settings": {
+    "language": "",
+    "currencyCode": "INR",
+    "dateFormat": ""
+  },
+  "address": {
+    "latitude": 0,
+    "longitude": 0,
+    "village": "Nuzvid",
+    "district": "Krishna",
+    "state": "Andhra Pradesh",
+    "country": "India",
+    "pinCode": 521201,
+    "doorNo": "7-228/3",
+    "street": "Samatha Nagar"
+  }
+}]

@@ -1,0 +1,304 @@
+[{
+  "_id": {
+    "$oid": "664f134a7d6d77363263b714"
+  },
+  "name": "LMS",
+  "description": "Learning Management System",
+  "status": "draft",
+  "type": "education",
+  "productID": "lms",
+  "image": "",
+  "providers": [
+    "gcp"
+  ],
+  "microServicesCount": 3,
+  "createdOn": {
+    "$date": "2024-05-23T07:25:00.146Z"
+  },
+  "updatedOn": {
+    "$date": "2024-05-23T09:58:34.132Z"
+  },
+  "databasesCount": 4,
+  "createdBy": "",
+  "microservices": [
+    {
+      "name": "frontend",
+      "type": "forntend",
+      "productID": "lms",
+      "portNumber": "4000",
+      "status": "active",
+      "host": "",
+      "basePath": "",
+      "version": "0.0.1",
+      "createdOn": {
+        "$date": "2024-05-23T09:03:14.327Z"
+      },
+      "updatedOn": {
+        "$date": {
+          "$numberLong": "-62135596800000"
+        }
+      },
+      "productDatabases": [
+        {
+          "type": "non-relational",
+          "database": "mongo",
+          "name": "lmsbo",
+          "portNumber": "27017",
+          "defaultUsername": "lms-bo",
+          "defaultPassword": "9wcEGYnFPgMWbsuQww0yTiEsQnW",
+          "host": "mongo",
+          "version": "latest",
+          "image": "mongo",
+          "mockDataPath": "lms/databases/mongo"
+        }
+      ]
+    },
+    {
+      "name": "content",
+      "type": "backend",
+      "productID": "lms",
+      "portNumber": "4001",
+      "status": "active",
+      "host": "",
+      "basePath": "api/content/v1",
+      "version": "0.0.1",
+      "createdOn": {
+        "$date": "2024-05-23T09:05:03.168Z"
+      },
+      "updatedOn": {
+        "$date": {
+          "$numberLong": "-62135596800000"
+        }
+      },
+      "productDatabases": [
+        {
+          "type": "non-relational",
+          "database": "mongo",
+          "name": "lmsbo",
+          "portNumber": "27017",
+          "defaultUsername": "lms-bo",
+          "defaultPassword": "9wcEGYnFPgMWbsuQww0yTiEsQnW",
+          "host": "mongo",
+          "version": "latest",
+          "image": "mongo",
+          "mockDataPath": "lms/databases/mongo"
+        }
+      ]
+    },
+    {
+      "name": "user",
+      "type": "backend",
+      "productID": "lms",
+      "portNumber": "4002",
+      "status": "active",
+      "host": "",
+      "basePath": "api/user/v1",
+      "version": "0.0.1",
+      "createdOn": {
+        "$date": "2024-05-23T09:05:07.367Z"
+      },
+      "updatedOn": {
+        "$date": {
+          "$numberLong": "-62135596800000"
+        }
+      },
+      "productDatabases": [
+        {
+          "type": "non-relational",
+          "database": "mongo",
+          "name": "lmsbo",
+          "portNumber": "27017",
+          "defaultUsername": "lms-bo",
+          "defaultPassword": "9wcEGYnFPgMWbsuQww0yTiEsQnW",
+          "host": "mongo",
+          "version": "latest",
+          "image": "mongo",
+          "mockDataPath": "lms/databases/mongo"
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "kind": "backend",
+      "taskType": "deployment",
+      "deploymentTemplateName": "",
+      "deploymentTemplateLocation": "",
+      "status": "active",
+      "name": "user",
+      "productID": "lms",
+      "createdOn": {
+        "$date": "2024-05-23T09:53:08.372Z"
+      },
+      "updatedOn": {
+        "$date": {
+          "$numberLong": "-62135596800000"
+        }
+      },
+      "versions": [
+        {
+          "resourceName": "bo-user",
+          "developmentTag": "0.0.0",
+          "productTag": "",
+          "stagingTag": "",
+          "testingTag": "",
+          "createdOn": "",
+          "updatedOn": "",
+          "latest": true
+        }
+      ],
+      "environmentVariablesFile": "",
+      "productVersion": "1.0.0",
+      "exposedEnvVariables": [
+        ""
+      ]
+    },
+    {
+      "kind": "frontend",
+      "taskType": "deployment",
+      "deploymentTemplateName": "",
+      "deploymentTemplateLocation": "",
+      "status": "active",
+      "name": "frontend",
+      "productID": "lms",
+      "createdOn": {
+        "$date": "2024-05-23T09:57:23.040Z"
+      },
+      "updatedOn": {
+        "$date": {
+          "$numberLong": "-62135596800000"
+        }
+      },
+      "versions": [
+        {
+          "resourceName": "bo-frontend",
+          "developmentTag": "0.0.1",
+          "productTag": "",
+          "stagingTag": "",
+          "testingTag": "",
+          "createdOn": "",
+          "updatedOn": "",
+          "latest": true
+        }
+      ],
+      "environmentVariablesFile": "",
+      "productVersion": "1.0.0",
+      "exposedEnvVariables": [
+        ""
+      ]
+    },
+    {
+      "kind": "backend",
+      "taskType": "deployment",
+      "deploymentTemplateName": "",
+      "deploymentTemplateLocation": "",
+      "status": "active",
+      "name": "content",
+      "productID": "lms",
+      "createdOn": {
+        "$date": "2024-05-23T09:57:30.217Z"
+      },
+      "updatedOn": {
+        "$date": {
+          "$numberLong": "-62135596800000"
+        }
+      },
+      "versions": [
+        {
+          "resourceName": "bo-content",
+          "developmentTag": "0.0.0",
+          "productTag": "",
+          "stagingTag": "",
+          "testingTag": "",
+          "createdOn": "",
+          "updatedOn": "",
+          "latest": true
+        }
+      ],
+      "environmentVariablesFile": "",
+      "productVersion": "1.0.0",
+      "exposedEnvVariables": [
+        ""
+      ]
+    }
+  ],
+  "configuration": {
+    "_id": {
+      "$oid": "664f11c395cd1097a1e6aa81"
+    },
+    "productID": "lms",
+    "defaultMemory": 10,
+    "defaultRAM": 4,
+    "providerPermissions": [
+      {
+        "permissions": [
+          "roles/artifactregistry.writer",
+          "roles/iam.serviceAccountTokenCreator",
+          "roles/compute.admin",
+          "roles/storage.admin"
+        ],
+        "provider": "gcp",
+        "enabled": true
+      }
+    ],
+    "startupScriptFilePath": "lms/start_up_script/compute_engine/startup_script.sh",
+    "status": "draft",
+    "artifactRegistryName": "lms",
+    "networkTags": [
+      "lms"
+    ],
+    "createdOn": {
+      "$date": "2024-05-23T09:52:03.692Z"
+    },
+    "updatedOn": {
+      "$date": {
+        "$numberLong": "-62135596800000"
+      }
+    },
+    "environmentsSupport": [
+      {
+        "provider": "gcp",
+        "enabled": true,
+        "environment": "compute_engine"
+      }
+    ]
+  },
+  "plans": [
+    {
+      "productID": "lms",
+      "plan": "free-trail",
+      "name": "free",
+      "description": "free trail version - the instance will automatically deleted after 7 days on its creation",
+      "status": "active",
+      "active": "",
+      "image": "",
+      "createdOn": {
+        "$date": "2024-05-23T09:06:07.897Z"
+      },
+      "updatedOn": {
+        "$date": {
+          "$numberLong": "-62135596800000"
+        }
+      }
+    }
+  ],
+  "versions": [
+    {
+      "name": "Latest",
+      "version": "1.0.0",
+      "buildNumber": "1",
+      "productID": "lms",
+      "status": "active",
+      "description": "Latest Version",
+      "type": "major",
+      "createdOn": {
+        "$date": "2024-05-23T07:25:43.693Z"
+      },
+      "updatedOn": {
+        "$date": {
+          "$numberLong": "-62135596800000"
+        }
+      }
+    }
+  ]
+}]
