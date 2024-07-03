@@ -1,10 +1,7 @@
 package main
 
 import (
-	"context"
 	"fmt"
-	"log"
-
 	swagger "github.com/arsmn/fiber-swagger/v2"
 	"net/http"
 	docs "products/docs"
@@ -17,8 +14,8 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/recover"
 	"github.com/spf13/viper"
 	_ "github.com/spf13/viper/remote"
-	"go.mongodb.org/mongo-driver/mongo"
-	"go.mongodb.org/mongo-driver/mongo/options"
+	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
 )
 
 func loadConfig() (config ServiceConfigurations, err error) {
@@ -92,17 +89,15 @@ func (srv *Service) initRouter() *fiber.App {
 	return app
 }
 
-func (srv *Service) initMongo() *mongo.Client {
-	var clientOptions *options.ClientOptions
-	if srv.Config.MONGO_USER != "" && srv.Config.MONGO_PASSWORD != "" {
-		clientOptions = options.Client().ApplyURI(fmt.Sprintf("mongodb://%s:%s@%s:%s", srv.Config.MONGO_USER, srv.Config.MONGO_PASSWORD, srv.Config.MONGO_HOST, srv.Config.MONGO_PORT))
-	} else {
-		clientOptions = options.Client().ApplyURI(fmt.Sprintf("mongodb://%s:%s", srv.Config.MONGO_HOST, srv.Config.MONGO_PORT))
-	}
-	client, err := mongo.Connect(context.Background(), clientOptions)
+func (srv *Service) initPostgres() *gorm.DB {
+	dns := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable",
+		srv.Config.POSTGRES_HOST, srv.Config.POSTGRES_USERNAME, srv.Config.POSTGRES_PASSWORD, srv.Config.POSTGRES_DATABASE, srv.Config.POSTGRES_PORT)
+	db, err := gorm.Open(postgres.Open(dns), &gorm.Config{})
 	if err != nil {
-		log.Println("Unable to create database client.", err)
+		panic(err)
 	}
-	fmt.Println("DB Connected")
-	return client
+	// Enable UUID generation
+	db.Exec("CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\";")
+	db.AutoMigrate(&Tokens{}, &FullProductDetails{}, &Product{}, &ProductMicroService{}, &ProductResource{}, &ProductConfiguration{}, &ProductPlan{}, &ProductVersion{})
+	return db
 }

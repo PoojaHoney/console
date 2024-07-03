@@ -9,9 +9,8 @@ import (
 	"time"
 
 	"github.com/pquerna/ffjson/ffjson"
-	"go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/bson/primitive"
-	"go.mongodb.org/mongo-driver/mongo"
+	"github.com/google/uuid"
+	"gorm.io/gorm"
 )
 
 func createProduct(srv *Service, product Product, createdBy string) (Product, error) {
@@ -29,8 +28,6 @@ func createProduct(srv *Service, product Product, createdBy string) (Product, er
 		return Product{}, errors.New("product already exists")
 	}
 	product.Status = "draft"
-	product.ID = primitive.NewObjectID()
-	product.CreatedOn = time.Now()
 	product.CreatedBy = createdBy
 	_, err = productCollection.InsertOne(context.TODO(), product)
 	if err != nil {

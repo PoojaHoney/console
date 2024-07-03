@@ -94,7 +94,7 @@ func (srv *Service) initRouter() *fiber.App {
 }
 
 func (srv *Service) initPostgres() *gorm.DB {
-	dns := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable",
+	dns := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=require",
 		srv.Config.POSTGRES_HOST, srv.Config.POSTGRES_USERNAME, srv.Config.POSTGRES_PASSWORD, srv.Config.POSTGRES_DATABASE, srv.Config.POSTGRES_PORT)
 	db, err := gorm.Open(postgres.Open(dns), &gorm.Config{})
 	if err != nil {

@@ -9,9 +9,8 @@ import (
 var validate = validator.New()
 
 func (srv *Service) init() {
-	srv.MongoDB = srv.initMongo()
+	srv.PostgresDB = srv.initPostgres()
 	srv.Router = srv.initRouter()
-
 	appRouter := srv.Router.Group(srv.Config.SERVICE_BASEPATH)
 	{
 		// appRouter.Use(ValidateToken(srv))
@@ -40,8 +39,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	productSrv.MongoDB = productSrv.initMongo()
-	productSrv.Router = productSrv.initRouter()
 	productSrv.init()
 	productSrv.Router.Listen(fmt.Sprintf(":%s", productSrv.Config.SERVICE_PORT))
 }
