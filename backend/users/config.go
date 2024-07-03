@@ -6,13 +6,15 @@ import (
 	swagger "github.com/arsmn/fiber-swagger/v2"
 	"net/http"
 	docs "users/docs"
-
+	"time"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/compress"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/monitor"
 	"github.com/gofiber/fiber/v2/middleware/recover"
+	"github.com/gofiber/fiber/v2/middleware/session"
+	"github.com/gofiber/fiber/v2/middleware/csrf"
 	"github.com/spf13/viper"
 	_ "github.com/spf13/viper/remote"
 	"gorm.io/driver/postgres"
@@ -76,6 +78,32 @@ func (srv *Service) initRouter() *fiber.App {
 	app.Use(compress.New(compress.Config{
 		Level: compress.LevelBestSpeed,
 	}))
+	// Initialize session middleware
+	store := session.New(session.Config{
+		KeyLookup:      "cookie:session_id",
+		CookieSecure:   true,
+		CookieHTTPOnly: true,
+		CookieSameSite: "Strict",
+		Expiration:     24 * time.Hour,
+	})
+	// Middleware to handle sessions
+	app.Use(func(c *fiber.Ctx) error {
+		sess, err := store.Get(c)
+		if err != nil {
+			return err
+		}
+		defer sess.Save()
+		c.Locals("session", sess)
+		return c.Next()
+	})
+
+	// Optional: Initialize CSRF protection middleware
+	app.Use(csrf.New(csrf.Config{
+		KeyLookup:      "header:X-CSRF-Token",
+		CookieName:     "csrf_",
+		CookieSameSite: "Strict",
+		CookieHTTPOnly: true,
+		}))
 	// Define a route for the health check endpoint
 	app.Get(srv.Config.SERVICE_BASEPATH+"/health", func(c *fiber.Ctx) error {
 		return c.Status(http.StatusOK).JSON(&fiber.Map{"status": "Ok"})
