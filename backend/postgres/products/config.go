@@ -122,7 +122,18 @@ func (srv *Service) initProductDB() *gorm.DB {
 	// Enable UUID generation
 	db.Exec("CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\";")
 	// db.AutoMigrate(&FullProductDetails{}, &Product{}, &ProductMicroService{}, &ProductResource{}, &ProductConfiguration{}, &ProductPlan{}, &ProductVersion{})
-	db.AutoMigrate(&Product{}, &ProductProvider{}, &ProductMicroService{}, &ProductMicroServiceDatabase{}, &ProductConfiguration{}, &ProductProviderPermissions{})
+	db.AutoMigrate(
+		&Product{}, 
+		&ProductProvider{}, 
+		&ProductMicroService{}, 
+		&ProductMicroServiceDatabase{}, 
+		&ProductConfiguration{}, 
+		&ProductProviderPermissions{}, 
+		&ProductVersion{}, 
+		&ProductPlan{},
+		&ProductResource{},
+		&ProductResourceVersions{},
+	)
 	return db
 }
 
