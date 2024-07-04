@@ -9,7 +9,8 @@ import (
 var validate = validator.New()
 
 func (srv *Service) init() {
-	srv.PostgresDB = srv.initPostgres()
+	srv.ProductDB = srv.initProductDB()
+	srv.UsersDB = srv.initUsersDB()
 	srv.Router = srv.initRouter()
 	appRouter := srv.Router.Group(srv.Config.SERVICE_BASEPATH)
 	{

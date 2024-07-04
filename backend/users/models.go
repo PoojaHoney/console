@@ -156,7 +156,6 @@ type User struct {
 	UserType      string         `json:"userType" gorm:"not null" validate:"required" description:"User Type"`
 	CloudProvider string         `json:"cloudProvider" description:"Cloud Provider"`
 	LastChangedBy string         `json:"lastChangedBy" description:"Last Changed By"`
-	CreatedOn     time.Time      `json:"createdOn" gorm:"autoCreateTime" description:"Created On"`
 	Personal      Personal       `json:"personal" gorm:"embedded" description:"Personal"`
 	Organization  Organization   `json:"organization" gorm:"embedded" description:"Organization"`
 	Settings      Settings       `json:"settings" gorm:"embedded" description:"Settings"`

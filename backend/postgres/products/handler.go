@@ -1,111 +1,76 @@
 package main
 
 import (
-	"context"
 	"errors"
+	"fmt"
 	"reflect"
 	"strconv"
 	"strings"
 	"time"
 
-	"github.com/pquerna/ffjson/ffjson"
 	"github.com/google/uuid"
 	"gorm.io/gorm"
+	"gorm.io/gorm/clause"
 )
 
 func createProduct(srv *Service, product Product, createdBy string) (Product, error) {
-	productCollection := getMongoCollection(srv, srv.Config.PRODUCT_COLLECTION)
-	recordsExists, err := getMongoRecordsCount(
-		productCollection,
-		bson.D{{
-			Key: "$or", Value: bson.A{
-				bson.D{{Key: "productID", Value: product.ProductID}},
-			}}})
-	if err != nil {
-		return Product{}, err
-	}
-	if recordsExists > 0 {
+	productExists := srv.ProductDB.Where("productID = ?", product.ProductID).First(&Product{})
+	if productExists.Error == nil {
 		return Product{}, errors.New("product already exists")
+	}
+	if productExists.Error != nil && productExists.Error != gorm.ErrRecordNotFound {
+		return Product{}, productExists.Error
 	}
 	product.Status = "draft"
 	product.CreatedBy = createdBy
-	_, err = productCollection.InsertOne(context.TODO(), product)
-	if err != nil {
-		return Product{}, err
+	result := srv.ProductDB.Create(&product)
+	if result.Error != nil {
+		return Product{}, result.Error
 	}
 	return product, nil
 }
 
 func createVersion(srv *Service, version ProductVersion) (ProductVersion, error) {
-	productVersionsCollection := getMongoCollection(srv, srv.Config.PRODUCT_VERSIONS_COLLECTION)
-	productCollection := getMongoCollection(srv, srv.Config.PRODUCT_COLLECTION)
-	productExists, err := getMongoRecordsCount(
-		productCollection,
-		bson.D{{
-			Key: "$or", Value: bson.A{
-				bson.D{{Key: "productID", Value: version.ProductID}},
-			}}})
-	if err != nil {
-		return ProductVersion{}, err
+	productExists := srv.ProductDB.Where("productID = ?", version.ProductID).First(&Product{})
+	if productExists.Error != nil {
+		return ProductVersion{}, productExists.Error
 	}
-	if productExists == 0 {
-		return ProductVersion{}, errors.New("product not found")
-	}
-	recordsExists, err := getMongoRecordsCount(
-		productVersionsCollection,
-		bson.D{{
-			Key: "$or", Value: bson.A{
-				bson.D{{Key: "version", Value: version.Version}},
-			}}})
-	if err != nil {
-		return ProductVersion{}, err
-	}
-	if recordsExists > 0 {
+	versionExists := srv.ProductDB.Where("version = ?", version.Version).First(&ProductVersion{})
+	if versionExists.Error == nil {
 		return ProductVersion{}, errors.New("version already exists")
+	}
+	if versionExists.Error != nil && versionExists.Error != gorm.ErrRecordNotFound {
+		return ProductVersion{}, versionExists.Error
 	}
 	version.Status = "draft"
 	// version.ID = primitive.NewObjectID()
-	version.CreatedOn = time.Now()
-	_, err = productVersionsCollection.InsertOne(context.TODO(), version)
-	if err != nil {
-		return ProductVersion{}, err
+	result := srv.ProductDB.Create(&version)
+	if result.Error != nil {
+		return ProductVersion{}, result.Error
 	}
 	return version, nil
 }
 
 func createMicroService(srv *Service, microservice ProductMicroService) (ProductMicroService, error) {
-	microserviceCollection := getMongoCollection(srv, srv.Config.PRODUCT_MICROSERVICES_COLLECTION)
-	productCollection := getMongoCollection(srv, srv.Config.PRODUCT_COLLECTION)
-	product, err := getProduct(srv, microservice.ProductID, productCollection)
+	product, err := getProduct(srv.ProductDB, map[string]interface{}{"productID": microservice.ProductID})
 	if err != nil {
 		return ProductMicroService{}, err
 	}
 	if product.ProductID == "" {
 		return ProductMicroService{}, errors.New("product not found")
 	}
-	recordsExists, err := getMongoRecordsCount(
-		microserviceCollection,
-		bson.D{{
-			Key: "$or", Value: bson.A{
-				bson.D{{Key: "name", Value: microservice.Name}},
-				bson.D{{Key: "portNumber", Value: microservice.PortNumber}},
-				bson.D{{Key: "basePath", Value: microservice.BasePath}},
-			}}, {
-			Key: "$and", Value: bson.A{
-				bson.D{{Key: "version", Value: microservice.Version}},
-			}}})
-	if err != nil {
-		return ProductMicroService{}, err
-	}
-	if recordsExists > 0 {
+	microserviceExists := srv.ProductDB.Where("name = ?", microservice.Name).Or("portNumber = ?", microservice.PortNumber).Or(
+		"basePath = ?", microservice.BasePath).Where("version = ?", microservice.Version).First(&ProductMicroService{})
+	if microserviceExists.Error == nil {
 		return ProductMicroService{}, errors.New("microservice already exists")
 	}
+	if microserviceExists.Error != nil && microserviceExists.Error != gorm.ErrRecordNotFound {
+		return ProductMicroService{}, microserviceExists.Error
+	}
 	microservice.Status = "draft"
-	microservice.CreatedOn = time.Now()
-	// microservice.ID = primitive.NewObjectID()
-	_, err = microserviceCollection.InsertOne(context.TODO(), microservice)
-	if err != nil {
-		return ProductMicroService{}, err
+	result := srv.ProductDB.Create(&microservice)
+	if result.Error != nil {
+		return ProductMicroService{}, result.Error
 	}
 	// product.MicroServicesCount = product.MicroServicesCount + 1
 	// product.DatabasesCount = product.DatabasesCount + len(microservice.Databases)
@@ -117,184 +82,145 @@ func createMicroService(srv *Service, microservice ProductMicroService) (Product
 }
 
 func createPlan(srv *Service, plan ProductPlan) (ProductPlan, error) {
-	plansCollection := getMongoCollection(srv, srv.Config.PRODUCT_PLANS_COLLECTION)
-	productCollection := getMongoCollection(srv, srv.Config.PRODUCT_COLLECTION)
-	productExists, err := getMongoRecordsCount(
-		productCollection,
-		bson.D{{
-			Key: "$or", Value: bson.A{
-				bson.D{{Key: "productID", Value: plan.ProductID}},
-			}}})
+	product, err := getProduct(srv.ProductDB, map[string]interface{}{"productID": plan.ProductID})
 	if err != nil {
 		return ProductPlan{}, err
 	}
-	if productExists == 0 {
+	if product.ProductID == "" {
 		return ProductPlan{}, errors.New("product not found")
 	}
-	recordsExists, err := getMongoRecordsCount(
-		plansCollection,
-		bson.D{{
-			Key: "$or", Value: bson.A{
-				bson.D{{Key: "plan", Value: plan.Plan}},
-				bson.D{{Key: "name", Value: plan.Name}},
-			}}})
-	if err != nil {
-		return ProductPlan{}, err
-	}
-	if recordsExists > 0 {
+	planExists := srv.ProductDB.Where("plan = ?", plan.Plan).Or("name = ?", plan.Name).First(&ProductPlan{})
+	if planExists.Error == nil {
 		return ProductPlan{}, errors.New("plan already exists")
+	}
+	if planExists.Error != nil && planExists.Error != gorm.ErrRecordNotFound {
+		return ProductPlan{}, planExists.Error
 	}
 	// plan.ID = primitive.NewObjectID()
 	plan.Status = "draft"
-	plan.CreatedOn = time.Now()
-	_, err = plansCollection.InsertOne(context.TODO(), plan)
-	if err != nil {
-		return ProductPlan{}, err
+	result := srv.ProductDB.Create(&plan)
+	if result.Error != nil {
+		return ProductPlan{}, result.Error
 	}
 	return plan, nil
 }
 
 func createResource(srv *Service, resource ProductResource) (ProductResource, error) {
-	resourceCollection := getMongoCollection(srv, srv.Config.PRODUCT_RESOURCES_COLLECTION)
-	productCollection := getMongoCollection(srv, srv.Config.PRODUCT_COLLECTION)
-	productExists, err := getMongoRecordsCount(
-		productCollection,
-		bson.D{{
-			Key: "$or", Value: bson.A{
-				bson.D{{Key: "productID", Value: resource.ProductID}},
-			}}})
+	product, err := getProduct(srv.ProductDB, map[string]interface{}{"productID": resource.ProductID})
 	if err != nil {
 		return ProductResource{}, err
 	}
-	if productExists == 0 {
+	if product.ProductID == "" {
 		return ProductResource{}, errors.New("product not found")
 	}
-	recordsExists, err := getMongoRecordsCount(
-		resourceCollection,
-		bson.D{{
-			Key: "$or", Value: bson.A{
-				bson.D{{Key: "kind", Value: resource.Kind}},
-				bson.D{{Key: "taskType", Value: resource.TaskType}},
-			}}, {
-			Key: "$and", Value: bson.A{
-				bson.D{{Key: "name", Value: resource.Name}},
-			}}})
-	if err != nil {
-		return ProductResource{}, err
-	}
-	if recordsExists > 0 {
+	resourceExists := srv.ProductDB.Where("name = ?", resource.Name).Or("kind = ?", resource.Kind).Or(
+		"taskType = ?", resource.TaskType).First(&ProductResource{})
+	if resourceExists.Error == nil {
 		return ProductResource{}, errors.New("resource already exists")
+	}
+	if resourceExists.Error != nil && resourceExists.Error != gorm.ErrRecordNotFound {
+		return ProductResource{}, resourceExists.Error
 	}
 	// resource.ID = primitive.NewObjectID()
 	resource.Status = "draft"
-	resource.CreatedOn = time.Now()
-	_, err = resourceCollection.InsertOne(context.TODO(), resource)
-	if err != nil {
-		return ProductResource{}, err
+	result := srv.ProductDB.Create(&resource)
+	if result.Error != nil {
+		return ProductResource{}, result.Error
 	}
 	return resource, nil
 }
 
 func createConfiguration(srv *Service, configuration ProductConfiguration) (ProductConfiguration, error) {
-	configCollection := getMongoCollection(srv, srv.Config.PRODUCT_CONFIG_COLLECTION)
-	productCollection := getMongoCollection(srv, srv.Config.PRODUCT_COLLECTION)
-	productExists, err := getMongoRecordsCount(
-		productCollection,
-		bson.D{{
-			Key: "$or", Value: bson.A{
-				bson.D{{Key: "productID", Value: configuration.ProductID}},
-			}}})
+	product, err := getProduct(srv.ProductDB, map[string]interface{}{"productID": configuration.ProductID})
 	if err != nil {
 		return ProductConfiguration{}, err
 	}
-	if productExists == 0 {
+	if product.ProductID == "" {
 		return ProductConfiguration{}, errors.New("product not found")
 	}
-	configuration.ID = primitive.NewObjectID()
 	configuration.Status = "draft"
-	configuration.CreatedOn = time.Now()
-	_, err = configCollection.InsertOne(context.TODO(), configuration)
-	if err != nil {
-		return ProductConfiguration{}, err
+	result := srv.ProductDB.Create(&configuration)
+	if result.Error != nil {
+		return ProductConfiguration{}, result.Error
 	}
 	return configuration, nil
 }
 
 func activateProduct(srv *Service, product string) (FullProductDetails, error) {
-	productCollection := getMongoCollection(srv, srv.Config.PRODUCT_COLLECTION)
-	productInfo, err := getProduct(srv, product, productCollection)
+	productInfo, err := getProduct(srv.ProductDB, map[string]interface{}{"productID": product})
 	if err != nil {
 		return FullProductDetails{}, err
 	}
-	configurationCollection := getMongoCollection(srv, srv.Config.PRODUCT_CONFIG_COLLECTION)
-	configuration, err := getProductConfigurations(srv, configurationCollection, product)
+	configuration, err := getProductConfigurations(srv.ProductDB, map[string]interface{}{"productID": product})
 	if err != nil {
 		return FullProductDetails{}, err
 	}
-	versionCollection := getMongoCollection(srv, srv.Config.PRODUCT_VERSIONS_COLLECTION)
-	versions, err := getProductVersions(srv, versionCollection, product)
+	versions, err := getProductVersions(srv.ProductDB, map[string]interface{}{"productID": product})
 	if err != nil {
 		return FullProductDetails{}, err
 	}
-	microserviceCollection := getMongoCollection(srv, srv.Config.PRODUCT_MICROSERVICES_COLLECTION)
-	microservices, err := getProductMicroServices(srv, microserviceCollection, product)
+	microservices, err := getProductMicroServices(srv.ProductDB, map[string]interface{}{"productID": product})
 	if err != nil {
 		return FullProductDetails{}, err
 	}
-	plansCollection := getMongoCollection(srv, srv.Config.PRODUCT_PLANS_COLLECTION)
-	plans, err := getProductPlans(srv, plansCollection, product)
+	plans, err := getProductPlans(srv.ProductDB, map[string]interface{}{"productID": product})
 	if err != nil {
 		return FullProductDetails{}, err
 	}
-	resourcesCollection := getMongoCollection(srv, srv.Config.PRODUCT_RESOURCES_COLLECTION)
-	resources, err := getProductResources(srv, resourcesCollection, product)
+	resources, err := getProductResources(srv.ProductDB, map[string]interface{}{"productID": product})
 	if err != nil {
 		return FullProductDetails{}, err
 	}
 
-	_, err = productCollection.DeleteOne(context.TODO(), bson.D{{Key: "productID", Value: product}})
-	if err != nil {
-		return FullProductDetails{}, err
+	result := srv.ProductDB.Unscoped().Delete(&Product{}, productInfo.ID)
+	if result.Error != nil {
+		return FullProductDetails{}, result.Error
 	}
 
-	_, err = configurationCollection.DeleteOne(context.TODO(), bson.D{{Key: "productID", Value: product}})
-	if err != nil {
-		productCollection.InsertOne(context.TODO(), productInfo)
-		return FullProductDetails{}, err
+	result = srv.ProductDB.Unscoped().Delete(&ProductConfiguration{}, configuration)
+	if result.Error != nil {
+		return FullProductDetails{}, result.Error
 	}
 
-	_, err = versionCollection.DeleteMany(context.TODO(), bson.D{{Key: "productID", Value: product}})
-	if err != nil {
-		productCollection.InsertOne(context.TODO(), productInfo)
-		configurationCollection.InsertOne(context.TODO(), configuration)
-		return FullProductDetails{}, err
+	result = srv.ProductDB.Unscoped().Delete(&ProductConfiguration{}, configuration.ID)
+	if result.Error != nil {
+		srv.ProductDB.Create(&productInfo)
+		return FullProductDetails{}, result.Error
 	}
 
-	_, err = microserviceCollection.DeleteMany(context.TODO(), bson.D{{Key: "productID", Value: product}})
-	if err != nil {
-		productCollection.InsertOne(context.TODO(), productInfo)
-		configurationCollection.InsertOne(context.TODO(), configuration)
-		insertProductVersions(srv, versionCollection, versions)
-		return FullProductDetails{}, err
+	// result = srv.ProductDB.Unscoped().Delete(&versions)
+	result = srv.ProductDB.Exec("DELETE FROM product_versions WHERE ", "productID = ?", product)
+	if result.Error != nil {
+		srv.ProductDB.Create(&productInfo)
+		srv.ProductDB.Create(&configuration)
+		return FullProductDetails{}, result.Error
 	}
 
-	_, err = plansCollection.DeleteMany(context.TODO(), bson.D{{Key: "productID", Value: product}})
-	if err != nil {
-		productCollection.InsertOne(context.TODO(), productInfo)
-		configurationCollection.InsertOne(context.TODO(), configuration)
-		insertProductVersions(srv, versionCollection, versions)
-		insertProductMicroServices(srv, microserviceCollection, microservices)
-		return FullProductDetails{}, err
+	result = srv.ProductDB.Exec("DELETE FROM product_microservices WHERE ", "productID = ?", product)
+	if result.Error != nil {
+		srv.ProductDB.Create(&productInfo)
+		srv.ProductDB.Create(&configuration)
+		srv.ProductDB.Clauses(clause.OnConflict{UpdateAll: true}).Create(&versions)
+		return FullProductDetails{}, result.Error
 	}
 
-	_, err = resourcesCollection.DeleteMany(context.TODO(), bson.D{{Key: "productID", Value: product}})
-	if err != nil {
-		productCollection.InsertOne(context.TODO(), productInfo)
-		configurationCollection.InsertOne(context.TODO(), configuration)
-		insertProductVersions(srv, versionCollection, versions)
-		insertProductMicroServices(srv, microserviceCollection, microservices)
-		insertProductPlans(srv, plansCollection, plans)
-		return FullProductDetails{}, err
+	result = srv.ProductDB.Exec("DELETE FROM product_plans WHERE ", "productID = ?", product)
+	if result.Error != nil {
+		srv.ProductDB.Create(&productInfo)
+		srv.ProductDB.Create(&configuration)
+		srv.ProductDB.Clauses(clause.OnConflict{UpdateAll: true}).Create(&versions)
+		srv.ProductDB.Clauses(clause.OnConflict{UpdateAll: true}).Create(&microservices)
+		return FullProductDetails{}, result.Error
+	}
+
+	result = srv.ProductDB.Exec("DELETE FROM product_resources WHERE ", "productID = ?", product)
+	if result.Error != nil {
+		srv.ProductDB.Create(&productInfo)
+		srv.ProductDB.Create(&configuration)
+		srv.ProductDB.Clauses(clause.OnConflict{UpdateAll: true}).Create(&versions)
+		srv.ProductDB.Clauses(clause.OnConflict{UpdateAll: true}).Create(&microservices)
+		srv.ProductDB.Clauses(clause.OnConflict{UpdateAll: true}).Create(&plans)
+		return FullProductDetails{}, result.Error
 	}
 
 	for index, _ := range microservices {
@@ -313,9 +239,8 @@ func activateProduct(srv *Service, product string) (FullProductDetails, error) {
 		MicroServices:      microservices,
 		Plans:              plans,
 		Resources:          resources,
-		Configuration:      configuration,
+		Configuration:      *configuration,
 		Versions:           versions,
-		ID:                 primitive.NewObjectID(),
 		Name:               productInfo.Name,
 		Description:        productInfo.Description,
 		Status:             productInfo.Status,
@@ -324,184 +249,148 @@ func activateProduct(srv *Service, product string) (FullProductDetails, error) {
 		Image:              productInfo.Image,
 		Providers:          productInfo.Providers,
 		MicroServicesCount: len(microservices),
-		CreatedOn:          productInfo.CreatedOn,
-		UpdatedOn:          time.Now(),
 		DatabasesCount:     productInfo.DatabasesCount,
 		CreatedBy:          productInfo.CreatedBy,
 	}
-	_, err = getMongoCollection(srv, srv.Config.PRODUCT_FULL_DETAILS).InsertOne(context.TODO(), productFullDetails)
-	if err != nil {
-		productCollection.InsertOne(context.TODO(), productInfo)
-		configurationCollection.InsertOne(context.TODO(), configuration)
-		insertProductVersions(srv, versionCollection, versions)
-		insertProductMicroServices(srv, microserviceCollection, microservices)
-		insertProductPlans(srv, plansCollection, plans)
-		insertProductResources(srv, resourcesCollection, resources)
+	result = srv.ProductDB.Create(&productFullDetails)
+	if result.Error != nil {
+		srv.ProductDB.Create(&productInfo)
+		srv.ProductDB.Create(&configuration)
+		srv.ProductDB.Clauses(clause.OnConflict{UpdateAll: true}).Create(&versions)
+		srv.ProductDB.Clauses(clause.OnConflict{UpdateAll: true}).Create(&microservices)
+		srv.ProductDB.Clauses(clause.OnConflict{UpdateAll: true}).Create(&plans)
+		srv.ProductDB.Clauses(clause.OnConflict{UpdateAll: true}).Create(&resources)
 		return FullProductDetails{}, err
 	}
 	return productFullDetails, nil
 }
 
-func insertProductVersions(srv *Service, collection *mongo.Collection, versions []ProductVersion) error {
-	if collection == nil {
-		collection = getMongoCollection(srv, srv.Config.PRODUCT_VERSIONS_COLLECTION)
+func getProduct(db *gorm.DB, filters map[string]interface{}) (*Product, error) {
+	var product Product
+	for key, value := range filters {
+		db = db.Where(fmt.Sprintf("%s = ?", key), value)
 	}
-	bytesVersion, _ := ffjson.Marshal(versions)
-	documentVersions := []interface{}{}
-	_ = ffjson.Unmarshal(bytesVersion, &documentVersions)
-	_, err := collection.InsertMany(context.TODO(), documentVersions)
-	return err
+	result := db.First(&product)
+	if result.Error != nil {
+		return nil, result.Error
+	}
+	return &product, nil
 }
 
-func insertProductMicroServices(srv *Service, collection *mongo.Collection, microservices []ProductMicroService) error {
-	if collection == nil {
-		collection = getMongoCollection(srv, srv.Config.PRODUCT_MICROSERVICES_COLLECTION)
+func getProductConfigurations(db *gorm.DB, filters map[string]interface{}) (*ProductConfiguration, error) {
+	var configurations ProductConfiguration
+	for key, value := range filters {
+		db = db.Where(fmt.Sprintf("%s = ?", key), value)
 	}
-	bytesMicroServices, _ := ffjson.Marshal(microservices)
-	documentMicroServices := []interface{}{}
-	_ = ffjson.Unmarshal(bytesMicroServices, &documentMicroServices)
-	_, err := collection.InsertMany(context.TODO(), documentMicroServices)
-	return err
+	result := db.First(&configurations)
+	if result.Error != nil {
+		return nil, result.Error
+	}
+	return &configurations, nil
 }
 
-func insertProductPlans(srv *Service, collection *mongo.Collection, plans []ProductPlan) error {
-	if collection == nil {
-		collection = getMongoCollection(srv, srv.Config.PRODUCT_PLANS_COLLECTION)
+func getProductMicroServices(db *gorm.DB, filters map[string]interface{}) ([]ProductMicroService, error) {
+	var microservices []ProductMicroService
+	for key, value := range filters {
+		db = db.Where(fmt.Sprintf("%s = ?", key), value)
 	}
-	bytesPlans, _ := ffjson.Marshal(plans)
-	documentPlans := []interface{}{}
-	_ = ffjson.Unmarshal(bytesPlans, &documentPlans)
-	_, err := collection.InsertMany(context.TODO(), documentPlans)
-	return err
-}
-
-func insertProductResources(srv *Service, collection *mongo.Collection, resources []ProductResource) error {
-	if collection == nil {
-		collection = getMongoCollection(srv, srv.Config.PRODUCT_RESOURCES_COLLECTION)
+	query := db.Model(&ProductMicroService{})
+	for operation, filter := range filters {
+		if operation == "or" {
+			for key, value := range filter.(map[string]interface{}) {
+				query = query.Or(fmt.Sprintf("%s = ?", key), value)
+			}
+		} else if operation == "and" {
+			for key, value := range filter.(map[string]interface{}) {
+				query = query.Where(fmt.Sprintf("%s = ?", key), value)
+			}
+		}
 	}
-	bytesResources, _ := ffjson.Marshal(resources)
-	documentResources := []interface{}{}
-	_ = ffjson.Unmarshal(bytesResources, &documentResources)
-	_, err := collection.InsertMany(context.TODO(), documentResources)
-	return err
-}
-
-func getProduct(srv *Service, productID string, collection *mongo.Collection) (Product, error) {
-	if collection == nil {
-		collection = getMongoCollection(srv, srv.Config.PRODUCT_COLLECTION)
-	}
-	document, err := getMongoRecord(collection, bson.D{{Key: "productID", Value: productID}})
-	if err != nil {
-		return Product{}, err
-	}
-	var _id primitive.ObjectID
-	if oid, ok := document["_id"].(primitive.ObjectID); ok {
-		_id = oid
-	}
-	if document["productID"].(string) == "" {
-		return Product{}, errors.New("product not found")
-	}
-	structProduct := Product{}
-	byteProduct, _ := ffjson.Marshal(document)
-	_ = ffjson.Unmarshal(byteProduct, &structProduct)
-	structProduct.ID = _id
-	return structProduct, nil
-}
-
-func getProductConfigurations(srv *Service, collection *mongo.Collection, productID string) (ProductConfiguration, error) {
-	if collection == nil {
-		collection = getMongoCollection(srv, srv.Config.PRODUCT_CONFIG_COLLECTION)
-	}
-	document, err := getMongoRecord(collection, bson.D{{Key: "productID", Value: productID}})
-	if err != nil {
-		return ProductConfiguration{}, err
-	}
-	var _id primitive.ObjectID
-	if oid, ok := document["_id"].(primitive.ObjectID); ok {
-		_id = oid
-	}
-	if document["productID"].(string) == "" {
-		return ProductConfiguration{}, errors.New("product not found")
-	}
-	structProductConfig := ProductConfiguration{}
-	byteProduct, _ := ffjson.Marshal(document)
-	_ = ffjson.Unmarshal(byteProduct, &structProductConfig)
-	structProductConfig.ID = _id
-	return structProductConfig, nil
-}
-
-func getProductMicroServices(srv *Service, collection *mongo.Collection, productID string) ([]ProductMicroService, error) {
-	if collection == nil {
-		collection = getMongoCollection(srv, srv.Config.PRODUCT_MICROSERVICES_COLLECTION)
-	}
-	microservices, err := getMongoRecords(collection, bson.D{{Key: "productID", Value: productID}})
-	if err != nil {
-		return []ProductMicroService{}, err
+	if err := query.Find(&microservices).Error; err != nil {
+		return nil, err
 	}
 	if len(microservices) == 0 {
 		return []ProductMicroService{}, errors.New("product microservices not found")
 	}
-	documentMicroservices := []ProductMicroService{}
-	bytesMicroServices, _ := ffjson.Marshal(microservices)
-	_ = ffjson.Unmarshal(bytesMicroServices, &documentMicroservices)
-	return documentMicroservices, nil
+	return microservices, nil
 }
 
-func getProductVersions(srv *Service, collection *mongo.Collection, productID string) ([]ProductVersion, error) {
-	if collection == nil {
-		collection = getMongoCollection(srv, srv.Config.PRODUCT_MICROSERVICES_COLLECTION)
+func getProductVersions(db *gorm.DB, filters map[string]interface{}) ([]ProductVersion, error) {
+	var versions []ProductVersion
+	for key, value := range filters {
+		db = db.Where(fmt.Sprintf("%s = ?", key), value)
 	}
-	versions, err := getMongoRecords(collection, bson.D{{Key: "productID", Value: productID}})
-	if err != nil {
-		return []ProductVersion{}, err
+	query := db.Model(&ProductVersion{})
+	for operation, filter := range filters {
+		if operation == "or" {
+			for key, value := range filter.(map[string]interface{}) {
+				query = query.Or(fmt.Sprintf("%s = ?", key), value)
+			}
+		} else if operation == "and" {
+			for key, value := range filter.(map[string]interface{}) {
+				query = query.Where(fmt.Sprintf("%s = ?", key), value)
+			}
+		}
+	}
+	if err := query.Find(&versions).Error; err != nil {
+		return nil, err
 	}
 	if len(versions) == 0 {
 		return []ProductVersion{}, errors.New("product versions not found")
 	}
-	for index, version := range versions {
-		if version["productID"].(string) == "" {
-			continue
-		}
-		versions[index]["status"] = "active"
-	}
-	documentVersions := []ProductVersion{}
-	bytesVersions, _ := ffjson.Marshal(versions)
-	_ = ffjson.Unmarshal(bytesVersions, &documentVersions)
-	return documentVersions, nil
+	return versions, nil
 }
 
-func getProductPlans(srv *Service, collection *mongo.Collection, productID string) ([]ProductPlan, error) {
-	if collection == nil {
-		collection = getMongoCollection(srv, srv.Config.PRODUCT_MICROSERVICES_COLLECTION)
+func getProductPlans(db *gorm.DB, filters map[string]interface{}) ([]ProductPlan, error) {
+	var plans []ProductPlan
+	for key, value := range filters {
+		db = db.Where(fmt.Sprintf("%s = ?", key), value)
 	}
-	plans, err := getMongoRecords(collection, bson.D{{Key: "productID", Value: productID}})
-	if err != nil {
-		return []ProductPlan{}, err
+	query := db.Model(&ProductPlan{})
+	for operation, filter := range filters {
+		if operation == "or" {
+			for key, value := range filter.(map[string]interface{}) {
+				query = query.Or(fmt.Sprintf("%s = ?", key), value)
+			}
+		} else if operation == "and" {
+			for key, value := range filter.(map[string]interface{}) {
+				query = query.Where(fmt.Sprintf("%s = ?", key), value)
+			}
+		}
+	}
+	if err := query.Find(&plans).Error; err != nil {
+		return nil, err
 	}
 	if len(plans) == 0 {
 		return []ProductPlan{}, errors.New("product plans not found")
 	}
-	documentPlans := []ProductPlan{}
-	bytesPlans, _ := ffjson.Marshal(plans)
-	_ = ffjson.Unmarshal(bytesPlans, &documentPlans)
-	return documentPlans, nil
+	return plans, nil
 }
 
-func getProductResources(srv *Service, collection *mongo.Collection, productID string) ([]ProductResource, error) {
-	if collection == nil {
-		collection = getMongoCollection(srv, srv.Config.PRODUCT_MICROSERVICES_COLLECTION)
+func getProductResources(db *gorm.DB, filters map[string]interface{}) ([]ProductResource, error) {
+	var resources []ProductResource
+	for key, value := range filters {
+		db = db.Where(fmt.Sprintf("%s = ?", key), value)
 	}
-	resources, err := getMongoRecords(collection, bson.D{{Key: "productID", Value: productID}})
-	if err != nil {
-		return []ProductResource{}, err
+	query := db.Model(&ProductResource{})
+	for operation, filter := range filters {
+		if operation == "or" {
+			for key, value := range filter.(map[string]interface{}) {
+				query = query.Or(fmt.Sprintf("%s = ?", key), value)
+			}
+		} else if operation == "and" {
+			for key, value := range filter.(map[string]interface{}) {
+				query = query.Where(fmt.Sprintf("%s = ?", key), value)
+			}
+		}
+	}
+	if err := query.Find(&resources).Error; err != nil {
+		return nil, err
 	}
 	if len(resources) == 0 {
 		return []ProductResource{}, errors.New("product resources not found")
 	}
-	documentResources := []ProductResource{}
-	bytesResources, _ := ffjson.Marshal(resources)
-	_ = ffjson.Unmarshal(bytesResources, &documentResources)
-	return documentResources, nil
+	return resources, nil
 }
 
 func fieldCatalogues(tables ...interface{}) map[string]interface{} {
@@ -551,17 +440,29 @@ func fieldCatalogues(tables ...interface{}) map[string]interface{} {
 	}
 	return allFieldCatalogues
 }
+func getToken(srv *Service, filters map[string]interface{}) (Tokens, error) {
+	var token Tokens
+	db := srv.ProductDB
+	for key, value := range filters {
+		db = db.Where(fmt.Sprintf("%s = ?", key), value)
+	}
+	resultToken := db.First(&token)
+	if resultToken.Error != nil {
+		return Tokens{}, resultToken.Error
+	}
+	return token, nil
+}
 
 func validateToken(srv *Service, authHeader string) (map[string]interface{}, error) {
 	// tokenString := authHeader[len("Bearer "):]
 	tokenString := authHeader
 	var expiryTime int
-	token, err := getToken(srv, bson.D{{Key: "accessToken", Value: tokenString}})
+	token, err := getToken(srv, map[string]interface{}{"access_token": tokenString})
 	if err != nil {
 		return nil, err
 	}
 	expiryTime = int(time.Since(token.CreatedAt.Add(time.Hour * 5)).Minutes())
-	if token.UserId != "" && (expiryTime < 30) {
+	if token.UserId != uuid.Nil && (expiryTime < 30) {
 		return map[string]interface{}{
 			"userId": token.UserId,
 			"email":  token.Email,
@@ -571,27 +472,8 @@ func validateToken(srv *Service, authHeader string) (map[string]interface{}, err
 	}
 }
 
-func getToken(srv *Service, filters bson.D) (Tokens, error) {
-	if filters == nil {
-		filters = bson.D{}
-	}
-	token, err := getMongoRecord(getMongoCollection(srv, srv.Config.TOKEN_COLLECTION), filters)
-	if err != nil {
-		return Tokens{}, err
-	}
-	var resultToken Tokens
-	tokenBytes, err := ffjson.Marshal(token)
-	if err != nil {
-		return Tokens{}, err
-	}
-	if err := ffjson.Unmarshal(tokenBytes, &resultToken); err != nil {
-		return Tokens{}, err
-	}
-	return resultToken, nil
-}
-
 // func createVersions(srv *Service, versions []ProductVersion) ([]ProductVersion, error) {
-// 	productVersionsCollection := getMongoCollection(srv, srv.Config.PRODUCT_VERSIONS_COLLECTION)
+// 	productVersionsCollection := getMongoCollection(srv, srv.Config.PRODUCT_VERSIONS_TABLE)
 // 	var createdVersions []ProductVersion
 // 	for _, version := range versions {
 // 		recordsExists, err := getMongoRecordsCount(
@@ -624,7 +506,7 @@ func getToken(srv *Service, filters bson.D) (Tokens, error) {
 // }
 
 // func createMicroServices(srv *Service, microservices []ProductMicroService) ([]ProductMicroService, error) {
-// 	microserviceCollection := getMongoCollection(srv, srv.Config.PRODUCT_MICROSERVICES_COLLECTION)
+// 	microserviceCollection := getMongoCollection(srv, srv.Config.PRODUCT_MICROSERVICES_TABLE)
 // 	var createdMicroServices []ProductMicroService
 // 	for _, microservice := range microservices {
 // 		recordsExists, err := getMongoRecordsCount(

@@ -89,15 +89,50 @@ func (srv *Service) initRouter() *fiber.App {
 	return app
 }
 
-func (srv *Service) initPostgres() *gorm.DB {
-	dns := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable",
-		srv.Config.POSTGRES_HOST, srv.Config.POSTGRES_USERNAME, srv.Config.POSTGRES_PASSWORD, srv.Config.POSTGRES_DATABASE, srv.Config.POSTGRES_PORT)
+func (srv *Service) initProductDB() *gorm.DB {
+	dns := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=require",
+		srv.Config.POSTGRES_HOST, srv.Config.POSTGRES_USERNAME, srv.Config.POSTGRES_PASSWORD, srv.Config.POSTGRES_DEFAULT_DATABASE, srv.Config.POSTGRES_PORT)
 	db, err := gorm.Open(postgres.Open(dns), &gorm.Config{})
+	if err != nil {
+		panic(err)
+	}
+
+	var count int64
+	db.Raw("SELECT COUNT(*) FROM pg_database WHERE datname = ?", srv.Config.POSTGRES_DATABASE).Scan(&count)
+	if count == 0 {
+		result := db.Exec("CREATE DATABASE " + srv.Config.POSTGRES_DATABASE)
+		if result.Error != nil {
+			panic(result.Error)
+		}
+	}
+	// Close the connection to 'default' database
+	sqlDB, err := db.DB()
+	if err != nil {
+		fmt.Println("Failed to get SQL database instance:", err)
+		panic(err)
+	}
+	sqlDB.Close()
+
+	dns = fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=require",
+		srv.Config.POSTGRES_HOST, srv.Config.POSTGRES_USERNAME, srv.Config.POSTGRES_PASSWORD, srv.Config.POSTGRES_DATABASE, srv.Config.POSTGRES_PORT)
+	db, err = gorm.Open(postgres.Open(dns), &gorm.Config{})
 	if err != nil {
 		panic(err)
 	}
 	// Enable UUID generation
 	db.Exec("CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\";")
-	db.AutoMigrate(&Tokens{}, &FullProductDetails{}, &Product{}, &ProductMicroService{}, &ProductResource{}, &ProductConfiguration{}, &ProductPlan{}, &ProductVersion{})
+	// db.AutoMigrate(&FullProductDetails{}, &Product{}, &ProductMicroService{}, &ProductResource{}, &ProductConfiguration{}, &ProductPlan{}, &ProductVersion{})
+	db.AutoMigrate(&Product{}, &ProductProvider{}, &ProductMicroService{}, &ProductMicroServiceDatabase{}, &ProductConfiguration{}, &ProductProviderPermissions{})
+	return db
+}
+
+func (srv *Service) initUsersDB() *gorm.DB {
+	dns := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=require",
+		srv.Config.POSTGRES_HOST, srv.Config.POSTGRES_USERNAME, srv.Config.POSTGRES_PASSWORD, srv.Config.USERS_DATABASE, srv.Config.POSTGRES_PORT)
+	db, err := gorm.Open(postgres.Open(dns), &gorm.Config{})
+	if err != nil {
+		panic(err)
+	}
+	db.AutoMigrate(&Tokens{})
 	return db
 }

@@ -76,7 +76,7 @@ func createUser(user User, srv *Service, createdBy string) (User, error) {
 		return User{}, errors.New("user already exists")
 	}
 	if userExists.Error != nil && userExists.Error != gorm.ErrRecordNotFound {
-		return User{}, err
+		return User{}, userExists.Error
 	}
 	result := srv.PostgresDB.Create(&user)
 	if result.Error != nil {
