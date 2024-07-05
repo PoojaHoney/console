@@ -101,7 +101,7 @@ type FullProductDetails struct {
 }
 
 type Product struct {
-	ID                 uuid.UUID         `json:"id" gorm:"type:uuid;primaryKey" description:"Product ID" editable:"false" enabled:"false" label:"ID" unique:"true"`
+	ID                 uuid.UUID         `json:"id" gorm:"type:uuid;primaryKey;default:uuid_generate_v4()" description:"Product ID" editable:"false" enabled:"false" label:"ID" unique:"true"`
 	Name               string            `json:"name" gorm:"not null" description:"Product Name" required:"true" editable:"true" enabled:"true" label:"Name" unique:"true"`
 	Description        string            `json:"description" gorm:"not null" description:"Product Description" required:"true" editable:"true" enabled:"true" label:"Description"`
 	Status             string            `json:"status" gorm:"not null" description:"Product Status" editable:"false" enabled:"true" label:"Status"`
@@ -119,8 +119,8 @@ type Product struct {
 
 type ProductProvider struct {
 	gorm.Model
-	ProductID uuid.UUID `json:"productID" gorm:"not null" `
-	Provider  string    `json:"provider" gorm:"not null" `
+	ProductID string `json:"productID" gorm:"not null" `
+	Provider  string `json:"provider" gorm:"not null" `
 }
 
 type ProductMicroServiceDatabase struct {
@@ -155,23 +155,6 @@ type ProductMicroService struct {
 	CreatedAt  time.Time                     `json:"createdAt" description:"Created On" editable:"false" enabled:"false" label:"Created On"`
 	UpdatedAt  time.Time                     `json:"updatedAt" description:"Updated On" editable:"false" enabled:"false" label:"Updated On"`
 	Databases  []ProductMicroServiceDatabase `gorm:"foreignKey:MicroserviceID" json:"productDatabases" description:"Product Databases" editable:"true" enabled:"true" label:"Databases"`
-}
-
-type ProductConfigurationProviderPermissions struct {
-	ID              uuid.UUID                    `json:"id" gorm:"type:uuid;primaryKey" description:"ID" editable:"false" enabled:"false" label:"ID" unique:"true"`
-	CreatedAt       time.Time                    `json:"createdAt" description:"Created On" editable:"false" enabled:"true" label:"Created On"`
-	DeletedAt       gorm.DeletedAt               `gorm:"index" json:"deletedAt"`
-	UpdatedAt       time.Time                    `json:"updatedAt" description:"Updated On" editable:"false" enabled:"true" label:"Updated On"`
-	ConfigurationID uuid.UUID                    `json:"configurationID"`
-	Permissions     []ProductProviderPermissions `gorm:"foreignKey:ProviderID;not null" json:"permissions" description:"Permissions" editable:"true" enabled:"true" label:"Permissions"`
-	Provider        string                       `json:"provider" description:"Provider" editable:"true" enabled:"true" label:"Provider"`
-	Enabled         bool                         `json:"enabled" description:"Enabled" editable:"true" enabled:"true" label:"Enabled"`
-}
-
-type ProductProviderPermissions struct {
-	gorm.Model
-	ProviderID uuid.UUID `json:"providerID" gorm:"not null" `
-	Permission string    `json:"permission" gorm:"not null" `
 }
 
 type ProductResourceVersions struct {
@@ -213,33 +196,49 @@ type ProductResourceExposedEnvVariables struct {
 }
 
 type ProductConfiguration struct {
-	ID                    uuid.UUID                                 `json:"id" gorm:"type:uuid;primaryKey" description:"Configuration ID" editable:"false" enabled:"false" label:"ID" unique:"true"`
+	ID                    uuid.UUID                                 `json:"id" gorm:"type:uuid;primaryKey;default:uuid_generate_v4();uniqueIndex" description:"Configuration ID" editable:"false" enabled:"false" label:"ID" unique:"true"`
 	ProductID             string                                    `json:"productID" required:"true" description:"Product ID" editable:"true" enabled:"true" label:"Product ID"`
 	DefaultMemory         float32                                   `json:"defaultMemory" required:"true" description:"Default Memory" editable:"true" enabled:"true" label:"Default Memory"`
 	DefaultRAM            float32                                   `json:"defaultRAM" required:"true" description:"Default RAM" editable:"true" enabled:"true" label:"Default RAM"`
 	StartupScriptFilePath string                                    `json:"startupScriptFilePath" description:"Startup Script File Path" editable:"true" enabled:"true" label:"Startup Script File Path"`
 	Status                string                                    `json:"status" description:"Product Status" editable:"true" enabled:"true" label:"Status"`
 	ArtifactRegistryName  string                                    `json:"artifactRegistryName" required:"true" description:"Artifact Registry Name" editable:"true" enabled:"true" label:"Artifact Registry Name"`
-	NetworkTags           []ProductConfigurationNetworkTags         `json:"networkTags" gorm:"foreignKey:ConfigurationID;not null" description:"Network Tags" editable:"true" enabled:"true" label:"Network Tags"`
+	NetworkTags           []ProductConfigurationNetworkTags         `json:"networkTags" gorm:"foreignKey:ProductID;references:ProductID;not null" description:"Network Tags" editable:"true" enabled:"true" label:"Network Tags"`
 	DeletedAt             gorm.DeletedAt                            `gorm:"index" json:"deletedAt"`
 	CreatedAt             time.Time                                 `json:"createdAt" description:"Created On" editable:"false" enabled:"false" label:"Created On"`
 	UpdatedAt             time.Time                                 `json:"updatedAt" description:"Updated On" editable:"false" enabled:"false" label:"Updated On"`
-	ProviderPermissions   []ProductConfigurationProviderPermissions `json:"providerPermissions" gorm:"foreignKey:ConfigurationID"`
-	EnvironmentsSupport   []ProductEnvironmentSupport               `gorm:"foreignKey:ConfigurationID" json:"environmentsSupport" description:"Environments Support" editable:"true" enabled:"true" label:"Environments Support"`
+	ProviderPermissions   []ProductConfigurationProviderPermissions `json:"providerPermissions" gorm:"foreignKey:ProductID;references:ProductID;not null"`
+	EnvironmentsSupport   []ProductEnvironmentSupport               `gorm:"foreignKey:ProductID;references:ProductID;not null" json:"environmentsSupport" description:"Environments Support" editable:"true" enabled:"true" label:"Environments Support"`
 }
 
+type ProductProviderPermissions struct {
+	gorm.Model
+	Provider   string `json:"provider" gorm:"not null" `
+	Permission string `json:"permission" gorm:"not null" `
+}
+
+type ProductConfigurationProviderPermissions struct {
+	ID          uuid.UUID                    `json:"id" gorm:"type:uuid;primaryKey;default:uuid_generate_v4();uniqueIndex" description:"ID" editable:"false" enabled:"false" label:"ID" unique:"true"`
+	CreatedAt   time.Time                    `json:"createdAt" description:"Created On" editable:"false" enabled:"true" label:"Created On"`
+	DeletedAt   gorm.DeletedAt               `gorm:"index;not null" json:"deletedAt"`
+	UpdatedAt   time.Time                    `json:"updatedAt" description:"Updated On" editable:"false" enabled:"true" label:"Updated On"`
+	ProductID   string                       `json:"productID" gorm:"not null;uniqueIndex"`
+	Permissions []ProductProviderPermissions `gorm:"foreignKey:Provider;not null" json:"permissions" description:"Permissions" editable:"true" enabled:"true" label:"Permissions"`
+	Provider    string                       `json:"provider" gorm:"not null" description:"Provider" editable:"true" enabled:"true" label:"Provider"`
+	Enabled     bool                         `json:"enabled" gorm:"not null" description:"Enabled" editable:"true" enabled:"true" label:"Enabled"`
+}
 type ProductConfigurationNetworkTags struct {
 	gorm.Model
-	ConfigurationID uuid.UUID `json:"configurationID" gorm:"not null" `
-	NetworkTag      string    `json:"networkTag" gorm:"not null" `
+	ProductID  string `json:"productID" gorm:"not null" `
+	NetworkTag string `json:"networkTag" gorm:"not null" `
 }
 
 type ProductEnvironmentSupport struct {
-	ID              uint      `gorm:"primaryKey"`
-	ConfigurationID uuid.UUID `json:"condifurationID"`
-	Provider        string    `json:"provider" description:"Provider" editable:"true" enabled:"true" label:"Provider"`
-	Enabled         bool      `json:"enabled" description:"Enabled" editable:"true" enabled:"true" label:"Enabled"`
-	Environment     string    `json:"environment" description:"Environment Name" editable:"true" enabled:"true" label:"Environment Name"`
+	ID          uint   `gorm:"type:uuid;primaryKey;default:uuid_generate_v4();uniqueIndex"`
+	ProductID   string `json:"productID" gorm:"not null"`
+	Provider    string `json:"provider" gorm:"not null" description:"Provider" editable:"true" enabled:"true" label:"Provider"`
+	Enabled     bool   `json:"enabled" gorm:"not null" description:"Enabled" editable:"true" enabled:"true" label:"Enabled"`
+	Environment string `json:"environment" gorm:"not null" description:"Environment Name" editable:"true" enabled:"true" label:"Environment Name"`
 }
 
 type ProductPlan struct {
@@ -257,7 +256,7 @@ type ProductPlan struct {
 }
 
 type ProductVersion struct {
-	ID          uuid.UUID      `json:"id" gorm:"type:uuid;primaryKey" description:"Plan ID" editable:"false" enabled:"false" label:"ID" unique:"true"`
+	ID          uuid.UUID      `json:"id" gorm:"type:uuid;primaryKey;default:uuid_generate_v4()" description:"Plan ID" editable:"false" enabled:"false" label:"ID" unique:"true"`
 	Name        string         `json:"name" description:"Name" editable:"true" required:"true" enabled:"true" label:"Name"`
 	Version     string         `json:"version" description:"Version" editable:"true" required:"true" enabled:"true" label:"Version"`
 	BuildNumber string         `json:"buildNumber" description:"Build Number" editable:"true" required:"true" enabled:"true" label:"Build Number"`

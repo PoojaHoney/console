@@ -6,9 +6,10 @@
         "microServicesCount": 2,
         "name": "LMS",
         "productID": "lms",
-        "providers": [
-            "gcp"
-        ],
+        "providers": [{
+            "productID":"lms",
+            "provider":"gcp"
+        }],
         "type": "education"
     },
     "versions": [

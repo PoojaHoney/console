@@ -14,7 +14,7 @@ import (
 )
 
 func createProduct(srv *Service, product Product, createdBy string) (Product, error) {
-	productExists := srv.ProductDB.Where("productID = ?", product.ProductID).First(&Product{})
+	productExists := srv.ProductDB.Where("product_id = ?", product.ProductID).First(&Product{})
 	if productExists.Error == nil {
 		return Product{}, errors.New("product already exists")
 	}
@@ -31,11 +31,12 @@ func createProduct(srv *Service, product Product, createdBy string) (Product, er
 }
 
 func createVersion(srv *Service, version ProductVersion) (ProductVersion, error) {
-	productExists := srv.ProductDB.Where("productID = ?", version.ProductID).First(&Product{})
+	productExists := srv.ProductDB.Where("product_id = ?", version.ProductID).First(&Product{})
 	if productExists.Error != nil {
 		return ProductVersion{}, productExists.Error
 	}
-	versionExists := srv.ProductDB.Where("version = ?", version.Version).First(&ProductVersion{})
+	var existingVersion ProductVersion
+	versionExists := srv.ProductDB.Where("version = ?", version.Version).First(&existingVersion)
 	if versionExists.Error == nil {
 		return ProductVersion{}, errors.New("version already exists")
 	}
@@ -52,7 +53,7 @@ func createVersion(srv *Service, version ProductVersion) (ProductVersion, error)
 }
 
 func createMicroService(srv *Service, microservice ProductMicroService) (ProductMicroService, error) {
-	product, err := getProduct(srv.ProductDB, map[string]interface{}{"productID": microservice.ProductID})
+	product, err := getProduct(srv.ProductDB, map[string]interface{}{"product_id": microservice.ProductID})
 	if err != nil {
 		return ProductMicroService{}, err
 	}
@@ -74,7 +75,7 @@ func createMicroService(srv *Service, microservice ProductMicroService) (Product
 	}
 	// product.MicroServicesCount = product.MicroServicesCount + 1
 	// product.DatabasesCount = product.DatabasesCount + len(microservice.Databases)
-	// _, err = productCollection.UpdateOne(context.TODO(), bson.D{{Key: "productID", Value: microservice.ProductID}}, bson.D{{Key: "$set", Value: product}})
+	// _, err = productCollection.UpdateOne(context.TODO(), bson.D{{Key: "product_id", Value: microservice.ProductID}}, bson.D{{Key: "$set", Value: product}})
 	// if err != nil {
 	// 	return ProductMicroService{}, err
 	// }
@@ -82,7 +83,7 @@ func createMicroService(srv *Service, microservice ProductMicroService) (Product
 }
 
 func createPlan(srv *Service, plan ProductPlan) (ProductPlan, error) {
-	product, err := getProduct(srv.ProductDB, map[string]interface{}{"productID": plan.ProductID})
+	product, err := getProduct(srv.ProductDB, map[string]interface{}{"product_id": plan.ProductID})
 	if err != nil {
 		return ProductPlan{}, err
 	}
@@ -106,7 +107,7 @@ func createPlan(srv *Service, plan ProductPlan) (ProductPlan, error) {
 }
 
 func createResource(srv *Service, resource ProductResource) (ProductResource, error) {
-	product, err := getProduct(srv.ProductDB, map[string]interface{}{"productID": resource.ProductID})
+	product, err := getProduct(srv.ProductDB, map[string]interface{}{"product_id": resource.ProductID})
 	if err != nil {
 		return ProductResource{}, err
 	}
@@ -131,7 +132,7 @@ func createResource(srv *Service, resource ProductResource) (ProductResource, er
 }
 
 func createConfiguration(srv *Service, configuration ProductConfiguration) (ProductConfiguration, error) {
-	product, err := getProduct(srv.ProductDB, map[string]interface{}{"productID": configuration.ProductID})
+	product, err := getProduct(srv.ProductDB, map[string]interface{}{"product_id": configuration.ProductID})
 	if err != nil {
 		return ProductConfiguration{}, err
 	}
@@ -147,27 +148,27 @@ func createConfiguration(srv *Service, configuration ProductConfiguration) (Prod
 }
 
 func activateProduct(srv *Service, product string) (FullProductDetails, error) {
-	productInfo, err := getProduct(srv.ProductDB, map[string]interface{}{"productID": product})
+	productInfo, err := getProduct(srv.ProductDB, map[string]interface{}{"product_id": product})
 	if err != nil {
 		return FullProductDetails{}, err
 	}
-	configuration, err := getProductConfigurations(srv.ProductDB, map[string]interface{}{"productID": product})
+	configuration, err := getProductConfigurations(srv.ProductDB, map[string]interface{}{"product_id": product})
 	if err != nil {
 		return FullProductDetails{}, err
 	}
-	versions, err := getProductVersions(srv.ProductDB, map[string]interface{}{"productID": product})
+	versions, err := getProductVersions(srv.ProductDB, map[string]interface{}{"product_id": product})
 	if err != nil {
 		return FullProductDetails{}, err
 	}
-	microservices, err := getProductMicroServices(srv.ProductDB, map[string]interface{}{"productID": product})
+	microservices, err := getProductMicroServices(srv.ProductDB, map[string]interface{}{"product_id": product})
 	if err != nil {
 		return FullProductDetails{}, err
 	}
-	plans, err := getProductPlans(srv.ProductDB, map[string]interface{}{"productID": product})
+	plans, err := getProductPlans(srv.ProductDB, map[string]interface{}{"product_id": product})
 	if err != nil {
 		return FullProductDetails{}, err
 	}
-	resources, err := getProductResources(srv.ProductDB, map[string]interface{}{"productID": product})
+	resources, err := getProductResources(srv.ProductDB, map[string]interface{}{"product_id": product})
 	if err != nil {
 		return FullProductDetails{}, err
 	}
@@ -189,14 +190,14 @@ func activateProduct(srv *Service, product string) (FullProductDetails, error) {
 	}
 
 	// result = srv.ProductDB.Unscoped().Delete(&versions)
-	result = srv.ProductDB.Exec("DELETE FROM product_versions WHERE ", "productID = ?", product)
+	result = srv.ProductDB.Exec("DELETE FROM product_versions WHERE ", "product_id = ?", product)
 	if result.Error != nil {
 		srv.ProductDB.Create(&productInfo)
 		srv.ProductDB.Create(&configuration)
 		return FullProductDetails{}, result.Error
 	}
 
-	result = srv.ProductDB.Exec("DELETE FROM product_microservices WHERE ", "productID = ?", product)
+	result = srv.ProductDB.Exec("DELETE FROM product_microservices WHERE ", "product_id = ?", product)
 	if result.Error != nil {
 		srv.ProductDB.Create(&productInfo)
 		srv.ProductDB.Create(&configuration)
@@ -204,7 +205,7 @@ func activateProduct(srv *Service, product string) (FullProductDetails, error) {
 		return FullProductDetails{}, result.Error
 	}
 
-	result = srv.ProductDB.Exec("DELETE FROM product_plans WHERE ", "productID = ?", product)
+	result = srv.ProductDB.Exec("DELETE FROM product_plans WHERE ", "product_id = ?", product)
 	if result.Error != nil {
 		srv.ProductDB.Create(&productInfo)
 		srv.ProductDB.Create(&configuration)
@@ -213,7 +214,7 @@ func activateProduct(srv *Service, product string) (FullProductDetails, error) {
 		return FullProductDetails{}, result.Error
 	}
 
-	result = srv.ProductDB.Exec("DELETE FROM product_resources WHERE ", "productID = ?", product)
+	result = srv.ProductDB.Exec("DELETE FROM product_resources WHERE ", "product_id = ?", product)
 	if result.Error != nil {
 		srv.ProductDB.Create(&productInfo)
 		srv.ProductDB.Create(&configuration)
