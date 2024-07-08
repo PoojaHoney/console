@@ -15,6 +15,8 @@ from typing import Any
 
 def list_vpcs(vpc_name: str, gcp_client: GCP_Crds.get_gcp_crds = None):
     if gcp_client == None:
+        print("GCP Creds: ",  settings.GCP_Config.PROJECT_ID, settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,
+              settings.GCP_Config.SRV_ACC_PRIVATE_KEY, settings.GCP_Config.SRV_ACC_CLIENT_EMAIL, settings.GCP_Config.TOKEN_URL)
         gcp_client = GCP_Crds.get_gcp_crds({"project_id": settings.GCP_Config.PROJECT_ID,
                                             "private_key_id": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,
                                             "private_key": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,

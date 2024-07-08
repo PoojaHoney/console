@@ -10,6 +10,8 @@ router = APIRouter()
 async def get_vpc(cloud_provider: str, framework: str, vpc_name: str = Query(default=None, max_length=200)):
     print("VPC: ", vpc_name, framework, cloud_provider)
     try:
+        print("Cloud Provider SETTINGS: ", settings.GCP_Config.CLOUD_PROVIDER)
+        print("SDK Framework CONST: ", constants.SDK_FRAMEWORK)
         if cloud_provider and framework:
             if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:
                 if framework == constants.SDK_FRAMEWORK:
