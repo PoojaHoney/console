@@ -17,6 +17,14 @@ async def get_vpc(cloud_provider: str, framework: str, vpc_name: str = Query(def
         return API_Response(error=exp, statusCode=400).model_dump()
 
 
+@router.get("/version")
+async def get_version():
+    print("Version API - Instance Microservice 1234")
+    return {
+        "version": "1.0.0"
+    }
+
+
 @router.post("/vpc/{cloud_provider}/{framework}")
 def create_vpc(cloud_provider: str, framework: str,  details: VPC_Schema):
     try:
