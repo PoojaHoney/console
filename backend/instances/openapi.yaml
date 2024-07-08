@@ -1,10 +1,13 @@
----
-openapi: 3.1.0
+openapi: 3.0.0
 info:
-  title: instances
-  version: 0.1.0
+  description: Instance Microservice for Console
+  contact: {}
+  version: "1.0"
+  title: Instance
+servers:
+  - url: http://localhost:6001
 paths:
-  "/api/instances/v1/iam_role/{cloud_provider}/{framework}":
+  "/iam_role/{cloud_provider}/{framework}":
     post:
       tags:
       - iam
@@ -128,7 +131,7 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/HTTPValidationError"
-  "/api/instances/v1/iam_role/{cloud_provider}/{framework}/{action}":
+  "/iam_role/{cloud_provider}/{framework}/{action}":
     put:
       tags:
       - iam
@@ -171,7 +174,7 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/HTTPValidationError"
-  "/api/instances/v1/iam_role_key/{cloud_provider}/{framework}":
+  "/iam_role_key/{cloud_provider}/{framework}":
     get:
       tags:
       - iam
@@ -222,7 +225,7 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/HTTPValidationError"
-  "/api/instances/v1/iam_role_permissions/{cloud_provider}/{framework}":
+  "/iam_role_permissions/{cloud_provider}/{framework}":
     get:
       tags:
       - iam
@@ -259,7 +262,7 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/HTTPValidationError"
-  "/api/instances/v1/iam_role_keys":
+  "/iam_role_keys":
     post:
       tags:
       - iam
@@ -296,7 +299,7 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/HTTPValidationError"
-  "/api/instances/v1/iam_predefined_roles/{cloud_provider}/{framework}":
+  "/iam_predefined_roles/{cloud_provider}/{framework}":
     post:
       tags:
       - iam
@@ -365,7 +368,7 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/HTTPValidationError"
-  "/api/instances/v1/vpc/{cloud_provider}/{framework}":
+  "/vpc/{cloud_provider}/{framework}":
     get:
       tags:
       - vpc
@@ -475,7 +478,7 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/HTTPValidationError"
-  "/api/instances/v1/compute/{cloud_provider}/{framework}":
+  "/compute/{cloud_provider}/{framework}":
     get:
       tags:
       - compute
@@ -585,7 +588,7 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/HTTPValidationError"
-  "/api/instances/v1/artifact_registry/{cloud_provider}/{framework}":
+  "/artifact_registry/{cloud_provider}/{framework}":
     get:
       tags:
       - artifactRegistry
@@ -623,7 +626,7 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/HTTPValidationError"
-  "/api/instances/v1/artifact_registry_permissions/{cloud_provider}/{framework}":
+  "/artifact_registry_permissions/{cloud_provider}/{framework}":
     get:
       tags:
       - artifactRegistry
@@ -661,7 +664,7 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/HTTPValidationError"
-  "/api/instances/v1/create":
+  "/create":
     post:
       tags:
       - instances
@@ -686,7 +689,7 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/HTTPValidationError"
-  "/api/instances/v1/delete":
+  "/delete":
     delete:
       tags:
       - instances
