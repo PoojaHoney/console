@@ -1354,7 +1354,7 @@
         "kind": 2,
         "importPath": "api_v1.handlers.sdk.vpc",
         "description": "api_v1.handlers.sdk.vpc",
-        "peekOfCode": "def list_vpcs(vpc_name: str, gcp_client: GCP_Crds.get_gcp_crds = None):\n    if gcp_client == None:\n        print(\"GCP Creds: \",  settings.GCP_Config.PROJECT_ID, settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n              settings.GCP_Config.SRV_ACC_PRIVATE_KEY, settings.GCP_Config.SRV_ACC_CLIENT_EMAIL, settings.GCP_Config.TOKEN_URL)\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                            \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                            \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                            \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                            })",
+        "peekOfCode": "def list_vpcs(vpc_name: str, gcp_client: GCP_Crds.get_gcp_crds = None):\n    if gcp_client == None:\n        print(\"GCP Creds 1234567890000: \",  settings.GCP_Config.PROJECT_ID, settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n              settings.GCP_Config.SRV_ACC_PRIVATE_KEY, settings.GCP_Config.SRV_ACC_CLIENT_EMAIL, settings.GCP_Config.TOKEN_URL)\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                            \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                            \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                            \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                            })",
         "detail": "api_v1.handlers.sdk.vpc",
         "documentation": {}
     },
@@ -1534,7 +1534,7 @@
         "kind": 2,
         "importPath": "cloudProviders.gcp.credentials",
         "description": "cloudProviders.gcp.credentials",
-        "peekOfCode": "def get_gcp_crds(crds: dict):\n    return GCPSrvAcc.Credentials.from_service_account_info(\n    # filename=\"svc-acc-gcp-cloud-automation-cred.json\", \n    crds,\n    scopes=[\"https://www.googleapis.com/auth/cloud-platform\"])",
+        "peekOfCode": "def get_gcp_crds(crds: dict):\n    print(\"crdsssss: \", crds)\n    return GCPSrvAcc.Credentials.from_service_account_info(\n    # filename=\"svc-acc-gcp-cloud-automation-cred.json\", \n    crds,\n    scopes=[\"https://www.googleapis.com/auth/cloud-platform\"])",
         "detail": "cloudProviders.gcp.credentials",
         "documentation": {}
     },
