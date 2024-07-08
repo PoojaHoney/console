@@ -11,12 +11,13 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Adjust this to your needs
-    allow_credentials=True,
-    allow_methods=["*"],
+    allow_origins=["*"],  
+    allow_credentials=False,
+    expose_headers=["Content-Length"], 
+    allow_methods=["*"], 
+    max_age=86400,
     allow_headers=["*"],
 )
-
 app.include_router(
     api_router, prefix=f"{settings.SERVICE_BASEPATH}/{settings.SERVICE_VERSION}")
 
