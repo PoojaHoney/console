@@ -1534,7 +1534,7 @@
         "kind": 2,
         "importPath": "cloudProviders.gcp.credentials",
         "description": "cloudProviders.gcp.credentials",
-        "peekOfCode": "def get_gcp_crds(crds: dict):\n    print(\"crdsssss: \", crds)\n    return GCPSrvAcc.Credentials.from_service_account_info(\n    # filename=\"svc-acc-gcp-cloud-automation-cred.json\", \n    crds,\n    scopes=[\"https://www.googleapis.com/auth/cloud-platform\"])",
+        "peekOfCode": "def get_gcp_crds(crds: dict):\n    print(\"crdsssss: \", crds)\n    result =  GCPSrvAcc.Credentials.from_service_account_info(\n    # filename=\"svc-acc-gcp-cloud-automation-cred.json\", \n    crds,\n    scopes=[\"https://www.googleapis.com/auth/cloud-platform\"])\n    print(result)\n    return result",
         "detail": "cloudProviders.gcp.credentials",
         "documentation": {}
     },

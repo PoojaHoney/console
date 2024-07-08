@@ -23,6 +23,7 @@ def list_vpcs(vpc_name: str, gcp_client: GCP_Crds.get_gcp_crds = None):
                                             "client_email": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,
                                             "token_uri": settings.GCP_Config.TOKEN_URL,
                                             })
+        print("gcp client created: ", gcp_client)
     print("vpc: name: ", vpc_name)
     if vpc_name == "" or vpc_name == None:
         print("vpc jfhksfjk name: ", vpc_name)
