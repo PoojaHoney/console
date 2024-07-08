@@ -98,7 +98,6 @@ paths:
       tags:
       - iam
       summary: Get Iam Roles
-      operationId: get_iam_roles_api_instances_v1_iam_role__cloud_provider___framework__get
       parameters:
       - name: cloud_provider
         in: path
@@ -373,7 +372,6 @@ paths:
       tags:
       - vpc
       summary: Get Vpc
-      operationId: get_vpc_api_instances_v1_vpc__cloud_provider___framework__get
       parameters:
       - name: cloud_provider
         in: path

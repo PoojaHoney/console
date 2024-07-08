@@ -1174,7 +1174,7 @@
         "kind": 5,
         "importPath": "api_v1.endpoints.vpc",
         "description": "api_v1.endpoints.vpc",
-        "peekOfCode": "router = APIRouter()\n@router.get(\"/vpc/{cloud_provider}/{framework}\")\nasync def get_vpc(cloud_provider: str, framework: str, vpc_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_VPC.list_vpcs(vpc_name=vpc_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
+        "peekOfCode": "router = APIRouter()\n@router.get(\"/vpc/{cloud_provider}/{framework}\")\nasync def get_vpc(cloud_provider: str, framework: str, vpc_name: str = Query(default=None, max_length=200)):\n    print(\"VPC: \", vpc_name, framework, cloud_provider)\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_VPC.list_vpcs(vpc_name=vpc_name)\n    except Exception as exp:",
         "detail": "api_v1.endpoints.vpc",
         "documentation": {}
     },

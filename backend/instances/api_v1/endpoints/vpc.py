@@ -8,12 +8,14 @@ router = APIRouter()
 
 @router.get("/vpc/{cloud_provider}/{framework}")
 async def get_vpc(cloud_provider: str, framework: str, vpc_name: str = Query(default=None, max_length=200)):
+    print("VPC: ", vpc_name, framework, cloud_provider)
     try:
         if cloud_provider and framework:
             if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:
                 if framework == constants.SDK_FRAMEWORK:
                     return SDK_VPC.list_vpcs(vpc_name=vpc_name)
     except Exception as exp:
+        print("VPC GET Exception: ", exp)
         return API_Response(error=exp, statusCode=400).model_dump()
 
 
