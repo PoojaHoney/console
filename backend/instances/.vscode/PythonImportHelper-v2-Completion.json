@@ -1957,7 +1957,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "app = FastAPI(\n    title=settings.SERVICE_NAME, \n    proxy_headers=True,\n    trusted_hosts=[\"*\"], \n    max_request_size=1024 * 1024 * 1024,  # Body limit in bytes (1 GB)\n    openapi_url=f\"{settings.SERVICE_BASEPATH}/{settings.SERVICE_VERSION}/openapi.json\", \n    docs_url=\"/docs\"\n)\napp.add_middleware(\n    CORSMiddleware,",
+        "peekOfCode": "app = FastAPI(\n    title=settings.SERVICE_NAME,\n    proxy_headers=True,\n    trusted_hosts=[\"*\"],\n    max_request_size=1024 * 1024 * 1024,  # Body limit in bytes (1 GB)\n    openapi_url=f\"{settings.SERVICE_BASEPATH}/{settings.SERVICE_VERSION}/openapi.json\",\n    docs_url=\"/docs\"\n)\napp.add_middleware(\n    CORSMiddleware,",
         "detail": "main",
         "documentation": {}
     },
