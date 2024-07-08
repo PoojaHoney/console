@@ -6,7 +6,12 @@ from fastapi.middleware.cors import CORSMiddleware
 
 
 app = FastAPI(
-    title=settings.SERVICE_NAME, openapi_url=f"{settings.SERVICE_BASEPATH}/{settings.SERVICE_VERSION}/openapi.json", docs_url="/docs"
+    title=settings.SERVICE_NAME, 
+    proxy_headers=True,
+    trusted_hosts=["*"], 
+    max_request_size=1024 * 1024 * 1024,  # Body limit in bytes (1 GB)
+    openapi_url=f"{settings.SERVICE_BASEPATH}/{settings.SERVICE_VERSION}/openapi.json", 
+    docs_url="/docs"
 )
 
 app.add_middleware(
