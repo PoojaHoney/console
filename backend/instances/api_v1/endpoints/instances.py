@@ -1,6 +1,7 @@
 import json
 from schemas import Instance, Response as API_Response
-from config import settings, databases
+from config import settings
+# , databases
 from fastapi import APIRouter
 from api_v1.handlers import instances as Instances
 from api_v1.handlers.instances import delete_instance_compute_engine

@@ -1,6 +1,6 @@
 import os
 from pydantic_settings import BaseSettings
-from pymongo import MongoClient
+# from pymongo import MongoClient
 
 
 class GCP_Settings(BaseSettings):
@@ -70,27 +70,27 @@ class Constants():
 constants = Constants()
 
 
-class Databases():
-    mongo_client = None
+# class Databases():
+#     mongo_client = None
 
-    @ classmethod
-    def get_mongo_connection(cls):
-        if cls.mongo_client is None:
-            if settings.MONGO_USERNAME != "" and settings.MONGO_PASSWORD != "":
-                cls.mongo_client = MongoClient(
-                    f"mongodb://{settings.MONGO_USERNAME}:{settings.MONGO_PASSWORD}@{settings.MONGO_HOST}:{settings.MONGO_PORT}/")
-            else:
-                cls.mongo_client = MongoClient(
-                    f"mongodb://{settings.MONGO_HOST}:{settings.MONGO_PORT}/")
-        return cls.mongo_client
+#     @ classmethod
+#     def get_mongo_connection(cls):
+#         if cls.mongo_client is None:
+#             if settings.MONGO_USERNAME != "" and settings.MONGO_PASSWORD != "":
+#                 cls.mongo_client = MongoClient(
+#                     f"mongodb://{settings.MONGO_USERNAME}:{settings.MONGO_PASSWORD}@{settings.MONGO_HOST}:{settings.MONGO_PORT}/")
+#             else:
+#                 cls.mongo_client = MongoClient(
+#                     f"mongodb://{settings.MONGO_HOST}:{settings.MONGO_PORT}/")
+#         return cls.mongo_client
 
-    @ classmethod
-    def get_mongo_database(cls, db_name: str):
-        return cls.get_mongo_connection()[db_name]
+#     @ classmethod
+#     def get_mongo_database(cls, db_name: str):
+#         return cls.get_mongo_connection()[db_name]
 
-    @classmethod
-    def get_mongo_collection(cls, db_name, collection_name: str):
-        return cls.get_mongo_database(db_name)[collection_name]
+#     @classmethod
+#     def get_mongo_collection(cls, db_name, collection_name: str):
+#         return cls.get_mongo_database(db_name)[collection_name]
 
 
-databases = Databases()
+# databases = Databases()

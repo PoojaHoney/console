@@ -7,7 +7,7 @@ router = APIRouter()
 
 
 @router.get("/vpc/{cloud_provider}/{framework}")
-def get_vpc(cloud_provider: str, framework: str, vpc_name: str = Query(default=None, max_length=200)):
+async def get_vpc(cloud_provider: str, framework: str, vpc_name: str = Query(default=None, max_length=200)):
     try:
         if cloud_provider and framework:
             if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:

@@ -408,14 +408,6 @@
         "documentation": {}
     },
     {
-        "label": "databases",
-        "importPath": "config",
-        "description": "config",
-        "isExtraImport": true,
-        "detail": "config",
-        "documentation": {}
-    },
-    {
         "label": "settings",
         "importPath": "config",
         "description": "config",
@@ -449,14 +441,6 @@
     },
     {
         "label": "settings",
-        "importPath": "config",
-        "description": "config",
-        "isExtraImport": true,
-        "detail": "config",
-        "documentation": {}
-    },
-    {
-        "label": "databases",
         "importPath": "config",
         "description": "config",
         "isExtraImport": true,
@@ -946,14 +930,6 @@
         "documentation": {}
     },
     {
-        "label": "MongoClient",
-        "importPath": "pymongo",
-        "description": "pymongo",
-        "isExtraImport": true,
-        "detail": "pymongo",
-        "documentation": {}
-    },
-    {
         "label": "uvicorn",
         "kind": 6,
         "isExtraImport": true,
@@ -1176,15 +1152,6 @@
         "documentation": {}
     },
     {
-        "label": "get_vpc",
-        "kind": 2,
-        "importPath": "api_v1.endpoints.vpc",
-        "description": "api_v1.endpoints.vpc",
-        "peekOfCode": "def get_vpc(cloud_provider: str, framework: str, vpc_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_VPC.list_vpcs(vpc_name=vpc_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.post(\"/vpc/{cloud_provider}/{framework}\")\ndef create_vpc(cloud_provider: str, framework: str,  details: VPC_Schema):",
-        "detail": "api_v1.endpoints.vpc",
-        "documentation": {}
-    },
-    {
         "label": "create_vpc",
         "kind": 2,
         "importPath": "api_v1.endpoints.vpc",
@@ -1207,7 +1174,7 @@
         "kind": 5,
         "importPath": "api_v1.endpoints.vpc",
         "description": "api_v1.endpoints.vpc",
-        "peekOfCode": "router = APIRouter()\n@router.get(\"/vpc/{cloud_provider}/{framework}\")\ndef get_vpc(cloud_provider: str, framework: str, vpc_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_VPC.list_vpcs(vpc_name=vpc_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
+        "peekOfCode": "router = APIRouter()\n@router.get(\"/vpc/{cloud_provider}/{framework}\")\nasync def get_vpc(cloud_provider: str, framework: str, vpc_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_VPC.list_vpcs(vpc_name=vpc_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
         "detail": "api_v1.endpoints.vpc",
         "documentation": {}
     },
@@ -1963,16 +1930,7 @@
         "kind": 6,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "class Constants():\n    TERRAFORM_FRAMEWORK: str = \"terraform\"\n    SDK_FRAMEWORK: str = \"sdk\"\nconstants = Constants()\nclass Databases():\n    mongo_client = None\n    @ classmethod\n    def get_mongo_connection(cls):\n        if cls.mongo_client is None:\n            if settings.MONGO_USERNAME != \"\" and settings.MONGO_PASSWORD != \"\":",
-        "detail": "config",
-        "documentation": {}
-    },
-    {
-        "label": "Databases",
-        "kind": 6,
-        "importPath": "config",
-        "description": "config",
-        "peekOfCode": "class Databases():\n    mongo_client = None\n    @ classmethod\n    def get_mongo_connection(cls):\n        if cls.mongo_client is None:\n            if settings.MONGO_USERNAME != \"\" and settings.MONGO_PASSWORD != \"\":\n                cls.mongo_client = MongoClient(\n                    f\"mongodb://{settings.MONGO_USERNAME}:{settings.MONGO_PASSWORD}@{settings.MONGO_HOST}:{settings.MONGO_PORT}/\")\n            else:\n                cls.mongo_client = MongoClient(",
+        "peekOfCode": "class Constants():\n    TERRAFORM_FRAMEWORK: str = \"terraform\"\n    SDK_FRAMEWORK: str = \"sdk\"\nconstants = Constants()\n# class Databases():\n#     mongo_client = None\n#     @ classmethod\n#     def get_mongo_connection(cls):\n#         if cls.mongo_client is None:\n#             if settings.MONGO_USERNAME != \"\" and settings.MONGO_PASSWORD != \"\":",
         "detail": "config",
         "documentation": {}
     },
@@ -1981,7 +1939,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "settings = Settings()\nclass Constants():\n    TERRAFORM_FRAMEWORK: str = \"terraform\"\n    SDK_FRAMEWORK: str = \"sdk\"\nconstants = Constants()\nclass Databases():\n    mongo_client = None\n    @ classmethod\n    def get_mongo_connection(cls):\n        if cls.mongo_client is None:",
+        "peekOfCode": "settings = Settings()\nclass Constants():\n    TERRAFORM_FRAMEWORK: str = \"terraform\"\n    SDK_FRAMEWORK: str = \"sdk\"\nconstants = Constants()\n# class Databases():\n#     mongo_client = None\n#     @ classmethod\n#     def get_mongo_connection(cls):\n#         if cls.mongo_client is None:",
         "detail": "config",
         "documentation": {}
     },
@@ -1990,16 +1948,7 @@
         "kind": 5,
         "importPath": "config",
         "description": "config",
-        "peekOfCode": "constants = Constants()\nclass Databases():\n    mongo_client = None\n    @ classmethod\n    def get_mongo_connection(cls):\n        if cls.mongo_client is None:\n            if settings.MONGO_USERNAME != \"\" and settings.MONGO_PASSWORD != \"\":\n                cls.mongo_client = MongoClient(\n                    f\"mongodb://{settings.MONGO_USERNAME}:{settings.MONGO_PASSWORD}@{settings.MONGO_HOST}:{settings.MONGO_PORT}/\")\n            else:",
-        "detail": "config",
-        "documentation": {}
-    },
-    {
-        "label": "databases",
-        "kind": 5,
-        "importPath": "config",
-        "description": "config",
-        "peekOfCode": "databases = Databases()",
+        "peekOfCode": "constants = Constants()\n# class Databases():\n#     mongo_client = None\n#     @ classmethod\n#     def get_mongo_connection(cls):\n#         if cls.mongo_client is None:\n#             if settings.MONGO_USERNAME != \"\" and settings.MONGO_PASSWORD != \"\":\n#                 cls.mongo_client = MongoClient(\n#                     f\"mongodb://{settings.MONGO_USERNAME}:{settings.MONGO_PASSWORD}@{settings.MONGO_HOST}:{settings.MONGO_PORT}/\")\n#             else:",
         "detail": "config",
         "documentation": {}
     },
@@ -2008,7 +1957,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "app = FastAPI(\n    title=settings.SERVICE_NAME, openapi_url=f\"{settings.SERVICE_BASEPATH}/{settings.SERVICE_VERSION}/openapi.json\", docs_url=\"/docs\"\n)\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],  # Adjust this to your needs\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)",
+        "peekOfCode": "app = FastAPI(\n    title=settings.SERVICE_NAME, openapi_url=f\"{settings.SERVICE_BASEPATH}/{settings.SERVICE_VERSION}/openapi.json\", docs_url=\"/docs\"\n)\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],  \n    allow_credentials=False,\n    expose_headers=[\"Content-Length\"], \n    allow_methods=[\"POST, GET, PUT, DELETE\"], \n    max_age=86400,",
         "detail": "main",
         "documentation": {}
     },

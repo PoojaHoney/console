@@ -1,7 +1,8 @@
 from schemas import IAM_Role, Response as API_Response
 from fastapi import Query
 from fastapi.encoders import jsonable_encoder
-from config import settings, databases
+from config import settings
+# databases
 import json
 import base64
 import cloudProviders.gcp.credentials as GCP_Crds

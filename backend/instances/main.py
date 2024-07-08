@@ -14,9 +14,9 @@ app.add_middleware(
     allow_origins=["*"],  
     allow_credentials=False,
     expose_headers=["Content-Length"], 
-    allow_methods=["*"], 
+    allow_methods=["POST, GET, PUT, DELETE"], 
     max_age=86400,
-    allow_headers=["*"],
+    allow_headers=["Access-Control-Allow-Origin, Origin, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization"],
 )
 app.include_router(
     api_router, prefix=f"{settings.SERVICE_BASEPATH}/{settings.SERVICE_VERSION}")
