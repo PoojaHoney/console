@@ -2476,6 +2476,14 @@
         "documentation": {}
     },
     {
+        "label": "CORSMiddleware",
+        "importPath": "fastapi.middleware.cors",
+        "description": "fastapi.middleware.cors",
+        "isExtraImport": true,
+        "detail": "fastapi.middleware.cors",
+        "documentation": {}
+    },
+    {
         "label": "BaseModel",
         "importPath": "pydantic",
         "description": "pydantic",
@@ -4344,7 +4352,7 @@
         "kind": 5,
         "importPath": "backend.instances.main",
         "description": "backend.instances.main",
-        "peekOfCode": "app = FastAPI(\n    title=settings.SERVICE_NAME, openapi_url=f\"{settings.SERVICE_BASEPATH}/{settings.SERVICE_VERSION}/openapi.json\", docs_url=\"/docs\"\n)\napp.include_router(api_router, prefix=f\"{settings.SERVICE_BASEPATH}/{settings.SERVICE_VERSION}\")\nif __name__ == \"__main__\":\n    uvicorn.run(app, host=settings.SERVICE_DOMAIN, port=settings.SERVICE_PORT)",
+        "peekOfCode": "app = FastAPI(\n    title=settings.SERVICE_NAME, openapi_url=f\"{settings.SERVICE_BASEPATH}/{settings.SERVICE_VERSION}/openapi.json\", docs_url=\"/docs\"\n)\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],  # Adjust this to your needs\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)",
         "detail": "backend.instances.main",
         "documentation": {}
     },
