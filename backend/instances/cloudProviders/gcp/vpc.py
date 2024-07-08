@@ -23,6 +23,7 @@ def get_vpc(gcp_crds: GCPSrvAcc.Credentials, vpc_name: str, vpc_client: Any = No
         vpc = vpc_client.networks().get(project=project_id, network=vpc_name).execute()
     except:
         vpc = None
+    print("vpccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc")
     return vpc
 
 def check_vpc_exists(gcp_crds: GCPSrvAcc.Credentials, vpc_name: str, vpc_client: Any = None):

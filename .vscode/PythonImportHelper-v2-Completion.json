@@ -3518,7 +3518,7 @@
         "kind": 5,
         "importPath": "backend.instances.api_v1.endpoints.vpc",
         "description": "backend.instances.api_v1.endpoints.vpc",
-        "peekOfCode": "router = APIRouter()\n@router.get(\"/vpc/{cloud_provider}/{framework}\")\nasync def get_vpc(cloud_provider: str, framework: str, vpc_name: str = Query(default=None, max_length=200)):\n    print(\"VPC: \", vpc_name, framework, cloud_provider)\n    try:\n        print(\"Cloud Provider SETTINGS: \", settings.GCP_Config.CLOUD_PROVIDER)\n        print(\"SDK Framework CONST: \", constants.SDK_FRAMEWORK)\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:",
+        "peekOfCode": "router = APIRouter()\n@router.get(\"/vpc/{cloud_provider}/{framework}\")\nasync def get_vpc(cloud_provider: str, framework: str, vpc_name: str = Query(default=None, max_length=200)):\n    print(\"VPC: \", vpc_name, framework, cloud_provider)\n    try:\n        print(\"Cloud Provider SETTINGS: \", settings.GCP_Config.CLOUD_PROVIDER)\n        print(\"SDK Framework CONST: \", constants.SDK_FRAMEWORK)\n        if cloud_provider and framework:\n            print(\"errtwytrerretrtert\")\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:",
         "detail": "backend.instances.api_v1.endpoints.vpc",
         "documentation": {}
     },
@@ -4112,7 +4112,7 @@
         "kind": 2,
         "importPath": "backend.instances.cloudProviders.gcp.vpc",
         "description": "backend.instances.cloudProviders.gcp.vpc",
-        "peekOfCode": "def get_vpc(gcp_crds: GCPSrvAcc.Credentials, vpc_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    try:\n        vpc = vpc_client.networks().get(project=project_id, network=vpc_name).execute()\n    except:\n        vpc = None\n    return vpc\ndef check_vpc_exists(gcp_crds: GCPSrvAcc.Credentials, vpc_name: str, vpc_client: Any = None):",
+        "peekOfCode": "def get_vpc(gcp_crds: GCPSrvAcc.Credentials, vpc_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    try:\n        vpc = vpc_client.networks().get(project=project_id, network=vpc_name).execute()\n    except:\n        vpc = None\n    print(\"vpccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\")\n    return vpc",
         "detail": "backend.instances.cloudProviders.gcp.vpc",
         "documentation": {}
     },

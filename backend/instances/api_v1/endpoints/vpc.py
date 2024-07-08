@@ -13,8 +13,11 @@ async def get_vpc(cloud_provider: str, framework: str, vpc_name: str = Query(def
         print("Cloud Provider SETTINGS: ", settings.GCP_Config.CLOUD_PROVIDER)
         print("SDK Framework CONST: ", constants.SDK_FRAMEWORK)
         if cloud_provider and framework:
+            print("errtwytrerretrtert")
             if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:
+                print("yrtrutytty")
                 if framework == constants.SDK_FRAMEWORK:
+                    print("yrtrutytty")
                     return SDK_VPC.list_vpcs(vpc_name=vpc_name)
     except Exception as exp:
         print("VPC GET Exception: ", exp)

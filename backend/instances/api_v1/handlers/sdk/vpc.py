@@ -26,6 +26,7 @@ def list_vpcs(vpc_name: str, gcp_client: GCP_Crds.get_gcp_crds = None):
     if vpc_name == "" or vpc_name == None:
         vpc = VPC.list_vpcs(gcp_crds=gcp_client)
         return API_Response(message="VPCs fetched successfully", data=vpc, statusCode=200).model_dump()
+    print("insideeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
     vpc = VPC.get_vpc(gcp_crds=gcp_client, vpc_name=vpc_name)
     return API_Response(message="VPCs fetched successfully", data=vpc, statusCode=200).model_dump()
 
