@@ -1,3 +1,4 @@
+import json
 from schemas import Instance, Response as API_Response
 from config import settings, databases
 from fastapi import APIRouter
@@ -12,8 +13,10 @@ def create_instance(details: Instance):
     try:
         if details.version == "":
             return API_Response(error="product version cannot be empty in instance creation", statusCode=400).model_dump()
-        product = databases.get_mongo_collection(
-            db_name=settings.PRODUCT_DATABASE, collection_name=settings.PRODUCT_FULL_DETAILS).find_one({"productID": details.productID})
+        # product = databases.get_mongo_collection(
+        #     db_name=settings.PRODUCT_DATABASE, collection_name=settings.PRODUCT_FULL_DETAILS).find_one({"productID": details.productID})
+        with open("input.json", "r") as f:
+            product = json.load(f)
         if product is None or product.get("productID") != details.productID or product.get("productID") == "":
             return API_Response(error="Product not found or does not exists", statusCode=404).model_dump()
         if details.provider not in product["providers"]:
