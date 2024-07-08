@@ -23,7 +23,9 @@ def list_vpcs(vpc_name: str, gcp_client: GCP_Crds.get_gcp_crds = None):
                                             "client_email": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,
                                             "token_uri": settings.GCP_Config.TOKEN_URL,
                                             })
+    print("vpc: name: ", vpc_name)
     if vpc_name == "" or vpc_name == None:
+        print("vpc jfhksfjk name: ", vpc_name)
         vpc = VPC.list_vpcs(gcp_crds=gcp_client)
         return API_Response(message="VPCs fetched successfully", data=vpc, statusCode=200).model_dump()
     print("insideeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
