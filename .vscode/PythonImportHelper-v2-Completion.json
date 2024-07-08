@@ -3878,7 +3878,7 @@
         "kind": 2,
         "importPath": "backend.instances.cloudProviders.gcp.credentials",
         "description": "backend.instances.cloudProviders.gcp.credentials",
-        "peekOfCode": "def get_gcp_crds(crds: dict):\n    print(\"crdsssss: \", crds)\n    result =  GCPSrvAcc.Credentials.from_service_account_info(\n    # filename=\"svc-acc-gcp-cloud-automation-cred.json\", \n    crds,\n    scopes=[\"https://www.googleapis.com/auth/cloud-platform\"]\n    )\n    print(result)\n    return result",
+        "peekOfCode": "def get_gcp_crds(crds: dict):\n    print(\"crds private key: \", crds[\"private_key\"])\n    crds = {\n        \"type\": \"service_account\",\n        \"project_id\": \"console-424205\",\n        \"private_key_id\": \"84c6cd36101a188c42648801b5cd476794d51613\",\n        \"private_key\": crds[\"private_key\"],\n        \"client_email\": \"console-automation@console-424205.iam.gserviceaccount.com\",\n        \"client_id\": \"107868089407702649699\",\n        \"auth_uri\": \"https://accounts.google.com/o/oauth2/auth\",",
         "detail": "backend.instances.cloudProviders.gcp.credentials",
         "documentation": {}
     },
