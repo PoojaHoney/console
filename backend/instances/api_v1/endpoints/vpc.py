@@ -1,35 +1,25 @@
+from fastapi.encoders import jsonable_encoder
 from schemas import Response as API_Response, VPC as VPC_Schema
 from fastapi import APIRouter, Query
 from api_v1.handlers.sdk import vpc as SDK_VPC
 from config import settings, constants
-
+from fastapi.responses import JSONResponse
+from typing import Any
 router = APIRouter()
 
 
 @router.get("/vpc/{cloud_provider}/{framework}")
-async def get_vpc(cloud_provider: str, framework: str, vpc_name: str = Query(default=None, max_length=200)):
-    print("VPC: ", vpc_name, framework, cloud_provider)
+def get_vpc(cloud_provider: str, framework: str, vpc_name: str = Query(default=None, max_length=200)):
     try:
-        print("Cloud Provider SETTINGS: ", settings.GCP_Config.CLOUD_PROVIDER)
-        print("SDK Framework CONST: ", constants.SDK_FRAMEWORK)
         if cloud_provider and framework:
-            print("errtwytrerretrtert")
             if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:
-                print("yrtrutytty")
                 if framework == constants.SDK_FRAMEWORK:
-                    print("yrtrutytty")
-                    return SDK_VPC.list_vpcs(vpc_name=vpc_name)
+                    result = SDK_VPC.list_vpcs(vpc_name=vpc_name)
+                    return result
     except Exception as exp:
-        print("VPC GET Exception: ", exp)
-        return API_Response(error=exp, statusCode=400).model_dump()
-
-
-@router.get("/version")
-async def get_version():
-    print("Version API - Instance Microservice 1234")
-    return {
-        "version": "1.0.0"
-    }
+        if len(exp.error_details):
+            return API_Response(error=exp.error_details, statusCode=400).model_dump()
+        return API_Response(error=exp.args[0], statusCode=400).model_dump()
 
 
 @router.post("/vpc/{cloud_provider}/{framework}")
@@ -40,7 +30,9 @@ def create_vpc(cloud_provider: str, framework: str,  details: VPC_Schema):
                 if framework == constants.SDK_FRAMEWORK:
                     return SDK_VPC.create_vpc_subnetwork_firewall(details=details)
     except Exception as exp:
-        return API_Response(error=exp, statusCode=400).model_dump()
+        if len(exp.error_details):
+            return API_Response(error=exp.error_details, statusCode=400).model_dump()
+        return API_Response(error=exp.args[0], statusCode=400).model_dump()
 
 
 @router.delete("/vpc/{cloud_provider}/{framework}")
@@ -51,4 +43,6 @@ def delete_vpc(cloud_provider: str, framework: str, vpc_name: str):
                 if framework == constants.SDK_FRAMEWORK:
                     return SDK_VPC.delete_vpc(vpc_name=vpc_name)
     except Exception as exp:
-        return API_Response(error=exp, statusCode=400).model_dump()
+        if len(exp.error_details):
+            return API_Response(error=exp.error_details, statusCode=400).model_dump()
+        return API_Response(error=exp.args[0], statusCode=400).model_dump()

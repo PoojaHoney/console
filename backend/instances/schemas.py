@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Optional, Dict
 from pydantic import BaseModel
 import datetime
 from typing import Any, Optional, List
@@ -15,9 +15,9 @@ class IAM_Role(BaseModel):
 
 class Response(BaseModel):
     message: Optional[str] = ""
-    data: Optional[Any] = {}
+    data: Optional[Any] = None
     statusCode: Optional[int] = 0
-    error: Optional[Any] = ""
+    error: Optional[Any] = None
 
 
 class RoutingConfig(BaseModel):
@@ -165,3 +165,22 @@ class Instance(BaseModel):
     deployedOn: str = ""
     autoScaling: bool = False
     vmSourceImage: str = ""
+
+
+class VPC_RoutingConfig_Response(BaseModel):
+    routingMode: str = ""
+
+
+class VPC_Response(BaseModel):
+    name: str = ""
+    selfLink: str = ""
+    autoCreateSubnetwork: bool = False
+    creationTimestamp: str = ""
+    description: str = ""
+    id: int = ""
+    kind: str = ""
+    networkFirewallPolicyEnforcementOrder: str = ""
+    routingConfig: VPC_RoutingConfig_Response = {}
+    selfLinkWithId: str = ""
+    subnetworks: list = []
+

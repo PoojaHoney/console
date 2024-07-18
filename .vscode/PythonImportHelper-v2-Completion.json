@@ -464,6 +464,14 @@
         "documentation": {}
     },
     {
+        "label": "Request",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "APIRouter",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -760,6 +768,14 @@
         "documentation": {}
     },
     {
+        "label": "databases",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
         "label": "settings",
         "importPath": "config",
         "description": "config",
@@ -793,6 +809,14 @@
     },
     {
         "label": "settings",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "databases",
         "importPath": "config",
         "description": "config",
         "isExtraImport": true,
@@ -973,6 +997,38 @@
         "description": "config",
         "isExtraImport": true,
         "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "instances",
+        "importPath": "api_v1.handlers",
+        "description": "api_v1.handlers",
+        "isExtraImport": true,
+        "detail": "api_v1.handlers",
+        "documentation": {}
+    },
+    {
+        "label": "instances",
+        "importPath": "api_v1.handlers",
+        "description": "api_v1.handlers",
+        "isExtraImport": true,
+        "detail": "api_v1.handlers",
+        "documentation": {}
+    },
+    {
+        "label": "delete_instance_compute_engine",
+        "importPath": "api_v1.handlers.instances",
+        "description": "api_v1.handlers.instances",
+        "isExtraImport": true,
+        "detail": "api_v1.handlers.instances",
+        "documentation": {}
+    },
+    {
+        "label": "delete_instance_compute_engine",
+        "importPath": "api_v1.handlers.instances",
+        "description": "api_v1.handlers.instances",
+        "isExtraImport": true,
+        "detail": "api_v1.handlers.instances",
         "documentation": {}
     },
     {
@@ -985,140 +1041,75 @@
         "documentation": {}
     },
     {
-        "label": "instances",
-        "importPath": "api_v1.handlers",
-        "description": "api_v1.handlers",
+        "label": "jsonable_encoder",
+        "importPath": "fastapi.encoders",
+        "description": "fastapi.encoders",
         "isExtraImport": true,
-        "detail": "api_v1.handlers",
+        "detail": "fastapi.encoders",
         "documentation": {}
     },
     {
-        "label": "instances",
-        "importPath": "api_v1.handlers",
-        "description": "api_v1.handlers",
+        "label": "jsonable_encoder",
+        "importPath": "fastapi.encoders",
+        "description": "fastapi.encoders",
         "isExtraImport": true,
-        "detail": "api_v1.handlers",
+        "detail": "fastapi.encoders",
         "documentation": {}
     },
     {
-        "label": "delete_instance_compute_engine",
-        "importPath": "api_v1.handlers.instances",
-        "description": "api_v1.handlers.instances",
+        "label": "jsonable_encoder",
+        "importPath": "fastapi.encoders",
+        "description": "fastapi.encoders",
         "isExtraImport": true,
-        "detail": "api_v1.handlers.instances",
+        "detail": "fastapi.encoders",
         "documentation": {}
     },
     {
-        "label": "delete_instance_compute_engine",
-        "importPath": "api_v1.handlers.instances",
-        "description": "api_v1.handlers.instances",
+        "label": "jsonable_encoder",
+        "importPath": "fastapi.encoders",
+        "description": "fastapi.encoders",
         "isExtraImport": true,
-        "detail": "api_v1.handlers.instances",
+        "detail": "fastapi.encoders",
         "documentation": {}
     },
     {
-        "label": "artifactRegistry",
-        "importPath": "cloudProviders.gcp",
-        "description": "cloudProviders.gcp",
+        "label": "jsonable_encoder",
+        "importPath": "fastapi.encoders",
+        "description": "fastapi.encoders",
         "isExtraImport": true,
-        "detail": "cloudProviders.gcp",
+        "detail": "fastapi.encoders",
         "documentation": {}
     },
     {
-        "label": "compute",
-        "importPath": "cloudProviders.gcp",
-        "description": "cloudProviders.gcp",
+        "label": "jsonable_encoder",
+        "importPath": "fastapi.encoders",
+        "description": "fastapi.encoders",
         "isExtraImport": true,
-        "detail": "cloudProviders.gcp",
+        "detail": "fastapi.encoders",
         "documentation": {}
     },
     {
-        "label": "vpc",
-        "importPath": "cloudProviders.gcp",
-        "description": "cloudProviders.gcp",
+        "label": "jsonable_encoder",
+        "importPath": "fastapi.encoders",
+        "description": "fastapi.encoders",
         "isExtraImport": true,
-        "detail": "cloudProviders.gcp",
+        "detail": "fastapi.encoders",
         "documentation": {}
     },
     {
-        "label": "artifactRegistry",
-        "importPath": "cloudProviders.gcp",
-        "description": "cloudProviders.gcp",
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
         "isExtraImport": true,
-        "detail": "cloudProviders.gcp",
+        "detail": "fastapi.responses",
         "documentation": {}
     },
     {
-        "label": "compute",
-        "importPath": "cloudProviders.gcp",
-        "description": "cloudProviders.gcp",
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
         "isExtraImport": true,
-        "detail": "cloudProviders.gcp",
-        "documentation": {}
-    },
-    {
-        "label": "vpc",
-        "importPath": "cloudProviders.gcp",
-        "description": "cloudProviders.gcp",
-        "isExtraImport": true,
-        "detail": "cloudProviders.gcp",
-        "documentation": {}
-    },
-    {
-        "label": "cloudProviders.gcp.credentials",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "cloudProviders.gcp.credentials",
-        "description": "cloudProviders.gcp.credentials",
-        "detail": "cloudProviders.gcp.credentials",
-        "documentation": {}
-    },
-    {
-        "label": "get_gcp_crds",
-        "importPath": "cloudProviders.gcp.credentials",
-        "description": "cloudProviders.gcp.credentials",
-        "isExtraImport": true,
-        "detail": "cloudProviders.gcp.credentials",
-        "documentation": {}
-    },
-    {
-        "label": "get_gcp_crds",
-        "importPath": "cloudProviders.gcp.credentials",
-        "description": "cloudProviders.gcp.credentials",
-        "isExtraImport": true,
-        "detail": "cloudProviders.gcp.credentials",
-        "documentation": {}
-    },
-    {
-        "label": "get_gcp_crds",
-        "importPath": "cloudProviders.gcp.credentials",
-        "description": "cloudProviders.gcp.credentials",
-        "isExtraImport": true,
-        "detail": "cloudProviders.gcp.credentials",
-        "documentation": {}
-    },
-    {
-        "label": "get_gcp_crds",
-        "importPath": "cloudProviders.gcp.credentials",
-        "description": "cloudProviders.gcp.credentials",
-        "isExtraImport": true,
-        "detail": "cloudProviders.gcp.credentials",
-        "documentation": {}
-    },
-    {
-        "label": "get_gcp_crds",
-        "importPath": "cloudProviders.gcp.credentials",
-        "description": "cloudProviders.gcp.credentials",
-        "isExtraImport": true,
-        "detail": "cloudProviders.gcp.credentials",
-        "documentation": {}
-    },
-    {
-        "label": "get_gcp_crds",
-        "importPath": "cloudProviders.gcp.credentials",
-        "description": "cloudProviders.gcp.credentials",
-        "isExtraImport": true,
-        "detail": "cloudProviders.gcp.credentials",
+        "detail": "fastapi.responses",
         "documentation": {}
     },
     {
@@ -1127,6 +1118,14 @@
         "isExtraImport": true,
         "importPath": "typing",
         "description": "typing",
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
         "detail": "typing",
         "documentation": {}
     },
@@ -1220,6 +1219,14 @@
     },
     {
         "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -1995,51 +2002,108 @@
         "documentation": {}
     },
     {
-        "label": "jsonable_encoder",
-        "importPath": "fastapi.encoders",
-        "description": "fastapi.encoders",
+        "label": "artifactRegistry",
+        "importPath": "cloudProviders.gcp",
+        "description": "cloudProviders.gcp",
         "isExtraImport": true,
-        "detail": "fastapi.encoders",
+        "detail": "cloudProviders.gcp",
         "documentation": {}
     },
     {
-        "label": "jsonable_encoder",
-        "importPath": "fastapi.encoders",
-        "description": "fastapi.encoders",
+        "label": "compute",
+        "importPath": "cloudProviders.gcp",
+        "description": "cloudProviders.gcp",
         "isExtraImport": true,
-        "detail": "fastapi.encoders",
+        "detail": "cloudProviders.gcp",
         "documentation": {}
     },
     {
-        "label": "jsonable_encoder",
-        "importPath": "fastapi.encoders",
-        "description": "fastapi.encoders",
+        "label": "vpc",
+        "importPath": "cloudProviders.gcp",
+        "description": "cloudProviders.gcp",
         "isExtraImport": true,
-        "detail": "fastapi.encoders",
+        "detail": "cloudProviders.gcp",
         "documentation": {}
     },
     {
-        "label": "jsonable_encoder",
-        "importPath": "fastapi.encoders",
-        "description": "fastapi.encoders",
+        "label": "artifactRegistry",
+        "importPath": "cloudProviders.gcp",
+        "description": "cloudProviders.gcp",
         "isExtraImport": true,
-        "detail": "fastapi.encoders",
+        "detail": "cloudProviders.gcp",
         "documentation": {}
     },
     {
-        "label": "jsonable_encoder",
-        "importPath": "fastapi.encoders",
-        "description": "fastapi.encoders",
+        "label": "compute",
+        "importPath": "cloudProviders.gcp",
+        "description": "cloudProviders.gcp",
         "isExtraImport": true,
-        "detail": "fastapi.encoders",
+        "detail": "cloudProviders.gcp",
         "documentation": {}
     },
     {
-        "label": "jsonable_encoder",
-        "importPath": "fastapi.encoders",
-        "description": "fastapi.encoders",
+        "label": "vpc",
+        "importPath": "cloudProviders.gcp",
+        "description": "cloudProviders.gcp",
         "isExtraImport": true,
-        "detail": "fastapi.encoders",
+        "detail": "cloudProviders.gcp",
+        "documentation": {}
+    },
+    {
+        "label": "cloudProviders.gcp.credentials",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cloudProviders.gcp.credentials",
+        "description": "cloudProviders.gcp.credentials",
+        "detail": "cloudProviders.gcp.credentials",
+        "documentation": {}
+    },
+    {
+        "label": "get_gcp_crds",
+        "importPath": "cloudProviders.gcp.credentials",
+        "description": "cloudProviders.gcp.credentials",
+        "isExtraImport": true,
+        "detail": "cloudProviders.gcp.credentials",
+        "documentation": {}
+    },
+    {
+        "label": "get_gcp_crds",
+        "importPath": "cloudProviders.gcp.credentials",
+        "description": "cloudProviders.gcp.credentials",
+        "isExtraImport": true,
+        "detail": "cloudProviders.gcp.credentials",
+        "documentation": {}
+    },
+    {
+        "label": "get_gcp_crds",
+        "importPath": "cloudProviders.gcp.credentials",
+        "description": "cloudProviders.gcp.credentials",
+        "isExtraImport": true,
+        "detail": "cloudProviders.gcp.credentials",
+        "documentation": {}
+    },
+    {
+        "label": "get_gcp_crds",
+        "importPath": "cloudProviders.gcp.credentials",
+        "description": "cloudProviders.gcp.credentials",
+        "isExtraImport": true,
+        "detail": "cloudProviders.gcp.credentials",
+        "documentation": {}
+    },
+    {
+        "label": "get_gcp_crds",
+        "importPath": "cloudProviders.gcp.credentials",
+        "description": "cloudProviders.gcp.credentials",
+        "isExtraImport": true,
+        "detail": "cloudProviders.gcp.credentials",
+        "documentation": {}
+    },
+    {
+        "label": "get_gcp_crds",
+        "importPath": "cloudProviders.gcp.credentials",
+        "description": "cloudProviders.gcp.credentials",
+        "isExtraImport": true,
+        "detail": "cloudProviders.gcp.credentials",
         "documentation": {}
     },
     {
@@ -2216,6 +2280,15 @@
         "documentation": {}
     },
     {
+        "label": "proto.marshal.collections.repeated",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "proto.marshal.collections.repeated",
+        "description": "proto.marshal.collections.repeated",
+        "detail": "proto.marshal.collections.repeated",
+        "documentation": {}
+    },
+    {
         "label": "random",
         "kind": 6,
         "isExtraImport": true,
@@ -2378,7 +2451,7 @@
         "documentation": {}
     },
     {
-        "label": "storage",
+        "label": "compute_v1",
         "importPath": "google.cloud",
         "description": "google.cloud",
         "isExtraImport": true,
@@ -2391,6 +2464,63 @@
         "description": "google.cloud",
         "isExtraImport": true,
         "detail": "google.cloud",
+        "documentation": {}
+    },
+    {
+        "label": "compute_v1",
+        "importPath": "google.cloud",
+        "description": "google.cloud",
+        "isExtraImport": true,
+        "detail": "google.cloud",
+        "documentation": {}
+    },
+    {
+        "label": "storage",
+        "importPath": "google.cloud",
+        "description": "google.cloud",
+        "isExtraImport": true,
+        "detail": "google.cloud",
+        "documentation": {}
+    },
+    {
+        "label": "collections",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "collections",
+        "description": "collections",
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "OrderedDict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "Iterable",
+        "importPath": "collections.abc",
+        "description": "collections.abc",
+        "isExtraImport": true,
+        "detail": "collections.abc",
+        "documentation": {}
+    },
+    {
+        "label": "MutableSet",
+        "importPath": "collections.abc",
+        "description": "collections.abc",
+        "isExtraImport": true,
+        "detail": "collections.abc",
         "documentation": {}
     },
     {
@@ -2419,6 +2549,30 @@
         "documentation": {}
     },
     {
+        "label": "MongoClient",
+        "importPath": "pymongo",
+        "description": "pymongo",
+        "isExtraImport": true,
+        "detail": "pymongo",
+        "documentation": {}
+    },
+    {
+        "label": "MongoClient",
+        "importPath": "pymongo",
+        "description": "pymongo",
+        "isExtraImport": true,
+        "detail": "pymongo",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
         "label": "uvicorn",
         "kind": 6,
         "isExtraImport": true,
@@ -2444,11 +2598,12 @@
         "documentation": {}
     },
     {
-        "label": "CORSMiddleware",
-        "importPath": "fastapi.middleware.cors",
-        "description": "fastapi.middleware.cors",
+        "label": "logging",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "fastapi.middleware.cors",
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
         "documentation": {}
     },
     {
@@ -2474,14 +2629,6 @@
         "importPath": "datetime",
         "description": "datetime",
         "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "MongoClient",
-        "importPath": "pymongo",
-        "description": "pymongo",
-        "isExtraImport": true,
-        "detail": "pymongo",
         "documentation": {}
     },
     {
@@ -2744,23 +2891,6 @@
         "documentation": {}
     },
     {
-        "label": "collections",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "collections",
-        "description": "collections",
-        "detail": "collections",
-        "documentation": {}
-    },
-    {
-        "label": "OrderedDict",
-        "importPath": "collections",
-        "description": "collections",
-        "isExtraImport": true,
-        "detail": "collections",
-        "documentation": {}
-    },
-    {
         "label": "gyp.easy_xml",
         "kind": 6,
         "isExtraImport": true,
@@ -2970,14 +3100,6 @@
         "importPath": "gyp.generator.xcode",
         "description": "gyp.generator.xcode",
         "detail": "gyp.generator.xcode",
-        "documentation": {}
-    },
-    {
-        "label": "MutableSet",
-        "importPath": "collections.abc",
-        "description": "collections.abc",
-        "isExtraImport": true,
-        "detail": "collections.abc",
         "documentation": {}
     },
     {
@@ -3246,15 +3368,6 @@
         "documentation": {}
     },
     {
-        "label": "logging",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "logging",
-        "description": "logging",
-        "detail": "logging",
-        "documentation": {}
-    },
-    {
         "label": "sysconfig",
         "kind": 6,
         "isExtraImport": true,
@@ -3320,7 +3433,7 @@
         "kind": 2,
         "importPath": "backend.instances.api_v1.endpoints.artifactRegistry",
         "description": "backend.instances.api_v1.endpoints.artifactRegistry",
-        "peekOfCode": "def get_artifact_registry(cloud_provider: str, framework: str, registry_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_ArtifactRegistry.list_artifact_registries(registry_name=registry_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.get(\"/artifact_registry_permissions/{cloud_provider}/{framework}\")\ndef get_artifact_registry_permissions(cloud_provider: str, framework: str, registry_name: str = Query(default=None, max_length=200)):",
+        "peekOfCode": "def get_artifact_registry(cloud_provider: str, framework: str, registry_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_ArtifactRegistry.list_artifact_registries(registry_name=registry_name)\n    except Exception as exp:\n        if len(exp.error_details):\n            return API_Response(error=exp.error_details, statusCode=400).model_dump()\n        return API_Response(error=exp.args[0], statusCode=400).model_dump()",
         "detail": "backend.instances.api_v1.endpoints.artifactRegistry",
         "documentation": {}
     },
@@ -3329,7 +3442,7 @@
         "kind": 2,
         "importPath": "backend.instances.api_v1.endpoints.artifactRegistry",
         "description": "backend.instances.api_v1.endpoints.artifactRegistry",
-        "peekOfCode": "def get_artifact_registry_permissions(cloud_provider: str, framework: str, registry_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_ArtifactRegistry.get_artifact_registry_permissions(repository_id=registry_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
+        "peekOfCode": "def get_artifact_registry_permissions(cloud_provider: str, framework: str, registry_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_ArtifactRegistry.get_artifact_registry_permissions(repository_id=registry_name)\n    except Exception as exp:\n        if len(exp.error_details):\n            return API_Response(error=exp.error_details, statusCode=400).model_dump()\n        return API_Response(error=exp.args[0], statusCode=400).model_dump()",
         "detail": "backend.instances.api_v1.endpoints.artifactRegistry",
         "documentation": {}
     },
@@ -3338,7 +3451,7 @@
         "kind": 5,
         "importPath": "backend.instances.api_v1.endpoints.artifactRegistry",
         "description": "backend.instances.api_v1.endpoints.artifactRegistry",
-        "peekOfCode": "router = APIRouter()\n@router.get(\"/artifact_registry/{cloud_provider}/{framework}\")\ndef get_artifact_registry(cloud_provider: str, framework: str, registry_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_ArtifactRegistry.list_artifact_registries(registry_name=registry_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
+        "peekOfCode": "router = APIRouter()\n@router.get(\"/artifact_registry/{cloud_provider}/{framework}\")\ndef get_artifact_registry(cloud_provider: str, framework: str, registry_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_ArtifactRegistry.list_artifact_registries(registry_name=registry_name)\n    except Exception as exp:\n        if len(exp.error_details):",
         "detail": "backend.instances.api_v1.endpoints.artifactRegistry",
         "documentation": {}
     },
@@ -3347,7 +3460,7 @@
         "kind": 2,
         "importPath": "backend.instances.api_v1.endpoints.compute",
         "description": "backend.instances.api_v1.endpoints.compute",
-        "peekOfCode": "def get_compute(cloud_provider: str, framework: str, compute_engine_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_Compute.list_compute_engines(compute_engine_name=compute_engine_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.post(\"/compute/{cloud_provider}/{framework}\")\ndef create_compute(cloud_provider: str, details: ComputeEngine_Schema, framework: str):",
+        "peekOfCode": "def get_compute(cloud_provider: str, framework: str, compute_engine_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_Compute.list_compute_engines(compute_engine_name=compute_engine_name)\n    except Exception as exp:\n        if len(exp.error_details):\n            return API_Response(error=exp.error_details, statusCode=400).model_dump()\n        return API_Response(error=exp.args[0], statusCode=400).model_dump()",
         "detail": "backend.instances.api_v1.endpoints.compute",
         "documentation": {}
     },
@@ -3356,7 +3469,7 @@
         "kind": 2,
         "importPath": "backend.instances.api_v1.endpoints.compute",
         "description": "backend.instances.api_v1.endpoints.compute",
-        "peekOfCode": "def create_compute(cloud_provider: str, details: ComputeEngine_Schema, framework: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_Compute.create_compute_engine(details=details)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.delete(\"/compute/{cloud_provider}/{framework}\")\ndef delete_compute(cloud_provider: str, compute_engine: str, framework: str):",
+        "peekOfCode": "def create_compute(cloud_provider: str, details: ComputeEngine_Schema, framework: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_Compute.create_compute_engine(details=details)\n    except Exception as exp:\n        if len(exp.error_details):\n            return API_Response(error=exp.error_details, statusCode=400).model_dump()\n        return API_Response(error=exp.args[0], statusCode=400).model_dump()",
         "detail": "backend.instances.api_v1.endpoints.compute",
         "documentation": {}
     },
@@ -3365,7 +3478,7 @@
         "kind": 2,
         "importPath": "backend.instances.api_v1.endpoints.compute",
         "description": "backend.instances.api_v1.endpoints.compute",
-        "peekOfCode": "def delete_compute(cloud_provider: str, compute_engine: str, framework: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_Compute.delete_compute_engine(compute_engine_name=compute_engine)\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
+        "peekOfCode": "def delete_compute(cloud_provider: str, compute_engine: str, framework: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_Compute.delete_compute_engine(compute_engine_name=compute_engine)\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()\n    except Exception as exp:\n        if len(exp.error_details):",
         "detail": "backend.instances.api_v1.endpoints.compute",
         "documentation": {}
     },
@@ -3374,7 +3487,7 @@
         "kind": 5,
         "importPath": "backend.instances.api_v1.endpoints.compute",
         "description": "backend.instances.api_v1.endpoints.compute",
-        "peekOfCode": "router = APIRouter()\n@router.get(\"/compute/{cloud_provider}/{framework}\")\ndef get_compute(cloud_provider: str, framework: str, compute_engine_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_Compute.list_compute_engines(compute_engine_name=compute_engine_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
+        "peekOfCode": "router = APIRouter()\n@router.get(\"/compute/{cloud_provider}/{framework}\")\ndef get_compute(cloud_provider: str, framework: str, compute_engine_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_Compute.list_compute_engines(compute_engine_name=compute_engine_name)\n    except Exception as exp:\n        if len(exp.error_details):",
         "detail": "backend.instances.api_v1.endpoints.compute",
         "documentation": {}
     },
@@ -3383,7 +3496,7 @@
         "kind": 2,
         "importPath": "backend.instances.api_v1.endpoints.iam",
         "description": "backend.instances.api_v1.endpoints.iam",
-        "peekOfCode": "def create_iam_role(cloud_provider: str, details: IAM_Role, framework: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_IAM.create_service_account(details=details)\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
+        "peekOfCode": "def create_iam_role(cloud_provider: str, details: IAM_Role, framework: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_IAM.create_service_account(details=details)\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()\n    except Exception as exp:\n        if len(exp.error_details):",
         "detail": "backend.instances.api_v1.endpoints.iam",
         "documentation": {}
     },
@@ -3392,7 +3505,7 @@
         "kind": 2,
         "importPath": "backend.instances.api_v1.endpoints.iam",
         "description": "backend.instances.api_v1.endpoints.iam",
-        "peekOfCode": "def update_iam_role(cloud_provider: str, details: IAM_Role, action: str, framework: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_IAM.update_service_account(details=details, action=action)\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
+        "peekOfCode": "def update_iam_role(cloud_provider: str, details: IAM_Role, action: str, framework: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_IAM.update_service_account(details=details, action=action)\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()\n    except Exception as exp:\n        if len(exp.error_details):",
         "detail": "backend.instances.api_v1.endpoints.iam",
         "documentation": {}
     },
@@ -3410,7 +3523,7 @@
         "kind": 2,
         "importPath": "backend.instances.api_v1.endpoints.iam",
         "description": "backend.instances.api_v1.endpoints.iam",
-        "peekOfCode": "def get_iam_roles(cloud_provider: str, framework: str, service_account: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_IAM.list_service_accounts(service_account=service_account)\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
+        "peekOfCode": "def get_iam_roles(cloud_provider: str, framework: str, service_account: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_IAM.list_service_accounts(service_account=service_account)\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()\n    except Exception as exp:\n        if len(exp.error_details):",
         "detail": "backend.instances.api_v1.endpoints.iam",
         "documentation": {}
     },
@@ -3428,7 +3541,7 @@
         "kind": 2,
         "importPath": "backend.instances.api_v1.endpoints.iam",
         "description": "backend.instances.api_v1.endpoints.iam",
-        "peekOfCode": "def get_iam_role_permissions(cloud_provider: str, role_name: str, framework: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_IAM.get_service_account_permissions(role_name=role_name)\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
+        "peekOfCode": "def get_iam_role_permissions(cloud_provider: str, role_name: str, framework: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_IAM.get_service_account_permissions(role_name=role_name)\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()\n    except Exception as exp:\n        if len(exp.error_details):",
         "detail": "backend.instances.api_v1.endpoints.iam",
         "documentation": {}
     },
@@ -3437,7 +3550,7 @@
         "kind": 2,
         "importPath": "backend.instances.api_v1.endpoints.iam",
         "description": "backend.instances.api_v1.endpoints.iam",
-        "peekOfCode": "def create_iam_role_key(cloud_provider: str, service_account: str, framework: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_IAM.create_service_account_key(service_account=service_account)\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
+        "peekOfCode": "def create_iam_role_key(cloud_provider: str, service_account: str, framework: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_IAM.create_service_account_key(service_account=service_account)\n        else:\n            return API_Response(error=\"cloud_provider and framework are required\", statusCode=400).model_dump()\n    except Exception as exp:\n        if len(exp.error_details):",
         "detail": "backend.instances.api_v1.endpoints.iam",
         "documentation": {}
     },
@@ -3473,7 +3586,7 @@
         "kind": 2,
         "importPath": "backend.instances.api_v1.endpoints.instances",
         "description": "backend.instances.api_v1.endpoints.instances",
-        "peekOfCode": "def create_instance(details: Instance):\n    try:\n        if details.version == \"\":\n            return API_Response(error=\"product version cannot be empty in instance creation\", statusCode=400).model_dump()\n        # product = databases.get_mongo_collection(\n        #     db_name=settings.PRODUCT_DATABASE, collection_name=settings.PRODUCT_FULL_DETAILS).find_one({\"productID\": details.productID})\n        with open(\"input.json\", \"r\") as f:\n            product = json.load(f)\n        if product is None or product.get(\"productID\") != details.productID or product.get(\"productID\") == \"\":\n            return API_Response(error=\"Product not found or does not exists\", statusCode=404).model_dump()",
+        "peekOfCode": "def create_instance(details: Instance):\n    try:\n        if details.version == \"\":\n            return API_Response(error=\"product version cannot be empty in instance creation\", statusCode=400).model_dump()\n        product = databases.get_mongo_collection(\n            db_name=settings.PRODUCT_DATABASE, collection_name=settings.PRODUCT_FULL_DETAILS).find_one({\"productID\": details.productID})\n        if product is None or product.get(\"productID\") != details.productID or product.get(\"productID\") == \"\":\n            return API_Response(error=\"Product not found or does not exists\", statusCode=404).model_dump()\n        if details.provider not in product[\"providers\"]:\n            return API_Response(error=\"Provider not supported for the product\", statusCode=400).model_dump()",
         "detail": "backend.instances.api_v1.endpoints.instances",
         "documentation": {}
     },
@@ -3482,7 +3595,7 @@
         "kind": 2,
         "importPath": "backend.instances.api_v1.endpoints.instances",
         "description": "backend.instances.api_v1.endpoints.instances",
-        "peekOfCode": "def delete_instance(instance_id: str, product: str, name: str):\n    try:\n        result = delete_instance_compute_engine(\n            name=name, instanceId=instance_id, product=product)\n        return result\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
+        "peekOfCode": "def delete_instance(instance_id: str, product: str, name: str):\n    try:\n        result = delete_instance_compute_engine(\n            name=name, instanceId=instance_id, product=product)\n        return result\n    except Exception as exp:\n        if len(exp.error_details):\n            return API_Response(error=exp.error_details, statusCode=400).model_dump()\n        return API_Response(error=exp.args[0], statusCode=400).model_dump()",
         "detail": "backend.instances.api_v1.endpoints.instances",
         "documentation": {}
     },
@@ -3491,8 +3604,17 @@
         "kind": 5,
         "importPath": "backend.instances.api_v1.endpoints.instances",
         "description": "backend.instances.api_v1.endpoints.instances",
-        "peekOfCode": "router = APIRouter()\n@router.post(\"/create\", response_model=API_Response)\ndef create_instance(details: Instance):\n    try:\n        if details.version == \"\":\n            return API_Response(error=\"product version cannot be empty in instance creation\", statusCode=400).model_dump()\n        # product = databases.get_mongo_collection(\n        #     db_name=settings.PRODUCT_DATABASE, collection_name=settings.PRODUCT_FULL_DETAILS).find_one({\"productID\": details.productID})\n        with open(\"input.json\", \"r\") as f:\n            product = json.load(f)",
+        "peekOfCode": "router = APIRouter()\n@router.post(\"/create\", response_model=API_Response)\ndef create_instance(details: Instance):\n    try:\n        if details.version == \"\":\n            return API_Response(error=\"product version cannot be empty in instance creation\", statusCode=400).model_dump()\n        product = databases.get_mongo_collection(\n            db_name=settings.PRODUCT_DATABASE, collection_name=settings.PRODUCT_FULL_DETAILS).find_one({\"productID\": details.productID})\n        if product is None or product.get(\"productID\") != details.productID or product.get(\"productID\") == \"\":\n            return API_Response(error=\"Product not found or does not exists\", statusCode=404).model_dump()",
         "detail": "backend.instances.api_v1.endpoints.instances",
+        "documentation": {}
+    },
+    {
+        "label": "get_vpc",
+        "kind": 2,
+        "importPath": "backend.instances.api_v1.endpoints.vpc",
+        "description": "backend.instances.api_v1.endpoints.vpc",
+        "peekOfCode": "def get_vpc(cloud_provider: str, framework: str, vpc_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    result = SDK_VPC.list_vpcs(vpc_name=vpc_name)\n                    return result\n    except Exception as exp:\n        if len(exp.error_details):\n            return API_Response(error=exp.error_details, statusCode=400).model_dump()",
+        "detail": "backend.instances.api_v1.endpoints.vpc",
         "documentation": {}
     },
     {
@@ -3500,7 +3622,7 @@
         "kind": 2,
         "importPath": "backend.instances.api_v1.endpoints.vpc",
         "description": "backend.instances.api_v1.endpoints.vpc",
-        "peekOfCode": "def create_vpc(cloud_provider: str, framework: str,  details: VPC_Schema):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_VPC.create_vpc_subnetwork_firewall(details=details)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()\n@router.delete(\"/vpc/{cloud_provider}/{framework}\")\ndef delete_vpc(cloud_provider: str, framework: str, vpc_name: str):",
+        "peekOfCode": "def create_vpc(cloud_provider: str, framework: str,  details: VPC_Schema):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_VPC.create_vpc_subnetwork_firewall(details=details)\n    except Exception as exp:\n        if len(exp.error_details):\n            return API_Response(error=exp.error_details, statusCode=400).model_dump()\n        return API_Response(error=exp.args[0], statusCode=400).model_dump()",
         "detail": "backend.instances.api_v1.endpoints.vpc",
         "documentation": {}
     },
@@ -3509,7 +3631,7 @@
         "kind": 2,
         "importPath": "backend.instances.api_v1.endpoints.vpc",
         "description": "backend.instances.api_v1.endpoints.vpc",
-        "peekOfCode": "def delete_vpc(cloud_provider: str, framework: str, vpc_name: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_VPC.delete_vpc(vpc_name=vpc_name)\n    except Exception as exp:\n        return API_Response(error=exp, statusCode=400).model_dump()",
+        "peekOfCode": "def delete_vpc(cloud_provider: str, framework: str, vpc_name: str):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    return SDK_VPC.delete_vpc(vpc_name=vpc_name)\n    except Exception as exp:\n        if len(exp.error_details):\n            return API_Response(error=exp.error_details, statusCode=400).model_dump()\n        return API_Response(error=exp.args[0], statusCode=400).model_dump()",
         "detail": "backend.instances.api_v1.endpoints.vpc",
         "documentation": {}
     },
@@ -3518,7 +3640,7 @@
         "kind": 5,
         "importPath": "backend.instances.api_v1.endpoints.vpc",
         "description": "backend.instances.api_v1.endpoints.vpc",
-        "peekOfCode": "router = APIRouter()\n@router.get(\"/vpc/{cloud_provider}/{framework}\")\nasync def get_vpc(cloud_provider: str, framework: str, vpc_name: str = Query(default=None, max_length=200)):\n    print(\"VPC: \", vpc_name, framework, cloud_provider)\n    try:\n        print(\"Cloud Provider SETTINGS: \", settings.GCP_Config.CLOUD_PROVIDER)\n        print(\"SDK Framework CONST: \", constants.SDK_FRAMEWORK)\n        if cloud_provider and framework:\n            print(\"errtwytrerretrtert\")\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:",
+        "peekOfCode": "router = APIRouter()\n@router.get(\"/vpc/{cloud_provider}/{framework}\")\ndef get_vpc(cloud_provider: str, framework: str, vpc_name: str = Query(default=None, max_length=200)):\n    try:\n        if cloud_provider and framework:\n            if cloud_provider == settings.GCP_Config.CLOUD_PROVIDER:\n                if framework == constants.SDK_FRAMEWORK:\n                    result = SDK_VPC.list_vpcs(vpc_name=vpc_name)\n                    return result\n    except Exception as exp:",
         "detail": "backend.instances.api_v1.endpoints.vpc",
         "documentation": {}
     },
@@ -3694,11 +3816,20 @@
         "documentation": {}
     },
     {
+        "label": "convert_custom_object",
+        "kind": 2,
+        "importPath": "backend.instances.api_v1.handlers.sdk.vpc",
+        "description": "backend.instances.api_v1.handlers.sdk.vpc",
+        "peekOfCode": "def convert_custom_object(obj: Any) -> Any:\n    if isinstance(obj, dict):\n        return {k: convert_custom_object(v) for k, v in obj.items()}\n    elif isinstance(obj, list) or isinstance(obj, proto.marshal.collections.repeated.Repeated):\n        return [convert_custom_object(v) for v in obj]\n    elif hasattr(obj, '__dict__'):\n        return {k: convert_custom_object(v) for k, v in vars(obj).items()}\n    else:\n        return obj\ndef list_vpcs(vpc_name: str, gcp_client: GCP_Crds.get_gcp_crds = None):",
+        "detail": "backend.instances.api_v1.handlers.sdk.vpc",
+        "documentation": {}
+    },
+    {
         "label": "list_vpcs",
         "kind": 2,
         "importPath": "backend.instances.api_v1.handlers.sdk.vpc",
         "description": "backend.instances.api_v1.handlers.sdk.vpc",
-        "peekOfCode": "def list_vpcs(vpc_name: str, gcp_client: GCP_Crds.get_gcp_crds = None):\n    if gcp_client == None:\n        print(\"GCP Creds 1234567890000: \",  settings.GCP_Config.PROJECT_ID, settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n              settings.GCP_Config.SRV_ACC_PRIVATE_KEY, settings.GCP_Config.SRV_ACC_CLIENT_EMAIL, settings.GCP_Config.TOKEN_URL)\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                            \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                            \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                            \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                            })",
+        "peekOfCode": "def list_vpcs(vpc_name: str, gcp_client: GCP_Crds.get_gcp_crds = None):\n    if gcp_client == None and settings.ENVIRONMENT == \"dev\":\n        gcp_client = GCP_Crds.get_gcp_crds({\"project_id\": settings.GCP_Config.PROJECT_ID,\n                                            \"private_key_id\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,\n                                            \"private_key\": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,\n                                            \"client_email\": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,\n                                            \"token_uri\": settings.GCP_Config.TOKEN_URL,\n                                            \"auth_uri\": settings.GCP_Config.AUTH_URL,\n                                            \"client_id\": settings.GCP_Config.SRV_ACC_CLIENT_ID,\n                                            \"client_x509_cert_url\": settings.GCP_Config.CLIENT_X509_CERT_URL,",
         "detail": "backend.instances.api_v1.handlers.sdk.vpc",
         "documentation": {}
     },
@@ -3824,7 +3955,7 @@
         "kind": 2,
         "importPath": "backend.instances.cloudProviders.gcp.compute",
         "description": "backend.instances.cloudProviders.gcp.compute",
-        "peekOfCode": "def get_compute_client(gcp_crds):\n    return build(serviceName=\"compute\", version=\"v1\", credentials=gcp_crds)\ndef list_compute_engines(gcp_crds: GCPSrvAcc.Credentials, zone: str, compute_client: Any = None):\n    if compute_client is None:\n        compute_client = get_compute_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    compute = compute_client.instances().list(\n        project=project_id, zone=zone).execute()\n    return compute\ndef get_compute_engine(gcp_crds: GCPSrvAcc.Credentials, compute_engine_name: str, zone: str, compute_client: Any = None):",
+        "peekOfCode": "def get_compute_client(gcp_crds):\n    return build(serviceName=\"compute\", version=\"v1\", credentials=gcp_crds)\n    # return compute_v1.NetworksClient()\ndef list_compute_engines(gcp_crds: GCPSrvAcc.Credentials, zone: str, compute_client: Any = None):\n    if compute_client is None:\n        compute_client = get_compute_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    compute = compute_client.instances().list(\n        project=project_id, zone=zone).execute()\n    return compute",
         "detail": "backend.instances.cloudProviders.gcp.compute",
         "documentation": {}
     },
@@ -3878,7 +4009,7 @@
         "kind": 2,
         "importPath": "backend.instances.cloudProviders.gcp.credentials",
         "description": "backend.instances.cloudProviders.gcp.credentials",
-        "peekOfCode": "def get_gcp_crds(crds: dict):\n    print(\"crds new: \", crds)\n    result = GCPSrvAcc.Credentials.from_service_account_info(\n        info=crds,\n        scopes=[\"https://www.googleapis.com/auth/cloud-platform\"]\n    )\n    print(result)\n    return result",
+        "peekOfCode": "def get_gcp_crds(crds: dict):\n    return GCPSrvAcc.Credentials.from_service_account_info(\n    # filename=\"svc-acc-gcp-cloud-automation-cred.json\", \n    crds,\n    scopes=[\"https://www.googleapis.com/auth/cloud-platform\"])",
         "detail": "backend.instances.cloudProviders.gcp.credentials",
         "documentation": {}
     },
@@ -3887,7 +4018,7 @@
         "kind": 2,
         "importPath": "backend.instances.cloudProviders.gcp.iam",
         "description": "backend.instances.cloudProviders.gcp.iam",
-        "peekOfCode": "def get_iam_client(gcp_crds):\n    return build(serviceName=\"iam\", version=\"v1\", credentials=gcp_crds)\ndef get_resource_manager(gcp_crds: GCPSrvAcc.Credentials):\n    return build(\"cloudresourcemanager\", \"v1\", credentials=gcp_crds)\ndef create_service_account(gcp_crds: GCPSrvAcc.Credentials, details: dict, iam_client: Any = None):\n    if iam_client is None:\n        iam_client = get_iam_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    service_account = iam_client.projects().serviceAccounts().create(\n        # name=\"projects/{}/serviceAccounts/\".format(gcp_crds.project_id), ",
+        "peekOfCode": "def get_iam_client(gcp_crds):\n    return build(serviceName=\"iam\", version=\"v1\", credentials=gcp_crds)\n    # return iam_v1.IAMPolicyClient()\ndef get_resource_manager(gcp_crds: GCPSrvAcc.Credentials):\n    return build(\"cloudresourcemanager\", \"v1\", credentials=gcp_crds)\ndef create_service_account(gcp_crds: GCPSrvAcc.Credentials, details: dict, iam_client: Any = None):\n    if iam_client is None:\n        iam_client = get_iam_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    service_account = iam_client.projects().serviceAccounts().create(",
         "detail": "backend.instances.cloudProviders.gcp.iam",
         "documentation": {}
     },
@@ -4094,7 +4225,7 @@
         "kind": 2,
         "importPath": "backend.instances.cloudProviders.gcp.vpc",
         "description": "backend.instances.cloudProviders.gcp.vpc",
-        "peekOfCode": "def get_vpc_client(gcp_crds):\n    return build(serviceName=\"compute\", version=\"v1\", credentials=gcp_crds)\ndef list_vpcs(gcp_crds: GCPSrvAcc.Credentials, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    vpc = vpc_client.networks().list(project=project_id,).execute()\n    return vpc\ndef get_vpc(gcp_crds: GCPSrvAcc.Credentials, vpc_name: str, vpc_client: Any = None):\n    if vpc_client is None:",
+        "peekOfCode": "def get_vpc_client(gcp_crds):\n    # if gcp_crds == None:\n    #     return build(serviceName=\"compute\", version=\"v1\")\n    # else:\n    return build(serviceName=\"compute\", version=\"v1\", credentials=gcp_crds)\n    # return compute_v1.NetworksClient(credentials=gcp_crds)\ndef list_vpcs(gcp_crds: GCPSrvAcc.Credentials, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id",
         "detail": "backend.instances.cloudProviders.gcp.vpc",
         "documentation": {}
     },
@@ -4103,7 +4234,7 @@
         "kind": 2,
         "importPath": "backend.instances.cloudProviders.gcp.vpc",
         "description": "backend.instances.cloudProviders.gcp.vpc",
-        "peekOfCode": "def list_vpcs(gcp_crds: GCPSrvAcc.Credentials, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    vpc = vpc_client.networks().list(project=project_id,).execute()\n    return vpc\ndef get_vpc(gcp_crds: GCPSrvAcc.Credentials, vpc_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id",
+        "peekOfCode": "def list_vpcs(gcp_crds: GCPSrvAcc.Credentials, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    vpcs_result = vpc_client.networks().list(project=project_id).execute()\n    return vpcs_result[\"items\"]\ndef get_vpc(gcp_crds: GCPSrvAcc.Credentials, vpc_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id",
         "detail": "backend.instances.cloudProviders.gcp.vpc",
         "documentation": {}
     },
@@ -4112,7 +4243,7 @@
         "kind": 2,
         "importPath": "backend.instances.cloudProviders.gcp.vpc",
         "description": "backend.instances.cloudProviders.gcp.vpc",
-        "peekOfCode": "def get_vpc(gcp_crds: GCPSrvAcc.Credentials, vpc_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    try:\n        vpc = vpc_client.networks().get(project=project_id, network=vpc_name).execute()\n    except:\n        vpc = None\n    print(\"vpccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\")\n    return vpc",
+        "peekOfCode": "def get_vpc(gcp_crds: GCPSrvAcc.Credentials, vpc_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    try:\n        result = vpc_client.networks().get(project=project_id, network=vpc_name).execute()\n    except Exception as exp:\n        error_data = json.loads(exp.content.decode(\"utf-8\"))\n        if \"was not found\" in error_data['error']['message']:\n            return None",
         "detail": "backend.instances.cloudProviders.gcp.vpc",
         "documentation": {}
     },
@@ -4130,7 +4261,7 @@
         "kind": 2,
         "importPath": "backend.instances.cloudProviders.gcp.vpc",
         "description": "backend.instances.cloudProviders.gcp.vpc",
-        "peekOfCode": "def create_vpc(gcp_crds: GCPSrvAcc.Credentials, details: dict, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    vpc = vpc_client.networks().insert(project=project_id, body=details).execute()\n    time.sleep(30)\n    return vpc\ndef create_subnetwork(gcp_crds: GCPSrvAcc.Credentials, details: dict, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)   ",
+        "peekOfCode": "def create_vpc(gcp_crds: GCPSrvAcc.Credentials, details: dict, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    vpc = vpc_client.networks().insert(project=project_id, body=details).execute()\n    time.sleep(30)\n    return vpc\ndef create_subnetwork(gcp_crds: GCPSrvAcc.Credentials, details: dict, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)",
         "detail": "backend.instances.cloudProviders.gcp.vpc",
         "documentation": {}
     },
@@ -4139,7 +4270,7 @@
         "kind": 2,
         "importPath": "backend.instances.cloudProviders.gcp.vpc",
         "description": "backend.instances.cloudProviders.gcp.vpc",
-        "peekOfCode": "def create_subnetwork(gcp_crds: GCPSrvAcc.Credentials, details: dict, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)   \n    response = vpc_client.subnetworks().insert(project=gcp_crds.project_id, region=details[\"region\"], body=details).execute()\n    time.sleep(10)\n    return response\ndef get_subnetwork(gcp_crds: GCPSrvAcc.Credentials,subnetwork_name: str ,vpc_client: Any= None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id",
+        "peekOfCode": "def create_subnetwork(gcp_crds: GCPSrvAcc.Credentials, details: dict, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    response = vpc_client.subnetworks().insert(project=gcp_crds.project_id,\n                                               region=details[\"region\"], body=details).execute()\n    time.sleep(10)\n    return response\ndef get_subnetwork(gcp_crds: GCPSrvAcc.Credentials, subnetwork_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)",
         "detail": "backend.instances.cloudProviders.gcp.vpc",
         "documentation": {}
     },
@@ -4148,7 +4279,7 @@
         "kind": 2,
         "importPath": "backend.instances.cloudProviders.gcp.vpc",
         "description": "backend.instances.cloudProviders.gcp.vpc",
-        "peekOfCode": "def get_subnetwork(gcp_crds: GCPSrvAcc.Credentials,subnetwork_name: str ,vpc_client: Any= None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    try:\n        subnetwork = vpc_client.subnetworks().get(project=project_id, subnetwork=subnetwork_name).execute()\n    except: \n        subnetwork = None\n    return subnetwork\ndef list_subnetworks(gcp_crds: GCPSrvAcc.Credentials, vpc_client: Any = None):",
+        "peekOfCode": "def get_subnetwork(gcp_crds: GCPSrvAcc.Credentials, subnetwork_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    try:\n        subnetwork = vpc_client.subnetworks().get(\n            project=project_id, subnetwork=subnetwork_name).execute()\n    except:\n        subnetwork = None\n    return subnetwork",
         "detail": "backend.instances.cloudProviders.gcp.vpc",
         "documentation": {}
     },
@@ -4166,7 +4297,7 @@
         "kind": 2,
         "importPath": "backend.instances.cloudProviders.gcp.vpc",
         "description": "backend.instances.cloudProviders.gcp.vpc",
-        "peekOfCode": "def list_vpc_subnetworks(gcp_crds: GCPSrvAcc.Credentials, vpc_target_link: str, region: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    subnetworks = vpc_client.subnetworks().list(project=project_id, filter=f'network=\"{vpc_target_link}\"', region=region).execute()\n    return subnetworks\ndef check_subnetwork_exists(gcp_crds: GCPSrvAcc.Credentials, subnetwork_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    if get_subnetwork(gcp_crds, subnetwork_name, vpc_client) is None:",
+        "peekOfCode": "def list_vpc_subnetworks(gcp_crds: GCPSrvAcc.Credentials, vpc_target_link: str, region: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    subnetworks = vpc_client.subnetworks().list(project=project_id,\n                                                filter=f'network=\"{vpc_target_link}\"', region=region).execute()\n    return subnetworks\ndef check_subnetwork_exists(gcp_crds: GCPSrvAcc.Credentials, subnetwork_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)",
         "detail": "backend.instances.cloudProviders.gcp.vpc",
         "documentation": {}
     },
@@ -4175,7 +4306,7 @@
         "kind": 2,
         "importPath": "backend.instances.cloudProviders.gcp.vpc",
         "description": "backend.instances.cloudProviders.gcp.vpc",
-        "peekOfCode": "def check_subnetwork_exists(gcp_crds: GCPSrvAcc.Credentials, subnetwork_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    if get_subnetwork(gcp_crds, subnetwork_name, vpc_client) is None:\n        return False\n    return True\ndef list_vpc_firewalls(gcp_crds: GCPSrvAcc.Credentials, vpc_target_link: str,vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id",
+        "peekOfCode": "def check_subnetwork_exists(gcp_crds: GCPSrvAcc.Credentials, subnetwork_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    if get_subnetwork(gcp_crds, subnetwork_name, vpc_client) is None:\n        return False\n    return True\ndef list_vpc_firewalls(gcp_crds: GCPSrvAcc.Credentials, vpc_target_link: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id",
         "detail": "backend.instances.cloudProviders.gcp.vpc",
         "documentation": {}
     },
@@ -4184,7 +4315,7 @@
         "kind": 2,
         "importPath": "backend.instances.cloudProviders.gcp.vpc",
         "description": "backend.instances.cloudProviders.gcp.vpc",
-        "peekOfCode": "def list_vpc_firewalls(gcp_crds: GCPSrvAcc.Credentials, vpc_target_link: str,vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    firewalls = vpc_client.firewalls().list(project=project_id, filter=f'network=\"{vpc_target_link}\"').execute()\n    return firewalls\ndef list_firewalls(gcp_crds: GCPSrvAcc.Credentials, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id",
+        "peekOfCode": "def list_vpc_firewalls(gcp_crds: GCPSrvAcc.Credentials, vpc_target_link: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    firewalls = vpc_client.firewalls().list(\n        project=project_id, filter=f'network=\"{vpc_target_link}\"').execute()\n    return firewalls\ndef list_firewalls(gcp_crds: GCPSrvAcc.Credentials, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)",
         "detail": "backend.instances.cloudProviders.gcp.vpc",
         "documentation": {}
     },
@@ -4202,7 +4333,7 @@
         "kind": 2,
         "importPath": "backend.instances.cloudProviders.gcp.vpc",
         "description": "backend.instances.cloudProviders.gcp.vpc",
-        "peekOfCode": "def get_firewall(gcp_crds: GCPSrvAcc.Credentials, firewall_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    try:\n        firewall = vpc_client.firewalls().get(project=project_id, firewall=firewall_name).execute()\n    except:\n        firewall = None\n    return firewall\ndef create_firewall(gcp_crds: GCPSrvAcc.Credentials, details: dict, vpc_client: Any = None):",
+        "peekOfCode": "def get_firewall(gcp_crds: GCPSrvAcc.Credentials, firewall_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    try:\n        firewall = vpc_client.firewalls().get(\n            project=project_id, firewall=firewall_name).execute()\n    except:\n        firewall = None\n    return firewall",
         "detail": "backend.instances.cloudProviders.gcp.vpc",
         "documentation": {}
     },
@@ -4211,7 +4342,7 @@
         "kind": 2,
         "importPath": "backend.instances.cloudProviders.gcp.vpc",
         "description": "backend.instances.cloudProviders.gcp.vpc",
-        "peekOfCode": "def create_firewall(gcp_crds: GCPSrvAcc.Credentials, details: dict, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    firewall = vpc_client.firewalls().insert(project=project_id, body=details).execute()\n    return firewall\ndef check_firewall_exists(gcp_crds: GCPSrvAcc.Credentials, firewall_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    if get_firewall(gcp_crds, firewall_name, vpc_client) is None:",
+        "peekOfCode": "def create_firewall(gcp_crds: GCPSrvAcc.Credentials, details: dict, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    project_id = gcp_crds.project_id\n    firewall = vpc_client.firewalls().insert(\n        project=project_id, body=details).execute()\n    return firewall\ndef check_firewall_exists(gcp_crds: GCPSrvAcc.Credentials, firewall_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)",
         "detail": "backend.instances.cloudProviders.gcp.vpc",
         "documentation": {}
     },
@@ -4220,7 +4351,7 @@
         "kind": 2,
         "importPath": "backend.instances.cloudProviders.gcp.vpc",
         "description": "backend.instances.cloudProviders.gcp.vpc",
-        "peekOfCode": "def check_firewall_exists(gcp_crds: GCPSrvAcc.Credentials, firewall_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    if get_firewall(gcp_crds, firewall_name, vpc_client) is None:\n        return False\n    return True\ndef delete_vpc(gcp_crds: GCPSrvAcc.Credentials, vpc_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    response = vpc_client.networks().delete(project=gcp_crds.project_id, network=f\"{vpc_name}\").execute()",
+        "peekOfCode": "def check_firewall_exists(gcp_crds: GCPSrvAcc.Credentials, firewall_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    if get_firewall(gcp_crds, firewall_name, vpc_client) is None:\n        return False\n    return True\ndef delete_vpc(gcp_crds: GCPSrvAcc.Credentials, vpc_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    response = vpc_client.networks().delete(",
         "detail": "backend.instances.cloudProviders.gcp.vpc",
         "documentation": {}
     },
@@ -4229,7 +4360,7 @@
         "kind": 2,
         "importPath": "backend.instances.cloudProviders.gcp.vpc",
         "description": "backend.instances.cloudProviders.gcp.vpc",
-        "peekOfCode": "def delete_vpc(gcp_crds: GCPSrvAcc.Credentials, vpc_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    response = vpc_client.networks().delete(project=gcp_crds.project_id, network=f\"{vpc_name}\").execute()\n    return response\ndef delete_firewall(gcp_crds: GCPSrvAcc.Credentials, firewall_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    response = vpc_client.firewalls().delete(project=gcp_crds.project_id, firewall=firewall_name).execute()\n    return response",
+        "peekOfCode": "def delete_vpc(gcp_crds: GCPSrvAcc.Credentials, vpc_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    response = vpc_client.networks().delete(\n        project=gcp_crds.project_id, network=f\"{vpc_name}\").execute()\n    return response\ndef delete_firewall(gcp_crds: GCPSrvAcc.Credentials, firewall_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    response = vpc_client.firewalls().delete(project=gcp_crds.project_id,",
         "detail": "backend.instances.cloudProviders.gcp.vpc",
         "documentation": {}
     },
@@ -4238,7 +4369,7 @@
         "kind": 2,
         "importPath": "backend.instances.cloudProviders.gcp.vpc",
         "description": "backend.instances.cloudProviders.gcp.vpc",
-        "peekOfCode": "def delete_firewall(gcp_crds: GCPSrvAcc.Credentials, firewall_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    response = vpc_client.firewalls().delete(project=gcp_crds.project_id, firewall=firewall_name).execute()\n    return response\ndef delete_subnetwork(gcp_crds: GCPSrvAcc.Credentials, subnetwork_name: str, region: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    response = vpc_client.subnetworks().delete(project=gcp_crds.project_id, region=region, subnetwork=subnetwork_name).execute()\n    return response",
+        "peekOfCode": "def delete_firewall(gcp_crds: GCPSrvAcc.Credentials, firewall_name: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    response = vpc_client.firewalls().delete(project=gcp_crds.project_id,\n                                             firewall=firewall_name).execute()\n    return response\ndef delete_subnetwork(gcp_crds: GCPSrvAcc.Credentials, subnetwork_name: str, region: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    response = vpc_client.subnetworks().delete(project=gcp_crds.project_id,",
         "detail": "backend.instances.cloudProviders.gcp.vpc",
         "documentation": {}
     },
@@ -4247,7 +4378,7 @@
         "kind": 2,
         "importPath": "backend.instances.cloudProviders.gcp.vpc",
         "description": "backend.instances.cloudProviders.gcp.vpc",
-        "peekOfCode": "def delete_subnetwork(gcp_crds: GCPSrvAcc.Credentials, subnetwork_name: str, region: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    response = vpc_client.subnetworks().delete(project=gcp_crds.project_id, region=region, subnetwork=subnetwork_name).execute()\n    return response",
+        "peekOfCode": "def delete_subnetwork(gcp_crds: GCPSrvAcc.Credentials, subnetwork_name: str, region: str, vpc_client: Any = None):\n    if vpc_client is None:\n        vpc_client = get_vpc_client(gcp_crds)\n    response = vpc_client.subnetworks().delete(project=gcp_crds.project_id,\n                                               region=region, subnetwork=subnetwork_name).execute()\n    return response",
         "detail": "backend.instances.cloudProviders.gcp.vpc",
         "documentation": {}
     },
@@ -4256,7 +4387,7 @@
         "kind": 6,
         "importPath": "backend.instances.config",
         "description": "backend.instances.config",
-        "peekOfCode": "class GCP_Settings(BaseSettings):\n    CLOUD_PROVIDER: str = \"gcp\"\n    IAM_TYPE: str = os.environ.get(\"GCP_IAM_TYPE\", \"service_account\")\n    DEFAULT_REGION: str = os.environ.get(\"GCP_DEFAULT_REGION\", \"asia-south1\")\n    PROJECT_ID: str = os.environ.get(\"GCP_PROJECT_ID\", \"console-424205\")\n    SRV_ACC_PRIVATE_KEY_ID: str = os.environ.get(\"GCP_SRV_ACC_PRIVATE_KEY_ID\", \"84c6cd36101a188c42648801b5cd476794d51613\")\n    SRV_ACC_PRIVATE_KEY: str = os.environ.get(\"GCP_SRV_ACC_PRIVATE_KEY\", \"-----BEGIN PRIVATE KEY-----\\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCu0CXKguMu7zQ9\\nWy22f6Dn7Xni8ABd+Tw1A6iUN0eTZFYdKqyG1uU36LUb5VVcAkqZ9XOgTb/gATSC\\ndAIEQzmaT3Mcs/RRQgx7Qr8OSjDvy3nk8t1wbovWk9W9dLtL1pYMG/uvtySMK2yj\\ne85NtTlaKDQ8KIrT0wCsPQT/IlhSY8gpvoX0axwIdX4032PCOxJk05Oan+ywqFu2\\nYQi/DfUjo5JrkzHZkkTkOKBoe++vAc1zad4V9OUo8S1UcgC/HjCjsXiALt1nERal\\nEtsuKHU9r2jHkD5C6ImG5GIJSfPWP8DLvu/nAezgXxdGytx5fth9IMFVGHZvPpHU\\nywxAPPgbAgMBAAECggEAIOm5o8Y+5dBNopuvIKQo9GHGyA5t00OgrU6SB83coQiM\\nGhO1xfFh2MPsjWMBTkB0MUaATZc14AP6EfGri4foqX/56VaMUlxAI1juxc78JbnG\\nqm97d7aoh27wGCqJNP8i4wbFvVCbBfULEEC4F/Nd5/aX1xe/A6C/iK44aZzayjAF\\njyAcf9mDWLi38ZAFY60OuHR5BeK+Gmna0tJHX5OC3Xn8TONryWcBHMO6T/Hwjt4P\\n5TbhC/H27GxyTdHBxfF6DoQTAiG19wAN90kQzF9c3AZ5EM0Bqsl1j7qFtuPntr3H\\nfpb3WTkwjTigUaXwFqULwOK8Ua1HaekkQsjnkhXzgQKBgQDVX09mu0m21qVbGAdL\\nUw5Ou2eRJkXn1TUjOulxB9r3ImL15X26ZFl8sDREtbJH6iH4Ei374eS4iPJMnXCG\\n4UPkcssPFIcZnlgE9kMAFKM6N7ve5CEeMPeC2qIRhX4GFUbuQP27Th+7B6CkDcs4\\nNrCnrRuGEQuO2lAtQRsV00KEQQKBgQDRvMS7mIajPqIrEuLdP6zZdN18q0DvkTz2\\nM54Nz9QbIl4460DLJ+a3UdrXZm7FpifU0FxY/CDg6Qn2Y+Qgjlgb2aJu2h6Ptuvh\\nNdWPQm484egQQzOnbeP9VS5jUvHc5MV9KNbIqoyOCe6Si5aFWzONqGdh43r8zV92\\nMVziIpa1WwKBgQDISL/Scaj+7Dqo6EQoi1zZwIW1tNRXikVnvWvUwofiBLAZmwJK\\njNmG9isJ9/fSE08xeXcagW7dXQb7rakropXFAY/jpuQtwvliJvq7P6P8CMbbsQ35\\nNgOPG8SXZ9Pkx+Id0HmbcPjN6Zn7hEsmiAeITTCRxrwvqnMqF3viH7zHQQKBgEzc\\ngbhB2C1g2asxW6Q7Hov+cOCsHbrtncqX9fcXz6I2AROY2wDYWYua2rkPV87k6jnq\\nNb2CgEYMANOjncl0gMOMCSPYmVSPc3fv85hxftae7x1ukzJrah6/paVOk0YhLGKG\\noded8K5o414e+4VZe9YQ/fn4lGyqkq5Mvr48cMB7AoGAE2NSJaqQTilQWQA4psLb\\naEoLHdo8CBrb6whXpTTgYu8LayRBuUNRqiOxJq0eFODkLnFTG6MxR86+Pqgs27RE\\ndjEmLoGtHNT78Xqnud4OI0V8CbuWAvKaHsWOERnJR7E7IAXxiSDPPzgMbydVEAup\\n+8AFcRV00F1eu1q3kt+m03w=\\n-----END PRIVATE KEY-----\\n\")\n    SRV_ACC_CLIENT_EMAIL: str = os.environ.get(\"GCP_SRV_ACC_CLIENT_EMAIL\", \"console-automation@console-424205.iam.gserviceaccount.com\")\n    SRV_ACC_CLIENT_ID: str = os.environ.get(\"GCP_SRV_ACC_CLIENT_ID\", \"107868089407702649699\")\n    AUTH_URL: str = os.environ.get(\"GCP_AUTH_URL\", \"https://accounts.google.com/o/oauth2/auth\")",
+        "peekOfCode": "class GCP_Settings(BaseSettings):\n    CLOUD_PROVIDER: str = \"gcp\"\n    IAM_TYPE: str = os.environ.get(\"GCP_IAM_TYPE\", \"service_account\")\n    DEFAULT_REGION: str = os.environ.get(\"GCP_DEFAULT_REGION\", \"asia-south1\")\n    PROJECT_ID: str = os.environ.get(\"GCP_PROJECT_ID\", \"\")\n    SRV_ACC_PRIVATE_KEY_ID: str = os.environ.get(\n        \"GCP_SRV_ACC_PRIVATE_KEY_ID\", \"\")\n    SRV_ACC_PRIVATE_KEY: str = os.environ.get(\"GCP_SRV_ACC_PRIVATE_KEY\", \"\")\n    SRV_ACC_CLIENT_EMAIL: str = os.environ.get(\"GCP_SRV_ACC_CLIENT_EMAIL\", \"\")\n    SRV_ACC_CLIENT_ID: str = os.environ.get(\"GCP_SRV_ACC_CLIENT_ID\", \"\")",
         "detail": "backend.instances.config",
         "documentation": {}
     },
@@ -4265,7 +4396,7 @@
         "kind": 6,
         "importPath": "backend.instances.config",
         "description": "backend.instances.config",
-        "peekOfCode": "class Settings(BaseSettings):\n    SERVICE_PORT: int = os.environ.get(\"SERVICE_PORT\", 6001)\n    SERVICE_NAME: str = os.environ.get(\"SERVICE_NAME\", \"Console Instances\")\n    SERVICE_DOMAIN: str = os.environ.get(\"SERVICE_DOMAIN\", \"localhost\")\n    SERVICE_BASEPATH: str = os.environ.get(\n        \"SERVICE_BASEPATH\", \"/api/instances\")\n    SERVICE_VERSION: str = os.environ.get(\"SERVICE_VERSION\", \"v1\")\n    AWS_CLOUD_PROVIDER: str = \"aws\"\n    GCP_Config: GCP_Settings = GCP_Settings()  # type: ignore\n    MONGO_DATABASE: str = os.environ.get(\"MONGO_DATABASE\", \"instances\")",
+        "peekOfCode": "class Settings(BaseSettings):\n    SERVICE_PORT: int = os.environ.get(\"SERVICE_PORT\", 6001)\n    SERVICE_NAME: str = os.environ.get(\"SERVICE_NAME\", \"Console Instances\")\n    SERVICE_DOMAIN: str = os.environ.get(\"SERVICE_DOMAIN\", \"\")\n    SERVICE_HOST: str = os.environ.get(\"SERVICE_HOST\", \"localhost\")\n    SERVICE_BASEPATH: str = os.environ.get(\n        \"SERVICE_BASEPATH\", \"/api/instances\")\n    SERVICE_VERSION: str = os.environ.get(\"SERVICE_VERSION\", \"v1\")\n    AWS_CLOUD_PROVIDER: str = \"aws\"\n    GCP_Config: GCP_Settings = GCP_Settings()  # type: ignore",
         "detail": "backend.instances.config",
         "documentation": {}
     },
@@ -4274,7 +4405,16 @@
         "kind": 6,
         "importPath": "backend.instances.config",
         "description": "backend.instances.config",
-        "peekOfCode": "class Constants():\n    TERRAFORM_FRAMEWORK: str = \"terraform\"\n    SDK_FRAMEWORK: str = \"sdk\"\nconstants = Constants()\n# class Databases():\n#     mongo_client = None\n#     @ classmethod\n#     def get_mongo_connection(cls):\n#         if cls.mongo_client is None:\n#             if settings.MONGO_USERNAME != \"\" and settings.MONGO_PASSWORD != \"\":",
+        "peekOfCode": "class Constants():\n    TERRAFORM_FRAMEWORK: str = \"terraform\"\n    SDK_FRAMEWORK: str = \"sdk\"\nconstants = Constants()\nclass Databases():\n    mongo_client = None\n    @ classmethod\n    def get_mongo_connection(cls):\n        if cls.mongo_client is None:\n            if settings.MONGO_USERNAME != \"\" and settings.MONGO_PASSWORD != \"\":",
+        "detail": "backend.instances.config",
+        "documentation": {}
+    },
+    {
+        "label": "Databases",
+        "kind": 6,
+        "importPath": "backend.instances.config",
+        "description": "backend.instances.config",
+        "peekOfCode": "class Databases():\n    mongo_client = None\n    @ classmethod\n    def get_mongo_connection(cls):\n        if cls.mongo_client is None:\n            if settings.MONGO_USERNAME != \"\" and settings.MONGO_PASSWORD != \"\":\n                cls.mongo_client = MongoClient(\n                    f\"mongodb://{settings.MONGO_USERNAME}:{settings.MONGO_PASSWORD}@{settings.MONGO_HOST}:{settings.MONGO_PORT}/\")\n            else:\n                cls.mongo_client = MongoClient(",
         "detail": "backend.instances.config",
         "documentation": {}
     },
@@ -4283,7 +4423,7 @@
         "kind": 5,
         "importPath": "backend.instances.config",
         "description": "backend.instances.config",
-        "peekOfCode": "settings = Settings()\nclass Constants():\n    TERRAFORM_FRAMEWORK: str = \"terraform\"\n    SDK_FRAMEWORK: str = \"sdk\"\nconstants = Constants()\n# class Databases():\n#     mongo_client = None\n#     @ classmethod\n#     def get_mongo_connection(cls):\n#         if cls.mongo_client is None:",
+        "peekOfCode": "settings = Settings()\nclass Constants():\n    TERRAFORM_FRAMEWORK: str = \"terraform\"\n    SDK_FRAMEWORK: str = \"sdk\"\nconstants = Constants()\nclass Databases():\n    mongo_client = None\n    @ classmethod\n    def get_mongo_connection(cls):\n        if cls.mongo_client is None:",
         "detail": "backend.instances.config",
         "documentation": {}
     },
@@ -4292,7 +4432,16 @@
         "kind": 5,
         "importPath": "backend.instances.config",
         "description": "backend.instances.config",
-        "peekOfCode": "constants = Constants()\n# class Databases():\n#     mongo_client = None\n#     @ classmethod\n#     def get_mongo_connection(cls):\n#         if cls.mongo_client is None:\n#             if settings.MONGO_USERNAME != \"\" and settings.MONGO_PASSWORD != \"\":\n#                 cls.mongo_client = MongoClient(\n#                     f\"mongodb://{settings.MONGO_USERNAME}:{settings.MONGO_PASSWORD}@{settings.MONGO_HOST}:{settings.MONGO_PORT}/\")\n#             else:",
+        "peekOfCode": "constants = Constants()\nclass Databases():\n    mongo_client = None\n    @ classmethod\n    def get_mongo_connection(cls):\n        if cls.mongo_client is None:\n            if settings.MONGO_USERNAME != \"\" and settings.MONGO_PASSWORD != \"\":\n                cls.mongo_client = MongoClient(\n                    f\"mongodb://{settings.MONGO_USERNAME}:{settings.MONGO_PASSWORD}@{settings.MONGO_HOST}:{settings.MONGO_PORT}/\")\n            else:",
+        "detail": "backend.instances.config",
+        "documentation": {}
+    },
+    {
+        "label": "databases",
+        "kind": 5,
+        "importPath": "backend.instances.config",
+        "description": "backend.instances.config",
+        "peekOfCode": "databases = Databases()",
         "detail": "backend.instances.config",
         "documentation": {}
     },
@@ -4301,7 +4450,7 @@
         "kind": 5,
         "importPath": "backend.instances.main",
         "description": "backend.instances.main",
-        "peekOfCode": "app = FastAPI(\n    title=settings.SERVICE_NAME,\n    proxy_headers=True,\n    trusted_hosts=[\"*\"],\n    max_request_size=1024 * 1024 * 1024,  # Body limit in bytes (1 GB)\n    openapi_url=f\"{settings.SERVICE_BASEPATH}/{settings.SERVICE_VERSION}/openapi.json\",\n    docs_url=\"/docs\"\n)\napp.add_middleware(\n    CORSMiddleware,",
+        "peekOfCode": "app = FastAPI(\n    title=settings.SERVICE_NAME, openapi_url=f\"{settings.SERVICE_BASEPATH}/{settings.SERVICE_VERSION}/openapi.json\", docs_url=\"/docs\"\n)\n@app.middleware(\"http\")\nasync def log_request(request: Request, call_next):\n    try:\n        response = await call_next(request)\n        return response\n    except Exception as e:\n        logging.exception(\"Exception during request processing: %s\", e)",
         "detail": "backend.instances.main",
         "documentation": {}
     },
@@ -4310,7 +4459,7 @@
         "kind": 6,
         "importPath": "backend.instances.schemas",
         "description": "backend.instances.schemas",
-        "peekOfCode": "class IAM_Role(BaseModel):\n    name: str = \"\"\n    description: str = \"\"\n    policies: list = []\n    email: Optional[str] = \"\"\n    instanceId: Optional[str] = \"\"\n    product: Optional[str] = \"\"\nclass Response(BaseModel):\n    message: Optional[str] = \"\"\n    data: Optional[Any] = {}",
+        "peekOfCode": "class IAM_Role(BaseModel):\n    name: str = \"\"\n    description: str = \"\"\n    policies: list = []\n    email: Optional[str] = \"\"\n    instanceId: Optional[str] = \"\"\n    product: Optional[str] = \"\"\nclass Response(BaseModel):\n    message: Optional[str] = \"\"\n    data: Optional[Any] = None",
         "detail": "backend.instances.schemas",
         "documentation": {}
     },
@@ -4319,7 +4468,7 @@
         "kind": 6,
         "importPath": "backend.instances.schemas",
         "description": "backend.instances.schemas",
-        "peekOfCode": "class Response(BaseModel):\n    message: Optional[str] = \"\"\n    data: Optional[Any] = {}\n    statusCode: Optional[int] = 0\n    error: Optional[Any] = \"\"\nclass RoutingConfig(BaseModel):\n    routingMode: Optional[str] = \"REGIONAL\"\nclass SubNetwork(BaseModel):\n    vpc_name: str\n    name: str",
+        "peekOfCode": "class Response(BaseModel):\n    message: Optional[str] = \"\"\n    data: Optional[Any] = None\n    statusCode: Optional[int] = 0\n    error: Optional[Any] = None\nclass RoutingConfig(BaseModel):\n    routingMode: Optional[str] = \"REGIONAL\"\nclass SubNetwork(BaseModel):\n    vpc_name: str\n    name: str",
         "detail": "backend.instances.schemas",
         "documentation": {}
     },
@@ -4401,6 +4550,24 @@
         "importPath": "backend.instances.schemas",
         "description": "backend.instances.schemas",
         "peekOfCode": "class Instance(BaseModel):\n    name: str = \"\"\n    provider: str = \"\"\n    productID: str = \"\"\n    memory: float = 10\n    diskType: str = \"pd-standard\"\n    machineType: str = \"\"\n    planId: str = \"\"\n    status: Optional[str] = \"\"\n    createdOn: Optional[datetime.date] = datetime.date.today()",
+        "detail": "backend.instances.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "VPC_RoutingConfig_Response",
+        "kind": 6,
+        "importPath": "backend.instances.schemas",
+        "description": "backend.instances.schemas",
+        "peekOfCode": "class VPC_RoutingConfig_Response(BaseModel):\n    routingMode: str = \"\"\nclass VPC_Response(BaseModel):\n    name: str = \"\"\n    selfLink: str = \"\"\n    autoCreateSubnetwork: bool = False\n    creationTimestamp: str = \"\"\n    description: str = \"\"\n    id: int = \"\"\n    kind: str = \"\"",
+        "detail": "backend.instances.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "VPC_Response",
+        "kind": 6,
+        "importPath": "backend.instances.schemas",
+        "description": "backend.instances.schemas",
+        "peekOfCode": "class VPC_Response(BaseModel):\n    name: str = \"\"\n    selfLink: str = \"\"\n    autoCreateSubnetwork: bool = False\n    creationTimestamp: str = \"\"\n    description: str = \"\"\n    id: int = \"\"\n    kind: str = \"\"\n    networkFirewallPolicyEnforcementOrder: str = \"\"\n    routingConfig: VPC_RoutingConfig_Response = {}",
         "detail": "backend.instances.schemas",
         "documentation": {}
     },

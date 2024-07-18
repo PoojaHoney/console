@@ -3,6 +3,7 @@ import cloudProviders.gcp.credentials as GCP_Crds
 from fastapi.encoders import jsonable_encoder
 from cloudProviders.gcp import vpc as VPC
 from google.oauth2 import service_account as GCPSrvAcc
+import json
 from schemas import (
     Response as API_Response,
     VPC as VPC_Schema,
@@ -12,24 +13,41 @@ from schemas import (
 import time
 from typing import Any
 
+import proto.marshal.collections.repeated
+
+
+def convert_custom_object(obj: Any) -> Any:
+    if isinstance(obj, dict):
+        return {k: convert_custom_object(v) for k, v in obj.items()}
+    elif isinstance(obj, list) or isinstance(obj, proto.marshal.collections.repeated.Repeated):
+        return [convert_custom_object(v) for v in obj]
+    elif hasattr(obj, '__dict__'):
+        return {k: convert_custom_object(v) for k, v in vars(obj).items()}
+    else:
+        return obj
+
 
 def list_vpcs(vpc_name: str, gcp_client: GCP_Crds.get_gcp_crds = None):
-    if gcp_client == None:
-        print("GCP Creds 1234567890000: ",  settings.GCP_Config.PROJECT_ID, settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,
-              settings.GCP_Config.SRV_ACC_PRIVATE_KEY, settings.GCP_Config.SRV_ACC_CLIENT_EMAIL, settings.GCP_Config.TOKEN_URL)
+    if gcp_client == None and settings.ENVIRONMENT == "dev":
         gcp_client = GCP_Crds.get_gcp_crds({"project_id": settings.GCP_Config.PROJECT_ID,
                                             "private_key_id": settings.GCP_Config.SRV_ACC_PRIVATE_KEY_ID,
                                             "private_key": settings.GCP_Config.SRV_ACC_PRIVATE_KEY,
                                             "client_email": settings.GCP_Config.SRV_ACC_CLIENT_EMAIL,
                                             "token_uri": settings.GCP_Config.TOKEN_URL,
+                                            "auth_uri": settings.GCP_Config.AUTH_URL,
+                                            "client_id": settings.GCP_Config.SRV_ACC_CLIENT_ID,
+                                            "client_x509_cert_url": settings.GCP_Config.CLIENT_X509_CERT_URL,
+                                            "universe_domain": settings.GCP_Config.UNIVERSE_DOMAIN,
+                                            "auth_provider_x509_cert_url": settings.GCP_Config.AUTH_PROVIDER_X509_CERT_URL,
+                                            "type": settings.GCP_Config.IAM_TYPE
                                             })
-        print("gcp client created: ", gcp_client)
-    print("vpc: name: ", vpc_name)
     if vpc_name == "" or vpc_name == None:
-        print("vpc jfhksfjk name: ", vpc_name)
         vpc = VPC.list_vpcs(gcp_crds=gcp_client)
-        return API_Response(message="VPCs fetched successfully", data=vpc, statusCode=200).model_dump()
-    print("insideeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
+        # import pdb;pdb.set_trace()
+        # transformed_vpcs = convert_custom_object(vpc)
+        # vpc = json.dumps(vpc)
+        return API_Response(message="VPCs fetched successfully", data=vpc, statusCode=200)
+        # return {"message": "VPCs fetched successfully", "data": vpc, "statusCode": 200}
     vpc = VPC.get_vpc(gcp_crds=gcp_client, vpc_name=vpc_name)
     return API_Response(message="VPCs fetched successfully", data=vpc, statusCode=200).model_dump()
 
@@ -45,14 +63,14 @@ def create_vpc_subnetwork_firewall(details: VPC_Schema, gcp_client: GCP_Crds.get
     vpc_client = VPC.get_vpc_client(gcp_crds=gcp_client)
     if not VPC.check_vpc_exists(gcp_crds=gcp_client, vpc_name=details.name, vpc_client=vpc_client):
         vpc = create_vpc(gcp_client=gcp_client,
-                         details=details, vpc_client=vpc_client)
+                        details=details, vpc_client=vpc_client)
         if type(vpc) == API_Response:
             return vpc.model_dump()
         if vpc is None:
             return API_Response(error="VPC creation failed", statusCode=400).model_dump()
     else:
         vpc = VPC.get_vpc(gcp_crds=gcp_client,
-                          vpc_name=details.name, vpc_client=vpc_client)
+                        vpc_name=details.name, vpc_client=vpc_client)
         vpc["targetLink"] = vpc["selfLink"]
     if details.autoCreateSubnetworks != True:
         subnetwork_details = SubNetwork_Schema(
@@ -131,8 +149,8 @@ def create_vpc(details: VPC_Schema, gcp_client: GCPSrvAcc.Credentials = None, vp
         "mtu": details.mtu,
         "routingConfig": jsonable_encoder(details.routingConfig),
     }
-    if VPC.check_vpc_exists(gcp_crds=gcp_client, vpc_name=details_json["name"], vpc_client=vpc_client):
-        return API_Response(message="VPC already exists", statusCode=400)
+    # if VPC.check_vpc_exists(gcp_crds=gcp_client, vpc_name=details_json["name"], vpc_client=vpc_client):
+    #     return API_Response(message="VPC already exists", statusCode=400)
     vpc = VPC.create_vpc(gcp_crds=gcp_client,
                          details=details_json, vpc_client=vpc_client)
     return vpc

@@ -14,7 +14,9 @@ def get_compute(cloud_provider: str, framework: str, compute_engine_name: str = 
                 if framework == constants.SDK_FRAMEWORK:
                     return SDK_Compute.list_compute_engines(compute_engine_name=compute_engine_name)
     except Exception as exp:
-        return API_Response(error=exp, statusCode=400).model_dump()
+        if len(exp.error_details):
+            return API_Response(error=exp.error_details, statusCode=400).model_dump()
+        return API_Response(error=exp.args[0], statusCode=400).model_dump()
 
 
 @router.post("/compute/{cloud_provider}/{framework}")
@@ -25,7 +27,9 @@ def create_compute(cloud_provider: str, details: ComputeEngine_Schema, framework
                 if framework == constants.SDK_FRAMEWORK:
                     return SDK_Compute.create_compute_engine(details=details)
     except Exception as exp:
-        return API_Response(error=exp, statusCode=400).model_dump()
+        if len(exp.error_details):
+            return API_Response(error=exp.error_details, statusCode=400).model_dump()
+        return API_Response(error=exp.args[0], statusCode=400).model_dump()
 
 
 @router.delete("/compute/{cloud_provider}/{framework}")
@@ -38,4 +42,6 @@ def delete_compute(cloud_provider: str, compute_engine: str, framework: str):
         else:
             return API_Response(error="cloud_provider and framework are required", statusCode=400).model_dump()
     except Exception as exp:
-        return API_Response(error=exp, statusCode=400).model_dump()
+        if len(exp.error_details):
+            return API_Response(error=exp.error_details, statusCode=400).model_dump()
+        return API_Response(error=exp.args[0], statusCode=400).model_dump()

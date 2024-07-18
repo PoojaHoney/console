@@ -1,10 +1,13 @@
 from google.oauth2 import service_account as GCPSrvAcc
 from googleapiclient.discovery import build
 from typing import Any
+# from google.cloud import iam_v1
+
 
 
 def get_iam_client(gcp_crds):
     return build(serviceName="iam", version="v1", credentials=gcp_crds)
+    # return iam_v1.IAMPolicyClient()
 
 def get_resource_manager(gcp_crds: GCPSrvAcc.Credentials):
     return build("cloudresourcemanager", "v1", credentials=gcp_crds)

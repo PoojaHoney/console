@@ -5,7 +5,7 @@ sudo su
 
 # Variables
 SSH_USER="admin"
-SSH_PASSWORD="321@nimda#console-poc"
+SSH_PASSWORD="321#nimda#console-poc"
 MONGO_USERNAME="lms-bo"
 MONGO_DATABASE="lmsbo"
 MONGO_PASSWORD="9wcEGYnFPgMWbsuQww0yTiEsQnW"
@@ -50,7 +50,7 @@ su - $SSH_USER -c 'chmod 0600 ~/.ssh/authorized_keys'
 gsutil cp /home/$SSH_USER/.ssh/id_rsa gs://$CLOUD_STORE_BUCKET/$PRODUCT/$INSTANCE_ID/ssh-keys/
 
 sudo systemctl restart sshd
-
+9
 gsutil cp gs://$CLOUD_STORE_BUCKET/$PRODUCT/$INSTANCE_ID/serviceAccounts/keys/$PRODUCT-$INSTANCE_ID-$INSTANCE_NAME.json key.json
 gcloud auth activate-service-account --key-file key.json
 

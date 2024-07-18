@@ -25,6 +25,7 @@ def create_instance_compute_engine(details: Instance, product: dict):
     iam = None
     vpc = None
     compute_response = None
+    details.instanceId = instanceId
     try:
         ports = []
         for microservice in product["microservices"]:
@@ -34,7 +35,7 @@ def create_instance_compute_engine(details: Instance, product: dict):
             ports=ports,
             description=f"{instanceId}{details.name} VPC for {details.name} of {details.productID} product",
         ), gcp_client=gcp_client)
-        if vpc_response.get("error") != "":
+        if vpc_response.get("error") != "" and vpc_response.get("error") != None:
             return API_Response(error=vpc_response.get("error"), statusCode=400).model_dump()
         vpc = vpc_response["data"]
 
@@ -51,7 +52,7 @@ def create_instance_compute_engine(details: Instance, product: dict):
             description=f"{instanceId}{details.name} service account for {details.name} of {details.productID} product",
             policies=policies
         ), gcp_client=gcp_client)
-        if iam_response.get("error") != "":
+        if iam_response.get("error") != "" and iam_response.get("error") != None:
             return API_Response(error=iam_response.get("error"), statusCode=400).model_dump()
         iam = iam_response["data"]
 

@@ -19,6 +19,6 @@
         "deployedOn": "compute_engine",
         "autoScaling": false,
         "vmSourceImage": "",
-        "stage":"development"
+        "stage": "development"
     }
 }

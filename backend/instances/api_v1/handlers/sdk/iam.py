@@ -1,8 +1,7 @@
 from schemas import IAM_Role, Response as API_Response
 from fastapi import Query
 from fastapi.encoders import jsonable_encoder
-from config import settings
-# databases
+from config import settings, databases
 import json
 import base64
 import cloudProviders.gcp.credentials as GCP_Crds
@@ -38,7 +37,7 @@ def create_service_account(details: IAM_Role, gcp_client: GCP_Crds.get_gcp_crds 
 
     key_response = create_service_account_key(
         service_account=iam["email"], iam_client=iam_client)
-    if key_response.get("error") != "":
+    if key_response.get("error") != "" and key_response.get("error") != None:
         IAM.delete_service_account(
             gcp_crds=gcp_client, service_account=iam["email"], iam_client=iam_client)
         return key_response

@@ -18,7 +18,9 @@ def create_iam_role(cloud_provider: str, details: IAM_Role, framework: str):
         else:
             return API_Response(error="cloud_provider and framework are required", statusCode=400).model_dump()
     except Exception as exp:
-        return API_Response(error=exp, statusCode=400).model_dump()
+        if len(exp.error_details):
+            return API_Response(error=exp.error_details, statusCode=400).model_dump()
+        return API_Response(error=exp.args[0], statusCode=400).model_dump()
 
 
 @router.put("/iam_role/{cloud_provider}/{framework}/{action}")
@@ -31,7 +33,9 @@ def update_iam_role(cloud_provider: str, details: IAM_Role, action: str, framewo
         else:
             return API_Response(error="cloud_provider and framework are required", statusCode=400).model_dump()
     except Exception as exp:
-        return API_Response(error=exp, statusCode=400).model_dump()
+        if len(exp.error_details):
+            return API_Response(error=exp.error_details, statusCode=400).model_dump()
+        return API_Response(error=exp.args[0], statusCode=400).model_dump()
 
 
 @router.delete("/iam_role/{cloud_provider}/{framework}")
@@ -46,7 +50,9 @@ def delete_iam_role(cloud_provider: str, service_account: str, framework: str,
         else:
             return API_Response(error="cloud_provider and framework are required", statusCode=400).model_dump()
     except Exception as exp:
-        return API_Response(error=exp, statusCode=400).model_dump()
+        if len(exp.error_details):
+            return API_Response(error=exp.error_details, statusCode=400).model_dump()
+        return API_Response(error=exp.args[0], statusCode=400).model_dump()
 
 
 @router.get("/iam_role/{cloud_provider}/{framework}")
@@ -59,7 +65,9 @@ def get_iam_roles(cloud_provider: str, framework: str, service_account: str = Qu
         else:
             return API_Response(error="cloud_provider and framework are required", statusCode=400).model_dump()
     except Exception as exp:
-        return API_Response(error=exp, statusCode=400).model_dump()
+        if len(exp.error_details):
+            return API_Response(error=exp.error_details, statusCode=400).model_dump()
+        return API_Response(error=exp.args[0], statusCode=400).model_dump()
 
 
 @router.get("/iam_role_key/{cloud_provider}/{framework}")
@@ -74,7 +82,9 @@ def get_iam_role_key(cloud_provider: str, service_account: str, framework: str,
         else:
             return API_Response(error="cloud_provider and framework are required", statusCode=400).model_dump()
     except Exception as exp:
-        return API_Response(error=exp, statusCode=400).model_dump()
+        if len(exp.error_details):
+            return API_Response(error=exp.error_details, statusCode=400).model_dump()
+        return API_Response(error=exp.args[0], statusCode=400).model_dump()
 
 
 # --------------------------------------SERVICE ACCOUNT PERMISSIONS/POLICIES/ROLE APIs----------------------------------------
@@ -89,7 +99,9 @@ def get_iam_role_permissions(cloud_provider: str, role_name: str, framework: str
         else:
             return API_Response(error="cloud_provider and framework are required", statusCode=400).model_dump()
     except Exception as exp:
-        return API_Response(error=exp, statusCode=400).model_dump()
+        if len(exp.error_details):
+            return API_Response(error=exp.error_details, statusCode=400).model_dump()
+        return API_Response(error=exp.args[0], statusCode=400).model_dump()
 
 # --------------------------------------SERVICE ACCOUNT KEYS APIs----------------------------------------
 
@@ -104,7 +116,9 @@ def create_iam_role_key(cloud_provider: str, service_account: str, framework: st
         else:
             return API_Response(error="cloud_provider and framework are required", statusCode=400).model_dump()
     except Exception as exp:
-        return API_Response(error=exp, statusCode=400).model_dump()
+        if len(exp.error_details):
+            return API_Response(error=exp.error_details, statusCode=400).model_dump()
+        return API_Response(error=exp.args[0], statusCode=400).model_dump()
 
 # --------------------------------------IAM ROLES PERMISSIONS PREDEFINED APIs----------------------------------------
 
@@ -120,7 +134,9 @@ def create_iam_predefined_roles(cloud_provider: str, framework: str) -> API_Resp
         else:
             return API_Response(error="cloud_provider and framework are required", statusCode=400).model_dump()
     except Exception as exp:
-        return API_Response(error=exp, statusCode=400).model_dump()
+        if len(exp.error_details):
+            return API_Response(error=exp.error_details, statusCode=400).model_dump()
+        return API_Response(error=exp.args[0], statusCode=400).model_dump()
 
 
 @router.get("/iam_predefined_roles/{cloud_provider}/{framework}")
@@ -135,4 +151,6 @@ def get_iam_predefined_roles(cloud_provider: str,
         else:
             return API_Response(error="cloud_provider and framework are required", statusCode=400).model_dump()
     except Exception as exp:
-        return API_Response(error=exp, statusCode=400).model_dump()
+        if len(exp.error_details):
+            return API_Response(error=exp.error_details, statusCode=400).model_dump()
+        return API_Response(error=exp.args[0], statusCode=400).model_dump()

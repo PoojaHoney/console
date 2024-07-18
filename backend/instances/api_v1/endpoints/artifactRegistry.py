@@ -14,7 +14,9 @@ def get_artifact_registry(cloud_provider: str, framework: str, registry_name: st
                 if framework == constants.SDK_FRAMEWORK:
                     return SDK_ArtifactRegistry.list_artifact_registries(registry_name=registry_name)
     except Exception as exp:
-        return API_Response(error=exp, statusCode=400).model_dump()
+        if len(exp.error_details):
+            return API_Response(error=exp.error_details, statusCode=400).model_dump()
+        return API_Response(error=exp.args[0], statusCode=400).model_dump()
 
 
 @router.get("/artifact_registry_permissions/{cloud_provider}/{framework}")
@@ -25,4 +27,6 @@ def get_artifact_registry_permissions(cloud_provider: str, framework: str, regis
                 if framework == constants.SDK_FRAMEWORK:
                     return SDK_ArtifactRegistry.get_artifact_registry_permissions(repository_id=registry_name)
     except Exception as exp:
-        return API_Response(error=exp, statusCode=400).model_dump()
+        if len(exp.error_details):
+            return API_Response(error=exp.error_details, statusCode=400).model_dump()
+        return API_Response(error=exp.args[0], statusCode=400).model_dump()

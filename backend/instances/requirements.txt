@@ -9,3 +9,6 @@ pydantic_settings==2.2.1
 pymongo==4.7.0
 google-cloud-storage==2.16.0
 google-cloud-artifact-registry==1.11.3
+google-cloud-compute
+google-cloud-iam
+python-dotenv

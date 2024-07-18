@@ -2,11 +2,13 @@ from google.oauth2 import service_account as GCPSrvAcc
 from googleapiclient.discovery import build
 from typing import Any
 import time
+from google.cloud import compute_v1
 from cloudProviders.gcp.credentials import get_gcp_crds
 
 
 def get_compute_client(gcp_crds):
     return build(serviceName="compute", version="v1", credentials=gcp_crds)
+    # return compute_v1.NetworksClient()
 
 
 def list_compute_engines(gcp_crds: GCPSrvAcc.Credentials, zone: str, compute_client: Any = None):
