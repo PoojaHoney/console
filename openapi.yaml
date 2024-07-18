@@ -1,0 +1,1244 @@
+openapi: 3.1.0
+info:
+  title: instances
+  version: 0.1.0
+paths:
+  "/api/instances/v1/iam_role/{cloud_provider}/{framework}":
+    post:
+      tags:
+      - iam
+      summary: Create Iam Role
+      operationId: create_iam_role_api_instances_v1_iam_role__cloud_provider___framework__post
+      parameters:
+      - name: cloud_provider
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Cloud Provider
+      - name: framework
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Framework
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/IAM_Role"
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+    delete:
+      tags:
+      - iam
+      summary: Delete Iam Role
+      operationId: delete_iam_role_api_instances_v1_iam_role__cloud_provider___framework__delete
+      parameters:
+      - name: cloud_provider
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Cloud Provider
+      - name: framework
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Framework
+      - name: service_account
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Service Account
+      - name: product
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: Product
+      - name: instanceId
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: Instanceid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+    get:
+      tags:
+      - iam
+      summary: Get Iam Roles
+      operationId: get_iam_roles_api_instances_v1_iam_role__cloud_provider___framework__get
+      parameters:
+      - name: cloud_provider
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Cloud Provider
+      - name: framework
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Framework
+      - name: service_account
+        in: query
+        required: false
+        schema:
+          type: string
+          maxLength: 200
+          title: Service Account
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/instances/v1/iam_role/{cloud_provider}/{framework}/{action}":
+    put:
+      tags:
+      - iam
+      summary: Update Iam Role
+      operationId: update_iam_role_api_instances_v1_iam_role__cloud_provider___framework___action__put
+      parameters:
+      - name: cloud_provider
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Cloud Provider
+      - name: action
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Action
+      - name: framework
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Framework
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/IAM_Role"
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/instances/v1/iam_role_key/{cloud_provider}/{framework}":
+    get:
+      tags:
+      - iam
+      summary: Get Iam Role Key
+      operationId: get_iam_role_key_api_instances_v1_iam_role_key__cloud_provider___framework__get
+      parameters:
+      - name: cloud_provider
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Cloud Provider
+      - name: framework
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Framework
+      - name: service_account
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Service Account
+      - name: product
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: Product
+      - name: instanceId
+        in: query
+        required: false
+        schema:
+          type: string
+          default: ''
+          title: Instanceid
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/instances/v1/iam_role_permissions/{cloud_provider}/{framework}":
+    get:
+      tags:
+      - iam
+      summary: Get Iam Role Permissions
+      operationId: get_iam_role_permissions_api_instances_v1_iam_role_permissions__cloud_provider___framework__get
+      parameters:
+      - name: cloud_provider
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Cloud Provider
+      - name: framework
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Framework
+      - name: role_name
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Role Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/instances/v1/iam_role_keys":
+    post:
+      tags:
+      - iam
+      summary: Create Iam Role Key
+      operationId: create_iam_role_key_api_instances_v1_iam_role_keys_post
+      parameters:
+      - name: cloud_provider
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Cloud Provider
+      - name: service_account
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Service Account
+      - name: framework
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Framework
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/instances/v1/iam_predefined_roles/{cloud_provider}/{framework}":
+    post:
+      tags:
+      - iam
+      summary: Create Iam Predefined Roles
+      operationId: create_iam_predefined_roles_api_instances_v1_iam_predefined_roles__cloud_provider___framework__post
+      parameters:
+      - name: cloud_provider
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Cloud Provider
+      - name: framework
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Framework
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Response"
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+    get:
+      tags:
+      - iam
+      summary: Get Iam Predefined Roles
+      operationId: get_iam_predefined_roles_api_instances_v1_iam_predefined_roles__cloud_provider___framework__get
+      parameters:
+      - name: cloud_provider
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Cloud Provider
+      - name: framework
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Framework
+      - name: filter
+        in: query
+        required: false
+        schema:
+          type: string
+          maxLength: 200
+          title: Filter
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/instances/v1/vpc/{cloud_provider}/{framework}":
+    get:
+      tags:
+      - vpc
+      summary: Get Vpc
+      operationId: get_vpc_api_instances_v1_vpc__cloud_provider___framework__get
+      parameters:
+      - name: cloud_provider
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Cloud Provider
+      - name: framework
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Framework
+      - name: vpc_name
+        in: query
+        required: false
+        schema:
+          type: string
+          maxLength: 200
+          title: Vpc Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+    post:
+      tags:
+      - vpc
+      summary: Create Vpc
+      operationId: create_vpc_api_instances_v1_vpc__cloud_provider___framework__post
+      parameters:
+      - name: cloud_provider
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Cloud Provider
+      - name: framework
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Framework
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/VPC"
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+    delete:
+      tags:
+      - vpc
+      summary: Delete Vpc
+      operationId: delete_vpc_api_instances_v1_vpc__cloud_provider___framework__delete
+      parameters:
+      - name: cloud_provider
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Cloud Provider
+      - name: framework
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Framework
+      - name: vpc_name
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Vpc Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/instances/v1/compute/{cloud_provider}/{framework}":
+    get:
+      tags:
+      - compute
+      summary: Get Compute
+      operationId: get_compute_api_instances_v1_compute__cloud_provider___framework__get
+      parameters:
+      - name: cloud_provider
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Cloud Provider
+      - name: framework
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Framework
+      - name: compute_engine_name
+        in: query
+        required: false
+        schema:
+          type: string
+          maxLength: 200
+          title: Compute Engine Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+    post:
+      tags:
+      - compute
+      summary: Create Compute
+      operationId: create_compute_api_instances_v1_compute__cloud_provider___framework__post
+      parameters:
+      - name: cloud_provider
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Cloud Provider
+      - name: framework
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Framework
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/ComputeEngine"
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+    delete:
+      tags:
+      - compute
+      summary: Delete Compute
+      operationId: delete_compute_api_instances_v1_compute__cloud_provider___framework__delete
+      parameters:
+      - name: cloud_provider
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Cloud Provider
+      - name: framework
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Framework
+      - name: compute_engine
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Compute Engine
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/instances/v1/artifact_registry/{cloud_provider}/{framework}":
+    get:
+      tags:
+      - artifactRegistry
+      summary: Get Artifact Registry
+      operationId: get_artifact_registry_api_instances_v1_artifact_registry__cloud_provider___framework__get
+      parameters:
+      - name: cloud_provider
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Cloud Provider
+      - name: framework
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Framework
+      - name: registry_name
+        in: query
+        required: false
+        schema:
+          type: string
+          maxLength: 200
+          title: Registry Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/instances/v1/artifact_registry_permissions/{cloud_provider}/{framework}":
+    get:
+      tags:
+      - artifactRegistry
+      summary: Get Artifact Registry Permissions
+      operationId: get_artifact_registry_permissions_api_instances_v1_artifact_registry_permissions__cloud_provider___framework__get
+      parameters:
+      - name: cloud_provider
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Cloud Provider
+      - name: framework
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Framework
+      - name: registry_name
+        in: query
+        required: false
+        schema:
+          type: string
+          maxLength: 200
+          title: Registry Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/instances/v1/create":
+    post:
+      tags:
+      - instances
+      summary: Create Instance
+      operationId: create_instance_api_instances_v1_create_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/Instance"
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Response"
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+  "/api/instances/v1/delete":
+    delete:
+      tags:
+      - instances
+      summary: Delete Instance
+      operationId: delete_instance_api_instances_v1_delete_delete
+      parameters:
+      - name: instance_id
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Instance Id
+      - name: product
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Product
+      - name: name
+        in: query
+        required: true
+        schema:
+          type: string
+          title: Name
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/Response"
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/HTTPValidationError"
+components:
+  schemas:
+    AccessConfig:
+      properties:
+        type:
+          type: string
+          title: Type
+          default: ONE_TO_ONE_NAT
+        name:
+          type: string
+          title: Name
+          default: External NAT
+      type: object
+      title: AccessConfig
+    ComputeEngine:
+      properties:
+        name:
+          type: string
+          title: Name
+        machineType:
+          type: string
+          title: Machinetype
+        disks:
+          items:
+            "$ref": "#/components/schemas/Disks"
+          type: array
+          title: Disks
+        region:
+          type: string
+          title: Region
+          default: ''
+        networkInterfaces:
+          items:
+            "$ref": "#/components/schemas/NetworkInterfaces"
+          type: array
+          title: Networkinterfaces
+        serviceAccounts:
+          items:
+            "$ref": "#/components/schemas/Scopes"
+          type: array
+          title: Serviceaccounts
+        metadata:
+          "$ref": "#/components/schemas/Metadata"
+        tags:
+          "$ref": "#/components/schemas/Tags"
+        zone:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Zone
+          default: ''
+        cpuPlatform:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Cpuplatform
+          default: Intel Broadwell
+        shieldedInstanceConfig:
+          anyOf:
+          - "$ref": "#/components/schemas/ShieldedInstanceConfig"
+          - type: 'null'
+      type: object
+      required:
+      - name
+      - machineType
+      - disks
+      - networkInterfaces
+      - serviceAccounts
+      - metadata
+      - tags
+      title: ComputeEngine
+    Disks:
+      properties:
+        boot:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          title: Boot
+          default: true
+        autoDelete:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          title: Autodelete
+          default: true
+        type:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Type
+          default: PERSISTENT
+        initializeParams:
+          "$ref": "#/components/schemas/InitializeParams"
+      type: object
+      required:
+      - initializeParams
+      title: Disks
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            "$ref": "#/components/schemas/ValidationError"
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    IAM_Role:
+      properties:
+        name:
+          type: string
+          title: Name
+          default: ''
+        description:
+          type: string
+          title: Description
+          default: ''
+        policies:
+          items: {}
+          type: array
+          title: Policies
+          default: []
+        email:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Email
+          default: ''
+        instanceId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Instanceid
+          default: ''
+        product:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Product
+          default: ''
+      type: object
+      title: IAM_Role
+    InitializeParams:
+      properties:
+        sourceImage:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Sourceimage
+          default: projects/debian-cloud/global/images/family/debian-11
+        diskSizeGb:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Disksizegb
+          default: 10
+        diskType:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Disktype
+          default: pd-standard
+      type: object
+      title: InitializeParams
+    Instance:
+      properties:
+        name:
+          type: string
+          title: Name
+          default: ''
+        provider:
+          type: string
+          title: Provider
+          default: ''
+        productID:
+          type: string
+          title: Productid
+          default: ''
+        memory:
+          type: number
+          title: Memory
+          default: 10
+        diskType:
+          type: string
+          title: Disktype
+          default: pd-standard
+        machineType:
+          type: string
+          title: Machinetype
+          default: ''
+        planId:
+          type: string
+          title: Planid
+          default: ''
+        status:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Status
+          default: ''
+        createdOn:
+          anyOf:
+          - type: string
+            format: date
+          - type: 'null'
+          title: Createdon
+          default: '2024-07-08'
+        changedOn:
+          anyOf:
+          - type: string
+            format: date
+          - type: 'null'
+          title: Changedon
+          default: '2024-07-08'
+        region:
+          type: string
+          title: Region
+          default: ''
+        prefix:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Prefix
+          default: ''
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+          default: ''
+        instanceId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Instanceid
+          default: ''
+        startTimeInDay:
+          anyOf:
+          - type: string
+            format: time
+          - type: 'null'
+          title: Starttimeinday
+          default: '00:00:00'
+        endTimeInDay:
+          anyOf:
+          - type: string
+            format: time
+          - type: 'null'
+          title: Endtimeinday
+          default: '00:00:00'
+        reinitializeOnSameDay:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          title: Reinitializeonsameday
+          default: false
+        weekOffDays:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          title: Weekoffdays
+          default: false
+        alwaysRun:
+          type: boolean
+          title: Alwaysrun
+          default: false
+        createdBy:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Createdby
+          default: ''
+        runningStatus:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Runningstatus
+          default: ''
+        url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Url
+          default: ''
+        version:
+          type: string
+          title: Version
+          default: ''
+        stage:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Stage
+          default: ''
+        deployedOn:
+          type: string
+          title: Deployedon
+          default: ''
+        autoScaling:
+          type: boolean
+          title: Autoscaling
+          default: false
+        vmSourceImage:
+          type: string
+          title: Vmsourceimage
+          default: ''
+      type: object
+      title: Instance
+    Items:
+      properties:
+        key:
+          type: string
+          title: Key
+        value:
+          type: string
+          title: Value
+      type: object
+      required:
+      - key
+      - value
+      title: Items
+    Metadata:
+      properties:
+        items:
+          items:
+            "$ref": "#/components/schemas/Items"
+          type: array
+          title: Items
+      type: object
+      required:
+      - items
+      title: Metadata
+    NetworkInterfaces:
+      properties:
+        subnetwork:
+          type: string
+          title: Subnetwork
+        name:
+          type: string
+          title: Name
+        accessConfigs:
+          items:
+            "$ref": "#/components/schemas/AccessConfig"
+          type: array
+          title: Accessconfigs
+          default:
+          - type: ONE_TO_ONE_NAT
+            name: External NAT
+      type: object
+      required:
+      - subnetwork
+      - name
+      title: NetworkInterfaces
+    Response:
+      properties:
+        message:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Message
+          default: ''
+        data:
+          anyOf:
+          - {}
+          - type: 'null'
+          title: Data
+          default: {}
+        statusCode:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Statuscode
+          default: 0
+        error:
+          anyOf:
+          - {}
+          - type: 'null'
+          title: Error
+          default: ''
+      type: object
+      title: Response
+    RoutingConfig:
+      properties:
+        routingMode:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Routingmode
+          default: REGIONAL
+      type: object
+      title: RoutingConfig
+    Scopes:
+      properties:
+        email:
+          type: string
+          title: Email
+          default: default
+        scopes:
+          items:
+            type: string
+          type: array
+          title: Scopes
+          default:
+          - https://www.googleapis.com/auth/devstorage.read_write
+          - https://www.googleapis.com/auth/logging.write
+      type: object
+      title: Scopes
+    ShieldedInstanceConfig:
+      properties:
+        enableIntegrityMonitoring:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          title: Enableintegritymonitoring
+          default: true
+        enableSecureBoot:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          title: Enablesecureboot
+          default: false
+        enableVtpm:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          title: Enablevtpm
+          default: true
+      type: object
+      title: ShieldedInstanceConfig
+    Tags:
+      properties:
+        items:
+          items:
+            type: string
+          type: array
+          title: Items
+      type: object
+      required:
+      - items
+      title: Tags
+    VPC:
+      properties:
+        name:
+          type: string
+          title: Name
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+          default: ''
+        cidr:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Cidr
+          default: ''
+        network:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Network
+          default: ''
+        autoCreateSubnetworks:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          title: Autocreatesubnetworks
+          default: false
+        enableFlowLogs:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          title: Enableflowlogs
+          default: false
+        mtu:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Mtu
+          default: 1460
+        routingConfig:
+          anyOf:
+          - "$ref": "#/components/schemas/RoutingConfig"
+          - type: 'null'
+          default:
+            routingMode: REGIONAL
+        ports:
+          anyOf:
+          - items:
+              type: string
+            type: array
+          - type: 'null'
+          title: Ports
+          default: []
+      type: object
+      required:
+      - name
+      title: VPC
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
